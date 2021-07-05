@@ -1,0 +1,209 @@
+.main_bar {
+  width: 100%;
+  height: 3.6rem;
+  border-bottom: 1px solid #dedede;
+  display: flex;
+  align-items: center;
+  position: fixed;
+  margin: 0;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  background-color: white;
+}
+
+/* TIL 타이틀 */
+.main_bar--title {
+  font-size: 1.2rem;
+  font-weight: 400;
+  position: relative;
+  left: 1.5rem;
+  cursor: pointer;
+}
+/* 오른쪽 검색창 + 깃헙링크 구현 */
+.main_bar--right {
+  height: 1.6rem;
+  width: 18rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: absolute;
+  right: 5rem;
+}
+
+/* 검색창 바깥박스 */
+.search-box {
+  display: flex;
+  align-items: center;
+}
+
+/* 검색창 입력 */
+
+.search-form {
+  width: 8rem;
+  height: 2rem;
+  border: 1px solid darkgrey;
+  border-radius: 3rem;
+  font-size: 1rem;
+  padding: 0 0.5rem 0 2rem;
+  position: relaitve;
+  left: 0;
+  transition: ease-in 0.5s;
+}
+.search-form:focus {
+  outline: none;
+  border: 1px solid #3eaf7c;
+}
+.fa-search {
+  font-size: 1rem;
+  position: relative;
+  left: 1.5rem;
+  color: darkgray;
+}
+
+/* 깃헙링크 박스 */
+.main_bar--link {
+  height: 1.6rem;
+  width: 5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  cursor: pointer;
+}
+.main_bar--link p {
+  font-size: 1rem;
+}
+.fa-external-link-alt {
+  font-size: 1rem;
+  color: darkgray;
+}
+
+/* 좌측 메뉴바 */
+.menu-bar {
+  width: 20rem;
+  overflow: scroll;
+  height: 100vh;
+  padding: 2rem 0;
+  border-right: 1px solid #dedede;
+  position: fixed;
+  top: 3.6rem;
+}
+
+/* 타이틀메뉴 바깥경계박스 */
+.sidebar-group {
+  height: 2.3rem;
+  display: flex;
+  align-items: center;
+  padding-left: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+/* 타이틀메뉴 - 타이틀 */
+.sidebar-heading {
+  font-size: 18px;
+  box-sizing: border-box;
+  width: 100%;
+  height: 1.8rem;
+  cursor: pointer;
+  font-weight: light;
+}
+
+.fa-caret-right {
+  color: darkgrey;
+}
+
+.sidebar-heading--name {
+  margin-right: 0.5rem;
+}
+
+section:last-child {
+  margin-bottom: 2.4rem;
+}
+
+/* index페이지 소개란 */
+.main-page {
+  padding-top: 1.5rem;
+  padding-left: 20%;
+  box-sizing: border-box;
+  width: 70%;
+  position: relative;
+  top: 3.6rem;
+  left: 13rem;
+}
+
+.main-page--title {
+  font-size: 100px;
+  font-family: "Sigmar One", cursive;
+  /* font-family: 'Shadows Into Light', cursive; */
+}
+
+.line {
+  background-color: var(--line-color);
+  height: 1rem;
+  box-sizing: border-box;
+  width: 100%;
+  margin-top: 0.6rem;
+  margin-bottom: 0.6rem;
+}
+
+/* info container */
+.info-container {
+  box-sizing: border-box;
+  width: 100%;
+  height: 20rem;
+  padding-top: 5rem;
+}
+.info-container--name,
+.info-container--link {
+  text-align: right;
+}
+
+.info-container--name {
+  box-sizing: border-box;
+  width: 100%;
+  height: 3rem;
+  font-weight: 400;
+  color: black;
+  font-size: 1.8rem;
+}
+.info-container--link {
+  cursor: pointer;
+  color: #3eaf7c;
+}
+
+/* rotate animation */
+
+/* collapse definition */
+.sidebar-group--list {
+  display: flex;
+}
+
+.collapse {
+  display: flex;
+  flex-direction: column;
+}
+
+.card-body {
+  position: relative;
+  left: 2rem;
+  padding: 0;
+  font-weight: 300;
+  font-size: 1.1rem;
+  border: none;
+  height: 2rem;
+  box-sizing: border-box;
+  width: 100%;
+  font-size: 0.9rem;
+}
+.card-body:hover {
+  color: #3eaf7c;
+  cursor: pointer;
+}
+
+/* animation */
+.down {
+  transform: rotate(90deg);
+}
+
+.active {
+  color: var(--title-color);
+}

@@ -1,0 +1,17 @@
+.main-post {
+  box-sizing: border-box;
+  padding-top: 1.5rem;
+  padding-left: 20%;
+  box-sizing: border-box;
+  width: 70%;
+  position: relative;
+  top: 3.6rem;
+  left: 13rem;
+}
+
+.main-post--title {
+  font-family: "Gugi", cursive;
+  font-size: 4rem;
+  -webkit-font-smoothing: antialiased;
+  color: var(--article-color);
+}

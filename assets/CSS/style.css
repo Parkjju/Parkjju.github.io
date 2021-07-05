@@ -1,0 +1,31 @@
+/* CSS */
+@import "reset.css";
+@import "main.css";
+@import "post.css";
+@import "variable.css";
+@import "syntax.css";
+
+/* fonts */
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;1,100;1,300;1,400;1,500&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Sigmar+One&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Shadows+Into+Light&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Gugi&display=swap");
+
+body {
+  font-family: "Noto Sans KR", sans-serif;
+  font-family: "Roboto", sans-serif;
+  display: flex;
+  font-size: 20px;
+  height: 80vh;
+  box-sizing: border-box;
+  width: 100%;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+a:hover {
+  color: var(--title-color);
+}
