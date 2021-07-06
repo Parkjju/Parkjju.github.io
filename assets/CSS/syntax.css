@@ -12,6 +12,8 @@
   padding: 0.8rem;
   font-size: 1rem;
   font-weight: 300;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
 }
 .highlight .err {
   color: #272822;

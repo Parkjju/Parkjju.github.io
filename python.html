@@ -232,11 +232,9 @@
 </div>
  
     <main class="main-post">
-  <h1 class="main-post--title">Python 강좌(1) - Python 기본</h1>
+  <h1 class="main-post--title">객체 슬라이싱과 getitem magic method & setitem magic method</h1>
   <div class="line"></div>
-  <section class="main-post--content"><h1 id="객체-슬라이싱과-getitem-magic-method--setitem-magic-method">객체 슬라이싱과 <strong>getitem</strong> magic method &amp; <strong>setitem</strong> magic method</h1>
-
-<h3 id="getitem"><strong>getitem</strong></h3>
+  <section class="main-post--content"><h1 id="getitem">getitem</h1>
 
 <ul>
   <li>리스트와 튜플에 슬라이싱 연산을 해본 것처럼, <strong>클래스의 인스턴스 자체도 슬라이싱을 할 수 있게 만들 수 있다</strong></li>
@@ -254,14 +252,12 @@
   <li>getitem 메소드를 통해 슬라이싱 본연의 기능을 클래스 내부에서 직접 사용할 수 있게 된다.</li>
 </ul>
 
-<h3 id="setitem">setitem</h3>
+<h1 id="setitem">setitem</h1>
 
 <ul>
   <li>__setitem__(self,key,value) -&gt; 객체에서 연산자를 사용하여 변수를 지정할 때의 동작을 정의</li>
-  <li>
-    <p>obj[10] = 1 -&gt; obj.__setitem__(10,1)</p>
-  </li>
-  <li>(매직메소드 (==스페셜메소드) 정리 블로그)[https://corikachu.github.io/articles/python/python-magic-method]</li>
+  <li>obj[10] = 1 -&gt; obj.__setitem__(10,1)</li>
+  <li><a href="https://corikachu.github.io/articles/python/python-magic-method">매직메소드 (==스페셜메소드) 정리 블로그</a></li>
 </ul>
 </section>
 </main>
