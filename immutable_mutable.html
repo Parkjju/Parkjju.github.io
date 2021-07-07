@@ -1,0 +1,89 @@
+<h1 id="수정-가능한-객체와-수정-불가능한-객체">수정 가능한 객체와 수정 불가능한 객체</h1>
+
+<h3 id="immutable--mutable">[immutable] &amp; [mutable]</h3>
+
+<ul>
+  <li>
+    <p>객체가 지닌(객체에 저장된) 값의 수정이 불가능한 객체를 가리켜 <strong>‘immutable’</strong> 객체라고 한다. (문자열, 튜플 등)</p>
+  </li>
+  <li>
+    <p>immutable의 반대 개념인 값의 수정이 가능한 객체를 가리켜 <strong>‘mutable’</strong> 객체라고한다. (리스트, 딕셔너리 등)</p>
+  </li>
+</ul>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">&gt;&gt;&gt;</span> <span class="n">tup</span><span class="o">=</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="nb">id</span><span class="p">(</span><span class="n">tup</span><span class="p">)</span>
+<span class="mi">2745225900672</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">tup</span><span class="o">+=</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">)</span> <span class="c1"># 튜플에 변형?
+</span><span class="o">&gt;&gt;&gt;</span> <span class="k">print</span><span class="p">(</span><span class="n">tup</span><span class="p">)</span>
+<span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="nb">id</span><span class="p">(</span><span class="n">tup</span><span class="p">)</span> <span class="c1"># 어림도 없다. 새로운 튜플 객체가 생성되었음을 알 수 있음. 다른 객체 !
+</span><span class="mi">2745225785888</span>
+</code></pre></div></div>
+
+<h3 id="성격에-따라-달라지는-함수-정의">성격에 따라 달라지는 함수 정의</h3>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">&gt;&gt;&gt;</span> <span class="k">def</span> <span class="nf">add</span><span class="p">(</span><span class="n">m</span><span class="p">,</span><span class="n">n</span><span class="p">):</span>
+        <span class="n">m</span><span class="o">+</span><span class="n">n</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">lst</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">]</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">add</span><span class="p">(</span><span class="n">lst</span><span class="p">,</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">])</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="k">print</span><span class="p">(</span><span class="n">lst</span><span class="p">)</span>
+<span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">]</span>
+<span class="o">&gt;&gt;&gt;</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">tup</span> <span class="o">=</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">add</span><span class="p">(</span><span class="n">tup</span><span class="p">,(</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">))</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">tup</span>
+<span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span>
+</code></pre></div></div>
+
+<ul>
+  <li>
+    <p>위의 함수 정의와 활용 코드를 관찰해보자.</p>
+  </li>
+  <li>
+    <p>함수를 보면, 전달된 값을 더해서 반환하는 기능을 한다.</p>
+  </li>
+  <li>
+    <p>리스트의 경우 mutable객체이기 때문에 add함수 호출 이후 원본에 변화가 진행되었음을 알 수 있는데, 튜플의 경우에는 원본의 변화가 진행되지 않았다.</p>
+
+    <ul>
+      <li>튜플이 add 함수에 전달된 이후의 과정을 살펴보면,</li>
+    </ul>
+
+    <ol>
+      <li>tup변수가 참조하는 (1,2) 튜플객체가 함수의 m에 전달(m과 t가 같은 객체를 가리키는 상황)</li>
+      <li>(3,4)튜플 객체가 함수의 n에 전달</li>
+      <li>m이라는 변수에 (3,4) 튜플객체가 더해졌지만, immutable 객체이므로 m이라는 변수가 새로운 튜플 객체 (1,2,3,4)를 참조하게 된다.</li>
+      <li>결론적으로, m과 tup객체는 다른 객체를 가리키는 변수가 된다.</li>
+    </ol>
+  </li>
+</ul>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">&gt;&gt;&gt;</span> <span class="k">def</span> <span class="nf">min_max</span><span class="p">(</span><span class="n">d</span><span class="p">):</span>
+        <span class="n">d</span><span class="p">.</span><span class="n">sort</span><span class="p">()</span>
+        <span class="k">print</span><span class="p">(</span><span class="n">d</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span><span class="n">d</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">],</span><span class="n">sep</span><span class="o">=</span><span class="s">", "</span><span class="p">)</span> <span class="c1"># 오름차순 정렬 뒤, 첫 번째 값과 마지막 값 출력하면 최소 최댓값을 출력하게됨
+</span><span class="o">&gt;&gt;&gt;</span> <span class="n">lst</span> <span class="o">=</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">]</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">min_max</span><span class="p">(</span><span class="n">lst</span><span class="p">)</span>
+<span class="mi">1</span><span class="p">,</span> <span class="mi">5</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">lst</span>
+<span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">]</span> <span class="c1"># 원본의 변화가 일어남.
+</span></code></pre></div></div>
+
+<ul>
+  <li>함수에 있어서 레퍼런스 개념을 적용해보았으므로, 위의 예시에 만약 immutable객체가 전달되었을 때 의미없는 객체가 생길 수 있으므로 코드를 수정해주면</li>
+</ul>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">&gt;&gt;&gt;</span> <span class="k">def</span> <span class="nf">min_max2</span><span class="p">(</span><span class="n">d</span><span class="p">):</span>
+        <span class="n">d</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">d</span><span class="p">)</span> <span class="c1"># 원본의 내용이 담긴 리스트 객체 생성
+</span>        <span class="n">d</span><span class="p">.</span><span class="n">sort</span><span class="p">()</span>
+        <span class="k">print</span><span class="p">(</span><span class="n">d</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span><span class="n">d</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">],</span><span class="n">sep</span><span class="o">=</span><span class="s">", "</span><span class="p">)</span>
+</code></pre></div></div>
+
+<ul>
+  <li>
+    <p>값을 직접 복사하여 가져와 함수의 기능을 진행한다.</p>
+  </li>
+  <li>
+    <p>위와 같이 함수를 정의하면 immutable 객체라도 의미없는 객체 생성 및 참조에 대한 걱정 없이 함수를 호출할 수 있다.</p>
+  </li>
+</ul>

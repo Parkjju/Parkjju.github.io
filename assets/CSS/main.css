@@ -217,3 +217,17 @@ section:last-child {
 .collapse .card-body:first-child {
   margin-top: 0.6rem;
 }
+
+#collapse4 p {
+  font-size: 16px;
+  padding-left: 1.5rem;
+}
+#collapse4 p:hover {
+  color: var(--title-color);
+}
+
+#collapse4 #pythonNewbie,
+#collapse4 #pythonUser,
+#collapse4 #pythonAdditional {
+  padding-left: 1.5rem;
+}
