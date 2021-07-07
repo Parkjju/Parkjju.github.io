@@ -562,15 +562,15 @@
     <main class="main-post">
   <h1 class="main-post--title">최단경로 문제 - Ballman Ford & Dijkstra Algorithm</h1>
   <div class="line"></div>
-  <section class="main-post--content"><ul>
-  <li>dist[v] = s에서 v로 가는 최단경로 길이
-    <ul>
-      <li>v 바로 이전의 노드를 u1, u2, u3라고 가정하면,</li>
-      <li>dist[v] = min(dist[u1] + weight(u1,v) , dist[u2] + weight(u2,v) , dist[u3] + weight(u3, v))</li>
-      <li>weight는 특정 노드로 가는 데에 드는 비용 (edge 값)</li>
-      <li>이미 저장되어있던 dist[v]값이 새로운 경로의 값보다 크면, 이를 수정해주어야함</li>
-    </ul>
-  </li>
+  <section class="main-post--content"><h2 id="-distv--s에서-v로-가는-최단경로-길이"><a href="#">#</a> dist[v] = s에서 v로 가는 최단경로 길이</h2>
+
+<hr />
+
+<ul>
+  <li>v 바로 이전의 노드를 u1, u2, u3라고 가정하면,</li>
+  <li>dist[v] = min(dist[u1] + weight(u1,v) , dist[u2] + weight(u2,v) , dist[u3] + weight(u3, v))</li>
+  <li>weight는 특정 노드로 가는 데에 드는 비용 (edge 값)</li>
+  <li>이미 저장되어있던 dist[v]값이 새로운 경로의 값보다 크면, 이를 수정해주어야함</li>
 </ul>
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">if</span> <span class="n">dist</span><span class="p">[</span><span class="n">v</span><span class="p">]</span> <span class="o">&gt;</span> <span class="n">dist</span><span class="p">[</span><span class="n">u</span><span class="p">]</span> <span class="o">+</span> <span class="n">w</span><span class="p">(</span><span class="n">u</span><span class="p">,</span><span class="n">v</span><span class="p">):</span>
@@ -594,15 +594,16 @@
 </code></pre></div></div>
 
 <ul>
+  <li><a href="https://www.youtube.com/watch?v=FtN3BYH2Zes">bellman Ford Algorithm</a></li>
+</ul>
+
+<h3 id="uv까지-각-라운드에-정점의-값을-수정하는-상황">u~v까지 각 라운드에 정점의 값을 수정하는 상황</h3>
+
+<ul>
+  <li>한 라운드에 정점이 갖는 모든 경우의 수를 따져서 값을 완벽히 수정하는 것이 아님.</li>
+  <li>u~v의 중간 노드인 n1이 존재한다고 가정하면, k라운드에서의 n1값이 수정되었다고 해서 k라운드에 이미 릴랙싱이 끝난 n2 노드 (n1 이후의 노드라고 가정)의 값을 다시 릴랙싱 하지 않는다.</li>
   <li>
-    <p><a href="https://www.youtube.com/watch?v=FtN3BYH2Zes">bellman Ford Algorithm</a></p>
-  </li>
-  <li>u~v까지 각 라운드에 정점의 값을 수정하는 상황
-    <ul>
-      <li>한 라운드에 정점이 갖는 모든 경우의 수를 따져서 값을 완벽히 수정하는 것이 아님.</li>
-      <li>u~v의 중간 노드인 n1이 존재한다고 가정하면, k라운드에서의 n1값이 수정되었다고 해서 k라운드에 이미 릴랙싱이 끝난 n2 노드 (n1 이후의 노드라고 가정)의 값을 다시 릴랙싱 하지 않는다.</li>
-      <li>정점의 개수 n개일때, n-1 라운드 만큼 릴랙싱을 해야 모든 경우의 수에 따라서 모든 노드의 릴랙싱을 마치게 됨</li>
-    </ul>
+    <p>정점의 개수 n개일때, n-1 라운드 만큼 릴랙싱을 해야 모든 경우의 수에 따라서 모든 노드의 릴랙싱을 마치게 됨</p>
   </li>
   <li>(n-1) * Edge = O(nE) = O(n^3)</li>
 </ul>
@@ -639,17 +640,17 @@
     </ul>
   </li>
   <li>decreaseKey -&gt; 노드의 distance값을 저장하는 힙에, 입력된 d[v]값을 재배치</li>
-  <li>
-    <p>노드의 distance값을 저장하는 데에는 min_heap을 사용</p>
-  </li>
-  <li>
-    <p><strong>수행시간</strong></p>
+  <li>노드의 distance값을 저장하는 데에는 min_heap을 사용</li>
+</ul>
 
-    <ol>
-      <li>모든 노드 v는 min_heap에 한번씩 insert &amp; delete된다. -&gt; O(nlogn)</li>
-      <li>모든 edge는 한번의 relax를 함 -&gt; decreaseKey를 한번씩 하게됨. -&gt; decreaseKey는 heapify_up과 수행시간이 같음 O(logn) =&gt; O(Elogn) = O(n^2*logn)</li>
-    </ol>
-  </li>
+<h3 id="수행시간">수행시간</h3>
+
+<ol>
+  <li>모든 노드 v는 min_heap에 한번씩 insert &amp; delete된다. -&gt; O(nlogn)</li>
+  <li>모든 edge는 한번의 relax를 함 -&gt; decreaseKey를 한번씩 하게됨. -&gt; decreaseKey는 heapify_up과 수행시간이 같음 O(logn) =&gt; O(Elogn) = O(n^2*logn)</li>
+</ol>
+
+<ul>
   <li>최종적으로 parent 관계를 확립해놓으면, 특정노드~노드로까지의 최단경로는 부모 노드로 그려진 트리를 따라가면됨</li>
 </ul>
 </section>
