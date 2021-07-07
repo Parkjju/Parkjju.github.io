@@ -1,0 +1,984 @@
+<!DOCTYPE html>
+<html lang="kr">
+  <head>
+    <head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!-- CSS only -->
+  <link
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+    rel="stylesheet"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+    crossorigin="anonymous"
+  />
+  <link href="/assets/CSS/style.css" rel="stylesheet" />
+  <title>Parkjju's TIL</title>
+</head>
+
+  </head>
+
+  <body>
+    <div class="main_bar">
+  <p class="main_bar--title"><a href="/">Parkjju's Today I Learned</a></p>
+
+  <div class="main_bar--right">
+    <!-- 검색창 -->
+    <form action="" method="get" class="search-box">
+      <i class="fas fa-search"></i>
+      <input class="search-form" type="text" autocomplete="off" />
+    </form>
+
+    <!-- 링크버튼 -->
+    <div
+      class="main_bar--link"
+      onclick="window.open('https://github.com/Parkjju')"
+    >
+      <p>Github</p>
+      <i class="fas fa-external-link-alt"></i>
+    </div>
+  </div>
+</div>
+ <div class="menu-bar">
+  <ul>
+    <li
+      class="sidebar-group sidebar-heading"
+      data-bs-toggle="collapse"
+      href="#collapse1"
+      aria-expanded="false"
+      aria-controls="collapse1"
+      onclick="rotate(this)"
+      role="menuitem"
+    >
+      <span class="sidebar-heading--name">개발 기록</span>
+      <i class="fas fa-caret-right fa-xs"></i>
+    </li>
+    <ul class="collapse" id="collapse1">
+      <li class="card card-body">
+        <a href="./python" aria-current="page">Python 강좌(1) - Python 기본</a>
+      </li>
+      <li class="card card-body">
+        <a href="./pythonHard" target="_self"
+          >Python 강좌(2) - Python 제어문
+        </a>
+      </li>
+    </ul>
+
+    <li class="sidebar-group" role="menuitem">
+      <p
+        class="sidebar-heading"
+        data-bs-toggle="collapse"
+        href="#collapse2"
+        aria-expanded="false"
+        aria-controls="collapse2"
+        onclick="rotate(this)"
+      >
+        <span class="sidebar-heading--name">Algorithm</span>
+        <i class="fas fa-caret-right fa-xs"></i>
+      </p>
+    </li>
+    <div class="collapse" id="collapse2">
+      <div class="card card-body">
+        <a href="./shortest" target="_self">
+          Bellman Ford & Dijkstra 최단경로 알고리즘
+        </a>
+      </div>
+      <div class="card card-body">
+        <a href="./all-to-all" target="_self">all-to-all 최단경로 </a>
+      </div>
+      <div class="card card-body">
+        <a href="./Recursion" target="_self"> Recursion 재귀 </a>
+      </div>
+      <div class="card card-body">
+        <a href="./selection" target="_self"
+          >선택문제 - k번째로 작은 수, Quickselection & MoM
+        </a>
+      </div>
+      <div class="card card-body">
+        <a href="./mom" target="_self"
+          >MOM - Median of Medians 알고리즘 설명 + 수행시간
+        </a>
+      </div>
+      <div class="card card-body">
+        <a href="./divide" target="_self"
+          >Divide and Conquer 알고리즘 설명 & 예시
+        </a>
+      </div>
+    </div>
+
+    <li class="sidebar-group" role="menuitem">
+      <p
+        class="sidebar-heading"
+        data-bs-toggle="collapse"
+        href="#collapse3"
+        aria-expanded="false"
+        aria-controls="collapse3"
+        onclick="rotate(this)"
+      >
+        <span class="sidebar-heading--name">Data structure</span>
+        <i class="fas fa-caret-right fa-xs"></i>
+      </p>
+    </li>
+    <div class="collapse" id="collapse3">
+      <div class="card card-body">
+        <a href="./data_structure" target="_self">자료구조의 이해 </a>
+        <a href="./sequential_structure" target="_self">선형 자료구조 </a>
+        <a href="./hash_table" target="_self">해시 테이블 자료구조 </a>
+        <a href="./stack_cal" target="_self"
+          >스택을 이용하여 계산기 구현하기
+        </a>
+        <a href="./SinglyLinkedList" target="_self"
+          >한 방향 연결리스트 연산 구현
+        </a>
+        <a href="./doublyLinkedList" target="_self"
+          >양 방향 연결리스트 연산 구현
+        </a>
+        <a href="./pydict" target="_self">파이썬의 딕셔너리 작동방식 </a>
+        <a href="./tree" target="_self">트리 자료구조 </a>
+        <a href="./open_addressing" target="_self"
+          >해시테이블 open addressing 실습
+        </a>
+        <a href="./heap" target="_self">heap 자료구조 </a>
+        <a href="./union-find" target="_self">union find 자료구조 </a>
+        <a href="./graph" target="_self">graph 자료구조 </a>
+      </div>
+    </div>
+
+    <li class="sidebar-group" role="menuitem">
+      <p
+        class="sidebar-heading"
+        data-bs-toggle="collapse"
+        href="#collapse4"
+        aria-expanded="false"
+        aria-controls="collapse4"
+        onclick="rotate(this)"
+      >
+        <span class="sidebar-heading--name">Python</span>
+        <i class="fas fa-caret-right fa-xs"></i>
+      </p>
+    </li>
+    <div class="collapse" id="collapse4">
+      <li class="sidebar-group" role="menuitem">
+        <p
+          class="sidebar-heading"
+          data-bs-toggle="collapse"
+          href="#pythonNewbie"
+          aria-expanded="false"
+          aria-controls="pythonNewbie"
+          onclick="rotate(this)"
+        >
+          <span class="sidebar-heading--name">Python 초급</span>
+          <!-- <i class="fas fa-caret-right fa-xs"></i> -->
+        </p>
+      </li>
+      <div class="collapse" id="pythonNewbie">
+        <div class="card card-body">
+          <a href="./functions" target="_self">입출력과 변수 </a>
+        </div>
+        <div class="card card-body">
+          <a href="./input_and_print" target="_self">간단한 함수 만들기 </a>
+        </div>
+        <div class="card card-body">
+          <a href="./input_loop" target="_self"
+            >프로그램 사용자로부터 입력받기 + 코드의 반복
+          </a>
+        </div>
+        <div class="card card-body">
+          <a href="./int_float_data" target="_self"
+            >int형 데이터와 float형 데이터
+          </a>
+        </div>
+        <div class="card card-body">
+          <a href="./list_string" target="_self">리스트와 문자열 </a>
+        </div>
+        <div class="card card-body">
+          <a href="./list_function" target="_self">리스트와 문자열의 함수들 </a>
+        </div>
+        <div class="card card-body">
+          <a href="./TF" target="_self">True,False, if문과 형제들 </a>
+        </div>
+        <div class="card card-body">
+          <a href="./for_while_loop" target="_self">while, 이중 for루프 </a>
+        </div>
+        <div class="card card-body">
+          <a href="./tuple_range" target="_self">튜플과 레인지 </a>
+        </div>
+        <div class="card card-body">
+          <a href="./functions_add" target="_self"
+            >함수에 대한 추가적인 설명 - 디폴트값 등
+          </a>
+        </div>
+        <div class="card card-body">
+          <a href="./modules" target="_self">모듈(Modules) </a>
+        </div>
+        <div class="card card-body">
+          <a href="./dictionary" target="_self">딕셔너리(Dictionary) </a>
+        </div>
+        <div class="card card-body">
+          <a href="./class" target="_self">클래스와 객체 </a>
+        </div>
+        <div class="card card-body">
+          <a href="./unexpect" target="_self">예외처리</a>
+        </div>
+      </div>
+      <li class="sidebar-group" role="menuitem">
+        <p
+          class="sidebar-heading"
+          data-bs-toggle="collapse"
+          href="#pythonUser"
+          aria-expanded="false"
+          aria-controls="pythonUser"
+          onclick="rotate(this)"
+        >
+          <span class="sidebar-heading--name">Python 중급</span>
+          <!-- <i class="fas fa-caret-right fa-xs"></i> -->
+        </p>
+      </li>
+      <div class="collapse" id="pythonUser">
+        <div class="card card-body">
+          <a href="./reference_count_garbage_collection" target="_self"
+            >레퍼런스 카운트와 가비지 컬렉션
+          </a>
+        </div>
+        <div class="card card-body">
+          <a href="./immutable_mutable" target="_self"
+            >수정 가능한 객체와 수정 불가능한 객체
+          </a>
+        </div>
+        <div class="card card-body">
+          <a href="./deep_shallow_copy" target="_self"
+            >깊은 복사와 얕은 복사
+          </a>
+        </div>
+        <div class="card card-body">
+          <a href="./hide_dict" target="_self">정보 은닉과 dict</a>
+        </div>
+        <div class="card card-body">
+          <a href="./property" target="_self">프로퍼티</a>
+        </div>
+        <div class="card card-body">
+          <a href="./slots" target="_self">슬롯</a>
+        </div>
+        <div class="card card-body">
+          <a href="./list_comprehension" target="_self">리스트 컴프리헨션</a>
+        </div>
+        <div class="card card-body">
+          <a href="./iterable_iterator" target="_self"
+            >Iterable 객체와 Iterator 객체</a
+          >
+        </div>
+        <div class="card card-body">
+          <a href="./lambda" target="_self"
+            >객체처럼 다뤄지는 함수 그리고 람다</a
+          >
+        </div>
+        <div class="card card-body">
+          <a href="./map_and_filter" target="_self">map&filter</a>
+        </div>
+        <div class="card card-body">
+          <a href="./func_comprehension" target="_self"
+            >map&filter를 대신하는 리스트 컴프리헨션</a
+          >
+        </div>
+        <div class="card card-body">
+          <a href="./generator" target="_self">generator 함수</a>
+        </div>
+        <div class="card card-body">
+          <a href="./generator_expression" target="_self"
+            >generator expression</a
+          >
+        </div>
+        <div class="card card-body">
+          <a href="./tuple_packing" target="_self">튜플의 패킹과 언패킹</a>
+        </div>
+        <div class="card card-body">
+          <a href="./named_tuple" target="_self">네임드 튜플</a>
+        </div>
+        <div class="card card-body">
+          <a href="./prod_dict" target="_self">dict의 생성과 zip</a>
+        </div>
+        <div class="card card-body">
+          <a href="./dict_lupin" target="_self"
+            >dict의 루핑 기술과 컴프리헨션</a
+          >
+        </div>
+        <div class="card card-body">
+          <a href="./func_star_rule" target="_self"
+            >함수 호출과 매개변수 선언에 있어서 *과 **의 사용규칙</a
+          >
+        </div>
+        <div class="card card-body">
+          <a href="./dict_defaultdict" target="_self">dict & defaultdict</a>
+        </div>
+        <div class="card card-body">
+          <a href="./ordered_dict" target="_self">dict & OrderedDict</a>
+        </div>
+        <div class="card card-body">
+          <a href="./set_frozenset" target="_self"
+            >자료형 분류와 set&frozenset</a
+          >
+        </div>
+        <div class="card card-body">
+          <a href="./sort" target="_self">정렬 기술</a>
+        </div>
+        <div class="card card-body">
+          <a href="./enumerate" target="_self">enumerate과 문자열 비교</a>
+        </div>
+        <div class="card card-body">
+          <a href="./expression_comb" target="_self">표현식 기반 문자열 조합</a>
+        </div>
+        <div class="card card-body">
+          <a href="./method_str" target="_self">메소드 기반 문자열 조합</a>
+        </div>
+        <div class="card card-body">
+          <a href="./class_obj" target="_self">클래스와 객체의 본질</a>
+        </div>
+        <div class="card card-body">
+          <a href="./inheritance" target="_self">상속</a>
+        </div>
+        <div class="card card-body">
+          <a href="./isinstance" target="_self"
+            >isinstance함수와 object클래스</a
+          >
+        </div>
+        <div class="card card-body">
+          <a href="./special_method" target="_self">스페셜 메소드</a>
+        </div>
+        <div class="card card-body">
+          <a href="./operator_overload" target="_self">연산자 오버로딩</a>
+        </div>
+        <div class="card card-body">
+          <a href="./nested_func" target="_self">네스티드 함수와 클로저</a>
+        </div>
+        <div class="card card-body">
+          <a href="./decorator" target="_self">데코레이터</a>
+        </div>
+        <div class="card card-body">
+          <a href="./class_method" target="_self"
+            >클래스 메소드와 static 메소드</a
+          >
+        </div>
+        <div class="card card-body">
+          <a href="./name_main" target="_self">__name__ & __main__</a>
+        </div>
+      </div>
+      <li class="sidebar-group" role="menuitem">
+        <p
+          class="sidebar-heading"
+          data-bs-toggle="collapse"
+          href="#pythonAdditional"
+          aria-expanded="false"
+          aria-controls="pythonAdditional"
+          onclick="rotate(this)"
+        >
+          <span class="sidebar-heading--name">Python 추가 내용</span>
+          <!-- <i class="fas fa-caret-right fa-xs"></i> -->
+        </p>
+      </li>
+      <div class="collapse" id="pythonAdditional">
+        <div class="card card-body">
+          <a href="./dataframe" target="_self">Python 데이터 프레임 </a>
+        </div>
+        <div class="card card-body">
+          <a href="./sqlAlchemy" target="_self"
+            >Python SQL alchemy를 통해 mysql 연동하기
+          </a>
+        </div>
+        <div class="card card-body">
+          <a href="./join" target="_self"
+            >Python 문자열 자르고 합치기 - join, split함수</a
+          >
+        </div>
+        <div class="card card-body">
+          <a href="./getitem" target="_self"
+            >Python getitem, setitem 스페셜메소드</a
+          >
+        </div>
+        <div class="card card-body">
+          <a href="./pylance" target="_self"
+            >Pylance Unresolved import warnings 트러블슈팅</a
+          >
+        </div>
+        <div class="card card-body">
+          <a href="./django-css" target="_self"
+            >Python django - How to add css to django application</a
+          >
+        </div>
+      </div>
+    </div>
+
+    <li class="sidebar-group" role="menuitem">
+      <p
+        class="sidebar-heading"
+        data-bs-toggle="collapse"
+        href="#collapse5"
+        aria-expanded="false"
+        aria-controls="collapse5"
+        onclick="rotate(this)"
+      >
+        <span class="sidebar-heading--name">Computer Science</span>
+        <i class="fas fa-caret-right fa-xs"></i>
+      </p>
+    </li>
+    <div class="collapse" id="collapse5">
+      <div class="card card-body">
+        <a href="./docker" target="_self">Docker란?</a>
+      </div>
+      <div class="card card-body">
+        <a href="./domain" target="_self">Domain이란</a>
+      </div>
+      <div class="card card-body">
+        <a href="./serverless" target="_self">Serverless</a>
+      </div>
+      <div class="card card-body">
+        <a href="./library" target="_self">library vs framework</a>
+      </div>
+      <div class="card card-body">
+        <a href="./api" target="_self">API 란?</a>
+      </div>
+      <div class="card card-body">
+        <a href="./devops" target="_self">devops 정리</a>
+      </div>
+      <div class="card card-body">
+        <a href="./web_request" target="_self">web요청과 응답과정</a>
+      </div>
+      <div class="card card-body">
+        <a href="./block-chain" target="_self"
+          >nomad coders 블록체인 시리즈 총정리</a
+        >
+      </div>
+      <div class="card card-body">
+        <a href="./begin" target="_self">coursera series - Digital Logic</a>
+      </div>
+      <div class="card card-body">
+        <a href="./Module-Introduction" target="_self"
+          >coursera series - Hardware</a
+        >
+      </div>
+      <div class="card card-body">
+        <a href="./OS" target="_self">coursera series - OS</a>
+      </div>
+      <div class="card card-body">
+        <a href="./networking" target="_self">coursera series - networking</a>
+      </div>
+      <div class="card card-body">
+        <a href="./software" target="_self">coursera series - software</a>
+      </div>
+    </div>
+
+    <li class="sidebar-group" role="menuitem">
+      <p
+        class="sidebar-heading"
+        data-bs-toggle="collapse"
+        href="#collapse6"
+        aria-expanded="false"
+        aria-controls="collapse6"
+        onclick="rotate(this)"
+      >
+        <span class="sidebar-heading--name">Git</span>
+        <i class="fas fa-caret-right fa-xs"></i>
+      </p>
+    </li>
+    <div class="collapse" id="collapse6">
+      <div class="card card-body">Hello</div>
+      <div class="card card-body">Hello2</div>
+    </div>
+
+    <li class="sidebar-group" role="menuitem">
+      <p
+        class="sidebar-heading"
+        data-bs-toggle="collapse"
+        href="#collapse7"
+        aria-expanded="false"
+        aria-controls="collapse7"
+        onclick="rotate(this)"
+      >
+        <span class="sidebar-heading--name">Git</span>
+        <i class="fas fa-caret-right fa-xs"></i>
+      </p>
+    </li>
+    <div class="collapse" id="collapse7">
+      <div class="card card-body">Hello</div>
+      <div class="card card-body">Hello2</div>
+    </div>
+
+    <li class="sidebar-group" role="menuitem">
+      <p
+        class="sidebar-heading"
+        data-bs-toggle="collapse"
+        href="#collapse8"
+        aria-expanded="false"
+        aria-controls="collapse8"
+        onclick="rotate(this)"
+      >
+        <span class="sidebar-heading--name">Git</span>
+        <i class="fas fa-caret-right fa-xs"></i>
+      </p>
+    </li>
+    <div class="collapse" id="collapse8">
+      <div class="card card-body">Hello</div>
+      <div class="card card-body">Hello2</div>
+    </div>
+
+    <li class="sidebar-group" role="menuitem">
+      <p
+        class="sidebar-heading"
+        data-bs-toggle="collapse"
+        href="#collapse9"
+        aria-expanded="false"
+        aria-controls="collapse9"
+        onclick="rotate(this)"
+      >
+        <span class="sidebar-heading--name">Git</span>
+        <i class="fas fa-caret-right fa-xs"></i>
+      </p>
+    </li>
+    <div class="collapse" id="collapse9">
+      <div class="card card-body">Hello</div>
+      <div class="card card-body">Hello2</div>
+    </div>
+
+    <li class="sidebar-group" role="menuitem">
+      <p
+        class="sidebar-heading"
+        data-bs-toggle="collapse"
+        href="#collapse10"
+        aria-expanded="false"
+        aria-controls="collapse10"
+        onclick="rotate(this)"
+      >
+        <span class="sidebar-heading--name">HUFS 모각코 기록</span>
+        <i class="fas fa-caret-right fa-xs"></i>
+      </p>
+    </li>
+    <div class="collapse" id="collapse10">
+      <div class="card card-body">
+        <a href="./design" target="_self">2021.07 week2 </a>
+      </div>
+    </div>
+  </ul>
+</div>
+ 
+    <main class="main-post">
+  <h1 class="main-post--title">Crypto 101 with Nico - 가상화폐의 기술에 대하여</h1>
+  <div class="line"></div>
+  <section class="main-post--content"><h3 id="1-비트코인-떡상을-보고-개발자가-느낀-것">#1. 비트코인 떡상을 보고 개발자가 느낀 것</h3>
+
+<ul>
+  <li>소프트웨어의 시대를 살아가고 있는 우리 → 코드로 만들어진 돈의 시대에 살고있다</li>
+  <li>화폐를 코드화 할 수 있는 코인들이 많다. (나만의 것들로 만들 수 있음)
+    <ol>
+      <li>스마트 컨트랙</li>
+      <li>사이드 체인</li>
+      <li>Non Fungible Token (NFT) - 대체 불가능한 토큰</li>
+    </ol>
+  </li>
+  <li>탈중앙화? consensus mechanism? 작업증명-Proof of work? 지분증명-Proof of stake? ⇒ 개발자니까 알아두자~</li>
+  <li>제대로 알고 활용해보자!</li>
+</ul>
+
+<h3 id="2-블록체인-개발자가-쉽게-설명해드림-10분컷">#2. 블록체인. 개발자가 쉽게 설명해드림 10분컷.</h3>
+
+<p><a href="https://www.artnews.com/art-news/news/beeple-nft-artwork-nifty-gateway-sale-1234584701/">https://www.artnews.com/art-news/news/beeple-nft-artwork-nifty-gateway-sale-1234584701/</a></p>
+
+<ul>
+  <li>10초짜리 영상이 이더리움 블록체인에서 약 74억원에 판매되었다</li>
+</ul>
+
+<p><strong>현상에 대한 이해가 필요하다.</strong></p>
+
+<ul>
+  <li>어떻게 블록체인에서 동영상을 판매할 수 있는가?</li>
+  <li>크립토를 이용한 예술 아트 마켓이 무엇인가?</li>
+  <li>pancakeSwap vs sushiSwap?</li>
+  <li>ethereum → binance체인으로 옮기는 거래소가 왜 존재하는가</li>
+</ul>
+
+<p><strong>블록체인이란?</strong></p>
+
+<ul>
+  <li>빗코, 이더리움, 에이다 등등을 돌아가게 해주는 기반</li>
+  <li>blockchain = chain + block. (블록들이 모여있는 체인)</li>
+  <li>block =⇒ database.</li>
+  <li>블록체인은 Append만 가능한 데이터베이스. (편집이 불가능)
+    <ul>
+      <li>ex)운전면허증 or 지원금 사용내역을 블록체인을 통해 관리</li>
+    </ul>
+  </li>
+  <li>
+    <p>Decentralization (탈중앙화) → 특정 개인이 데이터베이스를 관리할 수 없다는 뜻</p>
+
+    <ul>
+      <li>모두가 DB의 복제본을 지니고 있음</li>
+      <li>따라서 크립토를 감시 or 통제하기가 어렵다.</li>
+      <li>수많은 사람들이 비트코인을 돌리고있고, 정확하게 동일한 데이터베이스를 지녔기 때문에 모든 사람들의 컴퓨터를 꺼야 빗코를 죽일 수 있다..</li>
+    </ul>
+  </li>
+  <li>
+    <p>블록 → 데이터베이스에 데이터를 추가하는 방식으로 , 데이터를 그냥 적어서 추가하는 것이 아님 → 블록이라는 것으로 추가를 함.</p>
+
+    <ul>
+      <li>블록 내에는 다양한 정보가 존재함</li>
+      <li>블록의 hash, 이전 블록의 hash, 데이터</li>
+    </ul>
+
+    <ol>
+      <li>데이터 → 결혼증명서, 운전면허 등.. 빗코의 경우 데이터가 Transaction(거래 내역)임 - 누가 얼마 가지고 있고, 누가 누구에게 얼마나 보냈는지 등</li>
+      <li>hash? → 수학 함수로, 한 개의 인풋에 아웃풋을 제공함 ⇒ <strong>단방향 함수이고, 결정론적(deterministic)이다.</strong>
+        <ul>
+          <li>결정론적이다 → ex) 인풋이 ‘김치’ → aefjlkjalejfeljfekljf93898913fewf와 같이 항상 같은 것으로 정해져있다.</li>
+          <li>김치가 아닌 김차로 바꾸면 180도 달라짐.</li>
+          <li><em>단방향</em> → 인풋에서 아웃풋은 나오지만, 아웃풋을 통해 인풋을 알아낼 수 없다!</li>
+          <li>이 두가지 특징을 통해 블록체인이 형성된다.</li>
+        </ul>
+      </li>
+    </ol>
+  </li>
+  <li>A 블록이 비트코인의 블록체인이 되고싶다
+    <ol>
+      <li>비트코인의 데이터에 해당하는 부분을 수집한다. (거래내역)</li>
+      <li>이전 블록의 해시가 필요하다.</li>
+      <li>이전 블록의 해시 + 데이터를 합친다 ⇒ 나만의 해시가 형성 ⇒ 비트코인의 블록체인으로 편입</li>
+    </ol>
+  </li>
+</ul>
+
+<h3 id="3-개발자가-설명해주는-비트코인-채굴-방법">#3. 개발자가 설명해주는 비트코인 채굴 방법</h3>
+
+<ul>
+  <li>작업증명이 뭐고, 채굴은 무엇이며, 그래픽카드가 필요한 이유가 무엇인가?</li>
+</ul>
+
+<ol>
+  <li>어떤 데이터가 추가되어야 하는가
+    <ul>
+      <li>블록체인 이용자들이 원하는 데이터는 참값뿐 → 내가 돈이 많다고 거짓말하면 안됨</li>
+      <li>이에 <strong>작업증명이 도입</strong> → 다양한 크립토들이 사기꾼 및 악용사례로부터 블록체인을 보호함</li>
+      <li>채굴자? → 블록체인에 들어오는 데이터를 확인하는 일. (채굴자가 데이터를 블록 안에 넣어서 블록체인에 보내주는 역할을 함!)</li>
+      <li>채굴자들이 데이터를 받아 블록에 올리다가, 블록이 충분이 데이터를 지닌다고 판단되면 블록체인에 올려주는 일을 한다</li>
+      <li>이를 탈중앙화 방식을 기반으로 하여, 누구나 채굴자가 될 수 있다! → 채굴자가 트랜잭션 컨펌을 하면 일종의 수수료를 받는다.</li>
+      <li>채굴자가 쉬운 일을 하는가.. → 블록체인에 블록을 올리는 일이 겁나 어렵다</li>
+      <li>해시를 통해 네트워크가 아웃풋을 낸 결과를 가지고, 채굴자가 분석하여 데이터를 찾으면 이때 블록을 올릴 수 있음</li>
+      <li>채굴자가 블록체인에 블록을 올리는 순간 coinbase transaction이 발생 → 비트코인이 생성되는 순간</li>
+    </ul>
+  </li>
+</ol>
+
+<ul>
+  <li>Nonce &amp; 난이도 (니꼬 기준)
+    <ul>
+      <li>난이도는 특정 숫자로, 생성 해시의 첫 n번째까지 0이 등장해야함</li>
+      <li>Nonce는 해시 내에 한 번만 등장할 수 있는 숫자를 지정하는 것으로, 채굴자가 받은 데이터 중 유일하게 바꿀 수 있는 데이터이다.</li>
+      <li>현재의 빗코 → 19개의 0으로 시작해야한다고 함.</li>
+    </ul>
+  </li>
+</ul>
+
+<p><a href="https://medium.com/hexlant/%EC%9D%B4%EB%8D%94%EB%A6%AC%EC%9B%80-nonce-%EB%85%BC%EC%8A%A4-%EB%9E%80-%EB%AC%B4%EC%97%87%EC%9D%B8%EA%B0%80-60819346c803">https://medium.com/hexlant/이더리움-nonce-논스-란-무엇인가-60819346c803</a></p>
+
+<p><a href="https://quasarzone.com/bbs/qf_cryptocurrency/views/94269">https://quasarzone.com/bbs/qf_cryptocurrency/views/94269</a></p>
+
+<p><strong>이더리움 채굴량이 박살 나는 이유</strong></p>
+
+<ul>
+  <li>(이더리움 기준)</li>
+  <li>nonce는 계정에서 보내는 트랜잭션에 할당된 번호.</li>
+  <li>
+    <p>클라이언트</p>
+  </li>
+  <li>그래픽카드가 필요한 이유 → 고성능 그래픽 카드는 6천만 논스를 1초에 계산한다고 함.</li>
+</ul>
+
+<h3 id="4-블록체인-개발자가-은행을-대체할-수-있을까">#4. 블록체인 개발자가 은행을 대체할 수 있을까?</h3>
+
+<ul>
+  <li>스마트 컨트랙은 다른 사람과 교류할 수 있음</li>
+  <li>개발자로서 코딩을하여 공유 네트워크에 올릴 수 있다 !</li>
+  <li>스마트 컨트랙 플랫폼에 데이터를 저장하면 (블록체인 기반이므로) 안전성이 매우 향상됨 → 아마존, Azure같이 클라우드 서버를 통하거나 개인 서버를 통해 자신의 데이터 및 앱을 배포하였을때 해당 서버의 컴퓨터가 손상입었을 때 날라가버림</li>
+  <li>
+    <p>스마트 컨트랙과 같이 공유 네트워크에 데이터를 올리면, (블록체인 기반이므로) 데이터의 수정도 못하고, 모두가 안정적으로 공유할 수 있음</p>
+  </li>
+  <li>
+    <p>스마트 컨트랙을 통한 나만의 은행</p>
+
+    <ol>
+      <li>서버에 돈을 올린다</li>
+      <li>30년뒤에 주라고 코딩해놓는다</li>
+    </ol>
+  </li>
+  <li>에어비엔비
+    <ol>
+      <li>프랑스 파리에 숙소를 예약하는 상황 → 에어비앤비가 중계를 도맡음</li>
+      <li>방 주인 → 에어비앤비 → 고객 (양방향 신뢰관계가 존재)</li>
+    </ol>
+  </li>
+  <li>
+    <p>스마트 컨트랙으로 대체</p>
+
+    <ol>
+      <li>에어비앤비 대신 스마트 컨트랙에 지불</li>
+      <li>스마트 컨트랙 + IoT의 접목을 통해 숙소의 시설을 개방해주는 방식. → 신뢰관계를 대체</li>
+    </ol>
+  </li>
+  <li>
+    <p>단점 → 블록체인 네트워크 위에서만 실행이 가능.</p>
+
+    <ul>
+      <li>신뢰 기반의 거래라는 것이 단점.</li>
+      <li>에어비앤비의 예시에서, 고객이 스마트 컨트랙에 돈을 지불하여 받아낸 방식이 정상적으로 진행되었음을 방 주인이 신뢰해야함.</li>
+      <li>비 감지 센서가 있고, 스마트 컨트랙을 통해 내일 비가 올 것이라는 내기를 진행한다 → 비가 왔음을 정상적으로 센서가 감지할 것이라고 신뢰하지 않고서는 이용 불가능.</li>
+      <li>→ not Trustless(신뢰 자체가 아니라) Trustful(신뢰할 만한, 신뢰 기반의 거래가 되어버림)</li>
+      <li>즉, 블록체인 네트워크 위에서만 실행이 가능하다는 것은 필연적으로 외부의 어떤 것에 의존해야만 사람과의 교류가 우리가 생각하는 그런 것들로 이루어진다는 것</li>
+    </ul>
+  </li>
+  <li>
+    <p>단점을 보완하기 위한 기술 → <strong>oracle이 있다고만 일단은 알아둬야겠다</strong></p>
+  </li>
+  <li>스마트 컨트랙을 통해 중개인을 없애고, 완벽하게 실행한다.</li>
+</ul>
+
+<h3 id="5-고양이-짤방이-7억-nft만드는-방법-설명해드림">#5. 고양이 짤방이 7억? NFT만드는 방법 설명해드림.</h3>
+
+<ul>
+  <li>NFT? → Non Fungible Token</li>
+  <li>What is non Fungiblity → 전세 계약 등</li>
+  <li>Token? 이더리움과 같은 블록체인들은 나만의 토큰을 발행할 수 있다 (이더리움의 블록체인 기반 이더 → 한화 200만)</li>
+  <li>블록체인의 안정성을 기반으로 토큰을 마음껏 발행.</li>
+  <li>어떻게?
+    <ol>
+      <li>돈을 받으면</li>
+      <li>토큰을 발행해준다 → 스마트 컨트랙을 통해</li>
+    </ol>
+  </li>
+  <li>NFT의 발생 → 단 한개의 , 전 세계에서 유일한 토큰을 발행해줌. (그림같은 경우 - 이미지가 첨부된 토큰)
+    <ul>
+      <li>왜 NFT를 사는가? → 모나리자를 뭐가좋다고 프랑스까지 가서 보고오는가?</li>
+      <li>유일한 원본임을 증명하는 역할로서 NFT가 존재함</li>
+    </ul>
+  </li>
+  <li>트윗을 NFT로 판매..등</li>
+  <li>최초로 인터넷 세상에서 저작권이 안정적인 시스템 아래 확립되는 것.</li>
+  <li>NFT를 샀으면 NFT 프레임이 필요하다 or 메탈리카의 티켓 발행을 NFT로 발행 → NFT리더기의 필요 ====⇒ 현대 산업의 게임 체인저로써 역할</li>
+</ul>
+
+<h3 id="6-잃어버린-비트코인-지갑-원리-제대로-설명해드림">#6. 잃어버린 비트코인? 지갑 원리 제대로 설명해드림</h3>
+
+<ul>
+  <li>What is crypto-bitcoin wallet?</li>
+  <li>
+    <p>빗코를 전송할때 실제로 보내는 것이 무엇인가!</p>
+  </li>
+  <li>빗코를 전송한다고 해서 실제로는 아무것도 보내지 않는다.</li>
+  <li>빗코를 소유한다는 것이 실제로 소유자가 수중에 가지고 있다는 것이 아님.</li>
+  <li>빗코는 블록체인 상에 항상 공유된 상태로 (네트워크와 함께) 묶여있음</li>
+  <li>
+    <p>어떻게 비트코인을 소유하는가?</p>
+
+    <ol>
+      <li>빗코를 보낸다는 것은 소유로 등록된 빗코를 받는 대상의 소유라고 문서를 수정하는 것이라고 보면 됨 → 데이터베이스상에서 작업</li>
+    </ol>
+  </li>
+  <li>빗코 지갑의 생성 메커니즘 → 비대칭적 암호화 (Asymmetric encryption)
+    <ul>
+      <li>대칭적 암호(symmetric encryption)란? → 특정 데이터를 전송함에 있어서, 암호화 하여 전달해야하는 상황이라면 상자에 데이터를 담고, 자물쇠로 잠근 다음 열쇠와 함께 대상에게 전달해야 함. (key를 서로 주고받는 행위 자체가 안전하지 않음)</li>
+      <li>비댕칭적 암호화 → 각자 지니는 열쇠가 두개임 (public key - 공개키, private key - 비공개키)
+        <ul>
+          <li>공개키 → 자물쇠, 비공개키 → 열쇠</li>
+          <li>A가 B에게 시크릿한 내용을 전달하는 상황 - B로부터 public key를 받아 B의 public키로 데이터 + A의 공개키를 동봉하여 B에게 전달. B가 받은 데이터 상자는 현재 자신의 공개키로 잠겨있는 상태이기 때문에 정상적으로 상자를 오픈할 수 있음</li>
+          <li>이후, 문서의 답장 내용을 적어 A로부터 전달받았던 A의 공개키로 상자를 데이터와 밀봉하여 보내면 거래가 종료</li>
+        </ul>
+      </li>
+      <li>이러한 방식이 암호화폐에서의 지갑</li>
+      <li>퍼블릭 키 → 네트워크상에 공유해도 됨 (공개키로 할수있는건 없음)</li>
+      <li>빗코의 거래를 위해서는 public key가 핵심임!</li>
+    </ul>
+  </li>
+</ul>
+
+<h3 id="7-금융의-미래-디파이defi를-꼭-알아야하는-이유">#7. 금융의 미래? “디파이(DeFi)”를 꼭 알아야하는 이유</h3>
+
+<ul>
+  <li>DeFi [ Decentralized Finance] - 탈중앙화된 금융</li>
+  <li>중간 거래자나, 서드파티가 없음. 모든 거래가 스마트 컨트랙을 통해 이루어짐</li>
+  <li>
+    <p>서드파티란?</p>
+  </li>
+  <li>
+    <p>디파이로 할 수 있는 것</p>
+
+    <ul>
+      <li>스마트컨트랙 기반 은행</li>
+      <li>탈중앙화 - 인간의 손을 거치지 않는 은행</li>
+    </ul>
+  </li>
+  <li>
+    <p>스테이블 코인</p>
+
+    <ul>
+      <li>암호화폐 중 하나로, USD와 1:1로 연결됨. → 거래소가 보증함</li>
+      <li>해당 거래소가 USD를 보유</li>
+      <li>동시에 암호화폐로서, 스테이블 코인을 이용함 → 스마트컨트랙 접목</li>
+    </ul>
+  </li>
+  <li>
+    <p>디파이 프로젝트 - AAVE</p>
+
+    <ul>
+      <li>돈을 빌리고, 빌려주는 은행같은 것</li>
+      <li>연 9~ 12%이자를 돌려주며 탈중앙화된 시스템아래 돌아감</li>
+      <li>10조원이 넘는 금액이 흐른다</li>
+    </ul>
+  </li>
+  <li>DEX? (Decentralized Exchanges)
+    <ul>
+      <li>중앙화된 거래소 - 바이낸스, 코인베이스, 빗썸 등</li>
+      <li>바이낸스에서 빗코를 팔려면 거래 수수료를 떼어감 (계좌를 제한할 수도 있음)</li>
+      <li>유니스왑, 팬케이크 스왑, 스시스왑 등은 100% 탈중앙화 - 코드로만 돌아감</li>
+      <li>유동성 풀?
+        <ul>
+          <li><a href="https://academy.binance.com/ko/articles/what-are-liquidity-pools-in-defi">https://academy.binance.com/ko/articles/what-are-liquidity-pools-in-defi</a></li>
+          <li>유동성 풀은 스마트 컨트랙 내에 동결되어 있는 자금들입니다.</li>
+          <li><a href="https://ko.everipedia.org/wiki/lang_ko/liquidity-pool">https://ko.everipedia.org/wiki/lang_ko/liquidity-pool</a></li>
+          <li>두개의 토큰을 서로 연결해주는 스마트 컨트랙</li>
+        </ul>
+      </li>
+      <li>CEX - 중앙화된 거래소(바이낸스 등)에서는 호가 기준으로, 즉 매수자와 매도자들의 가격차이로 인해 거래가 굳게되는 현상에 대하여 유동성 공급자가 존재해야한다. 특정 자산시장을 만들기 때문. 이로 인해 가격이 지속적으로 변경됨</li>
+      <li>DEX - CEX와 다르게 DEX는 유동성 풀이라는 것을 이용한다.
+        <ul>
+          <li>나에게 1000불이 있어서, 500불치 BUSD를 사고, 500불치 ETH를 샀다.</li>
+          <li>이들을 각 크립토에 맞는 유동성 풀에 투입한다. (스시스왑같은 DEX에 등록)</li>
+          <li>가격책정 알고리즘에 따라 설정된 비율로 또 다른 DEX이용자가 내가 등록한 500불치의 ETH를 자신이 가지고 있는 500불치의 BUSD 개수만큼 교환을 진행한다.</li>
+          <li>이후 DEX가 거래 수수료를 유동성 풀에 등록한 나에게 지급</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+</ul>
+
+<blockquote>
+  <p>유니스왑이 사용하는 유동성 풀은 2개의 토큰 수량이 동일하게 유지되도록 한다. 유동성 풀은 거래 규모가 크더라도 유동성을 제공할 수 있다. 유니스왑 알고리즘은 수량이 증가함에 따라 가격이 계속 상승하기 때문이다. 예를 들면, DAI/ETH 풀에서 ETH를 구매하면 ETH 공급을 줄고 DAI 공급이 늘며, ETH 가격 상승과 DAI 가격 하락이 이루워진다.</p>
+</blockquote>
+
+<p><strong>비영구적 손실이란?</strong></p>
+
+<ul>
+  <li><a href="https://academy.binance.com/ko/articles/impermanent-loss-explained">https://academy.binance.com/ko/articles/impermanent-loss-explained</a></li>
+  <li>유동성 풀에 자신의 자산을 등록한 뒤, 자금을 출금하여 얻는 수익 or 손실이 단순히 자산을 보유했을 때의 상황보다 수익이 낮거나, 손실이 큰 상황</li>
+  <li>DEX환경 내에서의 자산 가격의 변동은 풀 내에서 자산 간의 비율로 결정된다.</li>
+</ul>
+
+<p><a href="https://academy.binance.com/ko/articles/impermanent-loss-explained">https://academy.binance.com/ko/articles/impermanent-loss-explained</a> 예시 읽어보기</p>
+
+<h3 id="8-암호화폐의-단점-개발자가-설명해드림">#8. 암호화폐의 단점? 개발자가 설명해드림</h3>
+
+<ul>
+  <li>비트코인 네트워크 - 1초 5개</li>
+  <li>
+    <p>이더리움 - 1초 30개</p>
+  </li>
+  <li>1 비트코인 거래에 따른 에너지 → 한 달 동안 한 가구가 쓰는 에너지용량과 맞먹음</li>
+  <li>
+    <p>전체 빗코 네트워크가 1년간 사용하는 에너지 총량 → 체코 국가 총 에너지 사용량과 맞먹음</p>
+  </li>
+  <li>
+    <p>느리고 &amp; 에너지 비효율적인 암호화폐가 과연 기존 화폐를 대체할 수 있는가</p>
+  </li>
+  <li>정부의 규제 → 김치 프리미엄</li>
+  <li>SCAM → 가짜코인</li>
+  <li>기술적 문제</li>
+</ul>
+
+<ol>
+  <li>정부의 규제
+    <ul>
+      <li>정부는 암호화폐를 없앨 수 없다. 암호화폐는 그저 네트워크임</li>
+      <li>암호화폐를 금지 시키려면 인터넷 자체를 끄는 방법밖에 없음!</li>
+      <li>정부는 사실 거래소만 통제하면 됨. (정부가 규제하고 승인한 몇몇 거래소에서만 살 수 있음)</li>
+      <li>정부의 거래소 관리 == 누가 사고파는지 확인 가능.</li>
+      <li>따라서 정부의 거래소 장악은 암호화폐를 살 수 없게 할 수 있다.</li>
+      <li>But 암호화폐를 사고 나면, 이후로는 통제가 불가능.</li>
+      <li>정부가 어떻게 과세를 할 수 있는가? 과세 불가.</li>
+      <li>범죄자들의 돈세탁 ⇒ Ban BITCOIN?</li>
+      <li>개인 정보 보호가 없음. (탈중앙화 은행으로서 개인이 역할을 하는 것은 시기상조)</li>
+    </ul>
+  </li>
+  <li>SCAM 코인
+    <ul>
+      <li>코인 판에는 사기꾼들이 많음.</li>
+      <li>코인 만들기 자체는 쉬움. but 가치를 즉시 창출하는 것은 아님. (코드 상으로 복사&amp;붙여넣기만 해도 코인은 만들어짐)</li>
+      <li>코인이라고 모두가 암호화폐이고, 탈중앙화가 아닐 수 있음 ⇒ 마음대로 찍어낸 뒤 도망갈 수도 있음</li>
+      <li>DAI코인 → 알고리즘에 의해 보증되는 코인</li>
+    </ul>
+  </li>
+</ol>
+
+<h3 id="9-비트코인-이더리움의-기술적-한계를-꼭-알아야-하는-이유">#9. 비트코인, 이더리움의 “기술적 한계를 꼭 알아야 하는 이유!</h3>
+
+<ul>
+  <li>1세대 블록체인 → 비트코인
+    <ul>
+      <li>작업증명 (proof of work)을 통해 해킹당하지 않는 인터넷 돈을 구현</li>
+      <li>컴퓨터를 통한 작업 → 에너지가 막대한 양이 필요</li>
+      <li>해시율50%이상이 중국에 밀집됨. → 사실상 탈중앙화가 되지 못할 가능성이 존재 (해시율 → 암호화폐를 빠르게 찾을 수 있는 속도. 채굴에 대한 능력치를 뜻함)</li>
+    </ul>
+  </li>
+  <li>2세대 블록체인 → 스마트 컨트랙 컨셉을 이용
+    <ul>
+      <li>이더리움</li>
+      <li>전 세계가 공유하는 컴퓨터 (해킹할수 없도록)</li>
+      <li>빗코처럼 주고받는 것에서 끝나지 않음. → NFT DeFi등 등장으로 인해 네트워크에 부하가 걸림. → 이더리움 네트워크 수수료의 폭증</li>
+    </ul>
+  </li>
+  <li>
+    <p>Solidity 프로그래밍 언어 (스마트컨트랙 관련 개발을 위한 언어)</p>
+
+    <ul>
+      <li>solidity는 신생 프로그래밍 언어이기에 국가사업으로 도입하기가 쉽지 않음.</li>
+    </ul>
+  </li>
+  <li>3세대 블록체인
+    <ul>
+      <li><a href="https://www.bithumb.com/staking/eth2">https://www.bithumb.com/staking/eth2</a> → 3세대 블록체인 이더리움 2.0의 등장</li>
+      <li>확장성(빠른 속도 - 초당 25,000~100,000거래량), 이전보다 에너지를 99.98%적게 사용</li>
+    </ul>
+  </li>
+</ul>
+
+<h3 id="10-맡기면-이자-준다는-스테이킹제대로-이해하기">#10. 맡기면 이자 준다는 ‘스테이킹’제대로 이해하기</h3>
+
+<ul>
+  <li>what is PoS?</li>
+  <li>합의 알고리즘 기반 → PoW(채굴자들이 참임을 확인)</li>
+  <li>
+    <p>이는 많은 수의 사람들이 채굴자로 참여하면서, 채굴하기 어렵도록 만들어야함</p>
+  </li>
+  <li>Proo of Stake</li>
+  <li>검증(confirmation), 채굴자가 되기 위해서는 보호하려는 프로젝트(ex-빗코 프로젝트)의 코인을 소유해야만 가능하게됨</li>
+  <li>자신의 자산을 프로젝트에 맡기고, 채굴함으로써 검증작업을 진행하게됨. (채굴을 통해 51%공격을 진행하면 자신의 자산이 줄어들 뿐만 아니라, 네트워크 감지에 의해 추방되고 자신의 자산도 가둬지게됨)</li>
+  <li>
+    <p>지분증명 시스템의 검증자들은 지분 보유 비례에 따라 검증자로 선택됨.</p>
+  </li>
+  <li>PoS의 문제점
+    <ul>
+      <li>돈이 많을 수록 검증자가 될 확률이 높아짐 → 자산 양극화</li>
+      <li>얼리 어답터에게 유리함</li>
+      <li>Delegated Proof of Stake 도입 → 24시간 내내 랜덤으로 코인 보유자들을 검증자로 선택함.</li>
+      <li>검증자를 위임하는 위임자들을 코인 소유자들이 지분은 맡김으로써 투표할 수 있다. 이후 투표자들에게 보상을 나눠줌</li>
+    </ul>
+  </li>
+</ul>
+</section>
+</main>
+
+
+    <script src="https://use.fontawesome.com/releases/v5.15.3/js/all.js"></script>
+    <!-- JavaScript Bundle with Popper -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+      crossorigin="anonymous"
+    ></script>
+    <script src="assets/js/sidebar-click-event.js"></script>
+    <script src="//code.jquery.com/jquery-3.3.1.min.js"></script>
+  </body>
+</html>

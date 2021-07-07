@@ -1,0 +1,961 @@
+<!DOCTYPE html>
+<html lang="kr">
+  <head>
+    <head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!-- CSS only -->
+  <link
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+    rel="stylesheet"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+    crossorigin="anonymous"
+  />
+  <link href="/assets/CSS/style.css" rel="stylesheet" />
+  <title>Parkjju's TIL</title>
+</head>
+
+  </head>
+
+  <body>
+    <div class="main_bar">
+  <p class="main_bar--title"><a href="/">Parkjju's Today I Learned</a></p>
+
+  <div class="main_bar--right">
+    <!-- 검색창 -->
+    <form action="" method="get" class="search-box">
+      <i class="fas fa-search"></i>
+      <input class="search-form" type="text" autocomplete="off" />
+    </form>
+
+    <!-- 링크버튼 -->
+    <div
+      class="main_bar--link"
+      onclick="window.open('https://github.com/Parkjju')"
+    >
+      <p>Github</p>
+      <i class="fas fa-external-link-alt"></i>
+    </div>
+  </div>
+</div>
+ <div class="menu-bar">
+  <ul>
+    <li
+      class="sidebar-group sidebar-heading"
+      data-bs-toggle="collapse"
+      href="#collapse1"
+      aria-expanded="false"
+      aria-controls="collapse1"
+      onclick="rotate(this)"
+      role="menuitem"
+    >
+      <span class="sidebar-heading--name">개발 기록</span>
+      <i class="fas fa-caret-right fa-xs"></i>
+    </li>
+    <ul class="collapse" id="collapse1">
+      <li class="card card-body">
+        <a href="./python" aria-current="page">Python 강좌(1) - Python 기본</a>
+      </li>
+      <li class="card card-body">
+        <a href="./pythonHard" target="_self"
+          >Python 강좌(2) - Python 제어문
+        </a>
+      </li>
+    </ul>
+
+    <li class="sidebar-group" role="menuitem">
+      <p
+        class="sidebar-heading"
+        data-bs-toggle="collapse"
+        href="#collapse2"
+        aria-expanded="false"
+        aria-controls="collapse2"
+        onclick="rotate(this)"
+      >
+        <span class="sidebar-heading--name">Algorithm</span>
+        <i class="fas fa-caret-right fa-xs"></i>
+      </p>
+    </li>
+    <div class="collapse" id="collapse2">
+      <div class="card card-body">
+        <a href="./shortest" target="_self">
+          Bellman Ford & Dijkstra 최단경로 알고리즘
+        </a>
+      </div>
+      <div class="card card-body">
+        <a href="./all-to-all" target="_self">all-to-all 최단경로 </a>
+      </div>
+      <div class="card card-body">
+        <a href="./Recursion" target="_self"> Recursion 재귀 </a>
+      </div>
+      <div class="card card-body">
+        <a href="./selection" target="_self"
+          >선택문제 - k번째로 작은 수, Quickselection & MoM
+        </a>
+      </div>
+      <div class="card card-body">
+        <a href="./mom" target="_self"
+          >MOM - Median of Medians 알고리즘 설명 + 수행시간
+        </a>
+      </div>
+      <div class="card card-body">
+        <a href="./divide" target="_self"
+          >Divide and Conquer 알고리즘 설명 & 예시
+        </a>
+      </div>
+    </div>
+
+    <li class="sidebar-group" role="menuitem">
+      <p
+        class="sidebar-heading"
+        data-bs-toggle="collapse"
+        href="#collapse3"
+        aria-expanded="false"
+        aria-controls="collapse3"
+        onclick="rotate(this)"
+      >
+        <span class="sidebar-heading--name">Data structure</span>
+        <i class="fas fa-caret-right fa-xs"></i>
+      </p>
+    </li>
+    <div class="collapse" id="collapse3">
+      <div class="card card-body">
+        <a href="./data_structure" target="_self">자료구조의 이해 </a>
+        <a href="./sequential_structure" target="_self">선형 자료구조 </a>
+        <a href="./hash_table" target="_self">해시 테이블 자료구조 </a>
+        <a href="./stack_cal" target="_self"
+          >스택을 이용하여 계산기 구현하기
+        </a>
+        <a href="./SinglyLinkedList" target="_self"
+          >한 방향 연결리스트 연산 구현
+        </a>
+        <a href="./doublyLinkedList" target="_self"
+          >양 방향 연결리스트 연산 구현
+        </a>
+        <a href="./pydict" target="_self">파이썬의 딕셔너리 작동방식 </a>
+        <a href="./tree" target="_self">트리 자료구조 </a>
+        <a href="./open_addressing" target="_self"
+          >해시테이블 open addressing 실습
+        </a>
+        <a href="./heap" target="_self">heap 자료구조 </a>
+        <a href="./union-find" target="_self">union find 자료구조 </a>
+        <a href="./graph" target="_self">graph 자료구조 </a>
+      </div>
+    </div>
+
+    <li class="sidebar-group" role="menuitem">
+      <p
+        class="sidebar-heading"
+        data-bs-toggle="collapse"
+        href="#collapse4"
+        aria-expanded="false"
+        aria-controls="collapse4"
+        onclick="rotate(this)"
+      >
+        <span class="sidebar-heading--name">Python</span>
+        <i class="fas fa-caret-right fa-xs"></i>
+      </p>
+    </li>
+    <div class="collapse" id="collapse4">
+      <li class="sidebar-group" role="menuitem">
+        <p
+          class="sidebar-heading"
+          data-bs-toggle="collapse"
+          href="#pythonNewbie"
+          aria-expanded="false"
+          aria-controls="pythonNewbie"
+          onclick="rotate(this)"
+        >
+          <span class="sidebar-heading--name">Python 초급</span>
+          <!-- <i class="fas fa-caret-right fa-xs"></i> -->
+        </p>
+      </li>
+      <div class="collapse" id="pythonNewbie">
+        <div class="card card-body">
+          <a href="./functions" target="_self">입출력과 변수 </a>
+        </div>
+        <div class="card card-body">
+          <a href="./input_and_print" target="_self">간단한 함수 만들기 </a>
+        </div>
+        <div class="card card-body">
+          <a href="./input_loop" target="_self"
+            >프로그램 사용자로부터 입력받기 + 코드의 반복
+          </a>
+        </div>
+        <div class="card card-body">
+          <a href="./int_float_data" target="_self"
+            >int형 데이터와 float형 데이터
+          </a>
+        </div>
+        <div class="card card-body">
+          <a href="./list_string" target="_self">리스트와 문자열 </a>
+        </div>
+        <div class="card card-body">
+          <a href="./list_function" target="_self">리스트와 문자열의 함수들 </a>
+        </div>
+        <div class="card card-body">
+          <a href="./TF" target="_self">True,False, if문과 형제들 </a>
+        </div>
+        <div class="card card-body">
+          <a href="./for_while_loop" target="_self">while, 이중 for루프 </a>
+        </div>
+        <div class="card card-body">
+          <a href="./tuple_range" target="_self">튜플과 레인지 </a>
+        </div>
+        <div class="card card-body">
+          <a href="./functions_add" target="_self"
+            >함수에 대한 추가적인 설명 - 디폴트값 등
+          </a>
+        </div>
+        <div class="card card-body">
+          <a href="./modules" target="_self">모듈(Modules) </a>
+        </div>
+        <div class="card card-body">
+          <a href="./dictionary" target="_self">딕셔너리(Dictionary) </a>
+        </div>
+        <div class="card card-body">
+          <a href="./class" target="_self">클래스와 객체 </a>
+        </div>
+        <div class="card card-body">
+          <a href="./unexpect" target="_self">예외처리</a>
+        </div>
+      </div>
+      <li class="sidebar-group" role="menuitem">
+        <p
+          class="sidebar-heading"
+          data-bs-toggle="collapse"
+          href="#pythonUser"
+          aria-expanded="false"
+          aria-controls="pythonUser"
+          onclick="rotate(this)"
+        >
+          <span class="sidebar-heading--name">Python 중급</span>
+          <!-- <i class="fas fa-caret-right fa-xs"></i> -->
+        </p>
+      </li>
+      <div class="collapse" id="pythonUser">
+        <div class="card card-body">
+          <a href="./reference_count_garbage_collection" target="_self"
+            >레퍼런스 카운트와 가비지 컬렉션
+          </a>
+        </div>
+        <div class="card card-body">
+          <a href="./immutable_mutable" target="_self"
+            >수정 가능한 객체와 수정 불가능한 객체
+          </a>
+        </div>
+        <div class="card card-body">
+          <a href="./deep_shallow_copy" target="_self"
+            >깊은 복사와 얕은 복사
+          </a>
+        </div>
+        <div class="card card-body">
+          <a href="./hide_dict" target="_self">정보 은닉과 dict</a>
+        </div>
+        <div class="card card-body">
+          <a href="./property" target="_self">프로퍼티</a>
+        </div>
+        <div class="card card-body">
+          <a href="./slots" target="_self">슬롯</a>
+        </div>
+        <div class="card card-body">
+          <a href="./list_comprehension" target="_self">리스트 컴프리헨션</a>
+        </div>
+        <div class="card card-body">
+          <a href="./iterable_iterator" target="_self"
+            >Iterable 객체와 Iterator 객체</a
+          >
+        </div>
+        <div class="card card-body">
+          <a href="./lambda" target="_self"
+            >객체처럼 다뤄지는 함수 그리고 람다</a
+          >
+        </div>
+        <div class="card card-body">
+          <a href="./map_and_filter" target="_self">map&filter</a>
+        </div>
+        <div class="card card-body">
+          <a href="./func_comprehension" target="_self"
+            >map&filter를 대신하는 리스트 컴프리헨션</a
+          >
+        </div>
+        <div class="card card-body">
+          <a href="./generator" target="_self">generator 함수</a>
+        </div>
+        <div class="card card-body">
+          <a href="./generator_expression" target="_self"
+            >generator expression</a
+          >
+        </div>
+        <div class="card card-body">
+          <a href="./tuple_packing" target="_self">튜플의 패킹과 언패킹</a>
+        </div>
+        <div class="card card-body">
+          <a href="./named_tuple" target="_self">네임드 튜플</a>
+        </div>
+        <div class="card card-body">
+          <a href="./prod_dict" target="_self">dict의 생성과 zip</a>
+        </div>
+        <div class="card card-body">
+          <a href="./dict_lupin" target="_self"
+            >dict의 루핑 기술과 컴프리헨션</a
+          >
+        </div>
+        <div class="card card-body">
+          <a href="./func_star_rule" target="_self"
+            >함수 호출과 매개변수 선언에 있어서 *과 **의 사용규칙</a
+          >
+        </div>
+        <div class="card card-body">
+          <a href="./dict_defaultdict" target="_self">dict & defaultdict</a>
+        </div>
+        <div class="card card-body">
+          <a href="./ordered_dict" target="_self">dict & OrderedDict</a>
+        </div>
+        <div class="card card-body">
+          <a href="./set_frozenset" target="_self"
+            >자료형 분류와 set&frozenset</a
+          >
+        </div>
+        <div class="card card-body">
+          <a href="./sort" target="_self">정렬 기술</a>
+        </div>
+        <div class="card card-body">
+          <a href="./enumerate" target="_self">enumerate과 문자열 비교</a>
+        </div>
+        <div class="card card-body">
+          <a href="./expression_comb" target="_self">표현식 기반 문자열 조합</a>
+        </div>
+        <div class="card card-body">
+          <a href="./method_str" target="_self">메소드 기반 문자열 조합</a>
+        </div>
+        <div class="card card-body">
+          <a href="./class_obj" target="_self">클래스와 객체의 본질</a>
+        </div>
+        <div class="card card-body">
+          <a href="./inheritance" target="_self">상속</a>
+        </div>
+        <div class="card card-body">
+          <a href="./isinstance" target="_self"
+            >isinstance함수와 object클래스</a
+          >
+        </div>
+        <div class="card card-body">
+          <a href="./special_method" target="_self">스페셜 메소드</a>
+        </div>
+        <div class="card card-body">
+          <a href="./operator_overload" target="_self">연산자 오버로딩</a>
+        </div>
+        <div class="card card-body">
+          <a href="./nested_func" target="_self">네스티드 함수와 클로저</a>
+        </div>
+        <div class="card card-body">
+          <a href="./decorator" target="_self">데코레이터</a>
+        </div>
+        <div class="card card-body">
+          <a href="./class_method" target="_self"
+            >클래스 메소드와 static 메소드</a
+          >
+        </div>
+        <div class="card card-body">
+          <a href="./name_main" target="_self">__name__ & __main__</a>
+        </div>
+      </div>
+      <li class="sidebar-group" role="menuitem">
+        <p
+          class="sidebar-heading"
+          data-bs-toggle="collapse"
+          href="#pythonAdditional"
+          aria-expanded="false"
+          aria-controls="pythonAdditional"
+          onclick="rotate(this)"
+        >
+          <span class="sidebar-heading--name">Python 추가 내용</span>
+          <!-- <i class="fas fa-caret-right fa-xs"></i> -->
+        </p>
+      </li>
+      <div class="collapse" id="pythonAdditional">
+        <div class="card card-body">
+          <a href="./dataframe" target="_self">Python 데이터 프레임 </a>
+        </div>
+        <div class="card card-body">
+          <a href="./sqlAlchemy" target="_self"
+            >Python SQL alchemy를 통해 mysql 연동하기
+          </a>
+        </div>
+        <div class="card card-body">
+          <a href="./join" target="_self"
+            >Python 문자열 자르고 합치기 - join, split함수</a
+          >
+        </div>
+        <div class="card card-body">
+          <a href="./getitem" target="_self"
+            >Python getitem, setitem 스페셜메소드</a
+          >
+        </div>
+        <div class="card card-body">
+          <a href="./pylance" target="_self"
+            >Pylance Unresolved import warnings 트러블슈팅</a
+          >
+        </div>
+        <div class="card card-body">
+          <a href="./django-css" target="_self"
+            >Python django - How to add css to django application</a
+          >
+        </div>
+      </div>
+    </div>
+
+    <li class="sidebar-group" role="menuitem">
+      <p
+        class="sidebar-heading"
+        data-bs-toggle="collapse"
+        href="#collapse5"
+        aria-expanded="false"
+        aria-controls="collapse5"
+        onclick="rotate(this)"
+      >
+        <span class="sidebar-heading--name">Computer Science</span>
+        <i class="fas fa-caret-right fa-xs"></i>
+      </p>
+    </li>
+    <div class="collapse" id="collapse5">
+      <div class="card card-body">
+        <a href="./docker" target="_self">Docker란?</a>
+      </div>
+      <div class="card card-body">
+        <a href="./domain" target="_self">Domain이란</a>
+      </div>
+      <div class="card card-body">
+        <a href="./serverless" target="_self">Serverless</a>
+      </div>
+      <div class="card card-body">
+        <a href="./library" target="_self">library vs framework</a>
+      </div>
+      <div class="card card-body">
+        <a href="./api" target="_self">API 란?</a>
+      </div>
+      <div class="card card-body">
+        <a href="./devops" target="_self">devops 정리</a>
+      </div>
+      <div class="card card-body">
+        <a href="./web_request" target="_self">web요청과 응답과정</a>
+      </div>
+      <div class="card card-body">
+        <a href="./block-chain" target="_self"
+          >nomad coders 블록체인 시리즈 총정리</a
+        >
+      </div>
+      <div class="card card-body">
+        <a href="./begin" target="_self">coursera series - Digital Logic</a>
+      </div>
+      <div class="card card-body">
+        <a href="./Module-Introduction" target="_self"
+          >coursera series - Hardware</a
+        >
+      </div>
+      <div class="card card-body">
+        <a href="./OS" target="_self">coursera series - OS</a>
+      </div>
+      <div class="card card-body">
+        <a href="./networking" target="_self">coursera series - networking</a>
+      </div>
+      <div class="card card-body">
+        <a href="./software" target="_self">coursera series - software</a>
+      </div>
+    </div>
+
+    <li class="sidebar-group" role="menuitem">
+      <p
+        class="sidebar-heading"
+        data-bs-toggle="collapse"
+        href="#collapse6"
+        aria-expanded="false"
+        aria-controls="collapse6"
+        onclick="rotate(this)"
+      >
+        <span class="sidebar-heading--name">Git</span>
+        <i class="fas fa-caret-right fa-xs"></i>
+      </p>
+    </li>
+    <div class="collapse" id="collapse6">
+      <div class="card card-body">Hello</div>
+      <div class="card card-body">Hello2</div>
+    </div>
+
+    <li class="sidebar-group" role="menuitem">
+      <p
+        class="sidebar-heading"
+        data-bs-toggle="collapse"
+        href="#collapse7"
+        aria-expanded="false"
+        aria-controls="collapse7"
+        onclick="rotate(this)"
+      >
+        <span class="sidebar-heading--name">Git</span>
+        <i class="fas fa-caret-right fa-xs"></i>
+      </p>
+    </li>
+    <div class="collapse" id="collapse7">
+      <div class="card card-body">Hello</div>
+      <div class="card card-body">Hello2</div>
+    </div>
+
+    <li class="sidebar-group" role="menuitem">
+      <p
+        class="sidebar-heading"
+        data-bs-toggle="collapse"
+        href="#collapse8"
+        aria-expanded="false"
+        aria-controls="collapse8"
+        onclick="rotate(this)"
+      >
+        <span class="sidebar-heading--name">Git</span>
+        <i class="fas fa-caret-right fa-xs"></i>
+      </p>
+    </li>
+    <div class="collapse" id="collapse8">
+      <div class="card card-body">Hello</div>
+      <div class="card card-body">Hello2</div>
+    </div>
+
+    <li class="sidebar-group" role="menuitem">
+      <p
+        class="sidebar-heading"
+        data-bs-toggle="collapse"
+        href="#collapse9"
+        aria-expanded="false"
+        aria-controls="collapse9"
+        onclick="rotate(this)"
+      >
+        <span class="sidebar-heading--name">Git</span>
+        <i class="fas fa-caret-right fa-xs"></i>
+      </p>
+    </li>
+    <div class="collapse" id="collapse9">
+      <div class="card card-body">Hello</div>
+      <div class="card card-body">Hello2</div>
+    </div>
+
+    <li class="sidebar-group" role="menuitem">
+      <p
+        class="sidebar-heading"
+        data-bs-toggle="collapse"
+        href="#collapse10"
+        aria-expanded="false"
+        aria-controls="collapse10"
+        onclick="rotate(this)"
+      >
+        <span class="sidebar-heading--name">HUFS 모각코 기록</span>
+        <i class="fas fa-caret-right fa-xs"></i>
+      </p>
+    </li>
+    <div class="collapse" id="collapse10">
+      <div class="card card-body">
+        <a href="./design" target="_self">2021.07 week2 </a>
+      </div>
+    </div>
+  </ul>
+</div>
+ 
+    <main class="main-post">
+  <h1 class="main-post--title">What's an Operating System?</h1>
+  <div class="line"></div>
+  <section class="main-post--content"><ul>
+  <li>
+    <p>SSH(secure shell)</p>
+
+    <ul>
+      <li>protocol implemented(시행된) by other programs to securely access one computer from another.</li>
+      <li>다른 컴퓨터에서 한 컴퓨터로 안전하게 액세스하기 위해 프로그램에 의해 구현된 프로토콜</li>
+      <li>protocol? 복수의 컴퓨터 사이나 중앙 컴퓨터와 단말기 사이에서 데이터 통신을 원활하게 하기 위해 필요한 통신 규약.</li>
+      <li>SSH를 사용하려면, SSH 서버에 연결하려는 컴퓨터에 SSH클라이언트가 설치되어있어야 함.</li>
+      <li>SSH 서버는 특정 기계가 아니고 소프트웨어임</li>
+      <li>원격 시스템에서, SSH 서버는 background process로 실행되고있다. (background process -&gt; 사용자 간섭 없이 보이지 않는 뒷편에서 실행 중인 컴퓨터 프로세스) -&gt; <strong>It constantly checks if a client is trying to connect to it, then will authenticate its requests.</strong></li>
+      <li>most popular program to use SSH -&gt; 리눅스 내의 OpenSSH, 윈도우에서는 PuTTY</li>
+    </ul>
+  </li>
+  <li>
+    <p>SSH 사용</p>
+
+    <ul>
+      <li>원격 대상 컴퓨터에 계정이 있어야됨. + 해당 컴퓨터의 호스트 이름 or IP주소도 필요</li>
+      <li>the authenticity of host and then the IP address can’t be established. 메세지의 출력 -&gt; 이전에 이 컴퓨터에 연결한 적이 없고, SSH 클라이언트는 연결하려는 컴퓨터를 확인하거나 연결할 수 없다는 뜻</li>
+      <li>메세지 출력 이후 올바른 원격 연결이면 yes -&gt; 알려진 호스트로 저장되어 이후 메세지 출력 X</li>
+      <li>SSH를 통해 연결되었으므로 원격 장치에서의 텍스트 명령 입력 -&gt; SSH 서버로 전달. (APP실행 가능, 셀 환경에서 작업대신 GUI를 통한 작업도 가능)</li>
+      <li>비밀번호를 통한 SSH연결은 보안상 안전하지 않음. -&gt; SSH 인증 키를 사용</li>
+      <li>SSH authentication key -&gt; private key + public key</li>
+      <li>public key -&gt; can only lock something, private key -&gt; can only unlock something</li>
+    </ul>
+  </li>
+  <li>
+    <p>원격 시스템에 연결 (2) -&gt; VPN이용</p>
+    <ul>
+      <li>VPN (virtual private network) - 멀리 떨어진 네트워크 환경을 안전한 네트워크로 만드는 역할</li>
+      <li>ex) 회사 내부에서만 접근가능한 네트워크를 집에서 접속하기 위해 VPN을 이용.</li>
+    </ul>
+  </li>
+</ul>
+
+<h3 id="remote-connections-on-windows">Remote Connections on Windows</h3>
+
+<ul>
+  <li>
+    <p>PuTTY - SSH를 포함한 여러 네트워크 프로토콜을 통해 원격 연결을 할 수 있게 해주는 open source software</p>
+  </li>
+  <li>
+    <p>PuTTY를 통해 컴퓨터 원격 연결하기</p>
+
+    <ol>
+      <li>PuTTY설치 및 GUI실행</li>
+      <li>hostname, port, connection type options 기입
+        <ul>
+          <li>포트 : SSH 프로토콜이 사용하는 기본 포트인 22로 설정됨</li>
+          <li>connection type은 SSH가 default</li>
+          <li>실제 기입할 것은 host name or IP address (연결할 컴퓨터의 호스트 네임 또는 IP주소)</li>
+        </ul>
+      </li>
+    </ol>
+  </li>
+  <li>
+    <p>GUI가 아닌 prompt상에서 실행하기</p>
+
+    <ul>
+      <li><code class="language-plaintext highlighter-rouge">putty.exe -ssh hostname@IPaddress 22</code></li>
+    </ul>
+  </li>
+  <li>
+    <p>PuTTY Link (Plink)</p>
+
+    <ul>
+      <li>PuTTY설치시 함께 내장되는 도구</li>
+      <li>Plink를 통해 SSH 원격 연결을 진행할 수도 있음.</li>
+    </ul>
+  </li>
+  <li>
+    <p>SSH는 windows기반 컴퓨터에서 Linux기반 OS에 연결할 때에 매우 유용</p>
+  </li>
+  <li>SSH이외에 RDP(Remote Desktop Protocol)을 통해서도 컴퓨터 원격연결을 진행할 수 있음</li>
+  <li>
+    <p>RDP client for Linux &amp; MacOS는 real VNC와 Microsoft RDP on Mac과 유사하다.</p>
+
+    <ul>
+      <li>VNC(Virtual Network Computing, RFB프로토콜 이용하여 컴퓨터 원격 제어)</li>
+    </ul>
+  </li>
+  <li>
+    <p>mstsc.exe</p>
+
+    <ul>
+      <li>RDP연결을 만들기 위해 사용됨</li>
+    </ul>
+  </li>
+  <li>시작 메뉴 -&gt; 내 컴퓨터 우클릭 -&gt; 속성 -&gt; remote settings -&gt; 보안 관련 설정 변경을 통해 원격연결 허용 가능
+    <ul>
+      <li>원격 연결 허용 이후 컴퓨터에 접근 가능한 사용자 목록과 비교하여 존재하면 mstsc.exe를 통해 원격연결 가능</li>
+    </ul>
+  </li>
+</ul>
+
+<h3 id="components-of-an-operating-system">Components of an Operating System</h3>
+
+<ul>
+  <li>
+    <p>What is OS?</p>
+
+    <ul>
+      <li>Whole package that manages our computers resources and lets us interact with it.</li>
+    </ul>
+  </li>
+  <li>
+    <p>parts of OS</p>
+
+    <ol>
+      <li>kernel space</li>
+      <li>user space</li>
+    </ol>
+  </li>
+  <li>
+    <p>kernel space</p>
+
+    <ul>
+      <li>main core of an OS</li>
+      <li>하드웨어와 직접 소통하고, 시스템 리소스를 관리함.</li>
+    </ul>
+  </li>
+  <li>
+    <p>what is system resource?</p>
+
+    <blockquote>
+      <p>In computing, a system resource, or simply resource, is any physical or virtual component of limited availability within a computer system. All connected devices and internal system components are resources. Virtual system resources include files (concretely file handles), network connections (concretely network sockets), and memory areas.</p>
+    </blockquote>
+  </li>
+  <li>
+    <p>컴퓨터 시스템 내에서의 물리적 또는 virtual한 구성요소</p>
+
+    <ul>
+      <li>physical components -&gt; all connected devices &amp; interal system components</li>
+      <li>virtual components -&gt; files, network connections, memory areas..</li>
+    </ul>
+  </li>
+  <li>
+    <p>user space</p>
+
+    <ul>
+      <li>사용자들은 커널 공간과 상호작용하지 않음</li>
+      <li>basically made up of everything outside the kernel</li>
+    </ul>
+  </li>
+  <li>
+    <p>Linux OS</p>
+
+    <ul>
+      <li>open source여서, 전 세계의 개발자들이 이를 수정 및 공유하여 서로 발전시킴</li>
+      <li>거기에 더하여 서로 다른 커뮤니티가 각자의 버전에 맞게 개발해낸 패키지가 존재함. -&gt; Linus OSes distributions</li>
+      <li>Ubuntu, Debian, Red Hat등등이 이에 해당</li>
+    </ul>
+  </li>
+  <li>functions of kernel space
+    <ol>
+      <li>file management : 파일을 관리 (디렉토리, 폴더)</li>
+      <li>process management : 시스템상에서 실행하려는 파일들의 처리를 관리해줌
+        <ul>
+          <li>실행 순서, 실행 리소스의 수, 실행 시간 등을 관리</li>
+          <li>process scheduler 가 멀티태스킹을 할 수 있게끔 도와줌. (실제로는 눈 깜짝할 사이에 프로세스의 전환이 이루어지는것)</li>
+        </ul>
+      </li>
+      <li>memory management : 메모리 사용 최적화 및 APP 구동에 필요한 메모리 할당량 확인</li>
+      <li>I/O management (Input/Output) : 외부기기 (disk, 키보드, 네트워크 ,오디오 등)와 소통
+        <ul>
+          <li>모든 입출력 관련된 작업을 수행 (파일 저장, 마우스 클릭, 마이크 출력 등)</li>
+        </ul>
+      </li>
+    </ol>
+  </li>
+  <li><a href="https://en.wikipedia.org/wiki/Chrome_OS">Supplemental Reading for chorme OS</a>
+    <ul>
+      <li>chromium OS에서 파생</li>
+      <li>Linux distribution 중 하나인 Gentoo-Linux OS기반으로 google에서 디자인한 OS</li>
+      <li>chrome 브라우저 기반 UI</li>
+      <li>media player와 file manager를 통합</li>
+      <li>chrome apps -&gt; 원격 액세스 지원</li>
+      <li>only available pre-installed on hardware from google manufacturing partners. (unofficial methods 도 존재)</li>
+    </ul>
+  </li>
+</ul>
+
+<h3 id="files-amd-files-systems">Files amd Files Systems</h3>
+
+<ul>
+  <li>파일은 저장의 용이성 뿐만 아니라 <strong>저장된 파일을 추적하는 것도 중요하다</strong></li>
+  <li>
+    <p>kernel space에서 file stoarge와 file systems를 관리</p>
+  </li>
+  <li>
+    <p>file system</p>
+
+    <ul>
+      <li>데이터 저장에 있어서 디스크를 지우고, 구성하는 일을 진행 (운영체제가 파일을 추적하는 방식)</li>
+      <li>file system의 종류에 따라 data storage의 양이 다르고, 속도 및 파일 손상에 대한 복원력도 다양함</li>
+      <li>각 OS 업체에서는 고유한 파일 시스템을 권장</li>
+      <li>Windows file system - NTFS(Encryption,faster access speeds, security 등 다양한 기능 포함), ReFS도 있음 (개발중)</li>
+      <li>Mac OS file system - HFS+ (2017년 3월이후 APFS로 변경됨) - 저널링 기능(오류 발생시 디스크 상태를 저장 - 다른 OS file system에도 존재)</li>
+      <li>Linux file system - 각 배포판에 따라 다른 file system을 지님
+        <ul>
+          <li>표준 리눅스 파일시스템 - ext4 (ext파일 시스템의 이전 버전도 사용가눙)</li>
+        </ul>
+      </li>
+      <li>다른 file system끼리는 파일이 정상적으로 처리되지 않음.</li>
+    </ul>
+  </li>
+  <li>
+    <p>storage of actual file data</p>
+
+    <ul>
+      <li>데이터 블록 형태로 하드 드라이브에 데이터를 저장</li>
+      <li>하드 디스크에 저장할때에는 한 묶음으로 저장되는 것이 아님.</li>
+      <li>이를 블록 스토리지라고 하고, 이를 통해 빠른 액세스가 가능하여 데이터 처리 속도가 향상됨 + 스토리지 공간 활용의 효율성 증대</li>
+    </ul>
+  </li>
+  <li>
+    <p>metadata</p>
+
+    <ul>
+      <li>파일에 대한 정보를 담고있는 metadata를 유지해야함 (kernel공간의 file system이)</li>
+      <li>파일 작성자, 최종 수정일, 누가 파일에 접근 가능한 지 등 + 파일 형식</li>
+    </ul>
+  </li>
+  <li><a href="https://en.wikipedia.org/wiki/ReFS">supplemental readings for ReFS</a></li>
+</ul>
+
+<h3 id="process-management">Process management</h3>
+
+<ul>
+  <li>
+    <p>Process vs Program</p>
+
+    <ul>
+      <li>Process - program that’s executing (internet browser or text editor)</li>
+      <li>Program - application that we <strong>can run</strong></li>
+    </ul>
+  </li>
+  <li>프로그램의 구동을 위해서는 CPU와 RAM이라는 리소스를 투입해야하는데, 다양한 프로세스를 동시에 처리함에 있어서 효율성을 증대시키기 위해 kernel이 존재한다.</li>
+  <li>프로그램 실행을 위해서는 프로세스를 만들어야함. 이러한 프로세스는 RAM 및 CPU같은 리소스가 필요</li>
+  <li>
+    <p>하나의 CPU에 여러 프로세스를 처리하기 위해서 커널이 <strong>time slice</strong>를 통해 실행</p>
+
+    <ul>
+      <li>time slice : very short interval of time that gets allocated to a process for CPU execution (CPU실행을 위해 프로세스에 할당되는 짧은 시간)</li>
+    </ul>
+  </li>
+  <li>프로세스에 할당된 time slice가 CPU가 일반적으로 처리하는 time slice보다 클 경우 또는 처리할 프로세스가 너무 많을 경우 컴퓨터가 느려짐 -&gt; 수동 관리 필요</li>
+</ul>
+
+<h3 id="memory-management">Memory Management</h3>
+
+<ul>
+  <li>프로세스의 실헹에는 CPU에 할당되는 time slice도 필요하지만, 메모리도 필요하다.</li>
+  <li>
+    <p>하드 드라이브와 비교하면 메모리는 작은 양을 지니기 때문에, 더 많은 메모리를 제공하기 위해 virtual memory라는 개념을 도입한다.</p>
+  </li>
+  <li>
+    <p>virtual memory? : combination of hard drive space and RAM that acts like memory that our processes can use.</p>
+  </li>
+  <li>process의 실행시 프로그램 데이터를 page라고 불리는 chunks(데이터 덩어리)로 가져온다.
+    <ul>
+      <li>이러한 페이지들을 virtual memory에 저장</li>
+      <li>페이지들을 read and execute하고싶으면 RAM으로 보내야함.</li>
+      <li>hard drive에 virtual memory를 저장하려면, swap space라는 할당된 공간에 저장해야함. (RAM의 용량이 꽉 차게 되었을 때 이용)</li>
+      <li><a href="http://coffeenix.net/doc/RH-DOCS/rhl-cg-ko-9/ch-swapspace.html">스왑공간이란?</a></li>
+    </ul>
+  </li>
+</ul>
+
+<h3 id="io-management">I/O management</h3>
+
+<ul>
+  <li>I/O devices : devices that perform input and output (monitors, mice, hard disk, network adapter..)</li>
+  <li>I/O 장치들은 커널에 의해 관리되고, 각 장치들의 드라이버를 로드하여 서로 다른 하드웨어끼리 소통할 수 있게해줌</li>
+</ul>
+
+<h3 id="interacting-with-the-os--user-space">interacting with the OS : User Space</h3>
+
+<ul>
+  <li>
+    <p>two ways that we can interact with our OS</p>
+
+    <ol>
+      <li>shell환경</li>
+      <li>GUI환경 (GUI기반 shell도 있지만 대부분 CLIA shell을 주로 이용 - Command line interface)</li>
+    </ol>
+  </li>
+  <li>
+    <p>shell? : program that interprets text commands and sends them to the OS to execute.</p>
+    <ul>
+      <li>power user(시스템 관리자 및 사용자가 각종 전자기기를 다룰 때 일반 수준을 넘어서는 기술력을 가진 사람) 가 주로 shell환경을 이용</li>
+      <li>다양한 shell이 존재. (windows - Powershell, Linux - Bash(Bourne Again Shell)..)</li>
+    </ul>
+  </li>
+</ul>
+
+<h3 id="the-boot-process">The Boot process</h3>
+
+<ul>
+  <li>컴퓨터의 시작 -&gt; 부팅</li>
+  <li>많은 OS들은 일반적인 패턴을 따른다.
+    <ol>
+      <li>computer is powered on</li>
+      <li>BIOS/UEFI에서 하드웨어 초기화 및 정상작동 점검 이후 POST진행 (Power on Self Test, 컴퓨터 정상 작동여부 확인. 진단 테스트 진행)</li>
+      <li>BIOS/UEFI구성에 따라 부팅 디바이스 선택 (부팅 순서에 따라 선택됨. 하드 드라이브 -&gt; USB -&gt; CD드라이브 등)</li>
+      <li>부팅 디바이스 선택을 위해 각 디바이스들을 검사할때, Bootloader를 검색함.
+        <ul>
+          <li>Bootloader? : small program that loads the operating system</li>
+        </ul>
+      </li>
+      <li>bootloader실행 -&gt; 더 크고 복잡한 프로그램들이 로드 -&gt; OS로드</li>
+    </ol>
+  </li>
+</ul>
+
+<h3 id="choosing-an-operating-system">Choosing an Operating System</h3>
+
+<ul>
+  <li><a href="https://www.makeuseof.com/tag/operating-system-choose-next-pc/">Which Operating System Should You Choose for Your Next PC?</a></li>
+</ul>
+
+<ol>
+  <li>Windows
+    <ul>
+      <li>가장 일반적인 OS로, 호환성이 좋음</li>
+      <li>고사양 게임에 최적화</li>
+      <li>보안이슈가 여전히 존재 (malware) - 소프트웨어 업데이트에 신경써줘야함</li>
+    </ul>
+  </li>
+  <li>MacOS
+    <ul>
+      <li>only available on Mac hardware. (맥 기기가 아닌 곳에도 설치 가능 - Hackintosh, 복잡함)</li>
+      <li>특정 소프트웨어는 크로스플랫폼이더라도 맥에서 더 많은 옵션을 제공하는 경우가 존재. (전문가들에게 좋음) - Adobe photoshop or premier</li>
+      <li>MacOS 소프트웨어 업데이트가 무료임 &amp; 맬웨어 공격대상으로 잘 지정되지 않음</li>
+      <li>맥 기기가 비쌈 &amp; 소프트웨어 호환성문제</li>
+    </ul>
+  </li>
+  <li>Linux
+    <ul>
+      <li>flexibility가 가장 큰 장점</li>
+      <li>복잡한 작업을 진행하는 데에 있어서 power user들에게 자유도를 부여</li>
+      <li>리눅스 러닝 커브가 가파름</li>
+      <li>오래된 하드웨어도 돌아가게 해줌 (windows 실행에 무리가 있는 하드웨어도 경량 linux배포판 설치 이후 간단한 작업 가능)</li>
+    </ul>
+  </li>
+  <li>Chrome OS
+    <ul>
+      <li>chrome web browser, chrome apps, Android Apps에 접근 가능</li>
+      <li>Windows desktop software는 실행 불가</li>
+      <li>매우 간단하기 때문에 랩탑에 잘 맞음.</li>
+    </ul>
+  </li>
+  <li>BSD
+    <ul>
+      <li>Linux의 대체재 - Berkeley software distribution</li>
+      <li>Unix-based &amp; open source</li>
+      <li>보안 및 복잡한 네트워킹 작업에 이용됨</li>
+      <li>리눅스보다 flexible</li>
+      <li>써드파티의 규모가 작아 troubleshooting이 쉽지않음</li>
+    </ul>
+  </li>
+</ol>
+
+<h3 id="linux-os">Linux OS</h3>
+
+<ul>
+  <li><a href="https://ubuntu.com/">Ubuntu site</a></li>
+  <li><a href="https://www.balena.io/etcher/">etcher.io</a>
+    <ul>
+      <li>USB에 설치 이미지파일을 로드해주는 툴</li>
+    </ul>
+  </li>
+  <li><a href="https://www.ubuntuupdates.org/">Ubuntu update</a></li>
+  <li><a href="https://arstechnica.com/information-technology/2017/04/ubuntu-unity-is-dead-desktop-will-switch-back-to-gnome-next-year/">Ubuntu Unity is dead: Desktop will switch back to GNOME next year</a>
+    <ul>
+      <li>GNOME - Linux GUI환경</li>
+      <li>Ubuntu 보급회사인 canonical이 Unity를 Ubuntu 데스크톱의 default UI로 만든 지 6년만에 이를 그만두고 GNOME으로 전환할 예정</li>
+      <li>모바일 시장으로의 적응에 실패했지만, IoT 및 cloud + Infrastructure부문에 투자중</li>
+    </ul>
+  </li>
+</ul>
+</section>
+</main>
+
+
+    <script src="https://use.fontawesome.com/releases/v5.15.3/js/all.js"></script>
+    <!-- JavaScript Bundle with Popper -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+      crossorigin="anonymous"
+    ></script>
+    <script src="assets/js/sidebar-click-event.js"></script>
+    <script src="//code.jquery.com/jquery-3.3.1.min.js"></script>
+  </body>
+</html>

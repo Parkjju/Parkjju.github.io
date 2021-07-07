@@ -1,0 +1,1119 @@
+<!DOCTYPE html>
+<html lang="kr">
+  <head>
+    <head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!-- CSS only -->
+  <link
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+    rel="stylesheet"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+    crossorigin="anonymous"
+  />
+  <link href="/assets/CSS/style.css" rel="stylesheet" />
+  <title>Parkjju's TIL</title>
+</head>
+
+  </head>
+
+  <body>
+    <div class="main_bar">
+  <p class="main_bar--title"><a href="/">Parkjju's Today I Learned</a></p>
+
+  <div class="main_bar--right">
+    <!-- 검색창 -->
+    <form action="" method="get" class="search-box">
+      <i class="fas fa-search"></i>
+      <input class="search-form" type="text" autocomplete="off" />
+    </form>
+
+    <!-- 링크버튼 -->
+    <div
+      class="main_bar--link"
+      onclick="window.open('https://github.com/Parkjju')"
+    >
+      <p>Github</p>
+      <i class="fas fa-external-link-alt"></i>
+    </div>
+  </div>
+</div>
+ <div class="menu-bar">
+  <ul>
+    <li
+      class="sidebar-group sidebar-heading"
+      data-bs-toggle="collapse"
+      href="#collapse1"
+      aria-expanded="false"
+      aria-controls="collapse1"
+      onclick="rotate(this)"
+      role="menuitem"
+    >
+      <span class="sidebar-heading--name">개발 기록</span>
+      <i class="fas fa-caret-right fa-xs"></i>
+    </li>
+    <ul class="collapse" id="collapse1">
+      <li class="card card-body">
+        <a href="./python" aria-current="page">Python 강좌(1) - Python 기본</a>
+      </li>
+      <li class="card card-body">
+        <a href="./pythonHard" target="_self"
+          >Python 강좌(2) - Python 제어문
+        </a>
+      </li>
+    </ul>
+
+    <li class="sidebar-group" role="menuitem">
+      <p
+        class="sidebar-heading"
+        data-bs-toggle="collapse"
+        href="#collapse2"
+        aria-expanded="false"
+        aria-controls="collapse2"
+        onclick="rotate(this)"
+      >
+        <span class="sidebar-heading--name">Algorithm</span>
+        <i class="fas fa-caret-right fa-xs"></i>
+      </p>
+    </li>
+    <div class="collapse" id="collapse2">
+      <div class="card card-body">
+        <a href="./shortest" target="_self">
+          Bellman Ford & Dijkstra 최단경로 알고리즘
+        </a>
+      </div>
+      <div class="card card-body">
+        <a href="./all-to-all" target="_self">all-to-all 최단경로 </a>
+      </div>
+      <div class="card card-body">
+        <a href="./Recursion" target="_self"> Recursion 재귀 </a>
+      </div>
+      <div class="card card-body">
+        <a href="./selection" target="_self"
+          >선택문제 - k번째로 작은 수, Quickselection & MoM
+        </a>
+      </div>
+      <div class="card card-body">
+        <a href="./mom" target="_self"
+          >MOM - Median of Medians 알고리즘 설명 + 수행시간
+        </a>
+      </div>
+      <div class="card card-body">
+        <a href="./divide" target="_self"
+          >Divide and Conquer 알고리즘 설명 & 예시
+        </a>
+      </div>
+    </div>
+
+    <li class="sidebar-group" role="menuitem">
+      <p
+        class="sidebar-heading"
+        data-bs-toggle="collapse"
+        href="#collapse3"
+        aria-expanded="false"
+        aria-controls="collapse3"
+        onclick="rotate(this)"
+      >
+        <span class="sidebar-heading--name">Data structure</span>
+        <i class="fas fa-caret-right fa-xs"></i>
+      </p>
+    </li>
+    <div class="collapse" id="collapse3">
+      <div class="card card-body">
+        <a href="./data_structure" target="_self">자료구조의 이해 </a>
+        <a href="./sequential_structure" target="_self">선형 자료구조 </a>
+        <a href="./hash_table" target="_self">해시 테이블 자료구조 </a>
+        <a href="./stack_cal" target="_self"
+          >스택을 이용하여 계산기 구현하기
+        </a>
+        <a href="./SinglyLinkedList" target="_self"
+          >한 방향 연결리스트 연산 구현
+        </a>
+        <a href="./doublyLinkedList" target="_self"
+          >양 방향 연결리스트 연산 구현
+        </a>
+        <a href="./pydict" target="_self">파이썬의 딕셔너리 작동방식 </a>
+        <a href="./tree" target="_self">트리 자료구조 </a>
+        <a href="./open_addressing" target="_self"
+          >해시테이블 open addressing 실습
+        </a>
+        <a href="./heap" target="_self">heap 자료구조 </a>
+        <a href="./union-find" target="_self">union find 자료구조 </a>
+        <a href="./graph" target="_self">graph 자료구조 </a>
+      </div>
+    </div>
+
+    <li class="sidebar-group" role="menuitem">
+      <p
+        class="sidebar-heading"
+        data-bs-toggle="collapse"
+        href="#collapse4"
+        aria-expanded="false"
+        aria-controls="collapse4"
+        onclick="rotate(this)"
+      >
+        <span class="sidebar-heading--name">Python</span>
+        <i class="fas fa-caret-right fa-xs"></i>
+      </p>
+    </li>
+    <div class="collapse" id="collapse4">
+      <li class="sidebar-group" role="menuitem">
+        <p
+          class="sidebar-heading"
+          data-bs-toggle="collapse"
+          href="#pythonNewbie"
+          aria-expanded="false"
+          aria-controls="pythonNewbie"
+          onclick="rotate(this)"
+        >
+          <span class="sidebar-heading--name">Python 초급</span>
+          <!-- <i class="fas fa-caret-right fa-xs"></i> -->
+        </p>
+      </li>
+      <div class="collapse" id="pythonNewbie">
+        <div class="card card-body">
+          <a href="./functions" target="_self">입출력과 변수 </a>
+        </div>
+        <div class="card card-body">
+          <a href="./input_and_print" target="_self">간단한 함수 만들기 </a>
+        </div>
+        <div class="card card-body">
+          <a href="./input_loop" target="_self"
+            >프로그램 사용자로부터 입력받기 + 코드의 반복
+          </a>
+        </div>
+        <div class="card card-body">
+          <a href="./int_float_data" target="_self"
+            >int형 데이터와 float형 데이터
+          </a>
+        </div>
+        <div class="card card-body">
+          <a href="./list_string" target="_self">리스트와 문자열 </a>
+        </div>
+        <div class="card card-body">
+          <a href="./list_function" target="_self">리스트와 문자열의 함수들 </a>
+        </div>
+        <div class="card card-body">
+          <a href="./TF" target="_self">True,False, if문과 형제들 </a>
+        </div>
+        <div class="card card-body">
+          <a href="./for_while_loop" target="_self">while, 이중 for루프 </a>
+        </div>
+        <div class="card card-body">
+          <a href="./tuple_range" target="_self">튜플과 레인지 </a>
+        </div>
+        <div class="card card-body">
+          <a href="./functions_add" target="_self"
+            >함수에 대한 추가적인 설명 - 디폴트값 등
+          </a>
+        </div>
+        <div class="card card-body">
+          <a href="./modules" target="_self">모듈(Modules) </a>
+        </div>
+        <div class="card card-body">
+          <a href="./dictionary" target="_self">딕셔너리(Dictionary) </a>
+        </div>
+        <div class="card card-body">
+          <a href="./class" target="_self">클래스와 객체 </a>
+        </div>
+        <div class="card card-body">
+          <a href="./unexpect" target="_self">예외처리</a>
+        </div>
+      </div>
+      <li class="sidebar-group" role="menuitem">
+        <p
+          class="sidebar-heading"
+          data-bs-toggle="collapse"
+          href="#pythonUser"
+          aria-expanded="false"
+          aria-controls="pythonUser"
+          onclick="rotate(this)"
+        >
+          <span class="sidebar-heading--name">Python 중급</span>
+          <!-- <i class="fas fa-caret-right fa-xs"></i> -->
+        </p>
+      </li>
+      <div class="collapse" id="pythonUser">
+        <div class="card card-body">
+          <a href="./reference_count_garbage_collection" target="_self"
+            >레퍼런스 카운트와 가비지 컬렉션
+          </a>
+        </div>
+        <div class="card card-body">
+          <a href="./immutable_mutable" target="_self"
+            >수정 가능한 객체와 수정 불가능한 객체
+          </a>
+        </div>
+        <div class="card card-body">
+          <a href="./deep_shallow_copy" target="_self"
+            >깊은 복사와 얕은 복사
+          </a>
+        </div>
+        <div class="card card-body">
+          <a href="./hide_dict" target="_self">정보 은닉과 dict</a>
+        </div>
+        <div class="card card-body">
+          <a href="./property" target="_self">프로퍼티</a>
+        </div>
+        <div class="card card-body">
+          <a href="./slots" target="_self">슬롯</a>
+        </div>
+        <div class="card card-body">
+          <a href="./list_comprehension" target="_self">리스트 컴프리헨션</a>
+        </div>
+        <div class="card card-body">
+          <a href="./iterable_iterator" target="_self"
+            >Iterable 객체와 Iterator 객체</a
+          >
+        </div>
+        <div class="card card-body">
+          <a href="./lambda" target="_self"
+            >객체처럼 다뤄지는 함수 그리고 람다</a
+          >
+        </div>
+        <div class="card card-body">
+          <a href="./map_and_filter" target="_self">map&filter</a>
+        </div>
+        <div class="card card-body">
+          <a href="./func_comprehension" target="_self"
+            >map&filter를 대신하는 리스트 컴프리헨션</a
+          >
+        </div>
+        <div class="card card-body">
+          <a href="./generator" target="_self">generator 함수</a>
+        </div>
+        <div class="card card-body">
+          <a href="./generator_expression" target="_self"
+            >generator expression</a
+          >
+        </div>
+        <div class="card card-body">
+          <a href="./tuple_packing" target="_self">튜플의 패킹과 언패킹</a>
+        </div>
+        <div class="card card-body">
+          <a href="./named_tuple" target="_self">네임드 튜플</a>
+        </div>
+        <div class="card card-body">
+          <a href="./prod_dict" target="_self">dict의 생성과 zip</a>
+        </div>
+        <div class="card card-body">
+          <a href="./dict_lupin" target="_self"
+            >dict의 루핑 기술과 컴프리헨션</a
+          >
+        </div>
+        <div class="card card-body">
+          <a href="./func_star_rule" target="_self"
+            >함수 호출과 매개변수 선언에 있어서 *과 **의 사용규칙</a
+          >
+        </div>
+        <div class="card card-body">
+          <a href="./dict_defaultdict" target="_self">dict & defaultdict</a>
+        </div>
+        <div class="card card-body">
+          <a href="./ordered_dict" target="_self">dict & OrderedDict</a>
+        </div>
+        <div class="card card-body">
+          <a href="./set_frozenset" target="_self"
+            >자료형 분류와 set&frozenset</a
+          >
+        </div>
+        <div class="card card-body">
+          <a href="./sort" target="_self">정렬 기술</a>
+        </div>
+        <div class="card card-body">
+          <a href="./enumerate" target="_self">enumerate과 문자열 비교</a>
+        </div>
+        <div class="card card-body">
+          <a href="./expression_comb" target="_self">표현식 기반 문자열 조합</a>
+        </div>
+        <div class="card card-body">
+          <a href="./method_str" target="_self">메소드 기반 문자열 조합</a>
+        </div>
+        <div class="card card-body">
+          <a href="./class_obj" target="_self">클래스와 객체의 본질</a>
+        </div>
+        <div class="card card-body">
+          <a href="./inheritance" target="_self">상속</a>
+        </div>
+        <div class="card card-body">
+          <a href="./isinstance" target="_self"
+            >isinstance함수와 object클래스</a
+          >
+        </div>
+        <div class="card card-body">
+          <a href="./special_method" target="_self">스페셜 메소드</a>
+        </div>
+        <div class="card card-body">
+          <a href="./operator_overload" target="_self">연산자 오버로딩</a>
+        </div>
+        <div class="card card-body">
+          <a href="./nested_func" target="_self">네스티드 함수와 클로저</a>
+        </div>
+        <div class="card card-body">
+          <a href="./decorator" target="_self">데코레이터</a>
+        </div>
+        <div class="card card-body">
+          <a href="./class_method" target="_self"
+            >클래스 메소드와 static 메소드</a
+          >
+        </div>
+        <div class="card card-body">
+          <a href="./name_main" target="_self">__name__ & __main__</a>
+        </div>
+      </div>
+      <li class="sidebar-group" role="menuitem">
+        <p
+          class="sidebar-heading"
+          data-bs-toggle="collapse"
+          href="#pythonAdditional"
+          aria-expanded="false"
+          aria-controls="pythonAdditional"
+          onclick="rotate(this)"
+        >
+          <span class="sidebar-heading--name">Python 추가 내용</span>
+          <!-- <i class="fas fa-caret-right fa-xs"></i> -->
+        </p>
+      </li>
+      <div class="collapse" id="pythonAdditional">
+        <div class="card card-body">
+          <a href="./dataframe" target="_self">Python 데이터 프레임 </a>
+        </div>
+        <div class="card card-body">
+          <a href="./sqlAlchemy" target="_self"
+            >Python SQL alchemy를 통해 mysql 연동하기
+          </a>
+        </div>
+        <div class="card card-body">
+          <a href="./join" target="_self"
+            >Python 문자열 자르고 합치기 - join, split함수</a
+          >
+        </div>
+        <div class="card card-body">
+          <a href="./getitem" target="_self"
+            >Python getitem, setitem 스페셜메소드</a
+          >
+        </div>
+        <div class="card card-body">
+          <a href="./pylance" target="_self"
+            >Pylance Unresolved import warnings 트러블슈팅</a
+          >
+        </div>
+        <div class="card card-body">
+          <a href="./django-css" target="_self"
+            >Python django - How to add css to django application</a
+          >
+        </div>
+      </div>
+    </div>
+
+    <li class="sidebar-group" role="menuitem">
+      <p
+        class="sidebar-heading"
+        data-bs-toggle="collapse"
+        href="#collapse5"
+        aria-expanded="false"
+        aria-controls="collapse5"
+        onclick="rotate(this)"
+      >
+        <span class="sidebar-heading--name">Computer Science</span>
+        <i class="fas fa-caret-right fa-xs"></i>
+      </p>
+    </li>
+    <div class="collapse" id="collapse5">
+      <div class="card card-body">
+        <a href="./docker" target="_self">Docker란?</a>
+      </div>
+      <div class="card card-body">
+        <a href="./domain" target="_self">Domain이란</a>
+      </div>
+      <div class="card card-body">
+        <a href="./serverless" target="_self">Serverless</a>
+      </div>
+      <div class="card card-body">
+        <a href="./library" target="_self">library vs framework</a>
+      </div>
+      <div class="card card-body">
+        <a href="./api" target="_self">API 란?</a>
+      </div>
+      <div class="card card-body">
+        <a href="./devops" target="_self">devops 정리</a>
+      </div>
+      <div class="card card-body">
+        <a href="./web_request" target="_self">web요청과 응답과정</a>
+      </div>
+      <div class="card card-body">
+        <a href="./block-chain" target="_self"
+          >nomad coders 블록체인 시리즈 총정리</a
+        >
+      </div>
+      <div class="card card-body">
+        <a href="./begin" target="_self">coursera series - Digital Logic</a>
+      </div>
+      <div class="card card-body">
+        <a href="./Module-Introduction" target="_self"
+          >coursera series - Hardware</a
+        >
+      </div>
+      <div class="card card-body">
+        <a href="./OS" target="_self">coursera series - OS</a>
+      </div>
+      <div class="card card-body">
+        <a href="./networking" target="_self">coursera series - networking</a>
+      </div>
+      <div class="card card-body">
+        <a href="./software" target="_self">coursera series - software</a>
+      </div>
+    </div>
+
+    <li class="sidebar-group" role="menuitem">
+      <p
+        class="sidebar-heading"
+        data-bs-toggle="collapse"
+        href="#collapse6"
+        aria-expanded="false"
+        aria-controls="collapse6"
+        onclick="rotate(this)"
+      >
+        <span class="sidebar-heading--name">Git</span>
+        <i class="fas fa-caret-right fa-xs"></i>
+      </p>
+    </li>
+    <div class="collapse" id="collapse6">
+      <div class="card card-body">Hello</div>
+      <div class="card card-body">Hello2</div>
+    </div>
+
+    <li class="sidebar-group" role="menuitem">
+      <p
+        class="sidebar-heading"
+        data-bs-toggle="collapse"
+        href="#collapse7"
+        aria-expanded="false"
+        aria-controls="collapse7"
+        onclick="rotate(this)"
+      >
+        <span class="sidebar-heading--name">Git</span>
+        <i class="fas fa-caret-right fa-xs"></i>
+      </p>
+    </li>
+    <div class="collapse" id="collapse7">
+      <div class="card card-body">Hello</div>
+      <div class="card card-body">Hello2</div>
+    </div>
+
+    <li class="sidebar-group" role="menuitem">
+      <p
+        class="sidebar-heading"
+        data-bs-toggle="collapse"
+        href="#collapse8"
+        aria-expanded="false"
+        aria-controls="collapse8"
+        onclick="rotate(this)"
+      >
+        <span class="sidebar-heading--name">Git</span>
+        <i class="fas fa-caret-right fa-xs"></i>
+      </p>
+    </li>
+    <div class="collapse" id="collapse8">
+      <div class="card card-body">Hello</div>
+      <div class="card card-body">Hello2</div>
+    </div>
+
+    <li class="sidebar-group" role="menuitem">
+      <p
+        class="sidebar-heading"
+        data-bs-toggle="collapse"
+        href="#collapse9"
+        aria-expanded="false"
+        aria-controls="collapse9"
+        onclick="rotate(this)"
+      >
+        <span class="sidebar-heading--name">Git</span>
+        <i class="fas fa-caret-right fa-xs"></i>
+      </p>
+    </li>
+    <div class="collapse" id="collapse9">
+      <div class="card card-body">Hello</div>
+      <div class="card card-body">Hello2</div>
+    </div>
+
+    <li class="sidebar-group" role="menuitem">
+      <p
+        class="sidebar-heading"
+        data-bs-toggle="collapse"
+        href="#collapse10"
+        aria-expanded="false"
+        aria-controls="collapse10"
+        onclick="rotate(this)"
+      >
+        <span class="sidebar-heading--name">HUFS 모각코 기록</span>
+        <i class="fas fa-caret-right fa-xs"></i>
+      </p>
+    </li>
+    <div class="collapse" id="collapse10">
+      <div class="card card-body">
+        <a href="./design" target="_self">2021.07 week2 </a>
+      </div>
+    </div>
+  </ul>
+</div>
+ 
+    <main class="main-post">
+  <h1 class="main-post--title">Module Introduction</h1>
+  <div class="line"></div>
+  <section class="main-post--content"><h2 id="the-modern-computer">The Modern Computer</h2>
+
+<h3 id="introduction-to-computer-hardware">Introduction to Computer Hardware</h3>
+
+<ul>
+  <li>
+    <p>모니터, 키보드 등.. 물리적 구성요소들을 통틀어 하드웨어라 칭함</p>
+  </li>
+  <li>
+    <p>ports? - Connection points that we can connect devices to that extend the functionality of our computer</p>
+  </li>
+  <li>
+    <p>CPU(Central Processing Unit) : The brain of our computer, it does all the calculations and data processing.</p>
+  </li>
+  <li>
+    <p>RAM(Random Access Memory) : Our computer’s short-term memory</p>
+  </li>
+  <li>
+    <p>Hard drive : Holds all of our data, which includes all of our music, pictures, applications.</p>
+  </li>
+  <li>
+    <p>Motherboard : It holds everything in place and lets our components communicate with each other. -&gt; foundation of computer</p>
+
+    <ul>
+      <li>The body of circulatory system of the computer that connects all the pieces together.</li>
+    </ul>
+  </li>
+  <li>
+    <p>power supply : Converts electricity from our wall outlet onto a format that our computer can use.</p>
+  </li>
+</ul>
+
+<h3 id="programs-and-hardware">Programs and Hardware</h3>
+
+<ul>
+  <li>Programs - Instructions that tell the computer what to do</li>
+  <li>
+    <p>인간이 컴퓨터와 소통하기 위해서는 인간의 언어를 machine language로 번역해야함! (Binary)</p>
+  </li>
+  <li>
+    <p>RAM에 대한 설명</p>
+  </li>
+  <li><strong>RAM is memory that is randomly accessed, allowing our CPU to read from any part of RAM as quickly as any other part.</strong> - 램은 자신의 어떤 부분에서든지 CPU가 다른 컴포넌트만큼 빠르게 읽을 수 있는 랜덤 액세스 메모리
+    <ol>
+      <li>요리를 위해 요리사를 고용 (CPU)</li>
+      <li>요리사가 처리하기 용이한 요리에 대해서는 쿡북을 읽으며 요리하는 것보다 혼자 요리하는 것이 더 빠름(RAM)
+        <ul>
+          <li>“Remember that RAM is our computer’s short-term memory. It stores Information in <strong>a location our CPU can access faster than it could with our hard drive.</strong></li>
+        </ul>
+      </li>
+      <li>요리사에게 요리 레시피를 골라 전달하는데, 효율적인 instructions 전달을 위해 각 순서에 따라 한 라인씩 전달한다. (one line at a time) + 요리사에게 전달하는데, 요리사가 알아먹는 형식은 Binary형식이므로, 변환하여 전달해야한다. (복잡한 과정. ) =&gt; “Our CPU is constantly taking Instructions and executing them.”</li>
+    </ol>
+  </li>
+  <li>
+    <p>EDB - External Data Bus</p>
+
+    <ul>
+      <li>It’s a row of wires that interconnect the parts of our computer, kind of veins in our body.</li>
+      <li>EDB를 통해 voltage(전압)을 보내면 1, 없으면 0임.(on&amp;off)</li>
+      <li>즉 byte는 EDB를 통해 컴퓨터 내부에서 움직인다.</li>
+      <li>EDB는 다양한 사이즈가 존재한다. (8bit, 16,32,64까지도 존재)</li>
+      <li>8bit EDB를 가정하고, 1바이트 데이터를 CPU에 전달하는 상황
+        <ul>
+          <li>CPU 내부의 레지스터가 CPU가 받은 데이터를 저장할 수 있게 해줌</li>
+          <li>1+2=3을 저장 -&gt; 1이 register a, 2가 register b, 덧셈의 결과인 3이 register c에 저장.</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <p>MCC - Memory Controller chip</p>
+  </li>
+  <li>
+    <p><a href="https://www.easytechjunkie.com/what-is-the-memory-controller.htm">What is the Memory Controller?</a></p>
+
+    <ul>
+      <li>HDD로부터 전달된 RAM의 데이터는 너무 방대하기때문에, EDB를 통한 1바이트 통신에 더하여 또 다른 컴포넌트의 도움이 필요하다. MCC!</li>
+      <li>
+        <p>MCC는 CPU와 RAM 사이의 다리와 같은 역할을 함</p>
+      </li>
+      <li><strong>It manages read and write operations with system memory, along with keeping the RAM active by supply the memory with electric current.</strong></li>
+    </ul>
+  </li>
+  <li>
+    <p>Address bus</p>
+
+    <blockquote>
+      <p>주소 버스(address bus)는 일정한 메모리 번지를 찾는 데 사용되는 신호를 운반하는 컴퓨터 내의 배선 버스이다. 간단히 말해 물리 주소를 지정하는 데 쓰인다.</p>
+    </blockquote>
+  </li>
+  <li>
+    <p>주소 버스는 CPU와 MCC를 연결하여 주소를 주고받는다. (데이터 자체를 주고받는 것이 아님.)</p>
+  </li>
+  <li><strong>정리</strong></li>
+</ul>
+
+<ol>
+  <li>CPU의 데이터 요청</li>
+  <li>HDD로부터 RAM에 데이터가 전달됨</li>
+  <li>CPU가 요청한 데이터에 대해 MCC가 Address bus로부터 데이터 주소를 받아와 EDB를 통해 CPU에 전달.</li>
+  <li>데이터 접근 후 처리</li>
+</ol>
+
+<ul>
+  <li><a href="https://www.youtube.com/watch?v=bGPYyVAXG9I&amp;list=PLVsNizTWUw7E2KrfnsyEjTqo-6uKiQoxc&amp;index=2">한빛 미디어 - 뇌를 자극하는 윈도우즈 시스템 프로그래밍 中 버스부분 발췌</a></li>
+  <li>
+    <p>CPU와 RAM 데이터 이동에서의 버스 시스템</p>
+
+    <ol>
+      <li>데이터 버스 - 데이터가 이동</li>
+      <li>어드레스 버스 - 데이터 주소의 이동</li>
+      <li>컨트롤 버스 - 컨트롤 신호의 이동 (CPU와 RAM 사이의 데이터 이동은 양방향임을 기억하자)</li>
+    </ol>
+  </li>
+  <li>
+    <p>Cache</p>
+
+    <ul>
+      <li>RAM은 CPU입장에서 데이터 처리 속도가 그렇게 빠르지 않다. (RAM 내부의 트랜지스터가 on 되려면 off에서 충전되어야함)</li>
+      <li>따라서, 자주 사용되는 데이터를 CPU 캐시 메모리에 저장하여 빠르게 접근한다.</li>
+      <li>CPU 내부에서 cache level은 L1, L2, L3로 쪼개진다.</li>
+      <li>L1 -&gt; 가장 작고 가장 빠름</li>
+    </ul>
+  </li>
+  <li>CPU clock
+    <ul>
+      <li><a href="https://www.quora.com/What-is-a-CPU-clock">What is CPU clock?</a></li>
+      <li>“CPU clock is for measuring the speed of processor.”</li>
+      <li>CPU 클럭은 clock wire에 연결되어있다.</li>
+      <li>데이터를 전송하거나 전달받을때, clock wire에 전압을 보내 CPU가 계산을 시작할 것이라는 것을 알림.</li>
+      <li>voltage가 clock wire로 보내지는 한 단위가 clock cycle이다.</li>
+      <li>CPU 속도를 표기할 때에 3.4ghz로 말하는 것은 clock cycle이 초당 34억회 진행된다는 것(Maximum, 항상 이러한 속도로 사이클이 돈다는 것 X)</li>
+      <li>CPU maximum clock cycle을 초과할 수도 있는데, 이를 <strong>CPU Overclock이라고함.</strong> - “in order to perform more tasks.”</li>
+      <li>빡센 게임을 돌릴 때 발생한다고 생각하면 됨 (CPU에 발열이 발생)</li>
+      <li><a href="https://en.wikipedia.org/wiki/CPU_cache">wiki - CPU cache</a></li>
+      <li><a href="https://www.digitaltrends.com/computing/how-to-overclock-your-cpu/">digitaltrends - How to overclock your CPU</a></li>
+    </ul>
+  </li>
+</ul>
+
+<h2 id="components">Components</h2>
+
+<h3 id="cpu">CPU</h3>
+
+<ul>
+  <li>명령어 집합(instructionset architecture, ISA) - 마이크로프로세서가 인식해서 기능을 이해하고 실행할 수 있는 기계어 명령어이다. 명령어 집합 구조는 자료형, 명령어, 레지스터, 어드레싱 모드, 메모리 구조, 인터럽트, 예외 처리, 외부 입출력을 포함한 프로그래밍 관련 컴퓨터 아키텍쳐의 일부이다.</li>
+  <li><a href="https://ko.wikipedia.org/wiki/%EB%AA%85%EB%A0%B9%EC%96%B4_%EC%A7%91%ED%95%A9">wiki - 명령어 집합 참고</a></li>
+  <li>The transition book is called an instruction set, which is literally just aa list instructions that our CPU is able to run. -&gt; 명령어 집합은 CPU가 실행할 수 있는 명령어</li>
+  <li>Every single program on your computer, while extremely complex, is broken down into very small and simple instructions found in our instruction set.</li>
+  <li>
+    <p>Instruction sets are hard-coded into our CPU.</p>
+
+    <ul>
+      <li>Hard-coding : 하드코드를 사용한 프로그래밍 방식.</li>
+      <li>하드코드는 변수에 담지 않거나, 리터럴 그대로 프로그램 소스로 기록하여 고정된 형태의 코드로 표현한 것</li>
+      <li>하드코드 예시 -&gt; <code class="language-plaintext highlighter-rouge">password = 123;</code></li>
+      <li>하드코드의 반대 -&gt; soft coding : 변수에 담아 간략하게 표현할 수 있거나, 유동적인 값을 표현하거나, 사용자의 입력이 요구되는 보안이 필요한 정보 등에 사용</li>
+      <li>예시) <code class="language-plaintext highlighter-rouge">SECRET_CODE = 123;</code> , <code class="language-plaintext highlighter-rouge">password = SECRET_CODE;</code></li>
+      <li>CPU내의 명령어 집합이 하드코딩 되어있기 때문에 제조사마다 명령어 집합을 다르게 CPU를 제작할 수 있다.(기능 자체는 동일)</li>
+    </ul>
+  </li>
+  <li>
+    <p>CPU는 또한 마더보드와 호환되는지 알아야한다.</p>
+
+    <ul>
+      <li><a href="https://ko.wikipedia.org/wiki/%EB%A9%94%EC%9D%B8%EB%B3%B4%EB%93%9C">wiki - 우리가 메인보드라고 알고있는 마더보드</a></li>
+      <li>CPU가 마더보드에 장착되는 방식은 소켓마다 상이하다.</li>
+      <li>CPU가 마더보드 소켓에 올바르게 장착되었는지 확인해야함.</li>
+      <li><a href="https://m.blog.naver.com/PostView.nhn?blogId=wksmsrltk&amp;logNo=220961411751&amp;proxyReferer=https:%2F%2Fwww.google.com%2F">CPU 소켓 - LGA, PGA, BGA?</a></li>
+      <li>LGA -&gt; 마더보드 CPU소켓에 튀어나온 핀이 있어서, LGA에 호환되는 CPU의 홈과 맞춰 끼우면 구동됨 (PGA는 반대의 경우)</li>
+    </ul>
+  </li>
+  <li>
+    <p>CPU 장착시, CPU를 냉각하기 위한 장치도 마련해야함</p>
+
+    <ul>
+      <li><a href="https://ko.wikipedia.org/wiki/%ED%9E%88%ED%8A%B8_%EC%8B%B1%ED%81%AC">히트싱크</a></li>
+      <li>CPU의 열을 흡수하여 발산하는 장치</li>
+    </ul>
+  </li>
+  <li>CPU 32비트 vs 64비트 아키텍쳐
+    <ul>
+      <li><a href="https://eine.tistory.com/entry/64%EB%B9%84%ED%8A%B8-32%EB%B9%84%ED%8A%B8-CPU%EC%99%80-%EC%9A%B4%EC%98%81%EC%B2%B4%EC%A0%9C-%EC%97%90-%EB%8C%80%ED%95%98%EC%97%AC">64비트 32비트 CPU와 운영체제에 대하여</a></li>
+      <li>컴퓨터의 워드 사이즈 (Word size)란, <strong>데이터 기본 처리 단위이다.</strong> CPU 32비트, 64비트 구조를 말하는 것은 컴퓨터의 워드 사이즈를 말하는 것이다. 64비트 머신은 32비트 머신보다 한 번에 처리할 수 있는 데이터의 양이 두배 많다는 것이다.</li>
+    </ul>
+  </li>
+</ul>
+
+<h3 id="ram">RAM</h3>
+
+<ul>
+  <li>We use RAM to store data that we want to access quickly. This data changes all the time so it isn’t permanent.</li>
+  <li>RAM에는 빠른 접근이 필요한 데이터들을 저장하며, 항상 RAM 내의 데이터는 변하므로 영구적이지 않다. -&gt; volatile (휘발성)</li>
+  <li>프로그램을 실행하려면 HDD에 저장되어있는 데이터들을 RAM으로 복사하여 CPU가 처리할 수 있도록 해야한다.
+    <ul>
+      <li><a href="https://ko.wikipedia.org/wiki/%ED%8E%98%EC%9D%B4%EC%A7%95">paging 기법</a></li>
+      <li><a href="https://qr.ae/pGvW0H">Quora - How is information loaded from Hard Drive to RAM?</a></li>
+    </ul>
+  </li>
+  <li>RAM type
+    <ul>
+      <li>DRAM - commonly found in computers. (Dynamic random access memory)
+        <ul>
+          <li>1과 0이 전달되면 각 비트를 축전기로 보냄.</li>
+          <li>1이면 축전기를 충전시키고, 0이면 안함</li>
+        </ul>
+      </li>
+      <li>DRAM을 탑재할 수 있는 모듈-&gt;DIMM(Dual Inline Memory Module)</li>
+      <li>SDRAM - 시스템 클럭 속도에 동기화되어 데이터를 더 빠르게 처리하는 램
+        <ul>
+          <li>CPU 클럭이란 - CPU 속도를 나타내는 단위. 1초동안 파장이 한번 움직이는 시간</li>
+        </ul>
+      </li>
+      <li>오늘날 RAM -&gt; doubled data rate SDRAM == DDR
+        <ul>
+          <li>DDR1 부터 DDR4까지 다양함</li>
+          <li>기존 SDRAM보다 용량이크고 전력 소비량이 적으며, 빠르다</li>
+        </ul>
+      </li>
+      <li>RAM도 CPU와 마찬가지로 마더보드와 호환이 되는지 확인해야함</li>
+    </ul>
+  </li>
+</ul>
+
+<h3 id="motherboards">Motherboards</h3>
+
+<ul>
+  <li>컴퓨터를 하나로 묶는 기반.
+    <ul>
+      <li>expansion cards를 추가할 수 있게 하여 컴퓨터의 기능적 측면에서 확장 가능성을 제공</li>
+      <li>서로 다른 컴퓨터 부품들을 함께 상호작용 할 수 있게 해줌</li>
+    </ul>
+  </li>
+  <li>마더보드의 중요 특징들 (모든 마더보드 공통점)
+    <ol>
+      <li>chipset - 마더보드 내에 두 가지 칩으로 이루어져있음
+        <ul>
+          <li>CPU &amp; RAM 및 그래픽 카드들을 상호 연결하는 <strong>Northbridge</strong> - 노스브리지</li>
+          <li>데이터 입출력을 위한 하드 드라이브 &amp; peripherials - 주변기기(키보드, 마우스 등) &amp; 입출력 컨트롤러 (USB장치)들을 위한 <strong>Southbridge</strong> -사우스브리지</li>
+          <li>최신 CPU같은 경우 Northbridge가 CPU에 직접 통합되어 별도의 노스브리지 칩셋이 없다고 함. (BGA방식 CPU - 랩탑 및 부피가 작은 디바이스에 사용)</li>
+        </ul>
+      </li>
+      <li>Allows the use of expansion slots.
+        <ul>
+          <li>확장 슬롯을 통해 마더보드에 추가 부품을 장착</li>
+          <li>오늘날 확장 슬롯의 표준은 PCIe (PCI Express, Peripheral Component Interconnect Express)</li>
+        </ul>
+      </li>
+      <li>form factor (폼 팩터)
+        <ul>
+          <li>오늘날의 이용가능한 마더보드의 크기는 다양함. -&gt; 폼팩터는 마더보드의 크기 또는 치수를 일컫는 규격.</li>
+          <li>가장 일반적인 마더보드의 폼팩터 -&gt; ATX (Advanced Technology eXtended)</li>
+          <li>ITX (Information Technology eXtended) (ITX는 ATX보다 훨씬 작음)</li>
+          <li>자신이 사용할 환경에 맞추어 마더보드 폼팩터를 잘 골라야함. -&gt; 성능이 강력한 워크스테이션이 필요하다면 확장성이 뛰어난 폼팩터를 사용..</li>
+        </ul>
+      </li>
+    </ol>
+  </li>
+</ul>
+
+<h3 id="storage">Storage</h3>
+
+<ul>
+  <li>
+    <p>용량에 대한 단위</p>
+
+    <ol>
+      <li>bit -&gt; 가장 작은 단위</li>
+      <li>byte -&gt; 8 bit로 구성, 한 글자(영어 알파벳 기준) or 숫자 또는 기호</li>
+      <li>kibibyte == kilobyte -&gt; 1,024 byte</li>
+      <li>megabyte -&gt; 1,024 kilobyte</li>
+      <li>gigabyte -&gt; 1,024 megabyte</li>
+      <li>terabyte -&gt; 1,024 gigabyte</li>
+    </ol>
+  </li>
+  <li>
+    <p>Hard drive types</p>
+
+    <ol>
+      <li>HDD
+        <ul>
+          <li>보호케이스 내의 플래터를 회전시켜 자기 패턴으로 정보를 기록</li>
+          <li><a href="https://jhnyang.tistory.com/105">하드디스크 구성요소</a></li>
+          <li>플레터 회전 속도에 따라 데이터 읽고 쓰기의 속도가 달라짐. (당연히 회전 속도가 빠를수록 데이터 접근에 대한 속도도 빨라짐)</li>
+          <li>이를 RPM이라고 함. (revolution per minute)</li>
+          <li>hdd는 움직이는 부품이 많기 때문에 부품의 부식이 쉽다.</li>
+        </ul>
+      </li>
+      <li>SSD - solid state driver
+        <ul>
+          <li>hdd의 susceptibility to damage (손상에 대한 민감성)때문에 등장한 저장장치</li>
+          <li>SSD에는 움직이는 부품이 없다.</li>
+          <li>정보가 마이크로칩에 저장되어 HDD보다 훨씬 빠르게 데이터가 이동.</li>
+        </ul>
+      </li>
+    </ol>
+  </li>
+  <li>
+    <p>ATA</p>
+
+    <ul>
+      <li>하드디스크 또는 CD-ROM장치 등을 연결하기 위한 인터페이스.</li>
+      <li>최근 가장 인기 있는 ATA 인터페이스는 직렬 ATA이다. (Serial ATA - SATA)</li>
+      <li>SATA 드라이브는 핫 스왑이 가능하다.</li>
+      <li>핫 스왑이란? 전원이 켜져있는(작동중인)시스템을 끄지 않고 부품을 교체할 수 있는 방식</li>
+      <li>디스크 교체 이후 따로 설정이 필요 없이 바로 장치를 인식</li>
+      <li>마더보드가 핫스왑 관련 기능을 지원해야하며, CMOS SETUP에서 하드디스크 작동모드를 AHCI로 설정해야함</li>
+      <li><a href="https://kk-7790.tistory.com/29">핫 스왑이란?</a></li>
+      <li><a href="https://blog.naver.com/jusk2/30115676964">SATA컨트롤 모드 AHCI란?</a></li>
+    </ul>
+
+    <blockquote>
+      <p>인터페이스는 서로 다른 두 개의 시스템, 장치 사이에서 정보나 신호를 주고받는 경우의 접점이나 경계면이다.
+즉, 사용자가 기기를 쉽게 동작시키는데 도움을 주는 시스템을 의미</p>
+    </blockquote>
+  </li>
+  <li>SATA가 오늘날 하드디스크에 대한 최근의 일반적인 인터페이스이다.
+    <ul>
+      <li>SATA케이블을 사용하는 것이 시장에 출시되는 초고속 SSD 중 일부에게는 충분하지 않음</li>
+      <li>인터페이스가 최신 SSD속도를 따라가지 못해 NVMe(NVM Express)라는 또 다른 인터페이스가 등장함</li>
+      <li>케이블 대신 드라이브를 확장 슬롯으로 추가하여 데이터 처리량을 높임</li>
+      <li>여담이지만, 내 컴퓨터 드라이브 SSD256에 HDD 1테라가 SATA방식으로 연결되어 있음을 hwinfo 프로그램을 통해 확인할 수 있었다. (마더보드 플랫폼 - BGA방식)
+<img src="/assets/images/sata.png" height="40%" width="70%" /></li>
+    </ul>
+  </li>
+  <li><a href="https://en.wikipedia.org/wiki/Kilobyte">kilobyte 추가자료</a>
+    <ul>
+      <li>이진수 기반의 컴퓨터 시스템 특성 상 2의 거듭제곱 형태를 수의 표현에서 많이 사용하게 되는데, 때마침 2의 10제곱이 1000과 비슷한 크기여서 1024바이트를 키로바이트로 나타내게 됨. (1000은 SI - 국제표기법상 접두어가 kilo로 붙음. 킬로그램!)</li>
+      <li>SI표준에서 구분하여, 킬로바이트를 정확한 1000값으로 지정하였고 표준화 단체가 새롭게 제시한 KiB바이트가 2의 10제곱값인 1024로 이용하도록 용어의 변경을 추진하였다.</li>
+      <li>대세는 아직도 킬로바이트 == 1024라고 하지만, 그래도 표준은 알아두자. 킬로, 메가, 기가 등은 모두 10제곱 기반이고, 키비, 메비, 기비 등이 모두 2의 거듭제곱 형태이다.</li>
+    </ul>
+  </li>
+</ul>
+
+<h3 id="power-supplies">Power supplies</h3>
+
+<ul>
+  <li>AC &amp; DC
+    <ul>
+      <li>AC(Alternative current) - 교류 : 주기적으로 전류 흐름의 방향이 바뀜</li>
+      <li>DC(Direct current) - 직류 : 전류의 흐름이 한 방향
+        <ul>
+          <li>컴퓨터는 DC전압을 사용</li>
+          <li>콘센트의 AC전압을 컴퓨터 내에서 저전압DC 전원으로 변환함.</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+</ul>
+
+<h3 id="mobile-devices">Mobile Devices</h3>
+
+<ul>
+  <li>일반적으로 모바일 디바이스는 장치의 크기가 작으므로, 구성요소들이 통합되어있음
+    <ul>
+      <li>CPU, RAM, Motherboard가 분리할 수 없는 방식으로 구성됨</li>
+      <li>매우 작은 장치들에 대해 SoC(System on a chip)을 이용함</li>
+      <li><a href="https://ko.wikipedia.org/wiki/%EB%8B%A8%EC%9D%BC_%EC%B9%A9_%EC%B2%B4%EC%A0%9C">wiki - SoC란?</a></li>
+      <li>SoC로 함께 구성된 컴포넌트는 분리되었을 때보다 배터리 전력 소모량이 적다.</li>
+    </ul>
+  </li>
+</ul>
+
+<h3 id="batteries-and-charging-system">Batteries and Charging System</h3>
+
+<ul>
+  <li>
+    <p>Rechargeable batteries</p>
+
+    <ul>
+      <li>충전식 배터리는 한정적인 수명을 가지고, 이는 charge cycle이라는 단위로 측정된다.</li>
+      <li>1 charge cycle은 방전부터 완충까지 한번 이루어졌다는 뜻임</li>
+      <li>
+        <h2 id="매우-춥거나-더운-환경에서-손상될-수-있음-충전-또는-방전-시-손상">매우 춥거나 더운 환경에서 손상될 수 있음 (충전 또는 방전 시 손상)</h2>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <p>외부 전원으로부터 충전식 배터리로 전원을 공급하기 위해서 PSU(Power supply unit)과 유사한 충전 회로가 필요함</p>
+
+    <ul>
+      <li>입력된 전력이 정상적인 출력 전력으로 변환 되도록 관리</li>
+    </ul>
+  </li>
+  <li>
+    <p><a href="https://en.wikipedia.org/wiki/Inductive_charging">supplemental readings for batteries and charging systems</a></p>
+    <ul>
+      <li>inductive charging (wireless charging or cordless charging) - 무선충전기
+        <ol>
+          <li>AC가 induction coil로 진입.</li>
+          <li>전하가 움직여 자기장을 형성 (AC이기때문에 자기장의 변동) -&gt; induction coil에도 AC가 형성</li>
+          <li>rectifier(정류기)를 통과하여 직류로 변환 -&gt; 충전</li>
+        </ol>
+      </li>
+      <li><a href="https://www.apple.com/batteries/maximizing-performance/">How to maximize your batteries for iOS</a>
+        <ol>
+          <li>Update to the latest software</li>
+          <li>Avoid extreme ambient temperatures (주변온도 -20~45도가 베스트)</li>
+          <li>Remove certain cases during charging. (충전 중 열 발산을 억제하지 않기 위해 케이스 제거)</li>
+          <li>Store it half-charged when you store it long term. - 완충 또는 방전을 지양하자</li>
+        </ol>
+      </li>
+    </ul>
+  </li>
+</ul>
+
+<h3 id="peripherals">Peripherals</h3>
+
+<ul>
+  <li>
+    <p>peripheral? anything that you connect to your computer externally that adds functionality.</p>
+  </li>
+  <li>
+    <p>USB(범용 직렬 버스, Universal Serial Bus)</p>
+
+    <ul>
+      <li>USB 2.0 -&gt; Transfer speed of 480 Mb/s <strong>(Not megabytes, megabits)</strong> // 일반적인 색 표기 - 검정</li>
+      <li>USB 3.0 -&gt; Transfer speed of 5Gb/s // 파랑</li>
+      <li>USB 3.1 -&gt; Transfer speed of 10Gb/s // 황색</li>
+    </ul>
+  </li>
+  <li>
+    <p>gigabits vs gigabytes</p>
+
+    <ul>
+      <li>gigabytes 는 파일 크기를 측정할때 사용한다(GB, 대문자로 표기).</li>
+      <li>gigabits는 다운로드 및 업로드 속도를 측정하는 데 사용한다. (Gbps, b소문자로 &amp; Mb/s - per second)</li>
+      <li>1MB 파일을 전송하기 위해서는 8Mb/s 전송속도가 적당함. (1바이트 -&gt; 8비트)</li>
+      <li>일반적인 오해) 24Mb/s가 1초에 24MB를 다운 X -&gt; 24Mb/s는 초당 3MB를 다운 -&gt; 24MB를 받으려면 8초가 필요</li>
+    </ul>
+  </li>
+  <li>
+    <p>Display pheripheral</p>
+
+    <ul>
+      <li>DVI 케이블 -&gt; 일반적으로 비디오만 출력</li>
+      <li>HDMI &amp; displayPort -&gt; 비디오 및 오디오 출력(디스플레이 포트는 USB등의 다른 데이터 형식을 전송하는 데 사용되기도 함)</li>
+      <li>USB type C -&gt; 오디오, 비디오 외에 전원까지도 공급해줌.</li>
+    </ul>
+  </li>
+  <li>
+    <p><a href="https://en.wikipedia.org/wiki/USB">Wiki - USB</a></p>
+  </li>
+  <li>
+    <p>supplemental reading for projectors</p>
+    <ul>
+      <li>VGA,DVI,HDMI,displayPort와 같은 케이블들을 통해 프로젝터를 컴퓨터에 연결하면 OS가 새로운 디스플레이 연결을 인식한다.</li>
+      <li><a href="https://help.ubuntu.com/stable/ubuntu-help/display-dual-monitors.html">Ubuntu - connect another monitor to your computer</a></li>
+      <li>프로젝터의 디스플레이 해상도를 PC가 올바르게 인식하지 못하면 낮은 해상도로 기본 설정될 수 있음 -&gt; 프로젝터용 장치 드라이버 설치</li>
+      <li>이전의 프로젝터들은 incandescent(백열구) bulbs 기준으로 빛을 발산하였는데, 무리한 사용으로 온도가 높아지면 셧다운 되는 문제가 발생 -&gt; 최근 프로젝터들은 LED 빛을 기반으로 작동</li>
+    </ul>
+  </li>
+</ul>
+
+<h2 id="starting-it-up">Starting It UP</h2>
+
+<h3 id="bios">BIOS</h3>
+
+<ul>
+  <li>프로그램이 실행되는 과정 -&gt; 하드 - RAM - CPU로 이어지는 데이터 전송과정</li>
+  <li>
+    <p>마우스 클릭이나 키보드 입력과 같은 것들은 CPU가 어떻게 처리하는가?</p>
+
+    <ul>
+      <li>키보드 입력을 하면 CPU로 바이트만 전송된다.</li>
+      <li>본래 CPU는 해당 바이트를 어떻게 처리해야하는지 모르지만, <strong>장치 드라이버</strong> 설치를 통해 처리할 수 있게됨</li>
+      <li>서비스 &amp; 드라이버 -&gt; 외부 장치를 CPU가 이해하는 데 필요한 지침이 포함</li>
+    </ul>
+  </li>
+  <li>
+    <p>BIOS (Basic Input Output services)</p>
+
+    <ul>
+      <li>firmware중 하나(하드웨어화된 소프트웨어. ROM 등에 기입하여 사용)</li>
+      <li>주변 장치와 컴퓨터 OS 사이의 데이터 흐름을 관리함</li>
+      <li>“Our CPU doesn’t know that there is a device that it can talk to, so it has to connect to something called the BIOS.” -&gt; CPU에게 기본 입출력 장치에 대해 인지시킴</li>
+      <li>컴퓨터의 하드웨어를 초기화하고 운영체제를 가동하는 데에 도움이 되는 소프트웨어(펌웨어)</li>
+      <li>BIOS는 하드 드라이브에 저장되어있지 않고, 마더보드의 ROM chip에 저장되어있다.(Read-Only memory)</li>
+      <li>ROM -&gt; non-volatile, 전원이 꺼져도 데이터가 삭제되지 않는 메모리</li>
+      <li>The BIOS is tasked with managing your computer’s exchange of inputs and outputs, mostly when you’re booting up your computer.</li>
+      <li>BIOS instructs your computer on how to boot up the operating system, and it also operates the peripherals (like the mouse and keyboard)</li>
+      <li>Pressing the power key is a basic input. Booting up your operating system is the basic output.</li>
+    </ul>
+  </li>
+  <li>
+    <p>input output 예시</p>
+
+    <ul>
+      <li>CPU가 하드디스크로부터 소프트웨어를 검색하라고 명령 -&gt; input</li>
+      <li>하드디스크로부터 소프트웨어를 찾아 CPU에게 다시 보냄 -&gt; output</li>
+      <li>CPU가 프로그램을 돌려 그래픽 처리를 명령 -&gt; input</li>
+      <li>그래픽 처리 후 모니터에게 픽셀 배열 instruction을 반환 -&gt; output</li>
+      <li>모든 컴퓨터 작업을 입출력으로 요약할 수 있다. <strong>BIOS는 바로 컴퓨터 부팅 시의 입출력 작업을 수행하는 것</strong></li>
+    </ul>
+  </li>
+  <li>
+    <p>UEFI</p>
+
+    <ul>
+      <li>BIOS보다 최신버전의 펌웨어 (기능은 동일)</li>
+      <li>better compatibility(좋은 호환성) and support for newer hardware</li>
+      <li>컴퓨터 부팅시 삐 소리 -&gt; 하드웨어 정상작동 여부 알리는 신호음 -&gt; <strong>POST, Power On Self Test</strong></li>
+    </ul>
+  </li>
+  <li>
+    <p>POST, Power On Self Test</p>
+
+    <ul>
+      <li>BIOS가 하드웨어 초기화 또는 필수 드라이버 로드 전에 발생</li>
+      <li>만약 문제가 있는 상황(비디오 드라이버에 문제..) -&gt; 표시할 방법이 없으므로 삐 소리를 모스코드와 비슷하게 발생시킴</li>
+      <li>제조업체마다 다르며, 기본적으로 두 번의 신호음 발생시 POST오류가 발생한 것</li>
+    </ul>
+  </li>
+  <li>
+    <p>CMOS battery</p>
+
+    <ul>
+      <li>CMOS stands for “Complementary Metal Oxide Semiconductor.” The CMOS battery powers the BIOS firmware in your laptop.</li>
+      <li>BIOS needs to remain operational even when your computer isn’t plugged into a power source. That’s where the battery comes in. When your computer gets unplugged, BIOS relies on the CMOS battery for power.</li>
+      <li>전원이 연결되지 않은 상태에도 BIOS는 계속 작동해야함. 컴퓨터의 플러그를 뽑으면 전원 대신 BIOS가 CMOS배터리에 의존함. (데스크탑은 주로 전원이 연결된 상태이기때문에, CMOS가 자주 사용되는 곳은 laptop)</li>
+      <li>CMOS 배터리는 전원에 연결되면 자동으로 충전됨.</li>
+      <li>제조일 기준 2~10년의 수명을 가짐</li>
+    </ul>
+  </li>
+  <li>
+    <p>reimaging of a computer</p>
+
+    <ul>
+      <li>“a disk image which is a copy of an operating system” - 운영체제의 복사본인 디스크 이미지</li>
+      <li>Reimaging is a recovery process that involves restoring a computer back to its factory settings. When you purchase a new computer, it typically comes with pre-installed software. Reimaging allows you to keep this software while deleting all other files on your computer.</li>
+      <li>OS도 삭제함. 외부 장치 (USB, CD-ROM)로부터 저장된 프로그램을 사용하여 수행</li>
+      <li>BIOS를 통해 외부 장치에서 부팅하도록 지시</li>
+    </ul>
+  </li>
+  <li><a href="https://www.hp.com/us-en/shop/tech-takes/what-is-cmos-battery-how-to-remove-and-replace">What is a CMOS Battery? (BIOS에 대한 설명까지)</a>
+    <ul>
+      <li>Every computer has BIOS pre-programmed into its hardware. OS와는 다르다. OS는 설치 삭제 업데이트가 가능하지만 BIOS는 컴퓨터에 합쳐진 채로 제조됨</li>
+    </ul>
+  </li>
+</ul>
+</section>
+</main>
+
+
+    <script src="https://use.fontawesome.com/releases/v5.15.3/js/all.js"></script>
+    <!-- JavaScript Bundle with Popper -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+      crossorigin="anonymous"
+    ></script>
+    <script src="assets/js/sidebar-click-event.js"></script>
+    <script src="//code.jquery.com/jquery-3.3.1.min.js"></script>
+  </body>
+</html>

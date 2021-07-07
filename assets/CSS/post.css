@@ -26,11 +26,23 @@
   line-height: 1.5rem;
   list-style: none;
 }
+img {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+.main-post li {
+  display: list-item;
+  padding-left: 1rem;
+}
+ol,
+p,
+ul {
+  line-height: 1.7;
+}
 
 h2 {
   font-size: 1.65rem;
   padding-bottom: 0.3rem;
-  border-bottom: 1px solid #eaecef;
 }
 
 h1,
