@@ -271,20 +271,133 @@
     </div>
   </ul>
 </div>
+ 
+    <main class="main-post">
+  <h1 class="main-post--title">Union find 자료구조</h1>
+  <div class="line"></div>
+  <section class="main-post--content"><ul>
+  <li>집합(set)에 대한 연산을 효율적으로 제공하기 위해 만들어진 자료구조</li>
+  <li>
+    <p>S = {…} 원소들이 중복되면 안됨</p>
+  </li>
+  <li>제공연산들
+    <ol>
+      <li>membership 연산 : 2라는 원소가 S에 속하는 원소인가</li>
+      <li>기본적으로 집합과 관련된 연산들 - 합집합(Union) 교집합(intersection) 차집합(difference) 등</li>
+    </ol>
+  </li>
+  <li>모든 연산을 제공하지 않고, membership과 union 중점으로 수업 진행
+    <ol>
+      <li>make_set(x) : {x} -&gt; O(1)</li>
+      <li>find(x) : membership function. x가 속한 집합을 리턴 (각 집합을 대표하는 값을 정의할 것임) -&gt; O(logn)</li>
+      <li>union(x-key,y-key) -&gt; 합집합해줌 -&gt; O(logn)</li>
+    </ol>
+  </li>
+  <li>python - set자료구조</li>
+</ul>
 
-    <main class="main-page">
-      <h1 class="main-page--title">Today I<br />Learned</h1>
-      <div class="line"></div>
-      <div class="info-container">
-        <p class="info-container--name">Parkjju's TIL</p>
-        <p
-          onclick="window.open('https://github.com/Parkjju')"
-          class="info-container--link"
-        >
-          Github
-        </p>
-      </div>
-    </main>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">a</span> <span class="o">=</span> <span class="nb">set</span><span class="p">()</span> <span class="c1"># a = {} 공집합
+</span><span class="n">b</span> <span class="o">=</span> <span class="p">{</span><span class="mi">3</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">3</span><span class="p">}</span> <span class="c1"># b = {3,5,1} - 중복 key값들은 제거
+</span></code></pre></div></div>
+
+<ul>
+  <li>
+    <p>구현 1 -&gt; 원형 양방향리스트 기반으로 union자료구조 구현</p>
+
+    <ol>
+      <li>make_set(x) -&gt; 더미노드를 붙여서 집합을 형성 : O(n)</li>
+      <li>find(x) -&gt; 연결리스트 순회하며 x를 찾음. 더미노드가 해당 집합의 id : O(n)</li>
+      <li>union(x,y)
+        <ul>
+          <li>v = find(x) -&gt; O(n)</li>
+          <li>w = find(y) -&gt; O(n)</li>
+          <li>if v!=w: join(v, w)</li>
+        </ul>
+      </li>
+    </ol>
+  </li>
+  <li>
+    <p>구현 2 -&gt; 트리로 union-find자료구조 구현</p>
+
+    <ul>
+      <li>일반적인 트리가 아님. 각 노드를 가리키는 링크가 child -&gt; parent로의 방향밖에 없음 (자식이 이진으로 형성될 필요도 x)</li>
+      <li>자기자신을 가리키게 될 때 id가 됨 (root노드)</li>
+      <li>make_set(x) -&gt; x가 자기자신을 가리키는 노드로 트리 형성</li>
+      <li>find(x) -&gt; x노드에서 부모 노드까지 가서 root를 반환 : O(h) - h를 줄이기</li>
+      <li>union(x,y)
+        <ol>
+          <li>v = find(x)</li>
+          <li>w = find(y)</li>
+          <li><code class="language-plaintext highlighter-rouge">if v!=w: w.parent = v</code> -&gt; 두개의 트리를 하나의 트리로 : v또는 w중 하나의 root노드가 다른 하나의 root노드를 가리키도록 함</li>
+        </ol>
+      </li>
+      <li>union시 누가 부모 노드가 될 지는 rank라는 값에 따라 결정</li>
+    </ul>
+  </li>
+  <li>
+    <p>구현2의 rank</p>
+    <ul>
+      <li>union 되었을 때 height이 작게 트리가 형성되면 수행시간에 좋음</li>
+      <li>작은 height 가진 트리가 큰 height 가진 트리에 연결되도록 구현</li>
+      <li>결합된 이후에도 전체 height이 변하지 않게됨 (높이가 같은 트리를 연결할 시에는 높이가 1 증가)</li>
+      <li>union-find 자료구조에서는 관례적으로 height을 rank로 표현!</li>
+    </ul>
+  </li>
+</ul>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">#pseudo
+</span><span class="k">if</span> <span class="n">v</span><span class="p">.</span><span class="n">height</span> <span class="o">&gt;</span> <span class="n">w</span><span class="p">.</span><span class="n">height</span><span class="p">:</span>
+    <span class="n">w</span><span class="p">.</span><span class="n">parent</span> <span class="o">=</span> <span class="n">v</span>
+<span class="k">elif</span> <span class="n">v</span><span class="p">.</span><span class="n">height</span> <span class="o">&lt;</span> <span class="n">w</span><span class="p">.</span><span class="n">height</span><span class="p">:</span>
+    <span class="n">v</span><span class="p">.</span><span class="n">parent</span> <span class="o">=</span> <span class="n">w</span>
+<span class="k">else</span><span class="p">:</span> <span class="c1"># 높이가 동일
+</span>    <span class="c1"># 둘중 아무거나 골라서 연결
+</span></code></pre></div></div>
+
+<ul>
+  <li>전체적인 pseudo code 정의</li>
+</ul>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># pseudo code
+</span><span class="k">class</span> <span class="nc">Node</span><span class="p">:</span>
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">key</span><span class="p">):</span>
+        <span class="bp">self</span><span class="p">.</span><span class="n">key</span> <span class="o">=</span> <span class="n">key</span>
+        <span class="bp">self</span><span class="p">.</span><span class="n">parent</span> <span class="o">=</span> <span class="bp">self</span>
+        <span class="bp">self</span><span class="p">.</span><span class="n">rank</span> <span class="o">=</span> <span class="mi">0</span>
+
+<span class="k">def</span> <span class="nf">makeset</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">Node</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">find</span><span class="p">(</span><span class="n">x</span><span class="p">):</span> <span class="c1"># x의 루트노드 리턴
+</span>    <span class="k">while</span> <span class="n">x</span><span class="p">.</span><span class="n">parent</span> <span class="o">!=</span> <span class="n">x</span><span class="p">:</span> <span class="c1"># x is not root
+</span>        <span class="n">x</span> <span class="o">=</span> <span class="n">x</span><span class="p">.</span><span class="n">parent</span>
+    <span class="k">return</span> <span class="n">x</span>
+
+<span class="k">def</span> <span class="nf">union</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">):</span>
+    <span class="n">v</span><span class="p">,</span> <span class="n">w</span> <span class="o">=</span> <span class="n">find</span><span class="p">(</span><span class="n">x</span><span class="p">),</span> <span class="n">find</span><span class="p">(</span><span class="n">y</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">v</span><span class="p">.</span><span class="n">rank</span> <span class="o">&gt;</span> <span class="n">w</span><span class="p">.</span><span class="n">rank</span><span class="p">:</span>
+        <span class="n">v</span><span class="p">,</span> <span class="n">w</span> <span class="o">=</span> <span class="n">w</span><span class="p">,</span> <span class="n">v</span> <span class="c1"># rank가 작은 쪽에서 rank가 큰 쪽으로 트리를 연결, swap의 필요성?
+</span>    <span class="n">v</span><span class="p">.</span><span class="n">parent</span> <span class="o">=</span> <span class="n">w</span>
+    <span class="k">if</span> <span class="n">v</span><span class="p">.</span><span class="n">rank</span><span class="o">==</span><span class="n">w</span><span class="p">.</span><span class="n">rank</span><span class="p">:</span>
+        <span class="n">w</span><span class="p">.</span><span class="n">rank</span><span class="o">+=</span><span class="mi">1</span>
+</code></pre></div></div>
+
+<ul>
+  <li>h = O() 구하기
+    <ol>
+      <li>Nh = 높이 h인 트리의 최소 노드 갯수</li>
+      <li>N0 = 1</li>
+      <li>N1 = 2</li>
+      <li>N2 = 4</li>
+      <li>Nh = 2*N(h-1) = 2^h*N0 = 2^h</li>
+      <li>n &gt;= Nh = 2^h</li>
+      <li>h = O(logn)</li>
+    </ol>
+  </li>
+</ul>
+</section>
+</main>
+
 
     <script src="https://use.fontawesome.com/releases/v5.15.3/js/all.js"></script>
     <!-- JavaScript Bundle with Popper -->

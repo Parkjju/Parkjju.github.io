@@ -1,0 +1,628 @@
+<!DOCTYPE html>
+<html lang="kr">
+  <head>
+    <head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!-- CSS only -->
+  <link
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+    rel="stylesheet"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+    crossorigin="anonymous"
+  />
+  <link href="/assets/CSS/style.css" rel="stylesheet" />
+  <title>Parkjju's TIL</title>
+</head>
+
+  </head>
+
+  <body>
+    <div class="main_bar">
+  <p class="main_bar--title"><a href="/">Parkjju's Today I Learned</a></p>
+
+  <div class="main_bar--right">
+    <!-- 검색창 -->
+    <form action="" method="get" class="search-box">
+      <i class="fas fa-search"></i>
+      <input class="search-form" type="text" autocomplete="off" />
+    </form>
+
+    <!-- 링크버튼 -->
+    <div
+      class="main_bar--link"
+      onclick="window.open('https://github.com/Parkjju')"
+    >
+      <p>Github</p>
+      <i class="fas fa-external-link-alt"></i>
+    </div>
+  </div>
+</div>
+ <div class="menu-bar">
+  <ul>
+    <li
+      class="sidebar-group sidebar-heading"
+      data-bs-toggle="collapse"
+      href="#collapse1"
+      aria-expanded="false"
+      aria-controls="collapse1"
+      onclick="rotate(this)"
+      role="menuitem"
+    >
+      <span class="sidebar-heading--name">개발 기록</span>
+      <i class="fas fa-caret-right fa-xs"></i>
+    </li>
+    <ul class="collapse" id="collapse1">
+      <li class="card card-body">
+        <a href="./python" aria-current="page">Python 강좌(1) - Python 기본</a>
+      </li>
+      <li class="card card-body">
+        <a href="./pythonHard" target="_self"
+          >Python 강좌(2) - Python 제어문
+        </a>
+      </li>
+    </ul>
+
+    <li class="sidebar-group" role="menuitem">
+      <p
+        class="sidebar-heading"
+        data-bs-toggle="collapse"
+        href="#collapse2"
+        aria-expanded="false"
+        aria-controls="collapse2"
+        onclick="rotate(this)"
+      >
+        <span class="sidebar-heading--name">Algorithm</span>
+        <i class="fas fa-caret-right fa-xs"></i>
+      </p>
+    </li>
+    <div class="collapse" id="collapse2">
+      <div class="card card-body">
+        <a href="./shortest" target="_self">
+          Bellman Ford & Dijkstra 최단경로 알고리즘
+        </a>
+      </div>
+      <div class="card card-body">
+        <a href="./all-to-all" target="_self">all-to-all 최단경로 </a>
+      </div>
+      <div class="card card-body">
+        <a href="./Recursion" target="_self"> Recursion 재귀 </a>
+      </div>
+      <div class="card card-body">
+        <a href="./selection" target="_self"
+          >선택문제 - k번째로 작은 수, Quickselection & MoM
+        </a>
+      </div>
+      <div class="card card-body">
+        <a href="./mom" target="_self"
+          >MOM - Median of Medians 알고리즘 설명 + 수행시간
+        </a>
+      </div>
+      <div class="card card-body">
+        <a href="./divide" target="_self"
+          >Divide and Conquer 알고리즘 설명 & 예시
+        </a>
+      </div>
+    </div>
+
+    <li class="sidebar-group" role="menuitem">
+      <p
+        class="sidebar-heading"
+        data-bs-toggle="collapse"
+        href="#collapse3"
+        aria-expanded="false"
+        aria-controls="collapse3"
+        onclick="rotate(this)"
+      >
+        <span class="sidebar-heading--name">Data structure</span>
+        <i class="fas fa-caret-right fa-xs"></i>
+      </p>
+    </li>
+    <div class="collapse" id="collapse3">
+      <div class="card card-body">
+        <a href="./data_structure" target="_self">자료구조의 이해 </a>
+        <a href="./sequential_structure" target="_self">선형 자료구조 </a>
+        <a href="./hash_table" target="_self">해시 테이블 자료구조 </a>
+        <a href="./stack_cal" target="_self"
+          >스택을 이용하여 계산기 구현하기
+        </a>
+        <a href="./SinglyLinkedList" target="_self"
+          >한 방향 연결리스트 연산 구현
+        </a>
+        <a href="./doublyLinkedList" target="_self"
+          >양 방향 연결리스트 연산 구현
+        </a>
+        <a href="./pydict" target="_self">파이썬의 딕셔너리 작동방식 </a>
+        <a href="./tree" target="_self">트리 자료구조 </a>
+        <a href="./open_addressing" target="_self"
+          >해시테이블 open addressing 실습
+        </a>
+        <a href="./heap" target="_self">heap 자료구조 </a>
+        <a href="./union-find" target="_self">union find 자료구조 </a>
+        <a href="./graph" target="_self">graph 자료구조 </a>
+      </div>
+    </div>
+
+    <li class="sidebar-group" role="menuitem">
+      <p
+        class="sidebar-heading"
+        data-bs-toggle="collapse"
+        href="#collapse4"
+        aria-expanded="false"
+        aria-controls="collapse4"
+        onclick="rotate(this)"
+      >
+        <span class="sidebar-heading--name">Git</span>
+        <i class="fas fa-caret-right fa-xs"></i>
+      </p>
+    </li>
+    <div class="collapse" id="collapse4">
+      <div class="card card-body">Hello</div>
+      <div class="card card-body">Hello2</div>
+    </div>
+
+    <li class="sidebar-group" role="menuitem">
+      <p
+        class="sidebar-heading"
+        data-bs-toggle="collapse"
+        href="#collapse5"
+        aria-expanded="false"
+        aria-controls="collapse5"
+        onclick="rotate(this)"
+      >
+        <span class="sidebar-heading--name">Git</span>
+        <i class="fas fa-caret-right fa-xs"></i>
+      </p>
+    </li>
+    <div class="collapse" id="collapse5">
+      <div class="card card-body">Hello</div>
+      <div class="card card-body">Hello2</div>
+    </div>
+
+    <li class="sidebar-group" role="menuitem">
+      <p
+        class="sidebar-heading"
+        data-bs-toggle="collapse"
+        href="#collapse6"
+        aria-expanded="false"
+        aria-controls="collapse6"
+        onclick="rotate(this)"
+      >
+        <span class="sidebar-heading--name">Git</span>
+        <i class="fas fa-caret-right fa-xs"></i>
+      </p>
+    </li>
+    <div class="collapse" id="collapse6">
+      <div class="card card-body">Hello</div>
+      <div class="card card-body">Hello2</div>
+    </div>
+
+    <li class="sidebar-group" role="menuitem">
+      <p
+        class="sidebar-heading"
+        data-bs-toggle="collapse"
+        href="#collapse7"
+        aria-expanded="false"
+        aria-controls="collapse7"
+        onclick="rotate(this)"
+      >
+        <span class="sidebar-heading--name">Git</span>
+        <i class="fas fa-caret-right fa-xs"></i>
+      </p>
+    </li>
+    <div class="collapse" id="collapse7">
+      <div class="card card-body">Hello</div>
+      <div class="card card-body">Hello2</div>
+    </div>
+
+    <li class="sidebar-group" role="menuitem">
+      <p
+        class="sidebar-heading"
+        data-bs-toggle="collapse"
+        href="#collapse8"
+        aria-expanded="false"
+        aria-controls="collapse8"
+        onclick="rotate(this)"
+      >
+        <span class="sidebar-heading--name">Git</span>
+        <i class="fas fa-caret-right fa-xs"></i>
+      </p>
+    </li>
+    <div class="collapse" id="collapse8">
+      <div class="card card-body">Hello</div>
+      <div class="card card-body">Hello2</div>
+    </div>
+
+    <li class="sidebar-group" role="menuitem">
+      <p
+        class="sidebar-heading"
+        data-bs-toggle="collapse"
+        href="#collapse9"
+        aria-expanded="false"
+        aria-controls="collapse9"
+        onclick="rotate(this)"
+      >
+        <span class="sidebar-heading--name">Git</span>
+        <i class="fas fa-caret-right fa-xs"></i>
+      </p>
+    </li>
+    <div class="collapse" id="collapse9">
+      <div class="card card-body">Hello</div>
+      <div class="card card-body">Hello2</div>
+    </div>
+
+    <li class="sidebar-group" role="menuitem">
+      <p
+        class="sidebar-heading"
+        data-bs-toggle="collapse"
+        href="#collapse10"
+        aria-expanded="false"
+        aria-controls="collapse10"
+        onclick="rotate(this)"
+      >
+        <span class="sidebar-heading--name">Git</span>
+        <i class="fas fa-caret-right fa-xs"></i>
+      </p>
+    </li>
+    <div class="collapse" id="collapse10">
+      <div class="card card-body">Hello</div>
+      <div class="card card-body">Hello2</div>
+    </div>
+  </ul>
+</div>
+ 
+    <main class="main-post">
+  <h1 class="main-post--title">Graph 자료구조</h1>
+  <div class="line"></div>
+  <section class="main-post--content"><ul>
+  <li>가장 복잡(일반적)한 자료구조</li>
+  <li>G = (V,E)
+    <ul>
+      <li>V - vertex set (정점 set) (Node개념)</li>
+      <li>E - edge set (link개념) -&gt; {(1,2), (3,4)} … -&gt; 각 vertex를 잇는 순서쌍</li>
+    </ul>
+  </li>
+</ul>
+
+<h3 id="graph에-등장하는-용어">Graph에 등장하는 용어</h3>
+
+<p><img src="/assets/images/graphDS.jpg" height="50%" width="50%" /></p>
+
+<ol>
+  <li>vertex(정점) or Node</li>
+  <li>두 노드 또는 정점을 잇는 선 -&gt; edge or link</li>
+  <li>degree (분지수) -&gt; 노드에 인접한 노드의 개수
+    <ul>
+      <li>그래프 G의 분지수 -&gt; 가장 큰 분지수를 가진 노드의 degree값</li>
+    </ul>
+  </li>
+  <li>인접 (adjacent vs incident)
+    <ul>
+      <li>e = edge(4,5) -&gt; 4 노드와 5노드는 인접하다.(adjacent)</li>
+      <li>edge e는 노드 4와 노드 5와 인접하다. (incident)</li>
+    </ul>
+  </li>
+  <li>경로(path)
+    <ul>
+      <li>노드 A~B까지 가능 동안 거치는 노드들</li>
+      <li>거쳐가는 노드는 중복되면 안됨 (3 -&gt; 2 -&gt; 5), (3 -&gt; 2 -&gt; 1 -&gt; 2 -&gt; 5 X)</li>
+    </ul>
+  </li>
+  <li>사이클(cycle)
+    <ul>
+      <li>처음과 끝이 같은 경로 (닫힌 경로), (3 -&gt; 2 -&gt; 5 -&gt; 4 -&gt; 3)</li>
+      <li>cycle이 없는 그래프 : Tree - 트리는 두 노드를 연결하는 경로가 하나밖에 없는 그래프</li>
+    </ul>
+  </li>
+</ol>
+
+<h3 id="graph의-표현">Graph의 표현</h3>
+
+<ul>
+  <li>
+    <p>인접성을 표현해야함</p>
+  </li>
+  <li>표현법 1. 인접행렬 (adjacency matrix)</li>
+  <li>
+    <p>표현법 2. 인접 리스트 (adjacency list) -&gt; 리스트는 연결 리스트</p>
+  </li>
+  <li>undirected graph(무방향 그래프) - 그래프의 edge에 방향이 없음</li>
+  <li>directed graph(방향 그래프) - 그래프의 edge에 방향이 존재하여 노드간 이동이 제한될 수 있음</li>
+</ul>
+
+<h4 id="인접행렬로-나타내기">인접행렬로 나타내기</h4>
+
+<ul>
+  <li>n개의 노드가 존재하면, nXn 행렬을 생성한다.</li>
+</ul>
+
+<p><img src="/assets/images/graph_matrix.png" height="50%" width="50%" /></p>
+
+<ul>
+  <li>
+    <p>graph A</p>
+
+    <ul>
+      <li>대각행렬은 각 노드 스스로에 대한 경로를 표현 (1-&gt;1) : 0또는 1로 일관성 있게 표현하면 됨</li>
+      <li>무방향 그래프를 전제하에, 대각원소 기준 인접행렬은 대칭적으로 나타난다.</li>
+      <li>(1,2)원소값 -&gt; 1 -&gt; 1노드와 2노드 사이에 edge가 존재한다는 뜻</li>
+      <li>1과 0값은 노드들 간의 edge 유무를 표현</li>
+    </ul>
+  </li>
+  <li>
+    <p>directed graph의 경우</p>
+    <ul>
+      <li>노드 스스로에게 edge 부여하는 값 제외하고 edge의 값에 가중치를 부여하여 표현 (weight value), 가중치는 임의의 값</li>
+    </ul>
+  </li>
+</ul>
+
+<h4 id="인접-리스트로-나타내기">인접 리스트로 나타내기</h4>
+
+<ul>
+  <li>인접 행렬의 경우 무방향 그래프에서 대칭 edge의 표현에 있어서 데이터 낭비가 존재함.</li>
+</ul>
+
+<p><img src="/assets/images/graph_list.png" height="50%" width="50%" /></p>
+
+<ul>
+  <li>
+    <p>그림 참고</p>
+
+    <ul>
+      <li>1노드의 edge (1,2), (1,3), (1,4)…</li>
+      <li>edge표현은 순서에 구애 받지 않음 - (1,3), (1,4), (1,2)로도 표현 가능</li>
+      <li>각 노드 스스로에게 edge를 부여 -&gt; 일관성있게 진행하면 됨</li>
+    </ul>
+  </li>
+  <li>
+    <p>directed graph의 경우</p>
+    <ul>
+      <li>인접행렬과 마찬가지로 edge표현에 가중치를 두어 표현</li>
+      <li>1 -&gt; [2] edge가 존재 =&gt; 1 -&gt; [2, weightValue]</li>
+    </ul>
+  </li>
+</ul>
+
+<h3 id="그래프-기본연산">그래프 기본연산</h3>
+
+<ul>
+  <li>
+    <table>
+      <tbody>
+        <tr>
+          <td>G = (V,E),</td>
+          <td>V</td>
+          <td>= n,</td>
+          <td>E</td>
+          <td>= m</td>
+        </tr>
+      </tbody>
+    </table>
+  </li>
+</ul>
+
+<h4 id="인접행렬">인접행렬</h4>
+
+<ol>
+  <li>memory : O(n^2)</li>
+  <li>e = (u,v)가 존재하는가?
+    <ul>
+      <li>if G[u][v] == 1로 찾기 -&gt; O(1)</li>
+    </ul>
+  </li>
+  <li>u에 인접한 모든 노드 v에 대한 특정연산 -&gt; O(n), 각 노드에 대한 edge 유무 판단을 위해 모든 노드의 edge값을 검사해야함.</li>
+</ol>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">#pseudo code
+</span><span class="k">for</span> <span class="n">v</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="n">n</span><span class="o">+</span><span class="mi">1</span><span class="p">):</span>
+    <span class="n">do</span> <span class="k">with</span> <span class="n">G</span><span class="p">[</span><span class="n">u</span><span class="p">][</span><span class="n">v</span><span class="p">]</span>
+</code></pre></div></div>
+
+<ol>
+  <li>new edge(u,v) 삽입 -&gt; G[u][v] = 1 -&gt; O(1)</li>
+  <li>edge(u,v) 삭제 -&gt; G[u][v] = 0 대입 -&gt; O(1)</li>
+</ol>
+
+<h4 id="인접리스트">인접리스트</h4>
+
+<ol>
+  <li>memory : O(n+m)</li>
+  <li>G[u].search(v) - G[u]는 인접리스트
+    <ul>
+      <li>최악의 경우 노드 u 스스로를 제외하고 u가 모든 노드와 연결되어 있는 상태 -&gt; worst case - search가 O(n)</li>
+    </ul>
+  </li>
+  <li>u에 인접한 모든 노드 v에 대한 특정연산 -&gt; O(인접한 노드의 수) - worst case의 경우 O(n)</li>
+</ol>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">#pseudo code
+</span><span class="k">for</span> <span class="n">each</span> <span class="n">edge</span> <span class="ow">in</span> <span class="n">G</span><span class="p">[</span><span class="n">u</span><span class="p">]:</span>
+    <span class="n">do</span> <span class="n">something</span>
+</code></pre></div></div>
+
+<ol>
+  <li>new edge(u,v)삽입 -&gt; G[u].pushFront(v) -&gt; O(1)</li>
+  <li>edge(u,v) 삭제
+    <ul>
+      <li>x = G[u].search(v)</li>
+      <li>G[u].remove(x)</li>
+      <li>최악의 경우 search에 O(n)시간 발생</li>
+    </ul>
+  </li>
+</ol>
+
+<ul>
+  <li>인접행렬과 인접리스트의 비교
+    <ul>
+      <li>연산 자체는 인접행렬이 효율적인 부분이 더 많음</li>
+      <li>결정적으로 그래프 자체가 차지하는 메모리의 크기가 인접리스트가 더 좋음</li>
+      <li>n개의 노드에 비해 edge의 수인 m값이 상대적으로 작으면 <strong>sparse라고 표현</strong></li>
+      <li><strong>dense</strong>의 경우는 edge의 개수가 n과 비교하여 큰 상황</li>
+    </ul>
+  </li>
+  <li>참고 - python의 리스트로 인접리스트를 구현하려면 순서에 구애받지 않기 위해 append함수를 사용해야함!!!!</li>
+</ul>
+
+<h2 id="그래프-순회-graph-traversal--dfsdepth-first-search">그래프 순회 (Graph Traversal) : DFS(Depth First Search)</h2>
+
+<ul>
+  <li>그래프의 순회 방법
+    <ol>
+      <li>DFS (깊이 우선 탐색)</li>
+      <li>BFS (너비 우선 탐색)</li>
+    </ol>
+  </li>
+</ul>
+
+<ol>
+  <li>
+    <p>DFS</p>
+
+    <ul>
+      <li>알파벳을 노드의 값으로 갖는 graph가 존재한다고 가정.</li>
+      <li>a와 인접한 노드들 중 특정 기준을 만들어 먼저 search할 노드를 선택하여 진행 (알파벳 사전편찬 순으로 진행한다고 가정)</li>
+      <li>a와 b,c노드가 인접했다고 가정하면 a-&gt;b로 서치</li>
+      <li>b에서 다시 b와 인접한 여러 노드들 중 기준에 맞으면서 search하지 않은 노드로 진행</li>
+      <li>끝까지 가서 더 이상 search할 노드가 존재하지 않으면 backtrack으로 search를 시작한 노드까지 이동</li>
+      <li>backtrack은 역추적 진행하다가 인접한 노드들 중 search하지 않은 노드가 존재할 때 역추적 그만두고 다시 해당 인접노드로 search를 진행</li>
+    </ul>
+  </li>
+  <li>
+    <p>BFS</p>
+    <ul>
+      <li>a와 인접한 노드 b,c가 있으면, 해당 노드들을 모두 search한 뒤에 다음 레벨로 넘어가는 방식</li>
+      <li>모든 형제 노드들을 search</li>
+    </ul>
+  </li>
+</ol>
+
+<h3 id="dfs순회방법">DFS순회방법</h3>
+
+<p><img src="/assets/images/DFS.png" height="50%" width="50%" /></p>
+
+<ul>
+  <li>
+    <p>a에서 DFS로 순회</p>
+
+    <ul>
+      <li>a -&gt; b -&gt; c -&gt; d -&gt; f 이후 backtrack -&gt; b까지 옴</li>
+      <li>b -&gt; e -&gt; g 이후 backtrack</li>
+      <li>b -&gt; h 이후 backtrack하여 a까지 이동</li>
+    </ul>
+  </li>
+  <li>
+    <p>code구현 -&gt; recursive case</p>
+  </li>
+</ul>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">#pseudo code
+</span><span class="k">global</span> <span class="n">currentTime</span> <span class="o">=</span> <span class="mi">1</span>
+
+<span class="k">def</span> <span class="nf">DFS</span><span class="p">(</span><span class="n">v</span><span class="p">):</span>
+    <span class="n">mark</span><span class="p">[</span><span class="n">v</span><span class="p">]</span> <span class="o">=</span> <span class="s">"visited"</span>
+    <span class="n">pre</span><span class="p">[</span><span class="n">v</span><span class="p">]</span> <span class="o">=</span> <span class="n">currentTime</span> <span class="c1"># pre[v]는 v의 첫번째 방문 시간
+</span>    <span class="n">currentTime</span> <span class="o">+=</span> <span class="mi">1</span>
+    <span class="k">for</span> <span class="n">each</span> <span class="n">edge</span><span class="p">(</span><span class="n">v</span><span class="p">,</span><span class="n">w</span><span class="p">):</span> <span class="c1"># v에 인접한 모든 노드 w에 대해
+</span>        <span class="k">if</span> <span class="n">mark</span><span class="p">[</span><span class="n">w</span><span class="p">]</span> <span class="o">!=</span> <span class="s">"visited"</span><span class="p">:</span>
+            <span class="n">parent</span><span class="p">[</span><span class="n">w</span><span class="p">]</span> <span class="o">=</span> <span class="n">v</span>
+            <span class="n">DFS</span><span class="p">(</span><span class="n">w</span><span class="p">)</span>
+    <span class="c1"># v에 인접한 모든 노드를 고려한 상태이기 때문에 for loop를 탈출함
+</span>    <span class="n">post</span><span class="p">[</span><span class="n">v</span><span class="p">]</span> <span class="o">=</span> <span class="n">currentTime</span> <span class="c1"># v에서 인접한 모든 노드를 방문 완료한 순간, v에서 DFS가 완료된 시간
+</span>    <span class="n">currentTime</span><span class="o">+=</span><span class="mi">1</span>
+    <span class="c1"># return
+</span>
+<span class="k">def</span> <span class="nf">DFSALL</span><span class="p">(</span><span class="n">G</span><span class="p">):</span> <span class="c1">#그래프 G의 컴포넌트가 떨어져 있는 상황도 있음
+</span>    <span class="k">for</span> <span class="nb">all</span> <span class="n">nodes</span> <span class="ow">in</span> <span class="n">G</span><span class="p">:</span>
+        <span class="n">mark</span><span class="p">[</span><span class="n">v</span><span class="p">]</span> <span class="o">=</span> <span class="s">"unvisited"</span>
+    <span class="k">for</span> <span class="nb">all</span> <span class="n">nodes</span> <span class="n">v</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">mark</span><span class="p">[</span><span class="n">v</span><span class="p">]</span> <span class="o">!=</span> <span class="s">"visited"</span><span class="p">:</span>
+            <span class="n">DFS</span><span class="p">(</span><span class="n">v</span><span class="p">)</span>
+</code></pre></div></div>
+
+<ul>
+  <li>
+    <p>DFS 함수 정의에 따라 도식화한 그림 -&gt; Tree형태를 띰. -&gt; DFS Tree (parent리스트를 통해 도식화)</p>
+  </li>
+  <li>pre,post time &amp; parent list가 핵심</li>
+  <li>
+    <p>추가적으로 DFSALL(G) : #graph G를 DFS search</p>
+  </li>
+  <li>code 구현 -&gt; non recursive case
+    <ul>
+      <li>비재귀적 구현에서는 stack이 등장</li>
+      <li>currentTime, pre&amp;post time 정의는 직접 추가 필요</li>
+    </ul>
+  </li>
+</ul>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">DFS</span><span class="p">(</span><span class="n">s</span><span class="p">):</span>
+    <span class="n">stack</span><span class="p">.</span><span class="n">push</span><span class="p">((</span><span class="err">∅</span><span class="p">,</span> <span class="n">s</span><span class="p">))</span> <span class="c1"># ∅는 부모노드, s는 현재 방문노드
+</span>    <span class="k">while</span> <span class="n">stack</span> <span class="ow">is</span> <span class="ow">not</span> <span class="n">empty</span><span class="p">:</span>
+        <span class="n">p</span><span class="p">,</span> <span class="n">v</span> <span class="o">=</span> <span class="n">stack</span><span class="p">.</span><span class="n">pop</span><span class="p">()</span> <span class="c1"># tuple형태로 stack에 저장하기 때문에 unpacking하여 p,v에 저장
+</span>        <span class="k">if</span> <span class="n">v</span> <span class="ow">is</span> <span class="n">unmarked</span><span class="p">:</span>
+            <span class="n">mark</span><span class="p">[</span><span class="n">v</span><span class="p">]</span> <span class="o">=</span> <span class="s">"visited"</span>
+            <span class="n">parent</span><span class="p">[</span><span class="n">v</span><span class="p">]</span> <span class="o">=</span> <span class="n">p</span>
+            <span class="k">for</span> <span class="n">each</span> <span class="n">edge</span><span class="p">(</span><span class="n">v</span><span class="p">,</span><span class="n">w</span><span class="p">):</span>
+                <span class="k">if</span> <span class="n">w</span> <span class="ow">is</span> <span class="n">unmarked</span><span class="p">:</span>
+                    <span class="n">stack</span><span class="p">.</span><span class="n">push</span><span class="p">((</span><span class="n">v</span><span class="p">,</span><span class="n">w</span><span class="p">))</span> <span class="c1"># push또한 저장 기준에 입각하여 진행 - 사전편찬 순으로...예시
+</span>                    <span class="c1"># 먼저 방문이 진행되는 노드가 top에 오도록 push
+</span></code></pre></div></div>
+
+<ul>
+  <li>
+    <p>DFS tree의 경우 본 그래프에서 나타났던 모든 edge가 표기되지 않을 수 있음.</p>
+
+    <ul>
+      <li>DFS에서 나타나지 않은 edge -&gt; back edge</li>
+    </ul>
+  </li>
+  <li>
+    <p>back edge존재 의미</p>
+    <ul>
+      <li>ex) DFS 이미지에서 c - f - d 트리에서 f -&gt; c로의 back edge가 존재</li>
+      <li>c - f - d 로 구성되는 cycle이 존재한다는 뜻.</li>
+    </ul>
+  </li>
+</ul>
+
+<p><img src="/assets/images/DFStree.png" height="30%" width="60%" /></p>
+
+<ul>
+  <li>pretime~post time 구간의 포함관계가 DFS tree를 구성한다.</li>
+</ul>
+
+<h3 id="dag-directed-acyclic-graph--사이클이-없는-방향-그래프">DAG (Directed Acyclic Graph) : 사이클이 없는 방향 그래프</h3>
+
+<ul>
+  <li>선후 관계에 따라 상위노드로부터 데이터를 받는데, 하위 노드의 입장에서 자신의 모든 상위 노드가 일련의 처리 과정을 마쳐 자신에게 특정 데이터를 전달해주고 나서야 자신도 상위 입장의 노드가 되어 하위 노드에게 데이터 처리를 시작할 수 있게 된다.</li>
+</ul>
+
+<p><img src="/assets/images/topological.png" height="50%" width="50%" /></p>
+
+<ul>
+  <li>선후 관계에 따라 일의 순서를 결정 -&gt; topological sorting(위상정렬)</li>
+  <li>post time값이 가장 작은 값 -&gt; 가장 먼저 처리가 끝나는 노드
+    <ul>
+      <li>incoming만 있고 outgoing은 없는 노드.</li>
+      <li>위상정렬에 따라 가장 마지막에 위치해야함.</li>
+      <li>이후 post time 비교하며 차례로 배열 (post time가장 큰 값을 가진 노드가 가장 처음에 위치해야함)</li>
+    </ul>
+  </li>
+</ul>
+</section>
+</main>
+
+
+    <script src="https://use.fontawesome.com/releases/v5.15.3/js/all.js"></script>
+    <!-- JavaScript Bundle with Popper -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+      crossorigin="anonymous"
+    ></script>
+    <script src="assets/js/sidebar-click-event.js"></script>
+    <script src="//code.jquery.com/jquery-3.3.1.min.js"></script>
+  </body>
+</html>

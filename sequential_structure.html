@@ -1,0 +1,946 @@
+<!DOCTYPE html>
+<html lang="kr">
+  <head>
+    <head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!-- CSS only -->
+  <link
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+    rel="stylesheet"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+    crossorigin="anonymous"
+  />
+  <link href="/assets/CSS/style.css" rel="stylesheet" />
+  <title>Parkjju's TIL</title>
+</head>
+
+  </head>
+
+  <body>
+    <div class="main_bar">
+  <p class="main_bar--title"><a href="/">Parkjju's Today I Learned</a></p>
+
+  <div class="main_bar--right">
+    <!-- 검색창 -->
+    <form action="" method="get" class="search-box">
+      <i class="fas fa-search"></i>
+      <input class="search-form" type="text" autocomplete="off" />
+    </form>
+
+    <!-- 링크버튼 -->
+    <div
+      class="main_bar--link"
+      onclick="window.open('https://github.com/Parkjju')"
+    >
+      <p>Github</p>
+      <i class="fas fa-external-link-alt"></i>
+    </div>
+  </div>
+</div>
+ <div class="menu-bar">
+  <ul>
+    <li
+      class="sidebar-group sidebar-heading"
+      data-bs-toggle="collapse"
+      href="#collapse1"
+      aria-expanded="false"
+      aria-controls="collapse1"
+      onclick="rotate(this)"
+      role="menuitem"
+    >
+      <span class="sidebar-heading--name">개발 기록</span>
+      <i class="fas fa-caret-right fa-xs"></i>
+    </li>
+    <ul class="collapse" id="collapse1">
+      <li class="card card-body">
+        <a href="./python" aria-current="page">Python 강좌(1) - Python 기본</a>
+      </li>
+      <li class="card card-body">
+        <a href="./pythonHard" target="_self"
+          >Python 강좌(2) - Python 제어문
+        </a>
+      </li>
+    </ul>
+
+    <li class="sidebar-group" role="menuitem">
+      <p
+        class="sidebar-heading"
+        data-bs-toggle="collapse"
+        href="#collapse2"
+        aria-expanded="false"
+        aria-controls="collapse2"
+        onclick="rotate(this)"
+      >
+        <span class="sidebar-heading--name">Algorithm</span>
+        <i class="fas fa-caret-right fa-xs"></i>
+      </p>
+    </li>
+    <div class="collapse" id="collapse2">
+      <div class="card card-body">
+        <a href="./shortest" target="_self">
+          Bellman Ford & Dijkstra 최단경로 알고리즘
+        </a>
+      </div>
+      <div class="card card-body">
+        <a href="./all-to-all" target="_self">all-to-all 최단경로 </a>
+      </div>
+      <div class="card card-body">
+        <a href="./Recursion" target="_self"> Recursion 재귀 </a>
+      </div>
+      <div class="card card-body">
+        <a href="./selection" target="_self"
+          >선택문제 - k번째로 작은 수, Quickselection & MoM
+        </a>
+      </div>
+      <div class="card card-body">
+        <a href="./mom" target="_self"
+          >MOM - Median of Medians 알고리즘 설명 + 수행시간
+        </a>
+      </div>
+      <div class="card card-body">
+        <a href="./divide" target="_self"
+          >Divide and Conquer 알고리즘 설명 & 예시
+        </a>
+      </div>
+    </div>
+
+    <li class="sidebar-group" role="menuitem">
+      <p
+        class="sidebar-heading"
+        data-bs-toggle="collapse"
+        href="#collapse3"
+        aria-expanded="false"
+        aria-controls="collapse3"
+        onclick="rotate(this)"
+      >
+        <span class="sidebar-heading--name">Data structure</span>
+        <i class="fas fa-caret-right fa-xs"></i>
+      </p>
+    </li>
+    <div class="collapse" id="collapse3">
+      <div class="card card-body">
+        <a href="./data_structure" target="_self">자료구조의 이해 </a>
+        <a href="./sequential_structure" target="_self">선형 자료구조 </a>
+        <a href="./hash_table" target="_self">해시 테이블 자료구조 </a>
+        <a href="./stack_cal" target="_self"
+          >스택을 이용하여 계산기 구현하기
+        </a>
+        <a href="./SinglyLinkedList" target="_self"
+          >한 방향 연결리스트 연산 구현
+        </a>
+        <a href="./doublyLinkedList" target="_self"
+          >양 방향 연결리스트 연산 구현
+        </a>
+        <a href="./pydict" target="_self">파이썬의 딕셔너리 작동방식 </a>
+        <a href="./tree" target="_self">트리 자료구조 </a>
+        <a href="./open_addressing" target="_self"
+          >해시테이블 open addressing 실습
+        </a>
+        <a href="./heap" target="_self">heap 자료구조 </a>
+        <a href="./union-find" target="_self">union find 자료구조 </a>
+        <a href="./graph" target="_self">graph 자료구조 </a>
+      </div>
+    </div>
+
+    <li class="sidebar-group" role="menuitem">
+      <p
+        class="sidebar-heading"
+        data-bs-toggle="collapse"
+        href="#collapse4"
+        aria-expanded="false"
+        aria-controls="collapse4"
+        onclick="rotate(this)"
+      >
+        <span class="sidebar-heading--name">Git</span>
+        <i class="fas fa-caret-right fa-xs"></i>
+      </p>
+    </li>
+    <div class="collapse" id="collapse4">
+      <div class="card card-body">Hello</div>
+      <div class="card card-body">Hello2</div>
+    </div>
+
+    <li class="sidebar-group" role="menuitem">
+      <p
+        class="sidebar-heading"
+        data-bs-toggle="collapse"
+        href="#collapse5"
+        aria-expanded="false"
+        aria-controls="collapse5"
+        onclick="rotate(this)"
+      >
+        <span class="sidebar-heading--name">Git</span>
+        <i class="fas fa-caret-right fa-xs"></i>
+      </p>
+    </li>
+    <div class="collapse" id="collapse5">
+      <div class="card card-body">Hello</div>
+      <div class="card card-body">Hello2</div>
+    </div>
+
+    <li class="sidebar-group" role="menuitem">
+      <p
+        class="sidebar-heading"
+        data-bs-toggle="collapse"
+        href="#collapse6"
+        aria-expanded="false"
+        aria-controls="collapse6"
+        onclick="rotate(this)"
+      >
+        <span class="sidebar-heading--name">Git</span>
+        <i class="fas fa-caret-right fa-xs"></i>
+      </p>
+    </li>
+    <div class="collapse" id="collapse6">
+      <div class="card card-body">Hello</div>
+      <div class="card card-body">Hello2</div>
+    </div>
+
+    <li class="sidebar-group" role="menuitem">
+      <p
+        class="sidebar-heading"
+        data-bs-toggle="collapse"
+        href="#collapse7"
+        aria-expanded="false"
+        aria-controls="collapse7"
+        onclick="rotate(this)"
+      >
+        <span class="sidebar-heading--name">Git</span>
+        <i class="fas fa-caret-right fa-xs"></i>
+      </p>
+    </li>
+    <div class="collapse" id="collapse7">
+      <div class="card card-body">Hello</div>
+      <div class="card card-body">Hello2</div>
+    </div>
+
+    <li class="sidebar-group" role="menuitem">
+      <p
+        class="sidebar-heading"
+        data-bs-toggle="collapse"
+        href="#collapse8"
+        aria-expanded="false"
+        aria-controls="collapse8"
+        onclick="rotate(this)"
+      >
+        <span class="sidebar-heading--name">Git</span>
+        <i class="fas fa-caret-right fa-xs"></i>
+      </p>
+    </li>
+    <div class="collapse" id="collapse8">
+      <div class="card card-body">Hello</div>
+      <div class="card card-body">Hello2</div>
+    </div>
+
+    <li class="sidebar-group" role="menuitem">
+      <p
+        class="sidebar-heading"
+        data-bs-toggle="collapse"
+        href="#collapse9"
+        aria-expanded="false"
+        aria-controls="collapse9"
+        onclick="rotate(this)"
+      >
+        <span class="sidebar-heading--name">Git</span>
+        <i class="fas fa-caret-right fa-xs"></i>
+      </p>
+    </li>
+    <div class="collapse" id="collapse9">
+      <div class="card card-body">Hello</div>
+      <div class="card card-body">Hello2</div>
+    </div>
+
+    <li class="sidebar-group" role="menuitem">
+      <p
+        class="sidebar-heading"
+        data-bs-toggle="collapse"
+        href="#collapse10"
+        aria-expanded="false"
+        aria-controls="collapse10"
+        onclick="rotate(this)"
+      >
+        <span class="sidebar-heading--name">Git</span>
+        <i class="fas fa-caret-right fa-xs"></i>
+      </p>
+    </li>
+    <div class="collapse" id="collapse10">
+      <div class="card card-body">Hello</div>
+      <div class="card card-body">Hello2</div>
+    </div>
+  </ul>
+</div>
+ 
+    <main class="main-post">
+  <h1 class="main-post--title">순차적 자료구조</h1>
+  <div class="line"></div>
+  <section class="main-post--content"><h3 id="array배열-list리스트">Array(배열), List(리스트)</h3>
+
+<ul>
+  <li>
+    <p>데이터를 <strong>연속적인 메모리 공간</strong> 에 저장하고, 저장된 곳의 <strong>주소(address, reference)</strong> 를 통해 매우 빠른 시간에 접근할 수 있는 가장 많이 쓰이는 자료구조</p>
+
+    <ul>
+      <li>
+        <p>C에서의 배열 -&gt; 배열의 시작 주소, 저장된 값의 종류(바이트 개수), 몇 번째에 저장되어 있는지 나타내는 인덱스(index) 세 정보만으로 값이 저장된 곳의 주소 계산 가능!</p>
+
+        <ul>
+          <li>C의 배열은 읽기/쓰기 연산만 제공하는 제한된 자료구조</li>
+        </ul>
+      </li>
+      <li>
+        <p>Python에서의 list A (또는 tuple A)</p>
+
+        <ul>
+          <li>
+            <p>C언어 배열의 셀에는 실제 값(데이터)이 저장된 형식이지만, <strong>Python 리스트의 셀에는 데이터가 아닌 데이터가 저장된 곳의 주소(address 또는 reference)</strong> 가 저장된다.</p>
+          </li>
+          <li>
+            <p>각 셀에서 데이터를 가리키고 있는 형태이며, 새로운 객체 생성 후 그 객체에 대해 접근 시 가리키던 객체는 그대로 두고 새로운 객체를 가리키게 되는 것.</p>
+          </li>
+          <li>
+            <p><strong>리스트는 동적 배열이다</strong></p>
+
+            <ul>
+              <li>
+                <p>C언어의 배열과의 또 다른 중요한 차이점은 list의 크기(셀의 개수)가 필요에 따라 자동으로 증가, 감소한다는 것.</p>
+              </li>
+              <li>
+                <p>append 또는 insert연산을 위한 공간이 부족하면 더 큰 메모리를 할당받아 <strong>새로운 리스트를 만들고</strong> 이전 리스트의 값을 <strong>모두 이동한다.</strong></p>
+              </li>
+              <li>
+                <p>반대로 pop연산을 하면서 실제 저장된 값의 개수가 리스트 크기에 비해 충분히 작다면 <strong>더 작은 크기의 리스트를 만들고</strong> <strong>모두 이동한다.</strong></p>
+              </li>
+              <li>
+                <p>위와 같이 필요에 따라 크기가 변하는 배열을 <strong>동적 배열(dynamic array)</strong> 라 부른다. -&gt; 파이썬 사용자는 배열의 크기를 전혀 신경쓰지 않아도 됨!</p>
+              </li>
+              <li>
+                <p>동적배열인 list를 위해서는 python내부적으로 현재 list의 크기 (capacity)와 list에 저장된 실제 값의 개수(n)를 항상 알고 있어야함. -&gt; 해당 추가 정보를 위한 메모리가 필요하므로 빈 리스트 A는 0바이트보다 클 수 밖에 없다</p>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+</ul>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">&gt;&gt;&gt;</span><span class="kn">import</span> <span class="nn">sys</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">A</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">sys</span><span class="p">.</span><span class="n">getsizeof</span><span class="p">(</span><span class="n">A</span><span class="p">)</span> <span class="c1"># 빈 리스트가 0바이트보다 큰 이유
+</span><span class="mi">64</span>
+<span class="o">&gt;&gt;&gt;</span><span class="n">A</span><span class="p">.</span><span class="n">append</span><span class="p">(</span><span class="s">"Python"</span><span class="p">)</span>
+<span class="o">&gt;&gt;&gt;</span><span class="n">sys</span><span class="p">.</span><span class="n">getsizeof</span><span class="p">(</span><span class="n">A</span><span class="p">)</span>
+<span class="mi">96</span>
+</code></pre></div></div>
+
+<h4 id="수행-시간">수행 시간</h4>
+
+<ol>
+  <li>
+    <p>인덱싱 연산 -&gt; 값을 읽음 + 값을 쓰기 (읽/쓰 O(1))</p>
+  </li>
+  <li>
+    <p>append -&gt; 평균적으로 O(1)</p>
+  </li>
+  <li>
+    <p>pop -&gt; 평균적으로 O(1)</p>
+  </li>
+  <li>
+    <p>pop(index_value) -&gt; pop(0) 이 worst case로, O(len(A))시간</p>
+  </li>
+  <li>
+    <p>insert -&gt; 최악의 경우가 insert(0, value), 즉 삽입하는 인덱스값이 0일때 이므로 O(len(A))</p>
+  </li>
+  <li>
+    <p>remove -&gt; worst O(n)</p>
+  </li>
+  <li>
+    <p>index, count -&gt; O(len(A))</p>
+  </li>
+</ol>
+
+<h3 id="stack--lifo-queue--fifo-dqueue-stack--queue">Stack : LIFO, Queue = FIFO, DQueue; Stack + Queue</h3>
+
+<ul>
+  <li>
+    <p>Stack -&gt; Last In First Out 규칙</p>
+  </li>
+  <li>
+    <p>Queue -&gt; First In First Out 규칙</p>
+  </li>
+  <li>
+    <p>DQueue -&gt; Stack과 Queue 모두 지원</p>
+  </li>
+</ul>
+
+<h4 id="stack">Stack</h4>
+
+<ul>
+  <li>
+    <p>데이터는 리스트에 저장(append, pop함수 이용)</p>
+  </li>
+  <li>
+    <p>push, pop, top, isEmpty, size(Len)함수 내장된 자료구조</p>
+  </li>
+  <li>
+    <p>클래스 Stack 선언</p>
+  </li>
+</ul>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">Stack</span><span class="p">:</span>
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span> <span class="c1">#생성함수 -&gt; python초급편 클래스 단원 참조
+</span>        <span class="bp">self</span><span class="p">.</span><span class="n">items</span><span class="o">=</span><span class="p">[]</span> <span class="c1">#데이터 저장을 위한 리스트
+</span>
+    <span class="k">def</span> <span class="nf">push</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">val</span><span class="p">):</span>
+        <span class="bp">self</span><span class="p">.</span><span class="n">items</span><span class="p">.</span><span class="n">append</span><span class="p">(</span><span class="n">val</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">pop</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="bp">self</span><span class="p">.</span><span class="n">items</span><span class="p">.</span><span class="n">pop</span><span class="p">()</span>
+        <span class="k">except</span> <span class="nb">IndexError</span><span class="p">:</span> <span class="c1">#예외처리
+</span>            <span class="k">print</span><span class="p">(</span><span class="s">"Stack is Empty"</span><span class="p">)</span> <span class="c1"># pop할 아이템 X
+</span>
+    <span class="k">def</span> <span class="nf">top</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="k">return</span> <span class="bp">self</span><span class="p">.</span><span class="n">items</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+        <span class="k">except</span> <span class="nb">IndexError</span><span class="p">:</span>
+            <span class="k">print</span><span class="p">(</span><span class="s">"Stack is Empty"</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">__len__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span> <span class="c1">#스페셜 메소드로써, 함수 호출을 len(Stack_list)로 할 수 있게 해줌
+</span>    <span class="c1"># len에 관련한 정보는 리스트에서 이미 관리하고 있기 때문
+</span>        <span class="k">return</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="p">.</span><span class="n">items</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">isEmpty</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span><span class="o">==</span><span class="mi">0</span> <span class="c1"># True, False반환
+</span>
+</code></pre></div></div>
+
+<ul>
+  <li>스택 사용 예시1) 괄호맞추기</li>
+</ul>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="nn">Stack_python</span> <span class="kn">import</span> <span class="n">Stack</span> <span class="c1">#스택 정의 후 메소드 import
+</span>
+<span class="k">def</span> <span class="nf">parChecker</span><span class="p">(</span><span class="n">parSeq</span><span class="p">):</span> <span class="c1"># 괄호 맞추기 함수
+</span>    <span class="n">S</span> <span class="o">=</span> <span class="n">Stack</span><span class="p">()</span>
+    <span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="n">parSeq</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">p</span><span class="o">==</span><span class="s">"("</span><span class="p">:</span>
+            <span class="n">S</span><span class="p">.</span><span class="n">push</span><span class="p">(</span><span class="n">p</span><span class="p">)</span>
+        <span class="k">elif</span> <span class="n">p</span><span class="o">==</span><span class="s">")"</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">S</span><span class="p">.</span><span class="n">isEmpty</span><span class="p">():</span>
+                <span class="k">return</span> <span class="bp">False</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">S</span><span class="p">.</span><span class="n">pop</span><span class="p">()</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">print</span><span class="p">(</span><span class="s">"Not allowed Symbol"</span><span class="p">)</span>
+
+    <span class="k">if</span> <span class="n">S</span><span class="p">.</span><span class="n">isEmpty</span><span class="p">():</span>
+        <span class="k">return</span> <span class="bp">True</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">return</span> <span class="bp">False</span>
+
+<span class="c1"># 여는 괄호를 계속해서 스택에 저장
+# 닫는 괄호를 만나면 스택에서 여는 괄호를 추출하여 짝을 맞춰 소멸시켜준다
+# 모든 작업, 즉 괄호로 주어진 수식에 대해 전체 루프를 끝마치고 나왔을 때 스택에 괄호가 남아있다면 짝이 맞춰지지 않았으므로 False를 반환
+</span>
+
+<span class="k">def</span> <span class="nf">parChecker2</span><span class="p">(</span><span class="n">parSeq</span><span class="p">):</span> <span class="c1"># 중괄호, 대괄호 추가
+</span>    <span class="n">S</span> <span class="o">=</span> <span class="n">Stack</span><span class="p">()</span>
+    <span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="n">parSeq</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">p</span> <span class="o">==</span> <span class="s">"("</span> <span class="ow">or</span> <span class="n">p</span> <span class="o">==</span> <span class="s">"["</span> <span class="ow">or</span> <span class="n">p</span><span class="o">==</span><span class="s">"{"</span><span class="p">:</span>
+            <span class="n">S</span><span class="p">.</span><span class="n">push</span><span class="p">(</span><span class="n">p</span><span class="p">)</span>
+        <span class="k">elif</span> <span class="n">p</span><span class="o">==</span><span class="s">")"</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">S</span><span class="p">.</span><span class="n">top</span><span class="p">()</span><span class="o">!=</span><span class="s">"("</span><span class="p">:</span>
+                <span class="k">return</span> <span class="bp">False</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="k">if</span> <span class="n">S</span><span class="p">.</span><span class="n">isEmpty</span><span class="p">():</span>
+                    <span class="k">return</span> <span class="bp">False</span>
+                <span class="n">S</span><span class="p">.</span><span class="n">pop</span><span class="p">()</span>
+        <span class="k">elif</span> <span class="n">p</span><span class="o">==</span><span class="s">"]"</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">S</span><span class="p">.</span><span class="n">top</span><span class="p">()</span><span class="o">!=</span><span class="s">"["</span><span class="p">:</span>
+                <span class="k">return</span> <span class="bp">False</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="k">if</span> <span class="n">S</span><span class="p">.</span><span class="n">isEmpty</span><span class="p">():</span>
+                    <span class="k">return</span> <span class="bp">False</span>
+                <span class="n">S</span><span class="p">.</span><span class="n">pop</span><span class="p">()</span>
+        <span class="k">elif</span> <span class="n">p</span><span class="o">==</span><span class="s">"}"</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">S</span><span class="p">.</span><span class="n">top</span><span class="p">()</span><span class="o">!=</span><span class="s">"{"</span><span class="p">:</span>
+                <span class="k">return</span> <span class="bp">False</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="k">if</span> <span class="n">S</span><span class="p">.</span><span class="n">isEmpty</span><span class="p">():</span>
+                    <span class="k">return</span> <span class="bp">False</span>
+                <span class="n">S</span><span class="p">.</span><span class="n">pop</span><span class="p">()</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">print</span><span class="p">(</span><span class="s">"Not allowed symbol"</span><span class="p">)</span>
+
+
+
+    <span class="k">if</span> <span class="n">S</span><span class="p">.</span><span class="n">isEmpty</span><span class="p">():</span>
+        <span class="k">return</span> <span class="bp">True</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">return</span> <span class="bp">False</span>
+
+<span class="c1"># 위의 소괄호 맞추기 방식과 전체적으로 동일
+# 스택에 계속해서 저장하다가 닫는 괄호를 만났을 경우
+# 닫는 괄호가 소,중,대괄호였다면 스택의 가장 위쪽에 있는 괄호 또한 소,중,대괄호로 똑같은 종류여야만 한다.
+</span></code></pre></div></div>
+
+<ul>
+  <li>
+    <p>스택 사용 예시 2) infix를 Prefix로 변환</p>
+
+    <ol>
+      <li>한 자리수 피연산자를 만나면 Prefix 변환 리스트 공간에 둔다</li>
+      <li>두 자리수 피연산자를 만나는 것을 check -&gt; loop변수를 통해 함수에 전달되는 문자열의 이전 원소 또한 숫자임을 if로 확인 -&gt; exp[loop-1].isdigit()</li>
+      <li>소수점 피연산자 만나는 것을 check -&gt; 소수점 확인 후 이전에 Prefix변환 공간에 전달되었던 피연산자 숫자를 소수점과 결합한 상태로 변환 + 2차원 리스트 접근 방식을 통해 <strong>가장 최근 리스트의 원소 - 문자열</strong> 의 <strong>가장 마지막 글자인 소수점.</strong> 의 형태를 지니고 있다면 숫자 추가한 상태로 변환하여 prefix변환 공간에 전달. -» 코드 확인 요망!</li>
+      <li>변환된 Prefix수식을 계산 함수에 전달</li>
+      <li>숫자를 스택에 쌓고 피연산자를 만날때마다 두 개씩 pop하여 연산자에 맞게 float변환 후 계산, 다시 push</li>
+      <li>최종 push된 하나의 마지막 원소가 바로 계산된 값</li>
+    </ol>
+  </li>
+</ul>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="nn">Stack_python</span> <span class="kn">import</span> <span class="n">Stack</span> <span class="c1">#스택 메소드 import
+</span>
+<span class="k">def</span> <span class="nf">InfixToPrefix</span><span class="p">(</span><span class="n">exp</span><span class="p">):</span> <span class="c1"># infix를 prefix로 변환
+</span>    <span class="n">opstack</span> <span class="o">=</span> <span class="n">Stack</span><span class="p">()</span> <span class="c1"># 연산자operator를 담을 공간
+</span>    <span class="n">outstack</span> <span class="o">=</span> <span class="p">[]</span> <span class="c1"># 변환된 수식을 담을 공간
+</span>    <span class="n">loop</span><span class="o">=</span><span class="mi">0</span> <span class="c1"># 실수에 대한 연산이므로, 소수점이나 두자리수 이상 되는 피연산자에 대하여 접근하기 위한 방법 고안
+</span>    <span class="n">exp</span> <span class="o">=</span> <span class="n">exp</span><span class="p">.</span><span class="n">replace</span><span class="p">(</span><span class="s">" "</span><span class="p">,</span><span class="s">""</span><span class="p">)</span> <span class="c1"># 연산자와 피연산자 사이에 공백 존재 가능성 배제
+</span>
+    <span class="k">for</span> <span class="n">tok</span> <span class="ow">in</span> <span class="n">exp</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">tok</span> <span class="o">==</span> <span class="s">"*"</span> <span class="ow">or</span> <span class="n">tok</span> <span class="o">==</span><span class="s">"/"</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">opstack</span><span class="p">.</span><span class="n">top</span><span class="p">()</span><span class="o">==</span><span class="s">"^"</span><span class="p">:</span>
+                <span class="n">oustack</span><span class="p">.</span><span class="n">append</span><span class="p">(</span><span class="n">opstack</span><span class="p">.</span><span class="n">pop</span><span class="p">())</span>
+                <span class="n">opstack</span><span class="p">.</span><span class="n">push</span><span class="p">(</span><span class="n">tok</span><span class="p">)</span>
+            <span class="n">opstack</span><span class="p">.</span><span class="n">push</span><span class="p">(</span><span class="n">tok</span><span class="p">)</span>
+            <span class="n">loop</span><span class="o">+=</span><span class="mi">1</span>
+        <span class="k">elif</span> <span class="n">tok</span> <span class="o">==</span> <span class="s">"^"</span><span class="p">:</span>
+            <span class="n">opstack</span><span class="p">.</span><span class="n">push</span><span class="p">(</span><span class="n">tok</span><span class="p">)</span>
+            <span class="n">loop</span><span class="o">+=</span><span class="mi">1</span>
+        <span class="k">elif</span> <span class="n">tok</span> <span class="o">==</span> <span class="s">"+"</span> <span class="ow">or</span> <span class="n">tok</span> <span class="o">==</span><span class="s">"-"</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">opstack</span><span class="p">.</span><span class="n">top</span><span class="p">()</span> <span class="o">==</span> <span class="s">"*"</span> <span class="ow">or</span> <span class="n">opstack</span><span class="p">.</span><span class="n">top</span><span class="p">()</span><span class="o">==</span><span class="s">"/"</span> <span class="ow">or</span> <span class="n">opstack</span><span class="p">.</span><span class="n">top</span><span class="p">()</span><span class="o">==</span><span class="s">"^"</span><span class="p">:</span>
+                <span class="n">outstack</span><span class="p">.</span><span class="n">append</span><span class="p">(</span><span class="n">opstack</span><span class="p">.</span><span class="n">pop</span><span class="p">())</span>
+                <span class="n">opstack</span><span class="p">.</span><span class="n">push</span><span class="p">(</span><span class="n">tok</span><span class="p">)</span>
+                <span class="n">loop</span><span class="o">+=</span><span class="mi">1</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">opstack</span><span class="p">.</span><span class="n">push</span><span class="p">(</span><span class="n">tok</span><span class="p">)</span>
+                <span class="n">loop</span><span class="o">+=</span><span class="mi">1</span>
+        <span class="k">elif</span> <span class="n">tok</span> <span class="o">==</span> <span class="s">"("</span><span class="p">:</span>
+            <span class="n">opstack</span><span class="p">.</span><span class="n">push</span><span class="p">(</span><span class="n">tok</span><span class="p">)</span>
+            <span class="n">loop</span><span class="o">+=</span><span class="mi">1</span>
+        <span class="k">elif</span> <span class="n">tok</span> <span class="o">==</span> <span class="s">")"</span><span class="p">:</span>
+            <span class="k">while</span> <span class="n">opstack</span><span class="p">.</span><span class="n">top</span><span class="p">()</span><span class="o">!=</span><span class="s">"("</span><span class="p">:</span>
+                <span class="n">outstack</span><span class="p">.</span><span class="n">append</span><span class="p">(</span><span class="n">opstack</span><span class="p">.</span><span class="n">pop</span><span class="p">())</span>
+            <span class="n">opstack</span><span class="p">.</span><span class="n">pop</span><span class="p">()</span>
+            <span class="n">loop</span><span class="o">+=</span><span class="mi">1</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">outstack</span><span class="o">==</span><span class="p">[]:</span> <span class="c1"># loop를 통해 이전 토큰이 숫자였다면 두자리수 이상임을 확
+</span>                <span class="n">outstack</span><span class="p">.</span><span class="n">append</span><span class="p">(</span><span class="n">tok</span><span class="p">)</span>
+                <span class="n">loop</span><span class="o">+=</span><span class="mi">1</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="k">if</span> <span class="n">exp</span><span class="p">[</span><span class="n">loop</span><span class="o">-</span><span class="mi">1</span><span class="p">].</span><span class="n">isdigit</span><span class="p">():</span>
+                    <span class="n">newstr</span> <span class="o">=</span> <span class="n">outstack</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="o">+</span><span class="n">tok</span>
+                    <span class="n">outstack</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="o">=</span><span class="n">newstr</span>
+                    <span class="n">loop</span><span class="o">+=</span><span class="mi">1</span>
+                <span class="k">elif</span> <span class="n">tok</span><span class="o">==</span><span class="s">"."</span> <span class="ow">or</span> <span class="n">outstack</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">][</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">==</span><span class="s">"."</span><span class="p">:</span>
+                    <span class="n">newstr</span> <span class="o">=</span> <span class="n">outstack</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="o">+</span><span class="n">tok</span>
+                    <span class="n">outstack</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="o">=</span><span class="n">newstr</span>
+                    <span class="n">loop</span><span class="o">+=</span><span class="mi">1</span>
+                <span class="k">else</span><span class="p">:</span>
+                    <span class="n">outstack</span><span class="p">.</span><span class="n">append</span><span class="p">(</span><span class="n">tok</span><span class="p">)</span>
+                    <span class="n">loop</span><span class="o">+=</span><span class="mi">1</span>
+
+
+
+    <span class="k">while</span> <span class="ow">not</span> <span class="n">opstack</span><span class="p">.</span><span class="n">isEmpty</span><span class="p">():</span>
+        <span class="n">outstack</span><span class="p">.</span><span class="n">append</span><span class="p">(</span><span class="n">opstack</span><span class="p">.</span><span class="n">pop</span><span class="p">())</span>
+
+    <span class="k">return</span> <span class="n">outstack</span>
+
+
+<span class="k">def</span> <span class="nf">Calculator</span><span class="p">(</span><span class="n">exp</span><span class="p">):</span> <span class="c1"># if token in '*+/-':
+</span>    <span class="n">S</span> <span class="o">=</span> <span class="n">Stack</span><span class="p">()</span>
+    <span class="k">for</span> <span class="n">tok</span> <span class="ow">in</span> <span class="n">exp</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">tok</span> <span class="ow">in</span> <span class="s">"*/-+^"</span><span class="p">:</span>
+            <span class="n">a</span><span class="o">=</span><span class="nb">float</span><span class="p">(</span><span class="n">S</span><span class="p">.</span><span class="n">pop</span><span class="p">())</span>
+            <span class="n">b</span><span class="o">=</span><span class="nb">float</span><span class="p">(</span><span class="n">S</span><span class="p">.</span><span class="n">pop</span><span class="p">())</span>
+            <span class="k">if</span> <span class="n">tok</span><span class="o">==</span><span class="s">"-"</span><span class="p">:</span>
+                <span class="n">S</span><span class="p">.</span><span class="n">push</span><span class="p">(</span><span class="n">b</span><span class="o">-</span><span class="n">a</span><span class="p">)</span>
+            <span class="k">elif</span> <span class="n">tok</span><span class="o">==</span><span class="s">"+"</span><span class="p">:</span>
+                <span class="n">S</span><span class="p">.</span><span class="n">push</span><span class="p">(</span><span class="n">b</span><span class="o">+</span><span class="n">a</span><span class="p">)</span>
+            <span class="k">elif</span> <span class="n">tok</span><span class="o">==</span><span class="s">"*"</span><span class="p">:</span>
+                <span class="n">S</span><span class="p">.</span><span class="n">push</span><span class="p">(</span><span class="n">b</span><span class="o">*</span><span class="n">a</span><span class="p">)</span>
+            <span class="k">elif</span> <span class="n">tok</span> <span class="o">==</span> <span class="s">"^"</span><span class="p">:</span>
+                <span class="n">S</span><span class="p">.</span><span class="n">push</span><span class="p">(</span><span class="n">b</span><span class="o">**</span><span class="n">a</span><span class="p">)</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">S</span><span class="p">.</span><span class="n">push</span><span class="p">(</span><span class="n">b</span><span class="o">/</span><span class="n">a</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">S</span><span class="p">.</span><span class="n">push</span><span class="p">(</span><span class="n">tok</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">S</span><span class="p">.</span><span class="n">top</span><span class="p">()</span>
+
+
+</code></pre></div></div>
+
+<h3 id="queue">Queue</h3>
+
+<ul>
+  <li>Queue 자료구조의 연산
+    <ul>
+      <li>enqueue(val) -&gt; val을 큐의 rear에 삽입</li>
+      <li>dequeue() -&gt; 가장 앞쪽에 저장된 값을 삭제 및 리턴</li>
+      <li>front() -&gt; 가장 앞쪽에 저장된 값을 (삭제하지 않고) 리턴</li>
+    </ul>
+  </li>
+</ul>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">Queue</span><span class="p">:</span>
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="p">.</span><span class="n">items</span><span class="o">=</span><span class="p">[]</span> <span class="c1"># 데이터 저장 공간
+</span>        <span class="bp">self</span><span class="p">.</span><span class="n">front_index</span><span class="o">=</span><span class="mi">0</span> <span class="c1"># 가장 앞 원소의 위치 초기화
+</span>
+    <span class="k">def</span> <span class="nf">enqueue</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">val</span><span class="p">):</span>
+        <span class="bp">self</span><span class="p">.</span><span class="n">items</span><span class="p">.</span><span class="n">append</span><span class="p">(</span><span class="n">val</span><span class="p">)</span> <span class="c1"># rear에 데이터 저장
+</span>
+    <span class="k">def</span> <span class="nf">dequeue</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="p">.</span><span class="n">front_index</span><span class="o">==</span><span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="p">.</span><span class="n">items</span><span class="p">):</span> <span class="c1">#Queue 자료구조에서 dqueue연산은 실제 데이터를 삭제하는 것이 아니라 front 인덱스의 이동을 통해 값을 무시하는 것이다.따라서 enqueue로 데이터의 추가 없이 계속된 dequeue를 진행하면 front값이 Queue 공간의 길이값까지 움직이게 된다
+</span>            <span class="k">print</span><span class="p">(</span><span class="s">"Queue is empty"</span><span class="p">)</span>
+            <span class="k">return</span> <span class="bp">None</span> <span class="c1"># dequeue할 아이템이 없음
+</span>        <span class="k">else</span><span class="p">:</span>
+            <span class="n">result_value</span> <span class="o">=</span> <span class="bp">self</span><span class="p">.</span><span class="n">items</span><span class="p">[</span><span class="bp">self</span><span class="p">.</span><span class="n">front_index</span><span class="p">]</span> <span class="c1"># dequeue대상 값 반환하기 위해 저장
+</span>            <span class="bp">self</span><span class="p">.</span><span class="n">front_index</span><span class="o">+=</span><span class="mi">1</span> <span class="c1"># dequeue진행 후 front위치 이동
+</span>            <span class="k">return</span> <span class="n">result_value</span>
+</code></pre></div></div>
+
+<ul>
+  <li>Queue사용 예) Josephus게임
+    <ul>
+      <li>Josephus게임은 주어지는 조건으로 게임에 참여하는 인원의 수, 탈락의 기준인 간격 k 두 가지가 있다.</li>
+      <li>예를 들어 6명이 게임에 참여하고, k=2로 주어졌다면 1부터 시작하여 6까지 두 번째 사람이 탈락.</li>
+      <li>1로부터 2번째인 2탈락 -&gt; 3으로부터 2번째인 4 탈락 ……</li>
+      <li>dequeue하여 다시 그 값을 enqueue하는 과정을 k-1 번 반복하고
+해당 과정을 진행한 뒤에 dequeue를 진행한다. (k번째 기준에 해당하는 사람 탈락!)</li>
+    </ul>
+  </li>
+</ul>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="nn">Queue_python</span> <span class="kn">import</span> <span class="n">Queue</span>
+
+
+<span class="k">def</span> <span class="nf">Josephus</span><span class="p">(</span><span class="n">loop</span><span class="p">,</span> <span class="n">n</span><span class="p">):</span>
+    <span class="n">Q</span> <span class="o">=</span> <span class="n">Queue</span><span class="p">()</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="n">n</span><span class="o">+</span><span class="mi">1</span><span class="p">):</span>
+        <span class="n">Q</span><span class="p">.</span><span class="n">enqueue</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+
+    <span class="k">while</span> <span class="n">Q</span><span class="p">.</span><span class="n">front_index</span><span class="o">!=</span><span class="nb">len</span><span class="p">(</span><span class="n">Q</span><span class="p">.</span><span class="n">items</span><span class="p">):</span> <span class="c1"># Queue공간이 빌 때까지 게임 진행
+</span>        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">loop</span><span class="o">-</span><span class="mi">1</span><span class="p">):</span>
+            <span class="n">Q</span><span class="p">.</span><span class="n">enqueue</span><span class="p">(</span><span class="n">Q</span><span class="p">.</span><span class="n">dequeue</span><span class="p">())</span>
+        <span class="n">result</span> <span class="o">=</span> <span class="n">Q</span><span class="p">.</span><span class="n">dequeue</span><span class="p">()</span>
+
+    <span class="k">return</span> <span class="n">result</span> <span class="c1">#Queue 공간을 비워내는 차례의 dequeue값을 저장한 상태의 result
+</span></code></pre></div></div>
+
+<h3 id="deque-덱">Deque 덱</h3>
+
+<ul>
+  <li>
+    <p>python에서는 collection모듈에 deque클래스로 덱이 이미 구현되어 있음!</p>
+  </li>
+  <li>
+    <p>rear push -&gt; append, front push -&gt; appendleft</p>
+  </li>
+  <li>
+    <p>rear pop -&gt; pop, front pop -&gt; popleft</p>
+  </li>
+  <li>
+    <p>Deque 사용 예1) Palindrome검사</p>
+    <ul>
+      <li>Palindrome은 왼쪽부터 읽어도, 오른쪽부터 읽어도 같은 문자열을 말함.
+        <ul>
+          <li>기러기, radar,madam</li>
+        </ul>
+      </li>
+      <li>Palindrome checking은 세 방법이 있음
+        <ol>
+          <li>reversed함수 이용
+            <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">s</span> <span class="o">==</span> <span class="s">''</span><span class="p">.</span><span class="n">join</span><span class="p">(</span><span class="nb">reversed</span><span class="p">(</span><span class="n">s</span><span class="p">))</span>
+</code></pre></div>            </div>
+          </li>
+          <li>i=0, j=n-1부터 진행하여 i==j이거나 i&gt;j일때까지 s[i]==s[j]검사</li>
+          <li>deque 이용!
+            <ul>
+              <li>deque에 저장 후 popleft, pop이용하여 같은지 검사</li>
+            </ul>
+          </li>
+        </ol>
+      </li>
+    </ul>
+  </li>
+</ul>
+
+<h1 id="순차적-자료구조---연결-리스트-linked-list---한방향-vs-양방향">순차적 자료구조 - 연결 리스트 (Linked List) - 한방향 vs 양방향</h1>
+
+<h3 id="연결-리스트의-개념">연결 리스트의 개념</h3>
+
+<ul>
+  <li>
+    <p>연결리스트는 파이썬의 list와는 다른 개념이다. -&gt; 연속적인 메모리의 할당이 아니라, 다음 값이 저장되어 있는 주소가 필요함</p>
+  </li>
+  <li>
+    <p>저장할 data값을 key, 값이 저장된 곳의 주소를 link라고 한다.</p>
+  </li>
+  <li>
+    <p>이 둘을 합친 것을 <strong>node라고 한다.</strong> (클래스)</p>
+  </li>
+</ul>
+
+<h3 id="한-방향-연결리스트-singly-linked-list">한 방향 연결리스트 (singly linked list)</h3>
+
+<ul>
+  <li>가장 앞의 노드를 <strong>head 노드라고 한다.</strong> -&gt; head 노드를 통해 리스트의 노드를 접근.</li>
+  <li>
+    <p>가장 마지막 노드는 <strong>해당 노드의 next가 None을 가리킨다.</strong></p>
+  </li>
+  <li>
+    <p>head로부터 link를 따라가며 데이터를 참조하므로, <strong>노드 위치에 따른 값 참조의 수행 시간이 늘어난다.</strong> -&gt; 파이썬의 리스트와는 다르게, 값 참조의 수행시간이 상수 시간이 아니다.</p>
+  </li>
+  <li>
+    <p>값을 중간에 끼워넣는 연산을 진행하는 경우 insert</p>
+
+    <ol>
+      <li>파이썬 리스트 -&gt; 최악의 경우 O(n)</li>
+      <li>연결리스트 -&gt; 노드의 link만 만져주면 됨 (상수시간)</li>
+    </ol>
+  </li>
+  <li>Node 클래스</li>
+</ul>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">Node</span><span class="p">:</span>
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">key</span><span class="o">=</span><span class="n">none</span><span class="p">,</span> <span class="n">value</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span> <span class="c1"># parameter 전달되지 않았을 시 default 모두 None으로 초기화
+</span>        <span class="bp">self</span><span class="p">.</span><span class="n">key</span> <span class="o">=</span> <span class="n">key</span>
+        <span class="bp">self</span><span class="p">.</span><span class="n">value</span> <span class="o">=</span> <span class="n">value</span>
+        <span class="bp">self</span><span class="p">.</span><span class="nb">next</span> <span class="o">=</span> <span class="bp">None</span>
+
+    <span class="k">def</span> <span class="nf">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="p">.</span><span class="n">key</span><span class="p">)</span> <span class="c1"># key를 문자열 반환하는 스페셜메소드
+</span></code></pre></div></div>
+
+<ul>
+  <li>한방향 연결 리스트 클래스</li>
+  <li>(제너레이터 함수)[https://github.com/Parkjju/TIL/blob/master/Python/middle_class/generator.md]</li>
+</ul>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">SinglyLinkedList</span><span class="p">:</span>
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="p">.</span><span class="n">head</span> <span class="o">=</span> <span class="bp">None</span>
+        <span class="bp">self</span><span class="p">.</span><span class="n">size</span> <span class="o">=</span> <span class="mi">0</span>
+
+    <span class="k">def</span> <span class="nf">__iter__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">v</span> <span class="o">=</span> <span class="bp">self</span><span class="p">.</span><span class="n">head</span>
+        <span class="k">while</span> <span class="n">v</span><span class="o">!=</span><span class="bp">None</span><span class="p">:</span>
+            <span class="k">yield</span> <span class="n">v</span>
+            <span class="n">v</span> <span class="o">=</span> <span class="n">v</span><span class="p">.</span><span class="nb">next</span>
+
+    <span class="k">def</span> <span class="nf">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="s">" -&gt; "</span><span class="p">.</span><span class="n">join</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">v</span><span class="p">)</span> <span class="k">for</span> <span class="n">v</span> <span class="ow">in</span> <span class="bp">self</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">__len__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="p">.</span><span class="n">size</span>
+</code></pre></div></div>
+
+<ul>
+  <li>
+    <p>iter 스페셜메소드에 작동방식에 대한 이해 (@@@@중요@@@@ - 천천히 읽어보기)</p>
+
+    <ol>
+      <li>v를 head노드로 초기화한다.</li>
+      <li>v가 None인지 여부를 검사하여 while로 진입한다 (처음에 head로 초기화 하였으니, head가 None인지 검사할 것)</li>
+      <li>v를 yield하며 함수를 마친다.</li>
+      <li>현재 바깥에서는 singly linked List 객체를 생성하여 iterator로서의 역할을 지시하고 있는 상황 (while루프 전달을 통해 연속적인 값의 참조를 진행)</li>
+      <li>바깥의 while 루프 조건을 다시금 만족하여, iterator객체의 다음 값으로의 참조 (singly linked list객체)가 지시됨</li>
+      <li>이전 yield문 다음 부터, 그 다음 yield문을 만날 때까지의 문장을 실행하므로 이번에 실행될 문장은 v=v.next이다.</li>
+      <li>v에 next를 저장하였고, 그 다음 iter스페셜 메소드로 돌아가 while 루프 조건 검사를 진행한다.</li>
+      <li>next가 저장된 v가 none이면 탈출, 아니면 다시금 해당 v를 yield한다.</li>
+    </ol>
+  </li>
+  <li>str 스페셜 메소드 작동방식은 직접 SinglyLinkedList객체를 생성하고, 다음의 예제를 실행해보면 이해하게 된다.</li>
+  <li>(pushBack, pushFront 등 데이터 생성까지 완료한 상황에서 다음의 예제를 실행)</li>
+</ul>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">slist</span> <span class="o">=</span> <span class="n">SinglyLinkedList</span><span class="p">()</span>
+<span class="k">print</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">slist</span><span class="p">))</span>
+</code></pre></div></div>
+
+<ul>
+  <li>
+    <p>작동 방식에 대한 이해를 정리하자면</p>
+
+    <ol>
+      <li>join 컴프리헨션에 전달되는 for 문은 iter 스페셜 메소드의 generator 함수 호출을 진행한다.</li>
+      <li>계속해서 yield하며 v로 각 node의 정보들이 전달된다.</li>
+      <li>이를 str(v)를 통해 string으로 변환하고</li>
+      <li>join을 통해 표시할 노드 데이터들 사이사이에 -&gt; 화살표 표시를 넣는다.</li>
+    </ol>
+  </li>
+</ul>
+
+<h4 id="한방향-리스트에-구현되어야-할-각종-함수들">한방향 리스트에 구현되어야 할 각종 함수들</h4>
+
+<ol>
+  <li>L.pushFront(key) : key값을 갖는 새 노드를 L객체 가장 앞에 삽입 <strong>L 객체 head의 변경</strong></li>
+  <li>L.pushBack(key) : key값을 갖는 새 노드를 L객체 가장 뒤에 삽입 <strong>함수 내에 tail 선언, 이를 통해 노드를 붙인다.</strong></li>
+  <li>L.popFront() : L 객체의 head 노드를 삭제한 후 key 값을 리턴</li>
+  <li>L.popBack() : L 객체의 가장 마지막 노드를 삭제한 후 key값 리턴</li>
+  <li>L.search(key) : key값을 갖는 노드를 찾아 리턴</li>
+  <li>L.remove(v) : L 객체에서 v 노드를 삭제</li>
+</ol>
+
+<ul>
+  <li>함수들을 정의할 때에, 한방향 연결리스트 객체의 길이가 0인지 아닌 지에 대한 확인이 필요한 경우가 많으니 <strong>주의</strong></li>
+</ul>
+
+<h3 id="양방향-연결-리스트doubly-linked-list">양방향 연결 리스트(doubly linked list)</h3>
+
+<ul>
+  <li>
+    <p>한방향 연결 리스트의 <strong>결정적인 단점</strong>은 다음 노드에 대한 링크(next)만 있어서, 이전 노드를 알기 위해서는 head 노드부터 차례로 탐색을 진행해야 한다.</p>
+  </li>
+  <li>
+    <p>이를 보완하기 양방향 연결 리스트를 설계한다.</p>
+
+    <ol>
+      <li>이전 노드로의 링크 (prev)를 통해 왼쪽 이동</li>
+      <li>마지막 노드와 head노드를 연결하여 원형 리스트를 가정</li>
+      <li>head노드는 <strong>항상 dummy 노드가 되도록 하자</strong></li>
+    </ol>
+  </li>
+  <li>
+    <p>dummy 노드란? 리스트 처음을 구분할 수 있는 <strong>“marker”</strong>의 기능</p>
+  </li>
+  <li>
+    <p>노드 클래스</p>
+  </li>
+</ul>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">Node</span><span class="p">:</span>
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">key</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
+        <span class="bp">self</span><span class="p">.</span><span class="n">key</span><span class="o">=</span><span class="n">key</span>
+        <span class="bp">self</span><span class="p">.</span><span class="nb">next</span> <span class="o">=</span> <span class="bp">self</span><span class="p">.</span><span class="n">prev</span> <span class="o">=</span> <span class="bp">self</span> <span class="c1"># 자기 자신으로 향하는 링크, 첫 객체 생성 시 이러한 형태로 초기화 -&gt; 그림그려보기
+</span>
+    <span class="k">def</span> <span class="nf">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="p">.</span><span class="n">key</span><span class="p">)</span>
+</code></pre></div></div>
+
+<ul>
+  <li>양방향(원형) 연결 리스트</li>
+</ul>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">DoublyLinkedList</span><span class="p">:</span>
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="p">.</span><span class="n">head</span> <span class="o">=</span> <span class="n">Node</span><span class="p">()</span>
+        <span class="bp">self</span><span class="p">.</span><span class="n">size</span> <span class="o">=</span> <span class="mi">0</span>
+
+    <span class="k">def</span> <span class="nf">__iter__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">pass</span>
+
+    <span class="k">def</span> <span class="nf">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">pass</span>
+
+    <span class="k">def</span> <span class="nf">__len__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">pass</span>
+
+    <span class="c1"># 각 함수들 직접 작성해보기.
+</span></code></pre></div></div>
+
+<h6 id="중요---spliceabx연산---다른-연산에-이용되는-중요한-기본연산">중요 - splice(a,b,x)연산 - 다른 연산에 이용되는 중요한 기본연산</h6>
+
+<ul>
+  <li>
+    <p>노드 a부터 노드 b까지 떼어내(cut) -&gt; 노드 x 뒤에 붙여넣는 연산 (cut-and-paste)</p>
+
+    <ol>
+      <li>조건1 - a와 b가 동일하거나 b가 a뒤에 나타나야함</li>
+      <li>조건2 - head노드와 x는 a와 b사이에 포함되면 안됨.</li>
+    </ol>
+  </li>
+</ul>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">splice</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">a</span><span class="p">,</span><span class="n">b</span><span class="p">,</span><span class="n">x</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">a</span><span class="o">==</span><span class="bp">None</span> <span class="ow">or</span> <span class="n">b</span><span class="o">==</span><span class="bp">None</span> <span class="ow">or</span> <span class="n">x</span><span class="o">==</span><span class="bp">None</span><span class="p">:</span>
+        <span class="k">return</span>
+
+    <span class="n">ap</span> <span class="o">=</span> <span class="n">a</span><span class="p">.</span><span class="n">prev</span> <span class="c1"># ap is previous node of a
+</span>    <span class="n">bn</span> <span class="o">=</span> <span class="n">b</span><span class="p">.</span><span class="nb">next</span> <span class="c1"># bn is next node of b
+</span>
+    <span class="c1"># cut [a..b]
+</span>    <span class="n">ap</span><span class="p">.</span><span class="nb">next</span> <span class="o">=</span> <span class="n">bn</span>
+    <span class="n">bn</span><span class="p">.</span><span class="n">prev</span> <span class="o">=</span> <span class="n">ap</span>
+
+    <span class="c1"># insert [a..b] after x
+</span>    <span class="n">xn</span> <span class="o">=</span> <span class="n">x</span><span class="p">.</span><span class="nb">next</span> <span class="c1"># xn is next node of x
+</span>    <span class="n">xn</span><span class="p">.</span><span class="n">prev</span> <span class="o">=</span> <span class="n">b</span>
+    <span class="n">b</span><span class="p">.</span><span class="nb">next</span> <span class="o">=</span> <span class="n">xn</span>
+    <span class="n">a</span><span class="p">.</span><span class="n">prev</span> <span class="o">=</span> <span class="n">x</span>
+    <span class="n">x</span><span class="p">.</span><span class="nb">next</span> <span class="o">=</span> <span class="n">a</span>
+    <span class="c1"># 떼어낸 [a..b]를 a는 x에, b는 xn에 연결하는 과정
+</span></code></pre></div></div>
+
+<!-- Todo 추후 수업 및 과제에서 직접 구현한 것들 이곳에 정리하기 -->
+
+<ul>
+  <li>각종 연산들. (직접 구현해보기 - 추후 수업 과정에서 구현한 것들 정리)</li>
+</ul>
+
+<ol>
+  <li>탐색 및 기본 연산들
+    <ul>
+      <li>search(key) : key 가지는 노드 값 리턴. 없으면 None</li>
+      <li>isEmpty() : 빈 리스트면 True, 아니면 False</li>
+      <li>first(), last() : 처음, 마지막 노드를 리턴</li>
+    </ul>
+  </li>
+  <li>이동 및 삽입연산
+    <ul>
+      <li>moveAfter(a,x) : 노드 a를 x뒤로</li>
+      <li>moveBefore(a,x): 노드 a를 x이전으로</li>
+      <li>insertAfter(x, key) : 노드 x 뒤에 데이터가 key인 새 노드 생성하여 삽입</li>
+      <li>insertBefore(x, key) : 노드 x 앞에</li>
+      <li>pushFront(key) : 데이터가 key인 새 노드 생성, head 다음에 삽입</li>
+      <li>pushBack(key) : 데이터가 key인 새 노드 생성, head 이전에 삽입</li>
+    </ul>
+  </li>
+  <li>
+    <p>삭제 연산</p>
+
+    <ul>
+      <li>remove(self, x) : 빈 리스트 체크 후 삭제 (자료45p 참조)</li>
+      <li>
+        <p>popFront(self) : head 다음에 있는 노드 데이터 값 리턴 - 빈 리스트면 None리턴</p>
+      </li>
+      <li>popBack(self) : head 이전에 있는 노드…</li>
+    </ul>
+  </li>
+  <li>기타 연산
+    <ul>
+      <li>join(another_list) : self 뒤에 another_list 연결</li>
+      <li>split(x) : self를 노드 x 이전과 x 이후 노드들로 구성된 두 리스트로 분할</li>
+    </ul>
+  </li>
+</ol>
+</section>
+</main>
+
+
+    <script src="https://use.fontawesome.com/releases/v5.15.3/js/all.js"></script>
+    <!-- JavaScript Bundle with Popper -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+      crossorigin="anonymous"
+    ></script>
+    <script src="assets/js/sidebar-click-event.js"></script>
+    <script src="//code.jquery.com/jquery-3.3.1.min.js"></script>
+  </body>
+</html>

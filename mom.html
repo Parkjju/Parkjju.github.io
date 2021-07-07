@@ -271,20 +271,153 @@
     </div>
   </ul>
 </div>
+ 
+    <main class="main-post">
+  <h1 class="main-post--title">MOM (Median of Medians) 알고리즘</h1>
+  <div class="line"></div>
+  <section class="main-post--content"><ul>
+  <li>
+    <p>기존 QuickSelect알고리즘은 평균 O(n)시간이지만, O(n^2)로 늘어날 수 있는 원인이 Pivot설정에 있다. (순전히 운에 맡기기 때문)</p>
+  </li>
+  <li>
+    <p>pivot을 어떻게 고르느냐?</p>
 
-    <main class="main-page">
-      <h1 class="main-page--title">Today I<br />Learned</h1>
-      <div class="line"></div>
-      <div class="info-container">
-        <p class="info-container--name">Parkjju's TIL</p>
-        <p
-          onclick="window.open('https://github.com/Parkjju')"
-          class="info-container--link"
-        >
-          Github
-        </p>
-      </div>
-    </main>
+    <ul>
+      <li>리스트 A또는 B에 들어있는 값의 갯수가 n/c보다 작도록 pivot을 고르는것. (리스트 A는 피봇보다 작은 값들, B는 반대)</li>
+      <li>n -&gt; n/c -&gt; …. -&gt; n/(c^k) =&gt; logc(n)횟수만큼 재귀함수를 호출한다.</li>
+    </ul>
+  </li>
+  <li>
+    <p>비교횟수</p>
+
+    <ol>
+      <li>pivot을 고르는 데에 필요한 비교횟수 p</li>
+      <li>리스트 A와 B를 나누는 데에 필요한 횟수 (pivot과 리스트 A를 비교) -&gt; n번</li>
+      <li>최종 - logc(n) * (p+n), 재귀함수 각 호출당 p+n, 전체 재귀함수 호출횟수 logc(n)</li>
+    </ol>
+
+    <ul>
+      <li>-&gt; O(nlogn)을 보장하게됨.</li>
+    </ul>
+  </li>
+  <li>
+    <p>MOM (Median of Medians) 알고리즘 - 피봇을 잘 고르자 !!</p>
+
+    <ol>
+      <li>L : n개의 숫자 , <code class="language-plaintext highlighter-rouge">MOM(L, k)</code>, k는 index</li>
+      <li>5개씩 group -&gt; 그룹 수는 약 n/5</li>
+      <li>각 그룹의 중간값을 구한다. -&gt; 상수시간에 가능 (약 6번) =&gt; 약 (5/n)*6 횟수만큼 비교</li>
+      <li>각 그룹의 중앙값들을 한 리스트에 모아준 다음 해당 리스트의 중앙값을 다시 구한다.</li>
+      <li>
+        <table>
+          <tbody>
+            <tr>
+              <td>m* = MOM(medians,</td>
+              <td>medians</td>
+              <td>/2), m*는 피봇</td>
+            </tr>
+          </tbody>
+        </table>
+      </li>
+      <li>A m* B, n번 비교하여 A,B,m*구성</li>
+      <li>이후로는 QuickSelect과 동일하며, 재귀함수는 MOM을 호출하면된다.</li>
+    </ol>
+  </li>
+  <li>
+    <table>
+      <tbody>
+        <tr>
+          <td>호출횟수 T -&gt; T(</td>
+          <td>A</td>
+          <td>) or T(</td>
+          <td>B</td>
+          <td>)</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <ul>
+      <li>
+        <table>
+          <tbody>
+            <tr>
+              <td>T(</td>
+              <td>A</td>
+              <td>) &lt;= T(n/c) , T(</td>
+              <td>B</td>
+              <td>) &lt;= T(n/c)</td>
+            </tr>
+          </tbody>
+        </table>
+      </li>
+      <li>점화식 T(n) = 6n/5 + T(n/5) + n + T(n/c)</li>
+      <li>11n/5 -&gt; 그룹을 만들어서 median 구함, T(n/5) -&gt; 각 그룹의 median of median을 구하는 횟수, T(c/n) -&gt; A, m*, B에서 k번째로 작은 값을 찾는 횟수</li>
+    </ul>
+  </li>
+  <li>
+    <table>
+      <tbody>
+        <tr>
+          <td>Todo -&gt;</td>
+          <td>A</td>
+          <td>&lt;=n/c,</td>
+          <td>B</td>
+          <td>&lt;=n/c임을 증명해야함!</td>
+        </tr>
+      </tbody>
+    </table>
+  </li>
+</ul>
+
+<p><img src="/assets/images/cproof.jpg" height="60%" width="40%" /></p>
+
+<h2 id="mom-수행시간-분석">mom 수행시간 분석</h2>
+
+<ul>
+  <li>
+    <p>T(n) = T(3n/4) + T(n/5) + 11n/5, T(1) = 1</p>
+
+    <ul>
+      <li>기존의 전개 방식은 분수가 계수이므로 불가능</li>
+      <li>Guess!! T(n) &lt;= 44n? -&gt; T(n)을 임의 추측, 설정하여 <strong>귀납법으로 전개</strong></li>
+    </ul>
+  </li>
+  <li>
+    <p>귀납법?</p>
+
+    <ol>
+      <li>check basecase -&gt; 증명하고자 하는 식에 1을 대입한 수가 실제 초항값과 동일한지 검사</li>
+      <li>n보다 작은 모든 값에 대해서 등식 성립한다고 <strong>가정</strong></li>
+      <li>index가 n일때 성립하는지 증명하기</li>
+    </ol>
+  </li>
+  <li>
+    <p>MOM귀납법 증명</p>
+
+    <ol>
+      <li>T(1) = 1 &lt;= 44 -&gt; OK!!</li>
+      <li>T(n) &lt;= 44n이 n보다 작은 인덱스에서 성립함을 가정.</li>
+      <li>T(n) = T(3n/4) + T(n/5) + 11n/5
+        <ul>
+          <li>3n/4는 n보다 작으며, n보다 작은 값에 대하여 T(n)은 44n보다 작다.</li>
+          <li>n/5는 n보다 작으며, n보다 작은 값에 대하여 T(n)은 44n보다 작다.</li>
+        </ul>
+      </li>
+      <li>T(3n/4) + T(n/5) + 11n/5 &lt;= 44*3n/4 + 44*n/5 + 11n/5 = 33n + 11n = 44n</li>
+      <li>등식이 n에서도 성립함을 확인하였으므로, 수행시간이 O(n)임이 증명됨!</li>
+    </ol>
+  </li>
+  <li>
+    <p>guess구하기</p>
+    <ol>
+      <li>T(n) &lt;= cn // 적당한 상수시간을 정하여서, 직접 귀납법 전개해보면 c가 구해진다</li>
+      <li>T(n) &lt;= 3cn/4 + cn/5 + 11n/5 = 19cn/20 + 11n/5 &lt;= cn, 11n/5 &lt;= cn/20, c=44!!!!!</li>
+    </ol>
+  </li>
+</ul>
+</section>
+</main>
+
 
     <script src="https://use.fontawesome.com/releases/v5.15.3/js/all.js"></script>
     <!-- JavaScript Bundle with Popper -->

@@ -271,20 +271,55 @@
     </div>
   </ul>
 </div>
+ 
+    <main class="main-post">
+  <h1 class="main-post--title">파이썬 딕셔너리 작동방식</h1>
+  <div class="line"></div>
+  <section class="main-post--content"><ul>
+  <li>
+    <p>resize - 초기 size == 8 (빈 딕셔너리)</p>
 
-    <main class="main-page">
-      <h1 class="main-page--title">Today I<br />Learned</h1>
-      <div class="line"></div>
-      <div class="info-container">
-        <p class="info-container--name">Parkjju's TIL</p>
-        <p
-          onclick="window.open('https://github.com/Parkjju')"
-          class="info-container--link"
-        >
-          Github
-        </p>
-      </div>
-    </main>
+    <ul>
+      <li>전체 슬롯의 2/3이 채워지면 크기를 2배로 resize하여 이사감</li>
+      <li><strong>amortized time analysis</strong> - 연산 횟수에 대한 수행시간을 평균으로 계산하는 방식</li>
+      <li>resize후에 이사갈 때의 수행시간도 상수시간만큼 진행됨</li>
+      <li>set:insertion, remove, search 수행시간이 <strong>평균적으로 O(1)</strong></li>
+    </ul>
+  </li>
+  <li>
+    <p>hash function</p>
+    <ul>
+      <li>파이썬의 built-in hash function이 존재함.</li>
+      <li>hash function의 리턴 값이 크기 때문에 size로 적당히 나눈다</li>
+    </ul>
+  </li>
+</ul>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">hash</span><span class="p">(</span><span class="s">"apple"</span><span class="p">)</span>
+</code></pre></div></div>
+
+<ul>
+  <li><strong>collision resolution</strong></li>
+</ul>
+
+<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code># pseudo code
+i = hash(key) % size
+perturb = hash(key) # python의 perturb변수를 통해 search의 randomness 부여
+
+while H[i] is not empty: # H[i] is occupied slot
+    if H[i].key == key:
+        # found!!
+    # i = (i+1) % size -&gt; linear probing
+    i = (5*i+1 + perturb) % size -&gt; 중복없이 모든 슬롯을 방문할 수 있게됨 (size가 2^n일때)
+    perturb = perturb&gt;&gt;5
+</code></pre></div></div>
+
+<ul>
+  <li>버전마다, 인터프리터마다 실제 구현은 다를 수 있지만 틀은 비슷</li>
+</ul>
+</section>
+</main>
+
 
     <script src="https://use.fontawesome.com/releases/v5.15.3/js/all.js"></script>
     <!-- JavaScript Bundle with Popper -->

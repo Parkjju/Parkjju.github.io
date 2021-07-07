@@ -271,20 +271,72 @@
     </div>
   </ul>
 </div>
+ 
+    <main class="main-post">
+  <h1 class="main-post--title">분할정복방법 (Divide & Conquer)</h1>
+  <div class="line"></div>
+  <section class="main-post--content"><ul>
+  <li>큰 문제를 작은 문제로 분할하여 재귀적으로 해결</li>
+</ul>
 
-    <main class="main-page">
-      <h1 class="main-page--title">Today I<br />Learned</h1>
-      <div class="line"></div>
-      <div class="info-container">
-        <p class="info-container--name">Parkjju's TIL</p>
-        <p
-          onclick="window.open('https://github.com/Parkjju')"
-          class="info-container--link"
-        >
-          Github
-        </p>
-      </div>
-    </main>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">max</span><span class="p">(</span><span class="n">A</span><span class="p">):</span>
+    <span class="k">return</span> <span class="nb">max</span><span class="p">(</span><span class="n">A</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="nb">max</span><span class="p">(</span><span class="n">A</span><span class="p">[</span><span class="mi">1</span><span class="p">:]))</span> <span class="c1"># .....
+</span></code></pre></div></div>
+
+<ul>
+  <li>
+    <p>T(n) = T(n-1)+c, T(1) = c, T(n) = O(n)</p>
+  </li>
+  <li>
+    <p>분할의 방법은 다양하다. 위처럼 하나씩 분할하여 선형적으로 재귀를 구현하거나, 반씩 나누거나.. <code class="language-plaintext highlighter-rouge">max(A[:4], max(A[4:]))</code></p>
+
+    <ul>
+      <li>T(n) = 2*T(n/2) + c, T(1) = c, T(n) = O(n)</li>
+    </ul>
+  </li>
+  <li>
+    <p>제곱수 계산 -&gt; power(a,n) (a^n) = a*a^(n-1)</p>
+
+    <ul>
+      <li>바닥조건 n==1 -&gt; return a</li>
+      <li>else -&gt; return a*power(a,n-1)</li>
+      <li>T(n) = T(n-1) + c, T(1) = c, T(n) = O(n)</li>
+    </ul>
+  </li>
+  <li>
+    <p>반씩 나누어서 설계</p>
+
+    <ul>
+      <li><code class="language-plaintext highlighter-rouge">if n==1: return a</code>, <code class="language-plaintext highlighter-rouge">if n==0: return 1</code></li>
+      <li><code class="language-plaintext highlighter-rouge">a^n = a^(n/2) * a^(n/2)</code> -&gt; n (n에 대해 짝 홀수 구분)</li>
+      <li>
+        <ol>
+          <li>짝수 -&gt; <code class="language-plaintext highlighter-rouge">return power(a,n//2) * power(a, n//2)</code></li>
+        </ol>
+      </li>
+      <li>
+        <ol>
+          <li>홀수 -&gt; <code class="language-plaintext highlighter-rouge">return power(a,n//2) * power(a, n//2) * a</code></li>
+        </ol>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <p>비선형적으로 설계</p>
+    <ul>
+      <li><code class="language-plaintext highlighter-rouge">if n==0: return 1</code></li>
+      <li><code class="language-plaintext highlighter-rouge">x = power(a, n//2) # x = a^(n/2)</code></li>
+      <li><code class="language-plaintext highlighter-rouge">if n%2 == 0: return x*x</code></li>
+      <li><code class="language-plaintext highlighter-rouge">else: return x * x * a</code></li>
+      <li>재귀적 호출이 한번에서 끝남 -&gt; T(n) = T(n/2) + c, T(1) = c</li>
+      <li>T(n) = T(n/4) + c + c…. = T(n/(2^k)) + kc = k(c+1) = O(logn), T(n/(2^k))가 T(1)이 될때까지 -&gt; k=log2(n)</li>
+      <li>T(n) = T(1) + kc = c + kc = c(k+1)</li>
+    </ul>
+  </li>
+</ul>
+</section>
+</main>
+
 
     <script src="https://use.fontawesome.com/releases/v5.15.3/js/all.js"></script>
     <!-- JavaScript Bundle with Popper -->

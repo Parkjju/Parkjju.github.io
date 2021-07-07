@@ -271,20 +271,163 @@
     </div>
   </ul>
 </div>
+ 
+    <main class="main-post">
+  <h1 class="main-post--title">선택문제</h1>
+  <div class="line"></div>
+  <section class="main-post--content"><ul>
+  <li>입력 : n개의 값과 k(1&lt;=k&lt;=n)값</li>
+  <li>출력 : k번째로 작은 입력 값</li>
+  <li>
+    <p>목표 : 비교횟수 최소화</p>
+  </li>
+  <li>n-1번의 비교 -&gt; 최댓값 찾기 가능 : 상한(upperbound)</li>
+  <li>
+    <p>n-1번의 비교가 필수적인 경우 : 하한 (lowerbound)</p>
+  </li>
+  <li>n-1의 비교시 상한 하한이 모두 solve!</li>
+</ul>
 
-    <main class="main-page">
-      <h1 class="main-page--title">Today I<br />Learned</h1>
-      <div class="line"></div>
-      <div class="info-container">
-        <p class="info-container--name">Parkjju's TIL</p>
-        <p
-          onclick="window.open('https://github.com/Parkjju')"
-          class="info-container--link"
-        >
-          Github
-        </p>
-      </div>
-    </main>
+<h3 id="선택문제-2">선택문제 2</h3>
+
+<ul>
+  <li>
+    <p>토너먼트식으로 k=n 최대값찾기 -&gt; 둘씩 짝지어서 비교하여 승자를 선택 (홀수일 경우 부전승) -&gt; 최댓값 n-1번</p>
+  </li>
+  <li>
+    <p>k=1, n : 최대값, 최소값 찾기</p>
+
+    <ol>
+      <li>최대값을 먼저 n-1번 비교를 통해 찾는다.</li>
+      <li>최대값을 제외하고 n-1개를 n-2번 비교를 통해 최소값을 찾는다.</li>
+      <li>최종 -&gt; 2n-3번의 비교</li>
+    </ol>
+  </li>
+  <li>
+    <p>k=1, n : 최대값 최소값찾기 경우의 수 줄이기</p>
+    <ol>
+      <li>최대값은 토너먼트식으로 추려낸다.</li>
+      <li>최소값은 <strong>1라운드에서 패배한 원소들을 서로 비교하면 된다.</strong> -&gt; n/2 개중에 최소값을 찾는다 -&gt; (n/2 - 1)번 비교 !</li>
+      <li>최종 -&gt; 3n/2 - 2 번 비교 -&gt; upperbound, 해당 횟수만큼 비교를 진행하면 반드시 최대,최소가 찾아진다. (lowerbound도 동일하다고 증명되어있음)</li>
+    </ol>
+  </li>
+</ul>
+
+<h3 id="선택문제-3">선택문제 3</h3>
+
+<ul>
+  <li>k = 1, 2중에 제일 작은값, 두번째로 작은값 찾기</li>
+  <li>
+    <p>n-1번 비교 + n-2번 비교 =&gt; 2n-3번 비교 (단순비교이므로 더 줄일 수 있음)</p>
+  </li>
+  <li>최소값구하기 -&gt; 토너먼트를 진행하는 동안, 두번째로 작은 값은 최소값을 만나기 전까지 토너먼트에서 승리한다.</li>
+  <li>두번째로 작은값 구하기 -&gt; n-1번을 통해 최소값을 추려내기. + round수 - 1번 비교
+    <ul>
+      <li>n=8, round수 3번</li>
+      <li>n=9, round수 4번</li>
+      <li>….n=16, round수 4번</li>
+      <li>n=17, round수 5번</li>
+      <li>….n=33, round수 6번</li>
+      <li>log2(n)의 올림 수가 round 수</li>
+    </ul>
+  </li>
+  <li>최종 -&gt; n - log2(n) (의 올림) - 2 =&gt; 해당 횟수는 upperbound와 lowerbound가 일치된다고 증명되어있음.</li>
+</ul>
+
+<h2 id="quick-select">Quick Select</h2>
+
+<ul>
+  <li>
+    <p>n개의 값중에서 k번째로 작은 수 찾기</p>
+  </li>
+  <li>
+    <p>알고리즘 전개</p>
+    <ol>
+      <li>L이라는 리스트에 n개의 값이 들어있음.</li>
+      <li>pivot을 고른다 - L 내에서 랜덤한 값</li>
+      <li>A = {p보다 작은 값들}, M = {p와 같은 값들}, B = {p보다 큰 값들} -&gt; n-1번 비교</li>
+      <li>A의 개수를 비교.
+        <ol>
+          <li>
+            <table>
+              <tbody>
+                <tr>
+                  <td>if</td>
+                  <td>A</td>
+                  <td>&gt; k -&gt; A에서 k번째로 작은 값이 L에서 k보다 작은 값임. -&gt; 재귀적 사고를 활용 (L = A)</td>
+                </tr>
+              </tbody>
+            </table>
+          </li>
+          <li>
+            <table>
+              <tbody>
+                <tr>
+                  <td>elif</td>
+                  <td>A</td>
+                  <td>+</td>
+                  <td>M</td>
+                  <td>&lt; k -&gt; k번째로 작은 값은 B에 존재 -&gt; **B의 입장에서는 k-</td>
+                  <td>A</td>
+                  <td>-</td>
+                  <td>M</td>
+                  <td>**번째의 값이 L에서 k번째 작은 값이 됨.</td>
+                </tr>
+              </tbody>
+            </table>
+          </li>
+          <li>else -&gt; M에 k번째 작은값이 존재. -&gt; m은 pivot과 같은 값으로만 이어져있으므로, <code class="language-plaintext highlighter-rouge">return pivot</code></li>
+        </ol>
+      </li>
+    </ol>
+  </li>
+</ul>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># pseudo code
+</span><span class="k">def</span> <span class="nf">quickSelect</span><span class="p">(</span><span class="n">L</span><span class="p">,</span><span class="n">k</span><span class="p">):</span>
+    <span class="n">p</span> <span class="o">=</span> <span class="n">L</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+    <span class="n">A</span><span class="p">,</span><span class="n">B</span><span class="p">,</span><span class="n">M</span> <span class="o">=</span> <span class="p">[],[],[]</span>
+    <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">L</span> <span class="p">:</span>
+        <span class="k">if</span> <span class="n">x</span><span class="o">&lt;</span><span class="n">p</span><span class="p">:</span>
+            <span class="n">A</span><span class="p">.</span><span class="n">append</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+        <span class="k">elif</span> <span class="n">x</span><span class="o">==</span><span class="n">p</span><span class="p">:</span>
+            <span class="n">M</span><span class="p">.</span><span class="n">append</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">B</span><span class="p">.</span><span class="n">append</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+
+    <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">A</span><span class="p">)</span> <span class="o">&gt;</span> <span class="n">k</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">quickSelect</span><span class="p">(</span><span class="n">A</span><span class="p">,</span> <span class="n">k</span><span class="p">)</span>
+    <span class="k">elif</span> <span class="nb">len</span><span class="p">(</span><span class="n">A</span><span class="p">)</span> <span class="o">+</span> <span class="nb">len</span><span class="p">(</span><span class="n">M</span><span class="p">)</span> <span class="o">&lt;</span> <span class="n">k</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">quickSelect</span><span class="p">(</span><span class="n">B</span><span class="p">,</span> <span class="n">k</span><span class="o">-</span><span class="nb">len</span><span class="p">(</span><span class="n">A</span><span class="p">)</span><span class="o">-</span><span class="nb">len</span><span class="p">(</span><span class="n">M</span><span class="p">))</span> <span class="c1"># 조심! B에 피봇이 존재해도 재귀적으로 구현
+</span>    <span class="k">else</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">p</span>
+    <span class="c1"># 재귀적 호출이므로, pivot값이 재귀의 깊은 단계에서 리턴되었더라도 메모리에서 소멸되지 않음!!
+</span></code></pre></div></div>
+
+<ul>
+  <li>
+    <p>quickSelect worst case -&gt; A든 B든, 피봇의 비교로 나뉘는 집합이 극단적으로 나뉘는 경우</p>
+
+    <ul>
+      <li>T(n) = T(n-1) + n = 1 + 2 + … n = O(n^2)</li>
+    </ul>
+  </li>
+  <li>
+    <p>quickSelect best case -&gt; 피봇이 A와 B를 공평하게 나누는 경우</p>
+
+    <ul>
+      <li>T(n) = T(n/2) + n, let n = 2^k</li>
+      <li>T(n/2) = T(n/4) + n/2</li>
+      <li>… 1 + … n/4 + n/2 + n = n(1+1/2+1/4…..+1/2^k) &lt;= 2n =&gt; O(n)</li>
+    </ul>
+  </li>
+  <li>
+    <p>Average Case =&gt; O(n)</p>
+  </li>
+</ul>
+</section>
+</main>
+
 
     <script src="https://use.fontawesome.com/releases/v5.15.3/js/all.js"></script>
     <!-- JavaScript Bundle with Popper -->
