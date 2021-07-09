@@ -1,0 +1,1438 @@
+<!DOCTYPE html>
+<html lang="kr">
+  <head>
+    <head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!-- CSS only -->
+  <link
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+    rel="stylesheet"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+    crossorigin="anonymous"
+  />
+  <link href="/assets/CSS/style.css" rel="stylesheet" />
+  <title>Parkjju's TIL</title>
+</head>
+
+  </head>
+
+  <body>
+    <div class="main_bar">
+  <p class="main_bar--title"><a href="/">Parkjju's Today I Learned</a></p>
+
+  <div class="main_bar--right">
+    <!-- 검색창 -->
+    <form action="" method="get" class="search-box">
+      <i class="fas fa-search"></i>
+      <input class="search-form" type="text" autocomplete="off" />
+    </form>
+
+    <!-- 링크버튼 -->
+    <div
+      class="main_bar--link"
+      onclick="window.open('https://github.com/Parkjju')"
+    >
+      <p>Github</p>
+      <i class="fas fa-external-link-alt"></i>
+    </div>
+  </div>
+</div>
+ <div class="menu-bar">
+  <ul>
+    <li class="sidebar-group" role="menuitem">
+      <p
+        class="sidebar-heading"
+        data-bs-toggle="collapse"
+        href="#collapse5"
+        aria-expanded="false"
+        aria-controls="collapse5"
+        onclick="rotate(this)"
+      >
+        <span class="sidebar-heading--name">Computer Science</span>
+        <i class="fas fa-caret-right fa-xs"></i>
+      </p>
+    </li>
+    <div class="collapse" id="collapse5">
+      <div class="card card-body">
+        <a href="./docker" target="_self">Docker란?</a>
+      </div>
+      <div class="card card-body">
+        <a href="./domain" target="_self">Domain이란</a>
+      </div>
+      <div class="card card-body">
+        <a href="./serverless" target="_self">Serverless</a>
+      </div>
+      <div class="card card-body">
+        <a href="./library" target="_self">library vs framework</a>
+      </div>
+      <div class="card card-body">
+        <a href="./api" target="_self">API 란?</a>
+      </div>
+      <div class="card card-body">
+        <a href="./devops" target="_self">devops 정리</a>
+      </div>
+      <div class="card card-body">
+        <a href="./web_request" target="_self">web요청과 응답과정</a>
+      </div>
+      <div class="card card-body">
+        <a href="./block-chain" target="_self"
+          >nomad coders 블록체인 시리즈 총정리</a
+        >
+      </div>
+      <div class="card card-body">
+        <a href="./begin" target="_self">coursera series - Digital Logic</a>
+      </div>
+      <div class="card card-body">
+        <a href="./Module-Introduction" target="_self"
+          >coursera series - Hardware</a
+        >
+      </div>
+      <div class="card card-body">
+        <a href="./OS" target="_self">coursera series - OS</a>
+      </div>
+      <div class="card card-body">
+        <a href="./networking" target="_self">coursera series - networking</a>
+      </div>
+      <div class="card card-body">
+        <a href="./software" target="_self">coursera series - software</a>
+      </div>
+    </div>
+
+    <li class="sidebar-group" role="menuitem">
+      <p
+        class="sidebar-heading"
+        data-bs-toggle="collapse"
+        href="#collapse2"
+        aria-expanded="false"
+        aria-controls="collapse2"
+        onclick="rotate(this)"
+      >
+        <span class="sidebar-heading--name">Algorithm</span>
+        <i class="fas fa-caret-right fa-xs"></i>
+      </p>
+    </li>
+    <div class="collapse" id="collapse2">
+      <div class="card card-body">
+        <a href="./shortest" target="_self">
+          Bellman Ford & Dijkstra 최단경로 알고리즘
+        </a>
+      </div>
+      <div class="card card-body">
+        <a href="./all-to-all" target="_self">all-to-all 최단경로 </a>
+      </div>
+      <div class="card card-body">
+        <a href="./Recursion" target="_self"> Recursion 재귀 </a>
+      </div>
+      <div class="card card-body">
+        <a href="./selection" target="_self"
+          >선택문제 - k번째로 작은 수, Quickselection & MoM
+        </a>
+      </div>
+      <div class="card card-body">
+        <a href="./mom" target="_self"
+          >MOM - Median of Medians 알고리즘 설명 + 수행시간
+        </a>
+      </div>
+      <div class="card card-body">
+        <a href="./divide" target="_self"
+          >Divide and Conquer 알고리즘 설명 & 예시
+        </a>
+      </div>
+    </div>
+
+    <li class="sidebar-group" role="menuitem">
+      <p
+        class="sidebar-heading"
+        data-bs-toggle="collapse"
+        href="#collapse3"
+        aria-expanded="false"
+        aria-controls="collapse3"
+        onclick="rotate(this)"
+      >
+        <span class="sidebar-heading--name">Data structure</span>
+        <i class="fas fa-caret-right fa-xs"></i>
+      </p>
+    </li>
+    <div class="collapse" id="collapse3">
+      <div class="card card-body">
+        <a href="./data_structure" target="_self">자료구조의 이해 </a>
+        <a href="./sequential_structure" target="_self">선형 자료구조 </a>
+        <a href="./hash_table" target="_self">해시 테이블 자료구조 </a>
+        <a href="./stack_cal" target="_self"
+          >스택을 이용하여 계산기 구현하기
+        </a>
+        <a href="./SinglyLinkedList" target="_self"
+          >한 방향 연결리스트 연산 구현
+        </a>
+        <a href="./doublyLinkedList" target="_self"
+          >양 방향 연결리스트 연산 구현
+        </a>
+        <a href="./pydict" target="_self">파이썬의 딕셔너리 작동방식 </a>
+        <a href="./tree" target="_self">트리 자료구조 </a>
+        <a href="./open_addressing" target="_self"
+          >해시테이블 open addressing 실습
+        </a>
+        <a href="./heap" target="_self">heap 자료구조 </a>
+        <a href="./union-find" target="_self">union find 자료구조 </a>
+        <a href="./graph" target="_self">graph 자료구조 </a>
+      </div>
+    </div>
+
+    <li class="sidebar-group" role="menuitem">
+      <p
+        class="sidebar-heading"
+        data-bs-toggle="collapse"
+        href="#collapse4"
+        aria-expanded="false"
+        aria-controls="collapse4"
+        onclick="rotate(this)"
+      >
+        <span class="sidebar-heading--name">Python</span>
+        <i class="fas fa-caret-right fa-xs"></i>
+      </p>
+    </li>
+    <div class="collapse" id="collapse4">
+      <li class="sidebar-group" role="menuitem">
+        <p
+          class="sidebar-heading"
+          data-bs-toggle="collapse"
+          href="#pythonNewbie"
+          aria-expanded="false"
+          aria-controls="pythonNewbie"
+          onclick="rotate(this)"
+        >
+          <span class="sidebar-heading--name">Python 초급</span>
+          <!-- <i class="fas fa-caret-right fa-xs"></i> -->
+        </p>
+      </li>
+      <div class="collapse" id="pythonNewbie">
+        <div class="card card-body">
+          <a href="./functions" target="_self">입출력과 변수 </a>
+        </div>
+        <div class="card card-body">
+          <a href="./input_and_print" target="_self">간단한 함수 만들기 </a>
+        </div>
+        <div class="card card-body">
+          <a href="./input_loop" target="_self"
+            >프로그램 사용자로부터 입력받기 + 코드의 반복
+          </a>
+        </div>
+        <div class="card card-body">
+          <a href="./int_float_data" target="_self"
+            >int형 데이터와 float형 데이터
+          </a>
+        </div>
+        <div class="card card-body">
+          <a href="./list_string" target="_self">리스트와 문자열 </a>
+        </div>
+        <div class="card card-body">
+          <a href="./list_function" target="_self">리스트와 문자열의 함수들 </a>
+        </div>
+        <div class="card card-body">
+          <a href="./TF" target="_self">True,False, if문과 형제들 </a>
+        </div>
+        <div class="card card-body">
+          <a href="./for_while_loop" target="_self">while, 이중 for루프 </a>
+        </div>
+        <div class="card card-body">
+          <a href="./tuple_range" target="_self">튜플과 레인지 </a>
+        </div>
+        <div class="card card-body">
+          <a href="./functions_add" target="_self"
+            >함수에 대한 추가적인 설명 - 디폴트값 등
+          </a>
+        </div>
+        <div class="card card-body">
+          <a href="./modules" target="_self">모듈(Modules) </a>
+        </div>
+        <div class="card card-body">
+          <a href="./dictionary" target="_self">딕셔너리(Dictionary) </a>
+        </div>
+        <div class="card card-body">
+          <a href="./class" target="_self">클래스와 객체 </a>
+        </div>
+        <div class="card card-body">
+          <a href="./unexpect" target="_self">예외처리</a>
+        </div>
+      </div>
+      <li class="sidebar-group" role="menuitem">
+        <p
+          class="sidebar-heading"
+          data-bs-toggle="collapse"
+          href="#pythonUser"
+          aria-expanded="false"
+          aria-controls="pythonUser"
+          onclick="rotate(this)"
+        >
+          <span class="sidebar-heading--name">Python 중급</span>
+          <!-- <i class="fas fa-caret-right fa-xs"></i> -->
+        </p>
+      </li>
+      <div class="collapse" id="pythonUser">
+        <div class="card card-body">
+          <a href="./reference_count_garbage_collection" target="_self"
+            >레퍼런스 카운트와 가비지 컬렉션
+          </a>
+        </div>
+        <div class="card card-body">
+          <a href="./immutable_mutable" target="_self"
+            >수정 가능한 객체와 수정 불가능한 객체
+          </a>
+        </div>
+        <div class="card card-body">
+          <a href="./deep_shallow_copy" target="_self"
+            >깊은 복사와 얕은 복사
+          </a>
+        </div>
+        <div class="card card-body">
+          <a href="./hide_dict" target="_self">정보 은닉과 dict</a>
+        </div>
+        <div class="card card-body">
+          <a href="./property" target="_self">프로퍼티</a>
+        </div>
+        <div class="card card-body">
+          <a href="./slots" target="_self">슬롯</a>
+        </div>
+        <div class="card card-body">
+          <a href="./list_comprehension" target="_self">리스트 컴프리헨션</a>
+        </div>
+        <div class="card card-body">
+          <a href="./iterable_iterator" target="_self"
+            >Iterable 객체와 Iterator 객체</a
+          >
+        </div>
+        <div class="card card-body">
+          <a href="./lambda" target="_self"
+            >객체처럼 다뤄지는 함수 그리고 람다</a
+          >
+        </div>
+        <div class="card card-body">
+          <a href="./map_and_filter" target="_self">map&filter</a>
+        </div>
+        <div class="card card-body">
+          <a href="./func_comprehension" target="_self"
+            >map&filter를 대신하는 리스트 컴프리헨션</a
+          >
+        </div>
+        <div class="card card-body">
+          <a href="./generator" target="_self">generator 함수</a>
+        </div>
+        <div class="card card-body">
+          <a href="./generator_expression" target="_self"
+            >generator expression</a
+          >
+        </div>
+        <div class="card card-body">
+          <a href="./tuple_packing" target="_self">튜플의 패킹과 언패킹</a>
+        </div>
+        <div class="card card-body">
+          <a href="./named_tuple" target="_self">네임드 튜플</a>
+        </div>
+        <div class="card card-body">
+          <a href="./prod_dict" target="_self">dict의 생성과 zip</a>
+        </div>
+        <div class="card card-body">
+          <a href="./dict_lupin" target="_self"
+            >dict의 루핑 기술과 컴프리헨션</a
+          >
+        </div>
+        <div class="card card-body">
+          <a href="./func_star_rule" target="_self"
+            >함수 호출과 매개변수 선언에 있어서 *과 **의 사용규칙</a
+          >
+        </div>
+        <div class="card card-body">
+          <a href="./dict_defaultdict" target="_self">dict & defaultdict</a>
+        </div>
+        <div class="card card-body">
+          <a href="./ordered_dict" target="_self">dict & OrderedDict</a>
+        </div>
+        <div class="card card-body">
+          <a href="./set_frozenset" target="_self"
+            >자료형 분류와 set&frozenset</a
+          >
+        </div>
+        <div class="card card-body">
+          <a href="./sort" target="_self">정렬 기술</a>
+        </div>
+        <div class="card card-body">
+          <a href="./enumerate" target="_self">enumerate과 문자열 비교</a>
+        </div>
+        <div class="card card-body">
+          <a href="./expression_comb" target="_self">표현식 기반 문자열 조합</a>
+        </div>
+        <div class="card card-body">
+          <a href="./method_str" target="_self">메소드 기반 문자열 조합</a>
+        </div>
+        <div class="card card-body">
+          <a href="./class_obj" target="_self">클래스와 객체의 본질</a>
+        </div>
+        <div class="card card-body">
+          <a href="./inheritance" target="_self">상속</a>
+        </div>
+        <div class="card card-body">
+          <a href="./isinstance" target="_self"
+            >isinstance함수와 object클래스</a
+          >
+        </div>
+        <div class="card card-body">
+          <a href="./special_method" target="_self">스페셜 메소드</a>
+        </div>
+        <div class="card card-body">
+          <a href="./operator_overload" target="_self">연산자 오버로딩</a>
+        </div>
+        <div class="card card-body">
+          <a href="./nested_func" target="_self">네스티드 함수와 클로저</a>
+        </div>
+        <div class="card card-body">
+          <a href="./decorator" target="_self">데코레이터</a>
+        </div>
+        <div class="card card-body">
+          <a href="./class_method" target="_self"
+            >클래스 메소드와 static 메소드</a
+          >
+        </div>
+        <div class="card card-body">
+          <a href="./name_main" target="_self">__name__ & __main__</a>
+        </div>
+      </div>
+      <li class="sidebar-group" role="menuitem">
+        <p
+          class="sidebar-heading"
+          data-bs-toggle="collapse"
+          href="#pythonAdditional"
+          aria-expanded="false"
+          aria-controls="pythonAdditional"
+          onclick="rotate(this)"
+        >
+          <span class="sidebar-heading--name">Python 추가 내용</span>
+          <!-- <i class="fas fa-caret-right fa-xs"></i> -->
+        </p>
+      </li>
+      <div class="collapse" id="pythonAdditional">
+        <div class="card card-body">
+          <a href="./dataframe" target="_self">Python 데이터 프레임 </a>
+        </div>
+        <div class="card card-body">
+          <a href="./sqlAlchemy" target="_self"
+            >Python SQL alchemy를 통해 mysql 연동하기
+          </a>
+        </div>
+        <div class="card card-body">
+          <a href="./join" target="_self"
+            >Python 문자열 자르고 합치기 - join, split함수</a
+          >
+        </div>
+        <div class="card card-body">
+          <a href="./getitem" target="_self"
+            >Python getitem, setitem 스페셜메소드</a
+          >
+        </div>
+        <div class="card card-body">
+          <a href="./pylance" target="_self"
+            >Pylance Unresolved import warnings 트러블슈팅</a
+          >
+        </div>
+        <div class="card card-body">
+          <a href="./django-css" target="_self"
+            >Python django - How to add css to django application</a
+          >
+        </div>
+      </div>
+    </div>
+
+    <li class="sidebar-group" role="menuitem">
+      <p
+        class="sidebar-heading"
+        data-bs-toggle="collapse"
+        href="#collapse6"
+        aria-expanded="false"
+        aria-controls="collapse6"
+        onclick="rotate(this)"
+      >
+        <span class="sidebar-heading--name">CSS</span>
+        <i class="fas fa-caret-right fa-xs"></i>
+      </p>
+    </li>
+    <div class="collapse" id="collapse6">
+      <div class="card card-body">
+        <a href="./CSS_begin" target="_self"
+          >CSS 기초 - block ~ Selector, state</a
+        >
+      </div>
+      <div class="card card-body">
+        <a href="./CSS_Advanced" target="_self"
+          >CSS Transition, transform, animation</a
+        >
+      </div>
+      <div class="card card-body">
+        <a href="./CSS_additional" target="_self"
+          >CSS Icon, Block Element Modifier, Font</a
+        >
+      </div>
+      <div class="card card-body">
+        <a href="./resetCSS" target="_self">reset CSS</a>
+      </div>
+      <div class="card card-body">
+        <a href="./cssbox" target="_self"
+          >CSS box, text-transformation, z-index, flex-children,
+          forwards-animation, will change</a
+        >
+      </div>
+      <div class="card card-body">
+        <a href="./textarea" target="_self"
+          >CSS autocomplete, textarea resize, div에 onclick줘서 링크걸기</a
+        >
+      </div>
+      <div class="card card-body">
+        <a href="./bootstrap" target="_self"
+          >bootstrap 요소 클래스이름 충돌 관련 이슈 정리</a
+        >
+      </div>
+      <div class="card card-body">
+        <a href="./collapse" target="_self">bootstrap collapse이용하기</a>
+      </div>
+    </div>
+
+    <li class="sidebar-group" role="menuitem">
+      <p
+        class="sidebar-heading"
+        data-bs-toggle="collapse"
+        href="#collapse7"
+        aria-expanded="false"
+        aria-controls="collapse7"
+        onclick="rotate(this)"
+      >
+        <span class="sidebar-heading--name">Git</span>
+        <i class="fas fa-caret-right fa-xs"></i>
+      </p>
+    </li>
+    <div class="collapse" id="collapse7">
+      <div class="card card-body">Hello</div>
+      <div class="card card-body">Hello2</div>
+    </div>
+
+    <li class="sidebar-group" role="menuitem">
+      <p
+        class="sidebar-heading"
+        data-bs-toggle="collapse"
+        href="#collapse8"
+        aria-expanded="false"
+        aria-controls="collapse8"
+        onclick="rotate(this)"
+      >
+        <span class="sidebar-heading--name">Git</span>
+        <i class="fas fa-caret-right fa-xs"></i>
+      </p>
+    </li>
+    <div class="collapse" id="collapse8">
+      <div class="card card-body">Hello</div>
+      <div class="card card-body">Hello2</div>
+    </div>
+
+    <li class="sidebar-group" role="menuitem">
+      <p
+        class="sidebar-heading"
+        data-bs-toggle="collapse"
+        href="#collapse9"
+        aria-expanded="false"
+        aria-controls="collapse9"
+        onclick="rotate(this)"
+      >
+        <span class="sidebar-heading--name">Git</span>
+        <i class="fas fa-caret-right fa-xs"></i>
+      </p>
+    </li>
+    <div class="collapse" id="collapse9">
+      <div class="card card-body">Hello</div>
+      <div class="card card-body">Hello2</div>
+    </div>
+
+    <li class="sidebar-group" role="menuitem">
+      <p
+        class="sidebar-heading"
+        data-bs-toggle="collapse"
+        href="#collapse10"
+        aria-expanded="false"
+        aria-controls="collapse10"
+        onclick="rotate(this)"
+      >
+        <span class="sidebar-heading--name">HUFS 모각코 기록</span>
+        <i class="fas fa-caret-right fa-xs"></i>
+      </p>
+    </li>
+    <div class="collapse" id="collapse10">
+      <div class="card card-body">
+        <a href="./design" target="_self">2021.07 week2 </a>
+      </div>
+    </div>
+  </ul>
+</div>
+ 
+    <main class="main-post">
+  <h1 class="main-post--title">CSS 기초, 마진상쇄, flexbox, position, Pseudo selector, combinator, state</h1>
+  <div class="line"></div>
+  <section class="main-post--content"><h3 id="html에-css-추가하는-방법">HTML에 CSS 추가하는 방법</h3>
+
+<ol>
+  <li>
+    <p>같은 HTML파일에 CSS &amp; HTML코드를 배치 =&gt; head내에 style태그를 이용한다.</p>
+  </li>
+  <li>
+    <p>CSS와 HTML분리하기 -&gt; 권장되는 방법 (style.css생성 후 link태그의 href속성을 통해 접근 + rel=”stylesheet”지정)</p>
+  </li>
+</ol>
+
+<p>rel = relationsip의 약자로, 링크된 파일과의 관계를 설명</p>
+
+<ol>
+  <li>link:css -&gt; 외부 css파일 참조 뼈대코드 자동생성됨</li>
+</ol>
+
+<h3 id="css-코드-작성법-3가지-규칙">CSS 코드 작성법, 3가지 규칙</h3>
+
+<ol>
+  <li>
+    <p>셀렉터(selector)가 HTML 태그를 가리킨다.</p>
+  </li>
+  <li>
+    <p>프로퍼티(property)가 HTML태그의 속성을 지정한다.</p>
+  </li>
+  <li>
+    <p>CSS =&gt; Cascading style sheet임을 기억하자.</p>
+  </li>
+</ol>
+
+<p>(파일을 통해 external CSS를 지정하고, 파일 내부에서 inline CSS를 지정했지만</p>
+
+<p>만약 같은 태그에 대해 이루어진 것이라면?</p>
+
+<p>(<strong>cascading 성질로 인해 아래에 위치한 코드로 결국 적용된다.</strong>)</p>
+
+<ul>
+  <li>예시)</li>
+</ul>
+
+<div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">&lt;</span><span class="nt">style</span><span class="o">&gt;</span>
+    <span class="nt">h1</span><span class="p">{</span>
+        <span class="nl">color</span><span class="p">:</span><span class="no">blue</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="o">&lt;/</span><span class="nt">style</span><span class="o">&gt;</span>
+</code></pre></div></div>
+
+<ul>
+  <li><strong>프로퍼티 이름은 띄어쓰기가 불가능</strong>하며, 속성 지정시 <strong>콜론(:)</strong>, 속성 지정 후에는 <strong>세미콜론(;)</strong> 표기로 항상 마무리지어야한다.</li>
+</ul>
+
+<h3 id="blocks-and-inlines">Blocks and inlines</h3>
+
+<ul>
+  <li>
+    <p>Blocks의 성질을 지닌 태그들은 옆에 또 다른 block이 오지 못한다.&lt;/br&gt;(div, header, main, section 등등)</p>
+  </li>
+  <li>
+    <p>Block과 반대로 inline성질을 지닌 태그들은 옆에 다른 요소가 올 수 있다.</p>
+  </li>
+</ul>
+
+<h3 id="margin">Margin</h3>
+
+<ul>
+  <li>block을 inline으로 바꾸기 또는 반대의 경우를 진행 -&gt; display프로퍼티 만지기</li>
+</ul>
+
+<div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nc">.box</span> <span class="p">{</span>
+  <span class="nl">display</span><span class="p">:</span> <span class="nb">inline</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="nc">.nonbox</span> <span class="p">{</span>
+  <span class="nl">display</span><span class="p">:</span> <span class="nb">block</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<ul>
+  <li>(참고)inline요소는 너비와 높이를 가지지 않기 때문에, <strong>태그 내에 컨텐츠의 크기만큼만 공간을 차지</strong>하며 컨텐츠가 없으면 출력되는 것이 없다.</li>
+</ul>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">&lt;!DOCTYPE html&gt;</span>
+<span class="nt">&lt;head&gt;</span>
+  <span class="nt">&lt;style&gt;</span>
+    <span class="nt">header</span> <span class="p">{</span>
+      <span class="nl">display</span><span class="p">:</span> <span class="nb">inline</span><span class="p">;</span>
+      <span class="nl">height</span><span class="p">:</span> <span class="m">100px</span><span class="p">;</span>
+      <span class="nl">width</span><span class="p">:</span> <span class="m">100px</span><span class="p">;</span>
+      <span class="nl">background-color</span><span class="p">:</span> <span class="no">tomato</span><span class="p">;</span>
+    <span class="p">}</span>
+  <span class="nt">&lt;/style&gt;</span>
+<span class="nt">&lt;/head&gt;</span>
+<span class="nt">&lt;body&gt;</span>
+  <span class="nt">&lt;header&gt;&lt;/header&gt;</span>
+  <span class="nt">&lt;header&gt;&lt;/header&gt;</span>
+<span class="nt">&lt;/body&gt;</span>
+</code></pre></div></div>
+
+<ul>
+  <li>
+    <p>(참고) CSS설정시 특정 프로퍼티에 대해 값을 할당하지 않은 채 html파일을 생성하면&lt;/br&gt;브라우저의 종류에 따라 기본 설정값을 할당받아 생성되게 된다.&lt;/br&gt; 그 중 하나로 margin값이 있다&lt;/br&gt;</p>
+  </li>
+  <li>
+    <p>margin 프로퍼티에 값을 몇개 할당하느냐에 따라 적용되는 방향이 달라진다.</p>
+  </li>
+</ul>
+
+<div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">header</span><span class="p">{</span>
+    <span class="nl">margin</span><span class="p">:</span><span class="m">10px</span><span class="p">;</span> <span class="err">&lt;!--</span> <span class="err">box</span> <span class="err">상</span> <span class="err">하</span> <span class="err">좌</span> <span class="err">우</span> <span class="err">적용--&gt;</span>
+<span class="p">}</span>
+
+<span class="nt">header</span><span class="p">{</span>
+    <span class="nl">margin</span><span class="p">:</span><span class="m">10px</span> <span class="m">15px</span><span class="p">;</span> <span class="err">&lt;!--</span> <span class="err">상하</span> <span class="err">&amp;</span> <span class="err">좌우--&gt;</span>
+<span class="p">}</span>
+
+<span class="nt">header</span><span class="p">{</span>
+    <span class="nl">margin</span><span class="p">:</span> <span class="m">10px</span> <span class="m">15px</span> <span class="m">20px</span><span class="p">;</span> <span class="err">&lt;!--</span> <span class="err">첫번째는</span> <span class="err">상,</span> <span class="err">두번째는</span> <span class="err">좌우,</span> <span class="err">세번째는</span> <span class="err">하--&gt;</span>
+<span class="p">}</span>
+
+<span class="nt">header</span><span class="p">{</span>
+    <span class="nl">margin</span><span class="p">:</span> <span class="m">10px</span> <span class="m">15px</span> <span class="m">20px</span> <span class="m">25px</span><span class="p">;</span> <span class="err">&lt;!--</span> <span class="err">상우하좌,</span> <span class="err">시계방향--&gt;</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h3 id="여백상쇄란collapsing-margin">여백상쇄란?(Collapsing Margin)</h3>
+
+<blockquote>
+  <p>여러 블록의 위쪽 및 아래쪽 바깥 여백(마진)은 경우에 따라 제일 큰 여백의 크기를 가진 단일 여백으로 결합(상쇄)되곤 합니다. 이런 동작을 여백 상쇄라고 부릅니다. 단, 플로팅 요소와 절대 위치를 지정한 요소의 여백은 절대 상쇄되지 않습니다. - MDN</p>
+</blockquote>
+
+<ul>
+  <li>
+    <p>쉽게 말해, Block요소가 상 하로 존재하며 상하좌우 height,width 값을 모두 20px로 주었을 때&lt;/br&gt;
+&lt;img src=/assets/images/margin.PNG width=”100%” height=”100%”/&gt;</p>
+  </li>
+  <li>
+    <p>위의 이미지와 같이 윗 블록 요소의 하단부, 아래 블록 요소의 상단부가 겹쳐 &lt;/br&gt;본래 200px 가 되어야 할 마진 너비가 100px로 상쇄되어 버린 것이 바로 margin collapsing 현상이다.</p>
+  </li>
+  <li>
+    <p>이는 부모-자식 Block요소에서도 발생한다.</p>
+  </li>
+</ul>
+
+<div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nc">.parent</span> <span class="p">{</span>
+  <span class="nl">margin</span><span class="p">:</span> <span class="m">0</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="nc">.chi</span> <span class="p">{</span>
+  <span class="nl">margin</span><span class="p">:</span> <span class="m">50px</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<ul>
+  <li>위와 같은 클래스로 지정된 부모-자식 블록 태그가 있다고 가정하자.</li>
+</ul>
+
+<p><img src="/assets/images/margin2.jpg" width="100%" height="100%" /></p>
+
+<ul>
+  <li>
+    <p>허접하지만 위의 그림을 설명해보자면, 분명 부모 블록 요소의 클래스의 margin값을 0으로 지정했음에도 자식 블록 요소의 margin값이 50px였기 때문에 부모 블록 요소의 상단부에 여백이 생기게 된다.</p>
+  </li>
+  <li>
+    <p>이 경우는 개발자 입장에서 원하지 않는 형태의 구현이 될 수 있기 때문에 &lt;/br&gt;해당되는 케이스의 여백상쇄 현상을 일어나게 하지 않기 위해서는 공간을 차지하는 컨텐츠를 넣어줘야된다. &lt;/br&gt;하지만 쓸모 없는 텍스트를 집어넣을 수는 없으니 부모 블록 요소에 padding값을 지정함으로써 이를 방지한다.</p>
+  </li>
+</ul>
+
+<h3 id="paddings-and-ids">paddings and IDs</h3>
+
+<ul>
+  <li>
+    <p>padding opposite margin -&gt; padding은 box의 안쪽공간을 지정한다.</p>
+  </li>
+  <li>
+    <p>같은 요소에 차이를 두는 법 =&gt; id attribute 지정 후 &lt;/br&gt;
+style태그 내에서 #(해시태그)이용하여 프로퍼티 지정 (#id_name)</p>
+  </li>
+</ul>
+
+<div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nf">#exciting</span> <span class="p">{</span>
+  <span class="nl">background</span><span class="p">:</span> <span class="n">linear-gradient</span><span class="p">(</span><span class="n">to</span> <span class="nb">bottom</span><span class="p">,</span> <span class="m">#ffe8d4</span><span class="p">,</span> <span class="m">#f69d3c</span><span class="p">);</span>
+  <span class="nl">border</span><span class="p">:</span> <span class="m">1px</span> <span class="nb">solid</span> <span class="m">#696969</span><span class="p">;</span>
+  <span class="nl">padding</span><span class="p">:</span> <span class="m">10px</span><span class="p">;</span>
+  <span class="nl">border-radius</span><span class="p">:</span> <span class="m">10px</span><span class="p">;</span>
+  <span class="nl">box-shadow</span><span class="p">:</span> <span class="m">2px</span> <span class="m">2px</span> <span class="m">1px</span> <span class="no">black</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h3 id="border">border</h3>
+
+<ul>
+  <li>border : size style color;</li>
+</ul>
+
+<h3 id="classes">classes</h3>
+
+<ul>
+  <li>
+    <p>inline 요소는 너비와 높이의 개념이 없고, margin또한 좌-우만 적용 가능하다.</p>
+  </li>
+  <li>
+    <p>padding의 경우는 상하좌우 모두 적용 가능하다.</p>
+  </li>
+  <li>
+    <p>CSS class -&gt; 같은 태그 특정 컨텐츠에 다른 프로퍼티를 적용하고 싶을 때 이용한다.</p>
+  </li>
+  <li>
+    <p>ID의 경우 unique해야한다는 속성으로 인해 효율이 떨어진다.</p>
+  </li>
+</ul>
+
+<div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nf">#ID_one</span><span class="o">,</span>
+<span class="nf">#ID_two</span><span class="o">,</span>
+<span class="nf">#ID_three</span> <span class="p">{</span>
+  <span class="nl">color</span><span class="p">:</span> <span class="no">tomato</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<ul>
+  <li>
+    <p>ID로 여러 태그들 지정 시 위와 같이 한 번에 묶을 수 있다.</p>
+  </li>
+  <li>
+    <p>ID를 이용할 때 가장 큰 문제는, 특정 요소에 대하여 속성을 지정하고싶은데, 한 요소의 color를 red, 다른 요소의 color를 black 으로 설정하고 나머지의 프로퍼티를 동일하게하고싶을 때 비슷한 코드를 여러 번 작성해야하는 점이 비효율적이다.</p>
+  </li>
+  <li>
+    <p>id선택자는 요소당 하나밖에 지정 불가 !</p>
+  </li>
+  <li>
+    <p>class 지정 기본 구조는 다음과 같다</p>
+  </li>
+</ul>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;style&gt;</span>
+  <span class="nc">.class_name</span><span class="p">{</span>
+      <span class="err">color</span> <span class="err">=</span> <span class="err">red;</span>
+      <span class="err">background-color</span> <span class="err">=</span> <span class="err">tomato;</span>
+  <span class="p">}</span>
+<span class="nt">&lt;/style&gt;</span>
+<span class="nt">&lt;body&gt;</span>
+  <span class="nt">&lt;p</span> <span class="na">class=</span><span class="s">"class_name"</span><span class="nt">&gt;</span>
+    <span class="c">&lt;!--클래스 지정--&gt;</span>
+    text
+  <span class="nt">&lt;/p&gt;</span>
+<span class="nt">&lt;/body&gt;</span>
+</code></pre></div></div>
+
+<ul>
+  <li>한 요소에 여러 개의 클래스 지정도 가능하다. (공백으로 구분)</li>
+</ul>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;style&gt;</span>
+  <span class="nc">.class1</span> <span class="p">{</span>
+    <span class="nl">color</span><span class="p">:</span> <span class="no">tomato</span><span class="p">;</span>
+  <span class="p">}</span>
+  <span class="nc">.class2</span> <span class="p">{</span>
+    <span class="nl">background-color</span><span class="p">:</span> <span class="no">red</span><span class="p">;</span>
+  <span class="p">}</span>
+<span class="nt">&lt;/style&gt;</span>
+<span class="nt">&lt;body&gt;</span>
+  <span class="nt">&lt;p</span> <span class="na">class=</span><span class="s">"class1 class2"</span><span class="nt">&gt;</span>hello<span class="nt">&lt;/p&gt;</span>
+<span class="nt">&lt;/body&gt;</span>
+</code></pre></div></div>
+
+<h3 id="inline-block">inline block</h3>
+
+<ul>
+  <li>
+    <p>display 프로퍼티를 이용하여 inline-block … 등 여러 value를 지정할 때에 공간활용을 공평하지 못하게 분배한다는 문제점이 발생</p>
+  </li>
+  <li>
+    <p>즉, responsive design(반응형 웹디자인)을 지원하지 않는다.</p>
+  </li>
+  <li>
+    <p>이를 해결해주는 flexbox!</p>
+  </li>
+</ul>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;head&gt;</span>
+  <span class="nt">&lt;style&gt;</span>
+    <span class="nt">p</span> <span class="p">{</span>
+      <span class="nl">display</span><span class="p">:</span> <span class="n">inline-block</span><span class="p">;</span>
+      <span class="nl">background-color</span><span class="p">:</span> <span class="no">green</span><span class="p">;</span>
+      <span class="nl">width</span><span class="p">:</span> <span class="m">200px</span><span class="p">;</span>
+      <span class="nl">height</span><span class="p">:</span> <span class="m">200px</span><span class="p">;</span>
+    <span class="p">}</span>
+  <span class="nt">&lt;/style&gt;</span>
+<span class="nt">&lt;/head&gt;</span>
+</code></pre></div></div>
+
+<ul>
+  <li>
+    <p>위와 같이 스타일 및 display프로퍼티를 설정해 둔 후, 브라우저를 확대 - 축소 해보자.</p>
+
+    <ul>
+      <li>inline-block요소의 블록의 크기에 대해 자연스럽게 변하지 않고, 다음 줄로 넘어가버린다!</li>
+    </ul>
+  </li>
+  <li>
+    <p>flexbox는 이에 대해 자동으로 공간을 계산하여 박사의 크기를 조절한다</p>
+  </li>
+</ul>
+
+<h3 id="flexbox-part-one">Flexbox Part one</h3>
+
+<ul>
+  <li>
+    <p>주의 - <strong>부모요소에만 flex임을 인지시키기</strong></p>
+  </li>
+  <li>
+    <p>부모 요소에 display프로퍼티를 flex로 지정한 뒤에는 해당 부모 요소에게 justify-content 프로퍼티 또한 적용할 수 있게 된다.</p>
+  </li>
+</ul>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;head&gt;</span>
+  <span class="nt">&lt;style&gt;</span>
+    <span class="nt">body</span><span class="p">{</span>
+        <span class="nl">display</span><span class="p">:</span> <span class="n">flex</span><span class="p">;</span>
+        <span class="nl">justify-content</span><span class="p">:</span> <span class="nb">center</span><span class="p">;</span> <span class="err">&lt;!--가운데맞춤--&gt;</span>
+    <span class="p">}</span>
+  <span class="nt">&lt;/style&gt;</span>
+<span class="nt">&lt;/head&gt;</span>
+</code></pre></div></div>
+
+<ul>
+  <li>
+    <p>flexbox에는 축의 개념이 존재한다. 위의 justify-content 프로퍼티가 가로축(default)이고, align-items가 세로축(default)이다.</p>
+
+    <ul>
+      <li>
+        <p>flexbox에서 세로축은 main-axis, 가로축은 cross-axis이다.</p>
+      </li>
+      <li>
+        <p>justify-content와 align-items가 가리키는 축의 방향이 각각 main과cross인 것은 기본 설정이고, 이는 바꿀 수 있는 옵션이다.</p>
+      </li>
+    </ul>
+  </li>
+</ul>
+
+<h3 id="flexbox-part-two">flexbox part two</h3>
+
+<ul>
+  <li>justify-content와 align-items가 가리키는 축의 방향을 바꾸고 싶을 때의 프로퍼티</li>
+</ul>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;style&gt;</span>
+  <span class="nt">body</span><span class="p">{</span>
+      <span class="nl">display</span><span class="p">:</span> <span class="n">flex</span><span class="p">;</span>
+      <span class="nl">flex-direction</span><span class="p">:</span> <span class="n">column</span><span class="p">;</span> <span class="err">&lt;!--or</span> <span class="err">row--&gt;</span>
+  <span class="p">}</span>
+<span class="nt">&lt;/style&gt;</span>
+</code></pre></div></div>
+
+<ul>
+  <li>
+    <p>main-axis가 수직이고, cross-axis가 수평일 때 -&gt; column옵션</p>
+  </li>
+  <li>
+    <p>main-axis가 수평이고, cross-axis가 수직일 때 -&gt; row옵션(default)</p>
+  </li>
+  <li>
+    <p>flex와 관련된 프로퍼티 지정은 <strong>부모와 자식 관계</strong> 에서만 적용되고, 부모의 부모에 있어서는 적용이 되지 않는다.</p>
+  </li>
+  <li>
+    <p>flex-wrap 프로퍼티 - 브라우저 사이즈에 따른 컨텐츠의 변화 지정</p>
+
+    <ul>
+      <li>
+        <p>nowrap -&gt; 사이즈가 부족하면 그만큼 컨텐츠를 줄임</p>
+      </li>
+      <li>
+        <p>wrap -&gt; 사이즈가 부족하면 반응형에 맞추어 다음 줄로 넘어감</p>
+      </li>
+      <li>
+        <p>wrap-reverse -&gt; wrap될 때 x축 기준 대칭되어 쌓아올려짐</p>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <p>flex-direction 프로퍼티</p>
+
+    <ul>
+      <li>
+        <p>colunm-reverse : 나열된 컨텐츠들이 x축 대칭으로 변함</p>
+      </li>
+      <li>
+        <p>row-reverse : 나열된 컨텐츠들이 y축 대칭으로 변환</p>
+      </li>
+    </ul>
+  </li>
+</ul>
+
+<h4 id="css-hack">CSS hack</h4>
+
+<ul>
+  <li>
+    <p><strong>justify-content 프로퍼티의 space-between 값을 이용</strong></p>
+
+    <ul>
+      <li>
+        <p>flex로 나열된 컨텐츠들이 좌우로 공평하게 공간을 나누어 나열됨</p>
+      </li>
+      <li>
+        <p>하지만 각 컨텐츠의 width에 따라 중앙의 컨텐츠가 좌 또는 우 방향으로 치우칠 수도 있다는 문제점이 발생</p>
+      </li>
+      <li>
+        <p>css hack이용 !</p>
+      </li>
+    </ul>
+  </li>
+</ul>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;style&gt;</span>
+  <span class="nt">body</span> <span class="p">{</span>
+    <span class="nl">display</span><span class="p">:</span> <span class="n">flex</span><span class="p">;</span>
+    <span class="nl">justify-content</span><span class="p">:</span> <span class="nb">center</span><span class="p">;</span>
+  <span class="p">}</span>
+
+  <span class="nc">.myParentclass</span> <span class="p">{</span>
+    <span class="nl">width</span><span class="p">:</span> <span class="m">33%</span><span class="p">;</span>
+  <span class="p">}</span>
+
+  <span class="nc">.myParentclass__column</span><span class="nd">:nth-child</span><span class="o">(</span><span class="err">2</span><span class="o">)</span> <span class="p">{</span>
+    <span class="nl">display</span><span class="p">:</span> <span class="n">flex</span><span class="p">;</span>
+    <span class="nl">justify-content</span><span class="p">:</span> <span class="nb">center</span><span class="p">;</span>
+  <span class="p">}</span>
+
+  <span class="nc">.myParentclass_column</span><span class="nd">:last-child</span> <span class="p">{</span>
+    <span class="nl">display</span><span class="p">:</span> <span class="n">flex</span><span class="p">;</span>
+    <span class="nl">justify-content</span><span class="p">:</span> <span class="n">flex-end</span><span class="p">;</span>
+    <span class="nl">align-items</span><span class="p">:</span> <span class="nb">center</span><span class="p">;</span>
+  <span class="p">}</span>
+<span class="nt">&lt;/style&gt;</span>
+</code></pre></div></div>
+
+<ul>
+  <li>3분할된 공간을 공평하게 나누기 위한 작업.</li>
+</ul>
+
+<h3 id="fixed">Fixed</h3>
+
+<ul>
+  <li>
+    <p>position 프로퍼티 -&gt; Fixed로 속성값 지정시 스크롤 해도 컨텐츠 고정.</p>
+  </li>
+  <li>
+    <p>참고) 스크롤 될 정도로 브라우저 내의 body 키우려면</p>
+
+    <ul>
+      <li>body 스타일에 height:1000vh (view height) 지정을 큰 값으로 !</li>
+    </ul>
+  </li>
+</ul>
+
+<h3 id="relative-absolute">Relative absolute</h3>
+
+<ul>
+  <li>
+    <p>position 프로퍼티의 default 값 -&gt; static.</p>
+
+    <ul>
+      <li>레이아웃이 박스를 처음 위치하는 곳에 둠</li>
+    </ul>
+  </li>
+  <li>
+    <p>position 프로퍼티의 relative</p>
+
+    <ul>
+      <li>
+        <p>속성값을 relative로 설정 시 top, bottom, left, right 프로퍼티를 사용할 수 있게 된다.</p>
+      </li>
+      <li>
+        <p>element가 처음 위치한 곳을 기준으로 수정함.</p>
+      </li>
+    </ul>
+  </li>
+</ul>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;style&gt;</span>
+  <span class="nt">div</span> <span class="p">{</span>
+    <span class="nl">width</span><span class="p">:</span> <span class="m">300px</span><span class="p">;</span>
+    <span class="nl">height</span><span class="p">:</span> <span class="m">50vh</span><span class="p">;</span>
+    <span class="nl">background-color</span><span class="p">:</span> <span class="no">teal</span><span class="p">;</span>
+  <span class="p">}</span>
+  <span class="nc">.class2</span> <span class="p">{</span>
+    <span class="nl">background-color</span><span class="p">:</span> <span class="no">blanchedalmond</span><span class="p">;</span>
+    <span class="nl">height</span><span class="p">:</span> <span class="m">100px</span><span class="p">;</span>
+    <span class="nl">position</span><span class="p">:</span> <span class="nb">relative</span><span class="p">;</span>
+    <span class="nl">top</span><span class="p">:</span> <span class="m">-10px</span><span class="p">;</span>
+  <span class="p">}</span>
+<span class="nt">&lt;/style&gt;</span>
+</code></pre></div></div>
+
+<ul>
+  <li>
+    <p>스타일 태그를 위와 같이 정의하고, body내에서 div가 중첩되어있는 구조이며 안쪽 div태그에 class2를 적용했다고 가정하자.</p>
+
+    <ul>
+      <li>
+        <p>position 프로퍼티를 relative로 설정하고 top bottom left right 프로퍼티중 원하는 것을 골라 속성값으로 -10px를 주면,</p>
+      </li>
+      <li>
+        <p>안쪽 div 태그가 좌측 상단에 붙어있는 상황에서, 안쪽 div 박스가 10px 만큼 올라가게 된다.</p>
+      </li>
+      <li>
+        <p>relative 단어의 의미답게 위치를 상대화 함으로써 처음 태그 생성 후 만들어진 요소의 위치로부터 적당한 간격으로 조절을 시도한다.</p>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <p>position 프로퍼티의 absolute 속성값</p>
+
+    <ul>
+      <li>
+        <p>가장 가까운 relative부모를 기준으로 이동한다.</p>
+      </li>
+      <li>
+        <p>가정) body태그에 relative 속성을 주고, body내에 div태그를 중첩하여 두자.</p>
+      </li>
+      <li>
+        <p>안쪽 div태그에 absolute속성을 주자</p>
+      </li>
+      <li>
+        <p>자신의 부모 태그인 바깥 div태그는 relative가 아니므로 안쪽 div 태그에 right: 0px 프로퍼티를 설정하여도 바깥 div태그의 오른 쪽 끝으로 이동하지 않는다.</p>
+      </li>
+      <li>
+        <p>가장 가까운 relative 부모인 body태그를 찾았고, 해당 body태그 공간의 가장 오른쪽 끝으로 가게 된다</p>
+      </li>
+    </ul>
+  </li>
+</ul>
+
+<h3 id="pseudo-selector-part-one">Pseudo Selector part one</h3>
+
+<ul>
+  <li>
+    <p>Pseudo Selector란?</p>
+
+    <ul>
+      <li>세부적으로 셀렉터를 선택!</li>
+    </ul>
+
+    <ol>
+      <li>태그 이름</li>
+      <li>클래스</li>
+      <li>id</li>
+      <li>etc…</li>
+    </ol>
+  </li>
+</ul>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;style&gt;</span>
+  <span class="nt">div</span><span class="nd">:first-child</span><span class="p">{</span> <span class="err">&lt;!--띄어쓰기</span> <span class="err">하면</span> <span class="err">안됨.--&gt;</span>
+      <span class="nl">color</span><span class="p">:</span> <span class="no">black</span><span class="p">;</span>
+  <span class="p">}</span>
+  <span class="nt">div</span><span class="nd">:last-child</span><span class="p">{</span>
+      <span class="nl">color</span><span class="p">:</span> <span class="no">wheat</span><span class="p">;</span>
+  <span class="p">}</span>
+<span class="nt">&lt;/style&gt;</span>
+</code></pre></div></div>
+
+<ul>
+  <li>
+    <p>위의 예시를 보면, div: first-child 라는 표현을 썼음을 확인할 수 있는데, 이는 div태그들 중 가장 첫 번째 div태그를 말한다.</p>
+  </li>
+  <li>
+    <p>last-child의 경우 가장 마지막 div태그를 선택</p>
+  </li>
+  <li>
+    <p>nth-child도 존재한다.</p>
+
+    <ul>
+      <li>nth-child(odd,even,2n+1 …..)</li>
+    </ul>
+  </li>
+</ul>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;style&gt;</span>
+    <span class="nt">div</span><span class="nd">:nth-child</span><span class="o">(</span><span class="nt">odd</span><span class="o">)</span><span class="p">{</span>
+        <span class="nl">color</span><span class="p">:</span><span class="no">tomato</span><span class="p">;</span>
+    <span class="p">}</span>
+</code></pre></div></div>
+
+<h3 id="combinators">combinators</h3>
+
+<ul>
+  <li>span 태그 전체에 style 적용하기</li>
+</ul>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;style&gt;</span>
+  <span class="nt">span</span> <span class="p">{</span>
+    <span class="nl">color</span><span class="p">:</span> <span class="no">tomato</span><span class="p">;</span>
+  <span class="p">}</span>
+<span class="nt">&lt;/style&gt;</span>
+</code></pre></div></div>
+
+<ul>
+  <li>
+    <p>p 태그의 자식요소인 span 태그에 style적용하기</p>
+  </li>
+  <li>
+    <p>부모를 먼저 쓰고 자식 태그를 씀 -&gt; 자식 태그를 부모 요소에서 찾음</p>
+  </li>
+  <li>
+    <p>children selector라고 부르며, 이를 지정 시 부모-자식의 구조가 맞지 않으면 스타일이 적용되지 않음.</p>
+  </li>
+</ul>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;style&gt;</span>
+  <span class="nt">p</span> <span class="nt">span</span> <span class="p">{</span>
+    <span class="nl">color</span><span class="p">:</span> <span class="no">tomato</span><span class="p">;</span>
+  <span class="p">}</span>
+<span class="nt">&lt;/style&gt;</span>
+</code></pre></div></div>
+
+<ul>
+  <li>children selector 지정 시 생길 수 있는 문제</li>
+</ul>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;style&gt;</span>
+  <span class="nt">span</span> <span class="p">{</span>
+    <span class="nl">background-color</span><span class="p">:</span> <span class="no">yellowgreen</span><span class="p">;</span>
+    <span class="nl">padding</span><span class="p">:</span> <span class="m">5px</span><span class="p">;</span>
+    <span class="nl">border-radius</span><span class="p">:</span> <span class="m">10px</span><span class="p">;</span>
+    <span class="nl">text-decoration</span><span class="p">:</span> <span class="nb">underline</span><span class="p">;</span>
+  <span class="p">}</span>
+  <span class="nt">p</span> <span class="nt">span</span> <span class="p">{</span>
+    <span class="nl">color</span><span class="p">:</span> <span class="no">white</span><span class="p">;</span>
+  <span class="p">}</span>
+<span class="nt">&lt;/style&gt;</span>
+</code></pre></div></div>
+
+<ul>
+  <li>
+    <p>만약 위의 상황에서 p의 자식 요소의 span태그에는 underline 속성값을 주지않고, 바깥 요소의 span 태그에만 underline을 주고싶다면?</p>
+
+    <ol>
+      <li>
+        <p>span전체 태그에 text-decoration을 주고, p의 자식 요소에 text-decoration: none 을 준다. (좋은 방법 X)</p>
+      </li>
+      <li>
+        <p>direct children을 지정한다. (부모 태그의 바로 밑 자식을 지정) ==&gt; p &gt; span{}</p>
+      </li>
+    </ol>
+  </li>
+</ul>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;style&gt;</span>
+  <span class="nt">p</span> <span class="o">&gt;</span> <span class="nt">span</span> <span class="p">{</span>
+    <span class="nl">color</span><span class="p">:</span> <span class="no">tomato</span><span class="p">;</span>
+  <span class="p">}</span>
+<span class="nt">&lt;/style&gt;</span>
+</code></pre></div></div>
+
+<ul>
+  <li>
+    <p>또한 p의 direct 자식을 지정하는 방법 외에 p의 형제 요소에 대한 스타일 지정 방법 또한 있다.</p>
+  </li>
+  <li>
+    <p>p + span{}의 형식을 지니면 p 다음에 오는 span태그에 대한 style을 지정하는 것이다.</p>
+  </li>
+</ul>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;style&gt;</span>
+  <span class="nt">p</span> <span class="o">+</span> <span class="nt">span</span> <span class="p">{</span>
+    <span class="nl">color</span><span class="p">:</span> <span class="no">tomato</span><span class="p">;</span>
+  <span class="p">}</span>
+<span class="nt">&lt;/style&gt;</span>
+</code></pre></div></div>
+
+<h3 id="pseudo-selectors-part-two">pseudo selectors part two</h3>
+
+<ul>
+  <li>
+    <p>위의 combinator에서 +는 바로 다음 위치에 오는 태그에 대해서만 스타일이 적용된다는 한계가 있다.</p>
+  </li>
+  <li>
+    <p>이에 대해 ~ pseudo selector를 이용하면 형제관계가 바로 다음 위치에 오지 않아도 된다.</p>
+  </li>
+</ul>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;style&gt;</span>
+  <span class="nt">p</span> <span class="o">~</span> <span class="nt">span</span> <span class="p">{</span>
+    <span class="nl">background-color</span><span class="p">:</span> <span class="no">black</span><span class="p">;</span>
+  <span class="p">}</span>
+<span class="nt">&lt;/style&gt;</span>
+</code></pre></div></div>
+
+<h3 id="pseudo-selectors-part-two-1">Pseudo selectors part two</h3>
+
+<ul>
+  <li>attribute selector</li>
+</ul>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;style&gt;</span>
+  <span class="nt">input</span><span class="o">[</span><span class="nt">placeholder</span><span class="o">~=</span><span class="s1">"name"</span><span class="o">]</span> <span class="p">{</span>
+    <span class="nl">background-color</span><span class="p">:</span> <span class="no">pink</span><span class="p">;</span>
+  <span class="p">}</span>
+<span class="nt">&lt;/style&gt;</span>
+</code></pre></div></div>
+
+<ul>
+  <li>
+    <p>태그 옆에 []를 통해 attibute selector를 설정할 수 있다.</p>
+  </li>
+  <li>
+    <p>이후 body태그에서 attribute selector를 호출할 수 있다.</p>
+
+    <ul>
+      <li>
+        <p>attribute_name = “Attribute value” -&gt; 해당 속성을 지닌 태그를 제어</p>
+      </li>
+      <li>
+        <p>attribute_name ~= “Attribute value” -&gt; 해당 속성에 대한 단어를 포함한 모든 태그 제어</p>
+      </li>
+      <li>
+        <p>attribute_name $= “Attribute value” -&gt; 해당 속성에 대한 단어로 끝나는 모든 태그 제어</p>
+      </li>
+      <li>
+        <p>등등.. 링크 참조</p>
+      </li>
+    </ul>
+
+    <p><a href="https://developer.mozilla.org/ko/docs/Web/CSS/Attribute_selectors">(특성 선택자 - attribute selector)</a></p>
+  </li>
+</ul>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;style&gt;</span>
+    <span class="nt">a</span><span class="o">[</span><span class="nt">href</span><span class="o">=</span><span class="s1">"https://google.com"</span><span class="o">]</span><span class="p">{</span>
+        <span class="nl">color</span><span class="p">:</span><span class="no">green</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="nt">a</span><span class="o">[</span><span class="nt">href</span><span class="err">$</span><span class="o">=</span><span class="s1">".org"</span><span class="o">]</span><span class="p">{</span>
+        <span class="nl">color</span><span class="p">:</span><span class="no">green</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="nt">a</span><span class="o">[</span><span class="nt">class</span><span class="o">~=</span><span class="s1">"logo"</span><span class="o">]</span><span class="p">{</span>
+        <span class="nl">color</span><span class="p">:</span><span class="no">red</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="nt">a</span><span class="o">[</span><span class="nt">href</span><span class="o">*=</span><span class="s1">"example"</span><span class="o">]</span><span class="p">{</span>
+        <span class="nl">color</span><span class="p">:</span><span class="no">wheat</span><span class="p">;</span>
+    <span class="p">}</span>
+</code></pre></div></div>
+
+<h3 id="states">states</h3>
+
+<ul>
+  <li>선택한 요소에 대해 특별한 상태이어야 만족하여 동작을 취함.</li>
+</ul>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;style&gt;</span>
+  <span class="nt">button</span><span class="nd">:hover</span> <span class="p">{</span>
+    <span class="nl">color</span><span class="p">:</span> <span class="no">red</span><span class="p">;</span>
+  <span class="p">}</span>
+<span class="nt">&lt;/style&gt;</span>
+</code></pre></div></div>
+
+<p><a href="https://developer.mozilla.org/ko/docs/Web/CSS/Pseudo-classes">CSS States</a></p>
+
+<ul>
+  <li>states 연계하기</li>
+</ul>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;style&gt;</span>
+  <span class="nt">form</span><span class="nd">:hover</span> <span class="nt">input</span><span class="nd">:focus</span> <span class="p">{</span>
+    <span class="py">nackground-color</span><span class="p">:</span> <span class="no">black</span><span class="p">;</span>
+  <span class="p">}</span>
+<span class="nt">&lt;/style&gt;</span>
+</code></pre></div></div>
+
+<ul>
+  <li>위와 같이 states를 연계하면 두 state를 모두 만족할 때 input 에 대해 제어한다는 의미이다. (form이 hover이고 input이 form 안에 있을 때)</li>
+</ul>
+
+<h3 id="recap">Recap</h3>
+
+<ul>
+  <li>
+    <p>::??</p>
+  </li>
+  <li>
+    <p>::selection{} -&gt; 커서 드래그를 통해 텍스트를 select 했을 때의 스타일 지정</p>
+  </li>
+</ul>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;style&gt;</span>
+  <span class="nt">p</span><span class="nd">::selection</span> <span class="p">{</span>
+    <span class="nl">color</span><span class="p">:</span> <span class="no">white</span><span class="p">;</span>
+    <span class="nl">background-color</span><span class="p">:</span> <span class="no">wheat</span><span class="p">;</span>
+  <span class="p">}</span>
+<span class="nt">&lt;/style&gt;</span>
+</code></pre></div></div>
+
+<ul>
+  <li>
+    <p>::first-letter -&gt; 첫 글자에 대한 스타일 지정</p>
+  </li>
+  <li>
+    <p>::first-line -&gt; 첫 줄에 대한 스타일 지정</p>
+  </li>
+</ul>
+
+<h3 id="colors-and-variables">colors and variables</h3>
+
+<ul>
+  <li>
+    <p>CSS color system</p>
+
+    <ol>
+      <li>
+        <p>hexadecimal color -&gt; #F123</p>
+      </li>
+      <li>
+        <p>RGB or rgba(a==투명도) -&gt; rgb(197,93,161), rgba(195,32,132, 0.5)</p>
+      </li>
+    </ol>
+  </li>
+  <li>
+    <p>같은 색을 여러 번 이용할 시 매번 복사&amp;붙여넣기? NO!</p>
+
+    <ul>
+      <li>
+        <p>:root 엘리먼트를 추가 (모든 document의 뿌리가 됨)</p>
+      </li>
+      <li>
+        <p>custom property!</p>
+      </li>
+      <li>
+        <p>custom property는 색 뿐만 아니라 다른 것들도 저장 가능함.</p>
+      </li>
+    </ul>
+  </li>
+</ul>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;style&gt;</span>
+  <span class="nd">:root</span> <span class="p">{</span>
+    <span class="py">--main-color</span><span class="p">:</span> <span class="m">#fcce00</span><span class="p">;</span>
+    <span class="py">--default-border</span><span class="p">:</span> <span class="m">1px</span> <span class="nb">solid</span> <span class="n">var</span><span class="p">(</span><span class="n">--main-color</span><span class="p">);</span>
+  <span class="p">}</span>
+  <span class="nt">p</span> <span class="p">{</span>
+    <span class="nl">background-color</span><span class="p">:</span> <span class="n">var</span><span class="p">(</span><span class="n">--main-color</span><span class="p">);</span>
+  <span class="p">}</span>
+<span class="nt">&lt;/style&gt;</span>
+</code></pre></div></div>
+
+<ul>
+  <li>변수 명은 –var-name의 형식으로 선언해야하고, 호출 시에는 var(–var-name)으로 호출해야한다.</li>
+</ul>
+</section>
+</main>
+
+
+    <script src="https://use.fontawesome.com/releases/v5.15.3/js/all.js"></script>
+    <!-- JavaScript Bundle with Popper -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+      crossorigin="anonymous"
+    ></script>
+    <script src="assets/js/sidebar-click-event.js"></script>
+    <script src="//code.jquery.com/jquery-3.3.1.min.js"></script>
+  </body>
+</html>

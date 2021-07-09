@@ -1,0 +1,941 @@
+<!DOCTYPE html>
+<html lang="kr">
+  <head>
+    <head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!-- CSS only -->
+  <link
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+    rel="stylesheet"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+    crossorigin="anonymous"
+  />
+  <link href="/assets/CSS/style.css" rel="stylesheet" />
+  <title>Parkjju's TIL</title>
+</head>
+
+  </head>
+
+  <body>
+    <div class="main_bar">
+  <p class="main_bar--title"><a href="/">Parkjju's Today I Learned</a></p>
+
+  <div class="main_bar--right">
+    <!-- 검색창 -->
+    <form action="" method="get" class="search-box">
+      <i class="fas fa-search"></i>
+      <input class="search-form" type="text" autocomplete="off" />
+    </form>
+
+    <!-- 링크버튼 -->
+    <div
+      class="main_bar--link"
+      onclick="window.open('https://github.com/Parkjju')"
+    >
+      <p>Github</p>
+      <i class="fas fa-external-link-alt"></i>
+    </div>
+  </div>
+</div>
+ <div class="menu-bar">
+  <ul>
+    <li class="sidebar-group" role="menuitem">
+      <p
+        class="sidebar-heading"
+        data-bs-toggle="collapse"
+        href="#collapse5"
+        aria-expanded="false"
+        aria-controls="collapse5"
+        onclick="rotate(this)"
+      >
+        <span class="sidebar-heading--name">Computer Science</span>
+        <i class="fas fa-caret-right fa-xs"></i>
+      </p>
+    </li>
+    <div class="collapse" id="collapse5">
+      <div class="card card-body">
+        <a href="./docker" target="_self">Docker란?</a>
+      </div>
+      <div class="card card-body">
+        <a href="./domain" target="_self">Domain이란</a>
+      </div>
+      <div class="card card-body">
+        <a href="./serverless" target="_self">Serverless</a>
+      </div>
+      <div class="card card-body">
+        <a href="./library" target="_self">library vs framework</a>
+      </div>
+      <div class="card card-body">
+        <a href="./api" target="_self">API 란?</a>
+      </div>
+      <div class="card card-body">
+        <a href="./devops" target="_self">devops 정리</a>
+      </div>
+      <div class="card card-body">
+        <a href="./web_request" target="_self">web요청과 응답과정</a>
+      </div>
+      <div class="card card-body">
+        <a href="./block-chain" target="_self"
+          >nomad coders 블록체인 시리즈 총정리</a
+        >
+      </div>
+      <div class="card card-body">
+        <a href="./begin" target="_self">coursera series - Digital Logic</a>
+      </div>
+      <div class="card card-body">
+        <a href="./Module-Introduction" target="_self"
+          >coursera series - Hardware</a
+        >
+      </div>
+      <div class="card card-body">
+        <a href="./OS" target="_self">coursera series - OS</a>
+      </div>
+      <div class="card card-body">
+        <a href="./networking" target="_self">coursera series - networking</a>
+      </div>
+      <div class="card card-body">
+        <a href="./software" target="_self">coursera series - software</a>
+      </div>
+    </div>
+
+    <li class="sidebar-group" role="menuitem">
+      <p
+        class="sidebar-heading"
+        data-bs-toggle="collapse"
+        href="#collapse2"
+        aria-expanded="false"
+        aria-controls="collapse2"
+        onclick="rotate(this)"
+      >
+        <span class="sidebar-heading--name">Algorithm</span>
+        <i class="fas fa-caret-right fa-xs"></i>
+      </p>
+    </li>
+    <div class="collapse" id="collapse2">
+      <div class="card card-body">
+        <a href="./shortest" target="_self">
+          Bellman Ford & Dijkstra 최단경로 알고리즘
+        </a>
+      </div>
+      <div class="card card-body">
+        <a href="./all-to-all" target="_self">all-to-all 최단경로 </a>
+      </div>
+      <div class="card card-body">
+        <a href="./Recursion" target="_self"> Recursion 재귀 </a>
+      </div>
+      <div class="card card-body">
+        <a href="./selection" target="_self"
+          >선택문제 - k번째로 작은 수, Quickselection & MoM
+        </a>
+      </div>
+      <div class="card card-body">
+        <a href="./mom" target="_self"
+          >MOM - Median of Medians 알고리즘 설명 + 수행시간
+        </a>
+      </div>
+      <div class="card card-body">
+        <a href="./divide" target="_self"
+          >Divide and Conquer 알고리즘 설명 & 예시
+        </a>
+      </div>
+    </div>
+
+    <li class="sidebar-group" role="menuitem">
+      <p
+        class="sidebar-heading"
+        data-bs-toggle="collapse"
+        href="#collapse3"
+        aria-expanded="false"
+        aria-controls="collapse3"
+        onclick="rotate(this)"
+      >
+        <span class="sidebar-heading--name">Data structure</span>
+        <i class="fas fa-caret-right fa-xs"></i>
+      </p>
+    </li>
+    <div class="collapse" id="collapse3">
+      <div class="card card-body">
+        <a href="./data_structure" target="_self">자료구조의 이해 </a>
+        <a href="./sequential_structure" target="_self">선형 자료구조 </a>
+        <a href="./hash_table" target="_self">해시 테이블 자료구조 </a>
+        <a href="./stack_cal" target="_self"
+          >스택을 이용하여 계산기 구현하기
+        </a>
+        <a href="./SinglyLinkedList" target="_self"
+          >한 방향 연결리스트 연산 구현
+        </a>
+        <a href="./doublyLinkedList" target="_self"
+          >양 방향 연결리스트 연산 구현
+        </a>
+        <a href="./pydict" target="_self">파이썬의 딕셔너리 작동방식 </a>
+        <a href="./tree" target="_self">트리 자료구조 </a>
+        <a href="./open_addressing" target="_self"
+          >해시테이블 open addressing 실습
+        </a>
+        <a href="./heap" target="_self">heap 자료구조 </a>
+        <a href="./union-find" target="_self">union find 자료구조 </a>
+        <a href="./graph" target="_self">graph 자료구조 </a>
+      </div>
+    </div>
+
+    <li class="sidebar-group" role="menuitem">
+      <p
+        class="sidebar-heading"
+        data-bs-toggle="collapse"
+        href="#collapse4"
+        aria-expanded="false"
+        aria-controls="collapse4"
+        onclick="rotate(this)"
+      >
+        <span class="sidebar-heading--name">Python</span>
+        <i class="fas fa-caret-right fa-xs"></i>
+      </p>
+    </li>
+    <div class="collapse" id="collapse4">
+      <li class="sidebar-group" role="menuitem">
+        <p
+          class="sidebar-heading"
+          data-bs-toggle="collapse"
+          href="#pythonNewbie"
+          aria-expanded="false"
+          aria-controls="pythonNewbie"
+          onclick="rotate(this)"
+        >
+          <span class="sidebar-heading--name">Python 초급</span>
+          <!-- <i class="fas fa-caret-right fa-xs"></i> -->
+        </p>
+      </li>
+      <div class="collapse" id="pythonNewbie">
+        <div class="card card-body">
+          <a href="./functions" target="_self">입출력과 변수 </a>
+        </div>
+        <div class="card card-body">
+          <a href="./input_and_print" target="_self">간단한 함수 만들기 </a>
+        </div>
+        <div class="card card-body">
+          <a href="./input_loop" target="_self"
+            >프로그램 사용자로부터 입력받기 + 코드의 반복
+          </a>
+        </div>
+        <div class="card card-body">
+          <a href="./int_float_data" target="_self"
+            >int형 데이터와 float형 데이터
+          </a>
+        </div>
+        <div class="card card-body">
+          <a href="./list_string" target="_self">리스트와 문자열 </a>
+        </div>
+        <div class="card card-body">
+          <a href="./list_function" target="_self">리스트와 문자열의 함수들 </a>
+        </div>
+        <div class="card card-body">
+          <a href="./TF" target="_self">True,False, if문과 형제들 </a>
+        </div>
+        <div class="card card-body">
+          <a href="./for_while_loop" target="_self">while, 이중 for루프 </a>
+        </div>
+        <div class="card card-body">
+          <a href="./tuple_range" target="_self">튜플과 레인지 </a>
+        </div>
+        <div class="card card-body">
+          <a href="./functions_add" target="_self"
+            >함수에 대한 추가적인 설명 - 디폴트값 등
+          </a>
+        </div>
+        <div class="card card-body">
+          <a href="./modules" target="_self">모듈(Modules) </a>
+        </div>
+        <div class="card card-body">
+          <a href="./dictionary" target="_self">딕셔너리(Dictionary) </a>
+        </div>
+        <div class="card card-body">
+          <a href="./class" target="_self">클래스와 객체 </a>
+        </div>
+        <div class="card card-body">
+          <a href="./unexpect" target="_self">예외처리</a>
+        </div>
+      </div>
+      <li class="sidebar-group" role="menuitem">
+        <p
+          class="sidebar-heading"
+          data-bs-toggle="collapse"
+          href="#pythonUser"
+          aria-expanded="false"
+          aria-controls="pythonUser"
+          onclick="rotate(this)"
+        >
+          <span class="sidebar-heading--name">Python 중급</span>
+          <!-- <i class="fas fa-caret-right fa-xs"></i> -->
+        </p>
+      </li>
+      <div class="collapse" id="pythonUser">
+        <div class="card card-body">
+          <a href="./reference_count_garbage_collection" target="_self"
+            >레퍼런스 카운트와 가비지 컬렉션
+          </a>
+        </div>
+        <div class="card card-body">
+          <a href="./immutable_mutable" target="_self"
+            >수정 가능한 객체와 수정 불가능한 객체
+          </a>
+        </div>
+        <div class="card card-body">
+          <a href="./deep_shallow_copy" target="_self"
+            >깊은 복사와 얕은 복사
+          </a>
+        </div>
+        <div class="card card-body">
+          <a href="./hide_dict" target="_self">정보 은닉과 dict</a>
+        </div>
+        <div class="card card-body">
+          <a href="./property" target="_self">프로퍼티</a>
+        </div>
+        <div class="card card-body">
+          <a href="./slots" target="_self">슬롯</a>
+        </div>
+        <div class="card card-body">
+          <a href="./list_comprehension" target="_self">리스트 컴프리헨션</a>
+        </div>
+        <div class="card card-body">
+          <a href="./iterable_iterator" target="_self"
+            >Iterable 객체와 Iterator 객체</a
+          >
+        </div>
+        <div class="card card-body">
+          <a href="./lambda" target="_self"
+            >객체처럼 다뤄지는 함수 그리고 람다</a
+          >
+        </div>
+        <div class="card card-body">
+          <a href="./map_and_filter" target="_self">map&filter</a>
+        </div>
+        <div class="card card-body">
+          <a href="./func_comprehension" target="_self"
+            >map&filter를 대신하는 리스트 컴프리헨션</a
+          >
+        </div>
+        <div class="card card-body">
+          <a href="./generator" target="_self">generator 함수</a>
+        </div>
+        <div class="card card-body">
+          <a href="./generator_expression" target="_self"
+            >generator expression</a
+          >
+        </div>
+        <div class="card card-body">
+          <a href="./tuple_packing" target="_self">튜플의 패킹과 언패킹</a>
+        </div>
+        <div class="card card-body">
+          <a href="./named_tuple" target="_self">네임드 튜플</a>
+        </div>
+        <div class="card card-body">
+          <a href="./prod_dict" target="_self">dict의 생성과 zip</a>
+        </div>
+        <div class="card card-body">
+          <a href="./dict_lupin" target="_self"
+            >dict의 루핑 기술과 컴프리헨션</a
+          >
+        </div>
+        <div class="card card-body">
+          <a href="./func_star_rule" target="_self"
+            >함수 호출과 매개변수 선언에 있어서 *과 **의 사용규칙</a
+          >
+        </div>
+        <div class="card card-body">
+          <a href="./dict_defaultdict" target="_self">dict & defaultdict</a>
+        </div>
+        <div class="card card-body">
+          <a href="./ordered_dict" target="_self">dict & OrderedDict</a>
+        </div>
+        <div class="card card-body">
+          <a href="./set_frozenset" target="_self"
+            >자료형 분류와 set&frozenset</a
+          >
+        </div>
+        <div class="card card-body">
+          <a href="./sort" target="_self">정렬 기술</a>
+        </div>
+        <div class="card card-body">
+          <a href="./enumerate" target="_self">enumerate과 문자열 비교</a>
+        </div>
+        <div class="card card-body">
+          <a href="./expression_comb" target="_self">표현식 기반 문자열 조합</a>
+        </div>
+        <div class="card card-body">
+          <a href="./method_str" target="_self">메소드 기반 문자열 조합</a>
+        </div>
+        <div class="card card-body">
+          <a href="./class_obj" target="_self">클래스와 객체의 본질</a>
+        </div>
+        <div class="card card-body">
+          <a href="./inheritance" target="_self">상속</a>
+        </div>
+        <div class="card card-body">
+          <a href="./isinstance" target="_self"
+            >isinstance함수와 object클래스</a
+          >
+        </div>
+        <div class="card card-body">
+          <a href="./special_method" target="_self">스페셜 메소드</a>
+        </div>
+        <div class="card card-body">
+          <a href="./operator_overload" target="_self">연산자 오버로딩</a>
+        </div>
+        <div class="card card-body">
+          <a href="./nested_func" target="_self">네스티드 함수와 클로저</a>
+        </div>
+        <div class="card card-body">
+          <a href="./decorator" target="_self">데코레이터</a>
+        </div>
+        <div class="card card-body">
+          <a href="./class_method" target="_self"
+            >클래스 메소드와 static 메소드</a
+          >
+        </div>
+        <div class="card card-body">
+          <a href="./name_main" target="_self">__name__ & __main__</a>
+        </div>
+      </div>
+      <li class="sidebar-group" role="menuitem">
+        <p
+          class="sidebar-heading"
+          data-bs-toggle="collapse"
+          href="#pythonAdditional"
+          aria-expanded="false"
+          aria-controls="pythonAdditional"
+          onclick="rotate(this)"
+        >
+          <span class="sidebar-heading--name">Python 추가 내용</span>
+          <!-- <i class="fas fa-caret-right fa-xs"></i> -->
+        </p>
+      </li>
+      <div class="collapse" id="pythonAdditional">
+        <div class="card card-body">
+          <a href="./dataframe" target="_self">Python 데이터 프레임 </a>
+        </div>
+        <div class="card card-body">
+          <a href="./sqlAlchemy" target="_self"
+            >Python SQL alchemy를 통해 mysql 연동하기
+          </a>
+        </div>
+        <div class="card card-body">
+          <a href="./join" target="_self"
+            >Python 문자열 자르고 합치기 - join, split함수</a
+          >
+        </div>
+        <div class="card card-body">
+          <a href="./getitem" target="_self"
+            >Python getitem, setitem 스페셜메소드</a
+          >
+        </div>
+        <div class="card card-body">
+          <a href="./pylance" target="_self"
+            >Pylance Unresolved import warnings 트러블슈팅</a
+          >
+        </div>
+        <div class="card card-body">
+          <a href="./django-css" target="_self"
+            >Python django - How to add css to django application</a
+          >
+        </div>
+      </div>
+    </div>
+
+    <li class="sidebar-group" role="menuitem">
+      <p
+        class="sidebar-heading"
+        data-bs-toggle="collapse"
+        href="#collapse6"
+        aria-expanded="false"
+        aria-controls="collapse6"
+        onclick="rotate(this)"
+      >
+        <span class="sidebar-heading--name">CSS</span>
+        <i class="fas fa-caret-right fa-xs"></i>
+      </p>
+    </li>
+    <div class="collapse" id="collapse6">
+      <div class="card card-body">
+        <a href="./CSS_begin" target="_self"
+          >CSS 기초 - block ~ Selector, state</a
+        >
+      </div>
+      <div class="card card-body">
+        <a href="./CSS_Advanced" target="_self"
+          >CSS Transition, transform, animation</a
+        >
+      </div>
+      <div class="card card-body">
+        <a href="./CSS_additional" target="_self"
+          >CSS Icon, Block Element Modifier, Font</a
+        >
+      </div>
+      <div class="card card-body">
+        <a href="./resetCSS" target="_self">reset CSS</a>
+      </div>
+      <div class="card card-body">
+        <a href="./cssbox" target="_self"
+          >CSS box, text-transformation, z-index, flex-children,
+          forwards-animation, will change</a
+        >
+      </div>
+      <div class="card card-body">
+        <a href="./textarea" target="_self"
+          >CSS autocomplete, textarea resize, div에 onclick줘서 링크걸기</a
+        >
+      </div>
+      <div class="card card-body">
+        <a href="./bootstrap" target="_self"
+          >bootstrap 요소 클래스이름 충돌 관련 이슈 정리</a
+        >
+      </div>
+      <div class="card card-body">
+        <a href="./collapse" target="_self">bootstrap collapse이용하기</a>
+      </div>
+    </div>
+
+    <li class="sidebar-group" role="menuitem">
+      <p
+        class="sidebar-heading"
+        data-bs-toggle="collapse"
+        href="#collapse7"
+        aria-expanded="false"
+        aria-controls="collapse7"
+        onclick="rotate(this)"
+      >
+        <span class="sidebar-heading--name">Git</span>
+        <i class="fas fa-caret-right fa-xs"></i>
+      </p>
+    </li>
+    <div class="collapse" id="collapse7">
+      <div class="card card-body">Hello</div>
+      <div class="card card-body">Hello2</div>
+    </div>
+
+    <li class="sidebar-group" role="menuitem">
+      <p
+        class="sidebar-heading"
+        data-bs-toggle="collapse"
+        href="#collapse8"
+        aria-expanded="false"
+        aria-controls="collapse8"
+        onclick="rotate(this)"
+      >
+        <span class="sidebar-heading--name">Git</span>
+        <i class="fas fa-caret-right fa-xs"></i>
+      </p>
+    </li>
+    <div class="collapse" id="collapse8">
+      <div class="card card-body">Hello</div>
+      <div class="card card-body">Hello2</div>
+    </div>
+
+    <li class="sidebar-group" role="menuitem">
+      <p
+        class="sidebar-heading"
+        data-bs-toggle="collapse"
+        href="#collapse9"
+        aria-expanded="false"
+        aria-controls="collapse9"
+        onclick="rotate(this)"
+      >
+        <span class="sidebar-heading--name">Git</span>
+        <i class="fas fa-caret-right fa-xs"></i>
+      </p>
+    </li>
+    <div class="collapse" id="collapse9">
+      <div class="card card-body">Hello</div>
+      <div class="card card-body">Hello2</div>
+    </div>
+
+    <li class="sidebar-group" role="menuitem">
+      <p
+        class="sidebar-heading"
+        data-bs-toggle="collapse"
+        href="#collapse10"
+        aria-expanded="false"
+        aria-controls="collapse10"
+        onclick="rotate(this)"
+      >
+        <span class="sidebar-heading--name">HUFS 모각코 기록</span>
+        <i class="fas fa-caret-right fa-xs"></i>
+      </p>
+    </li>
+    <div class="collapse" id="collapse10">
+      <div class="card card-body">
+        <a href="./design" target="_self">2021.07 week2 </a>
+      </div>
+    </div>
+  </ul>
+</div>
+ 
+    <main class="main-post">
+  <h1 class="main-post--title">CSS transition, transform, animation, Media query</h1>
+  <div class="line"></div>
+  <section class="main-post--content"><h3 id="transitions">Transitions</h3>
+
+<ul>
+  <li>
+    <p>CSS state를 통해 선택한 요소가 특별한 상태일 때 만족되는 상황들을 만들 수 있다.</p>
+  </li>
+  <li>
+    <p>예) :hover를 적용하면, 포인터를 해당 요소에 올려놓아야 상태의 변화가 일어난다.</p>
+  </li>
+</ul>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;style&gt;</span>
+  <span class="nt">button</span><span class="nd">:hover</span> <span class="p">{</span>
+    <span class="nl">color</span><span class="p">:</span> <span class="no">blue</span><span class="p">;</span>
+  <span class="p">}</span>
+<span class="nt">&lt;/style&gt;</span>
+</code></pre></div></div>
+
+<ul>
+  <li>
+    <p>상당히 cool하지 못한 모습이기 때문에 transition프로퍼티를 이용하여 이를 자연스럽게 꾸며준다</p>
+  </li>
+  <li>
+    <p>state선언 되어있는 곳이 아닌 외부 공간에 스타일을 따로 지정해야 한다.</p>
+  </li>
+</ul>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;style&gt;</span>
+  <span class="nt">a</span> <span class="p">{</span>
+    <span class="nl">color</span><span class="p">:</span> <span class="no">tomato</span><span class="p">;</span>
+    <span class="nl">background-color</span><span class="p">:</span> <span class="no">wheat</span><span class="p">;</span>
+    <span class="nl">transition</span><span class="p">:</span> <span class="n">color</span> <span class="m">1s</span> <span class="n">ease-in-out</span><span class="p">;</span>
+  <span class="p">}</span>
+  <span class="nt">a</span><span class="nd">:hover</span> <span class="p">{</span>
+    <span class="nl">color</span><span class="p">:</span> <span class="no">red</span><span class="p">;</span>
+    <span class="nl">background-color</span><span class="p">:</span> <span class="no">black</span><span class="p">;</span>
+  <span class="p">}</span>
+<span class="nt">&lt;/style&gt;</span>
+</code></pre></div></div>
+
+<ul>
+  <li>
+    <p>위를 보면, hover 상태 만족 시 스타일 안에 transition을 넣은 것이 아니라 외부 a 태그 지정에 transition 프로퍼티를 넣었음을 관찰</p>
+  </li>
+  <li>
+    <p>transition이 state 지정되어있는 프로퍼티들을 찾아 전환 스타일에 대한 설정을해줌.</p>
+  </li>
+  <li>
+    <p>state설정해준 모든 프로퍼티에 대해 transition설정을 하고싶다면 all을 이용!</p>
+  </li>
+</ul>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;style&gt;</span>
+    <span class="nt">a</span><span class="p">{</span>
+        <span class="nl">color</span><span class="p">:</span><span class="no">tomato</span><span class="p">;</span>
+        <span class="nl">background-color</span><span class="p">:</span><span class="no">black</span><span class="p">;</span>
+        <span class="nl">transition</span><span class="p">:</span><span class="n">all</span> <span class="m">1s</span> <span class="n">ease-out</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="nt">a</span><span class="nd">:hover</span><span class="p">{</span>
+        <span class="nl">color</span><span class="p">:</span><span class="no">red</span><span class="p">;</span>
+        <span class="nl">background-color</span><span class="p">:</span><span class="no">white</span><span class="p">;</span>
+    <span class="p">}</span>
+</code></pre></div></div>
+
+<h3 id="transition-part-two">transition part two</h3>
+
+<ul>
+  <li>
+    <p>transition 프로퍼티에는 ease-in function이라는 것이 존재한다.</p>
+  </li>
+  <li>
+    <p>브라우저에게 애니메이션이 어떻게 변할 지에 대해 알리는 함수이다</p>
+  </li>
+</ul>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;style&gt;</span>
+  <span class="nt">a</span> <span class="p">{</span>
+    <span class="nl">color</span><span class="p">:</span> <span class="no">tomato</span><span class="p">;</span>
+    <span class="nl">transition</span><span class="p">:</span> <span class="n">all</span> <span class="m">1s</span> <span class="n">ease-in-out</span><span class="p">;</span>
+  <span class="p">}</span>
+<span class="nt">&lt;/style&gt;</span>
+</code></pre></div></div>
+
+<ul>
+  <li>
+    <p>위 코드에서 ease-in-out에 해당하는 부분.</p>
+  </li>
+  <li>
+    <p>ease-in-out 등등 여러 옵션들이 있지만, cubic-beizer라는 옵션을 통해 더 디테일한 애니메이션으로 꾸밀 수 있다.</p>
+  </li>
+</ul>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;style&gt;</span>
+  <span class="nt">a</span> <span class="p">{</span>
+    <span class="nl">color</span><span class="p">:</span> <span class="no">wheat</span><span class="p">;</span>
+    <span class="nl">background-color</span><span class="p">:</span> <span class="no">tomato</span><span class="p">;</span>
+    <span class="nl">text-decoration</span><span class="p">:</span> <span class="nb">none</span><span class="p">;</span>
+    <span class="nl">padding</span><span class="p">:</span> <span class="m">3px</span> <span class="m">5px</span><span class="p">;</span>
+    <span class="nl">border-radius</span><span class="p">:</span> <span class="m">5px</span><span class="p">;</span>
+    <span class="nl">font-size</span><span class="p">:</span> <span class="m">55px</span><span class="p">;</span>
+    <span class="nl">transition</span><span class="p">:</span> <span class="n">color</span> <span class="m">1s</span> <span class="n">cubic-bezier</span><span class="p">(</span><span class="m">0.6</span><span class="p">,</span> <span class="m">0</span><span class="p">,</span> <span class="m">0.735</span><span class="p">,</span> <span class="m">0.045</span><span class="p">),</span> <span class="n">border-radius</span> <span class="m">5s</span>
+        <span class="n">ease-in-out</span><span class="p">;</span>
+  <span class="p">}</span>
+  <span class="nt">a</span><span class="nd">:hover</span> <span class="p">{</span>
+    <span class="nl">border-radius</span><span class="p">:</span> <span class="m">20px</span><span class="p">;</span>
+    <span class="nl">color</span><span class="p">:</span> <span class="no">tomato</span><span class="p">;</span>
+    <span class="nl">background-color</span><span class="p">:</span> <span class="no">wheat</span><span class="p">;</span>
+  <span class="p">}</span>
+<span class="nt">&lt;/style&gt;</span>
+</code></pre></div></div>
+
+<ul>
+  <li>여러 옵션들을 한번에 transition 적용시키고 싶으면 쉼표를 통해 구분하면 됨! (위의 코드 참고)</li>
+</ul>
+
+<h3 id="transformation">Transformation</h3>
+
+<ul>
+  <li>
+    <p>transform 프로퍼티 - 이미지 등에 대해 전환</p>
+  </li>
+  <li>
+    <p>scaleX, scaleY, matrix, rotateX,Y,Z … 너무나 많은 옵션들이 존재함.</p>
+  </li>
+  <li>
+    <p><a href="https://developer.mozilla.org/ko/docs/Web/CSS/transform">Transform 프로퍼티 옵션 참고</a></p>
+  </li>
+  <li>
+    <p>Transform 프로퍼티는 transition 프로퍼티와 함께 쓰일 때 진정 cool한 모습을 보인다</p>
+  </li>
+</ul>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;style&gt;</span>
+  <span class="nt">img</span> <span class="p">{</span>
+    <span class="nl">border</span><span class="p">:</span> <span class="m">10px</span> <span class="nb">solid</span> <span class="no">black</span><span class="p">;</span>
+    <span class="nl">border-radius</span><span class="p">:</span> <span class="m">50%</span><span class="p">;</span>
+    <span class="nl">transition</span><span class="p">:</span> <span class="n">all</span> <span class="m">2s</span> <span class="n">ease-in-out</span><span class="p">;</span>
+  <span class="p">}</span>
+  <span class="nt">img</span><span class="nd">:hover</span> <span class="p">{</span>
+    <span class="nl">transform</span><span class="p">:</span> <span class="n">rotateX</span><span class="p">(</span><span class="m">50deg</span><span class="p">);</span>
+  <span class="p">}</span>
+<span class="nt">&lt;/style&gt;</span>
+</code></pre></div></div>
+
+<ul>
+  <li>
+    <p>각도에 대한 단위 -&gt; deg</p>
+  </li>
+  <li>
+    <p>rotate 옵션에 대해 자연스러운 움직임을 부여하기 위해 root 태그에 transition 프로퍼티를 <strong>무조건</strong> 부여하자!</p>
+  </li>
+  <li>
+    <p>기본 transform 옵션들</p>
+
+    <ol>
+      <li>
+        <p>scale - X, Y기준 늘이기 (Z축은 안됨)</p>
+      </li>
+      <li>
+        <p>rotate - 회전</p>
+      </li>
+      <li>
+        <p>translate - 이동</p>
+      </li>
+    </ol>
+  </li>
+  <li>
+    <p>CSS로 3D 애니메이션 구현 가능하게 된 것은 브라우저의 진보 + 컴퓨터 GPU의 활용으로 인함!</p>
+  </li>
+  <li>
+    <p><strong>transform프로퍼티는 다른 요소의 box에 영향을 주지 않는다.</strong> 페이지의 픽셀 차원에서 일어나는 변화이고 box 자체에 대한 변화가 일어나지 않음.</p>
+  </li>
+  <li>
+    <p>따라서 형제 요소가 인식하기를, transform이 일어난 요소에 대해서 그 요소가 제자리에 있는 것으로 인식함.</p>
+  </li>
+</ul>
+
+<h3 id="animaition-part-one">Animaition part one</h3>
+
+<ul>
+  <li>state에 상관 없이 움직이는 animation?</li>
+</ul>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;style&gt;</span>
+  <span class="k">@keyframes</span> <span class="n">myAnimate</span> <span class="p">{</span>
+    <span class="nt">from</span> <span class="p">{</span>
+      <span class="nl">transform</span><span class="p">:</span> <span class="n">rotateX</span><span class="p">(</span><span class="m">0</span><span class="p">);</span>
+    <span class="p">}</span>
+    <span class="nt">to</span> <span class="p">{</span>
+      <span class="nl">transform</span><span class="p">:</span> <span class="n">rotateX</span><span class="p">(</span><span class="m">360deg</span><span class="p">);</span>
+    <span class="p">}</span>
+  <span class="p">}</span>
+  <span class="nt">img</span> <span class="p">{</span>
+    <span class="nl">border</span><span class="p">:</span> <span class="m">10px</span> <span class="nb">solid</span> <span class="no">black</span><span class="p">;</span>
+    <span class="nl">border-radius</span><span class="p">:</span> <span class="m">50%</span><span class="p">;</span>
+    <span class="nl">animation</span><span class="p">:</span> <span class="n">myAnimate</span> <span class="m">5s</span> <span class="n">ease-in-out</span> <span class="n">infinite</span><span class="p">;</span>
+  <span class="p">}</span>
+<span class="nt">&lt;/style&gt;</span>
+</code></pre></div></div>
+
+<ul>
+  <li>
+    <p>@keyframes을 통해 특정 상태에 대한 만족이 없어도 실행되는 애니메이션을 정의한다.</p>
+  </li>
+  <li>
+    <p>from~to의 구조를 가지며, 애니메이션을 적용할 요소에 animation 프로퍼티를 적용한다.</p>
+  </li>
+  <li>
+    <p>infinite 옵션을 animation 프로퍼티에 추가하면 위의 코드를 예시로, 5초 동안 ease-in-out형태로 움직이는 애니메이션이 무한히 반복된다.</p>
+  </li>
+</ul>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;style&gt;</span>
+  <span class="k">@keyframes</span> <span class="n">name</span> <span class="p">{</span>
+    <span class="nt">from</span> <span class="p">{</span>
+      <span class="nl">transform</span><span class="p">:</span> <span class="n">rotateX</span><span class="p">();</span>
+    <span class="p">}</span>
+    <span class="nt">to</span> <span class="p">{</span>
+      <span class="nl">transform</span><span class="p">:</span> <span class="n">rotateX</span><span class="p">(</span><span class="m">360deg</span><span class="p">)</span> <span class="n">translate</span><span class="p">(</span><span class="m">100px</span><span class="p">);</span>
+    <span class="p">}</span>
+  <span class="p">}</span>
+<span class="nt">&lt;/style&gt;</span>
+</code></pre></div></div>
+
+<ul>
+  <li>위와 같이 tranform to에서 위치를 옮기는 옵션을 추가하면 애니메이션 한 사이클을 돈 뒤에 처음부터 시작할 때에 툭 끊기는 부자연스러움이 보인다.</li>
+</ul>
+
+<h3 id="animation-part-two">Animation Part two</h3>
+
+<ul>
+  <li>
+    <p>CSS를 통해 브라우저에 애니메이션을 구현하고 싶을 때, keyframes를 이용했었다.</p>
+  </li>
+  <li>
+    <p>하지만 translate를 이용하여 위치 전환을 자연스럽게 하고싶어도 애니메이션 사이클이 한번 돌면 초기화 될 때 jump를 하는 경우가 발생한다.</p>
+  </li>
+  <li>
+    <p>이를 해결하기 위해 애니메이션을 keyframes의 from~to가 아니라 %비율로 나누어 애니메이션화를 진행한다.</p>
+  </li>
+</ul>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;style&gt;</span>
+  <span class="k">@keyframes</span> <span class="n">superSexyCoinFlip</span> <span class="p">{</span>
+    <span class="err">0</span><span class="o">%</span> <span class="p">{</span>
+      <span class="nl">transform</span><span class="p">:</span> <span class="n">rotateY</span><span class="p">(</span><span class="m">0</span><span class="p">);</span>
+    <span class="p">}</span>
+    <span class="err">50</span><span class="o">%</span> <span class="p">{</span>
+      <span class="nl">border-radius</span><span class="p">:</span> <span class="m">0px</span><span class="p">;</span>
+      <span class="nl">transform</span><span class="p">:</span> <span class="n">rotateY</span><span class="p">(</span><span class="m">180deg</span><span class="p">)</span> <span class="n">translate</span><span class="p">(</span><span class="m">100px</span><span class="p">);</span>
+      <span class="nl">border-color</span><span class="p">:</span> <span class="no">tomato</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="err">100</span><span class="o">%</span> <span class="p">{</span>
+      <span class="nl">transform</span><span class="p">:</span> <span class="n">rotateY</span><span class="p">(</span><span class="m">0</span><span class="p">)</span> <span class="n">translate</span><span class="p">(</span><span class="m">0</span><span class="p">);</span>
+    <span class="p">}</span>
+  <span class="p">}</span>
+<span class="nt">&lt;/style&gt;</span>
+</code></pre></div></div>
+
+<ul>
+  <li>
+    <p>100% 완료하게 되었을 떄의 애니메이션 상태를 초기 애니메이션 상태 + 중간에 추가된 애니메이션들의 초기 상태 값으로 만들어주면 자연스러운 애니메이션이 만들어진다.</p>
+  </li>
+  <li>
+    <p><a href="https://animista.net/">CSS 애니메이션 사이트</a></p>
+  </li>
+  <li>
+    <p>%의 비율 분할은 자유롭게 진행 가능하다.</p>
+  </li>
+  <li>
+    <p>keyframes 내의 property들은 transform 이외에도 자유롭게 입력 가능하지만, 애니메이션으로 적용이 되지 않는 property들도 존재하기 때문에 transform을 권장한다.</p>
+  </li>
+  <li>
+    <p>100% 애니메이션에 opacity:0 프로퍼티를 넣으면 애니메이션 대상이 자연스럽게 사라지는 연출을 할 수 잇슴.</p>
+  </li>
+</ul>
+
+<h3 id="media-query">Media Query</h3>
+
+<ul>
+  <li>
+    <p>media query란? -&gt; CSS만을 이용해서 스크린 사이즈를 알 수 있는 방법.</p>
+  </li>
+  <li>
+    <p>핸드폰 또는 스크린사이즈가 이 정도 크기라면 어떨지 CSS를 보여주라!</p>
+  </li>
+</ul>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;style&gt;</span>
+  <span class="k">@media</span> <span class="n">screen</span> <span class="n">and</span> <span class="p">(</span><span class="n">min-width</span><span class="p">:</span> <span class="m">600px</span><span class="p">)</span> <span class="n">and</span> <span class="p">(</span><span class="n">max-width</span><span class="p">:</span> <span class="m">1200px</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nt">div</span> <span class="p">{</span>
+      <span class="nl">background-color</span><span class="p">:</span> <span class="no">wheat</span><span class="p">;</span>
+    <span class="p">}</span>
+  <span class="p">}</span>
+<span class="nt">&lt;/style&gt;</span>
+</code></pre></div></div>
+
+<ul>
+  <li>스크린 width가 600~1200일 때 div의 background-color를 wheat으로 설정!</li>
+</ul>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;style&gt;</span>
+  <span class="k">@media</span> <span class="n">screen</span> <span class="n">and</span> <span class="p">(</span><span class="n">min-width</span><span class="p">:</span> <span class="m">601px</span><span class="p">)</span> <span class="n">and</span> <span class="p">(</span><span class="n">orientation</span><span class="p">:</span> <span class="nb">landscape</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nt">span</span> <span class="p">{</span>
+      <span class="nl">display</span><span class="p">:</span> <span class="nb">none</span><span class="p">;</span>
+    <span class="p">}</span>
+  <span class="p">}</span>
+<span class="nt">&lt;/style&gt;</span>
+</code></pre></div></div>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;body&gt;</span>
+  <span class="nt">&lt;span&gt;</span>Please flip Your phone<span class="nt">&lt;/span&gt;</span>
+<span class="nt">&lt;/body&gt;</span>
+</code></pre></div></div>
+
+<ul>
+  <li>
+    <p>span 내의 텍스트를 orientation이 landscape모드일 때 사라지게 하겠다 !</p>
+
+    <ol>
+      <li>
+        <p>orientation은 화면이 가로 또는 세로모드일 상태를 지정한다.</p>
+      </li>
+      <li>
+        <p>landscape -&gt; 가로 , portrait -&gt; 세로</p>
+      </li>
+    </ol>
+  </li>
+  <li>
+    <p>min-device-width -&gt; (only phone, 데스크탑 브라우저는 이해못함)</p>
+  </li>
+  <li>
+    <p>CSS Media query MDN 검색!!</p>
+  </li>
+</ul>
+
+<h3 id="media-type---print">media type -&gt; print</h3>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;style&gt;</span>
+  <span class="k">@media</span> <span class="n">print</span> <span class="p">{</span>
+    <span class="nt">body</span> <span class="p">{</span>
+      <span class="nl">background-color</span><span class="p">:</span> <span class="no">tomato</span><span class="p">;</span>
+    <span class="p">}</span>
+  <span class="p">}</span>
+<span class="nt">&lt;/style&gt;</span>
+</code></pre></div></div>
+
+<ul>
+  <li>ctrl + p -&gt; 인쇄 상태의 브라우저를 확인</li>
+</ul>
+</section>
+</main>
+
+
+    <script src="https://use.fontawesome.com/releases/v5.15.3/js/all.js"></script>
+    <!-- JavaScript Bundle with Popper -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+      crossorigin="anonymous"
+    ></script>
+    <script src="assets/js/sidebar-click-event.js"></script>
+    <script src="//code.jquery.com/jquery-3.3.1.min.js"></script>
+  </body>
+</html>
