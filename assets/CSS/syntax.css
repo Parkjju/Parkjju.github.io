@@ -8,12 +8,25 @@
 .highlight .w {
   color: #f8f8f2;
   background-color: #272822;
-  border-radius: 8px;
-  padding: 0.8rem;
-  font-size: 1rem;
-  font-weight: 300;
-  margin-top: 1rem;
-  margin-bottom: 1rem;
+  border-radius: 6px;
+  padding: 0.6rem;
+  font-size: 0.9rem;
+  margin-top: 0.8rem;
+  margin-bottom: 0.8rem;
+  line-height: 1.4;
+  overflow: auto;
+  white-space: pre;
+  word-spacing: normal;
+  word-break: normal;
+  word-wrap: normal;
+  line-height: 1.5;
+  -moz-tab-size: 4;
+  -o-tab-size: 4;
+  tab-size: 4;
+  -webkit-hyphens: none;
+  -ms-hyphens: none;
+  hyphens: none;
+  font-family: Consolas, Monaco, Andale Mono, Ubuntu Mono, monospace;
 }
 .highlight .err {
   color: #272822;

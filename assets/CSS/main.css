@@ -81,7 +81,7 @@
 /* 좌측 메뉴바 */
 .menu-bar {
   width: 20rem;
-  overflow: scroll;
+  overflow: auto;
   height: 100vh;
   padding: 2rem 0;
   border-right: 1px solid #dedede;
@@ -91,7 +91,7 @@
 
 /* 타이틀메뉴 바깥경계박스 */
 .sidebar-group {
-  height: 2.3rem;
+  height: 3rem;
   display: flex;
   align-items: center;
   padding-left: 1.5rem;
@@ -103,7 +103,7 @@
   width: 100%;
   height: 1.8rem;
   cursor: pointer;
-  font-weight: light;
+  font-weight: bold;
   display: flex;
   align-items: center;
 }
@@ -177,7 +177,6 @@ section:last-child {
 .sidebar-group--list {
   display: flex;
 }
-
 .collapse {
   display: flex;
   flex-direction: column;
@@ -187,7 +186,7 @@ section:last-child {
   position: relative;
   left: 2rem;
   padding: 0;
-  font-weight: 400;
+  font-weight: 500;
   font-size: 1.1rem;
   border: none;
   box-sizing: border-box;
@@ -198,8 +197,10 @@ section:last-child {
   box-sizing: border-box;
   width: 80%;
   display: block;
-  margin-bottom: 1rem;
+  margin-bottom: 0.8rem;
+  font-size: 1rem;
 }
+
 .card-body:hover {
   color: #3eaf7c;
   cursor: pointer;
@@ -212,10 +213,6 @@ section:last-child {
 
 .active {
   color: var(--title-color);
-}
-
-.collapse .card-body:first-child {
-  margin-top: 0.6rem;
 }
 
 #collapse4 p {
