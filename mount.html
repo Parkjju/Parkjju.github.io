@@ -637,48 +637,20 @@
 </div>
  
     <main class="main-post">
-  <h1 class="main-post--title">도메인이란?</h1>
+  <h1 class="main-post--title">Vue mount</h1>
   <div class="line"></div>
   <section class="main-post--content"><ul>
-  <li><a href="https://www.youtube.com/watch?v=ao0VtQnBBXA">Nomad coders - 왜 도메인을 돈 주고 사야해? 도메인 시스템 6분 설명!</a></li>
+  <li><a href="https://stackoverflow.com/questions/49137607/what-does-mount-mean-in-vue-js">What does “mount” mean in Vue.js?</a></li>
 </ul>
 
-<h3 id="도메인-시스템이란">도메인 시스템이란?</h3>
-
-<ul>
-  <li>서로 복잡하게 얽힌 웹상을 교통하기 위해 IP주소를 불러야 한다면 매우 불편함</li>
-  <li>
-    <p>도메인 네임 시스템이 등장(Domain name system)</p>
-
-    <ul>
-      <li>거대한 전화번호부</li>
-      <li>웹사이트 주소 = IP주소</li>
-    </ul>
-  </li>
-  <li>ex) google에 접근하고자 함. -&gt; root name server에서 찾음 -&gt; 이후 하위 <strong>registry</strong>로 이동 (registry -&gt; IP주소와 도메인을 연결해놓는것)</li>
-  <li>레지스트리는 사기업에 의해 운영되는 중</li>
-  <li>.com의 레지스트리 -&gt; Verisign이라는 미국 기업이 운영중</li>
-  <li>
-    <p>registry 운영을 위해서는 웹에 연결하기 위한 인프라 , 보안 및 안전 요소를 확립해야함 (google.com, youtube.com웹에 접근하기 위해 커다란 트래픽이 발생할 것)</p>
-  </li>
-  <li>
-    <p>도메인을 구입 -&gt; 직접 도메인 운영하는 기업과 거래 X -&gt; 도메인 리셀러에게 접근해야함(GoDaddy 등)</p>
-
-    <ul>
-      <li>도메인 리셀러 - 유저 관리, 결제 프로세서, 도메인 관리 등을 처리해줌 (직접 운영하는 사기업보다 돈을 더 지불해야함)</li>
-    </ul>
-  </li>
-  <li>나만의 도메인을 만들기? ICANN에 신청하기.. 신청비용만 2억 2천 발생 (인프라, 기술, 고객관리 등이 존재함을 증명해야함.)</li>
-</ul>
-
-<h3 id="정리">정리</h3>
+<blockquote>
+  <p>What is mounting in vue? In vue, every instance is first stored as Virtual DOM objects(virtual html elements) in memory.When Vue create those components(virtual DOM)visible to the real DOM(Actual html elements) , the moment in which it create virtual DOM into real DOM is call ‘Mounting’. As the app state changes , vue detect changes user expect to see and put data changes to the real DOM from the memory.That is called an ‘update’. The entire process is called Vue Lifescyclehooks which has four stages, namely create,mount,update and destroyed.</p>
+</blockquote>
 
 <ol>
-  <li>도메인을 만드는 것은 registry이다.</li>
-  <li>registry는 IP = Domain 적어놓은 것</li>
-  <li>registry 되려면 인프라 및 막대한 자금 필요</li>
-  <li>도메인을 사면 registry에 직접 돈을 내지 않음.</li>
-  <li>리셀러 -&gt; 결제처리, 계약관리, 도메인 비용 지급</li>
+  <li>vue에서는 처음 저장되는 모든 인스턴스들을 (가상 DOM 객체 - virtual DOM objects, virtual html elements) 메모리에 저장한다.</li>
+  <li>vue가 virtual DOM들을 real DOM(Actual html elements)들로 바꾸어주는데, 이러한 순간이 <strong>마운팅</strong>이다.</li>
+  <li>vue 인스턴스의 라이프사이클에서 등장하는 중심 단계들로는 created, Mounted, Updated, Destroyed가 있다.</li>
 </ol>
 </section>
 </main>

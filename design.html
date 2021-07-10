@@ -591,6 +591,31 @@
       </div>
     </div>
 
+    <li class="sidebar-group" role="menuitem">
+      <p
+        class="sidebar-heading"
+        data-bs-toggle="collapse"
+        href="#vue"
+        aria-expanded="false"
+        aria-controls="vue"
+        onclick="rotate(this)"
+      >
+        <span class="sidebar-heading--name">Vue</span>
+        <i class="fas fa-caret-right fa-xs"></i>
+      </p>
+    </li>
+    <div class="collapse" id="vue">
+      <div class="card card-body">
+        <a href="./mount" target="_self">Vue에서의 마운트란 </a>
+      </div>
+      <div class="card card-body">
+        <a href="./vueComponent" target="_self">Vue 컴포넌트</a>
+      </div>
+      <div class="card card-body">
+        <a href="./vueData" target="_self">Vue Data옵션 </a>
+      </div>
+    </div>
+
     <!-- <li class="sidebar-group" role="menuitem">
       <p
         class="sidebar-heading"
@@ -607,7 +632,7 @@
     <div class="collapse" id="collapse9">
       <div class="card card-body">Hello</div>
       <div class="card card-body">Hello2</div>
-    </div>     -->
+    </div> -->
   </ul>
 </div>
  
@@ -648,6 +673,84 @@
   <li>클래스 이름이 너무 복잡하다 - 클린코드 서적 섭렵 후 이름짓는 데에 지혜를 더하기</li>
   <li>글자가 들어가는 요소에 line-height 필요한지 체크하기</li>
   <li>코드의 반복이 있는지 다시 확인해볼 것</li>
+</ul>
+
+<h1 id="710">7/10</h1>
+
+<hr />
+
+<h2 id="금일-모각코-목표-1">금일 모각코 목표</h2>
+
+<ul>
+  <li>인프런 Vue 강의 수강 (html파트)</li>
+</ul>
+
+<h2 id="결과-1">결과</h2>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    <span class="o">&lt;</span><span class="nx">script</span> <span class="nx">src</span><span class="o">=</span><span class="dl">"</span><span class="s2">https://unpkg.com/vue/dist/vue.min.js</span><span class="dl">"</span><span class="o">&gt;&lt;</span><span class="sr">/script&gt; /</span><span class="o">/</span> <span class="nx">CDN</span>
+    <span class="o">&lt;</span><span class="nx">script</span><span class="o">&gt;</span>
+        <span class="kd">var</span> <span class="nx">vm</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Vue</span><span class="p">({</span>
+            <span class="na">el</span><span class="p">:</span> <span class="dl">'</span><span class="s1">#app</span><span class="dl">'</span><span class="p">,</span>
+            <span class="na">data</span><span class="p">:</span> <span class="p">{</span>
+                <span class="na">name</span><span class="p">:</span> <span class="dl">''</span><span class="p">,</span>
+                <span class="na">newTodoItem</span><span class="p">:</span> <span class="dl">''</span><span class="p">,</span>
+                <span class="na">todoItems</span><span class="p">:[</span>
+                    <span class="p">{</span><span class="na">name</span><span class="p">:</span> <span class="dl">'</span><span class="s1">김석훈</span><span class="dl">'</span><span class="p">,</span> <span class="na">item</span><span class="p">:</span> <span class="dl">'</span><span class="s1">Django 와 Vue.js 연동 프로그램을 만들고 있습니다.</span><span class="dl">'</span><span class="p">},</span>
+                    <span class="p">{</span><span class="na">name</span><span class="p">:</span> <span class="dl">'</span><span class="s1">홍길동</span><span class="dl">'</span><span class="p">,</span> <span class="na">item</span><span class="p">:</span> <span class="dl">'</span><span class="s1">이름을 안쓰면 홍길동으로 나와요...</span><span class="dl">'</span><span class="p">},</span>
+                    <span class="p">{</span><span class="na">name</span><span class="p">:</span> <span class="dl">'</span><span class="s1">이순신</span><span class="dl">'</span><span class="p">,</span> <span class="na">item</span><span class="p">:</span> <span class="dl">'</span><span class="s1">신에게는 아직 열두 척의 배가 있사옵니다.</span><span class="dl">'</span><span class="p">},</span>
+                    <span class="p">{</span><span class="na">name</span><span class="p">:</span> <span class="dl">'</span><span class="s1">성춘향</span><span class="dl">'</span><span class="p">,</span> <span class="na">item</span><span class="p">:</span> <span class="dl">'</span><span class="s1">그네 타기</span><span class="dl">'</span><span class="p">},</span>
+                <span class="p">],</span>
+            <span class="p">},</span>
+            <span class="na">methods</span><span class="p">:</span> <span class="p">{</span>
+                <span class="na">add_todo</span><span class="p">:</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+                    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">"</span><span class="s2">add_todo()...</span><span class="dl">"</span><span class="p">);</span> <span class="c1">// 디버깅 위한 console log</span>
+                    <span class="k">this</span><span class="p">.</span><span class="nx">todoItems</span><span class="p">.</span><span class="nx">push</span><span class="p">({</span><span class="na">name</span><span class="p">:</span> <span class="k">this</span><span class="p">.</span><span class="nx">name</span><span class="p">,</span> <span class="na">item</span><span class="p">:</span> <span class="k">this</span><span class="p">.</span><span class="nx">newTodoItem</span><span class="p">});</span>
+                <span class="p">}</span>
+            <span class="p">},</span>
+        <span class="p">})</span>
+    <span class="o">&lt;</span><span class="sr">/script</span><span class="err">&gt;
+</span></code></pre></div></div>
+
+<ol>
+  <li>Vue 인스턴스에 el, data, methods옵션을 주어 생성한다.</li>
+  <li>el옵션에는 마운팅할 외부 html요소를 id값을 통해 지정한다.</li>
+  <li>data옵션에서는 생성한 Vue인스턴스에 반응형으로 추적시킬 데이터들을 추가한다.</li>
+  <li>methods옵션 내에 js 함수를 작성한다. (methods옵션에 대해 추가적인 공부 필요)</li>
+</ol>
+
+<h3 id="html">HTML</h3>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"inputBox"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;input</span> <span class="na">class=</span><span class="s">"name"</span> <span class="na">type=</span><span class="s">"text"</span> <span class="na">placeholder=</span><span class="s">"name ..."</span> <span class="na">v-model=</span><span class="s">"name"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;input</span> <span class="na">class=</span><span class="s">"item"</span> <span class="na">type=</span><span class="s">"text"</span> <span class="na">placeholder=</span><span class="s">"type anything welcomed ..."</span> <span class="na">v-model=</span><span class="s">"newTodoItem"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;button</span> <span class="na">v-on:click=</span><span class="s">"add_todo()"</span><span class="nt">&gt;</span>ADD<span class="nt">&lt;/button&gt;</span>
+<span class="nt">&lt;/div&gt;</span>
+
+<span class="nt">&lt;ul</span> <span class="na">class=</span><span class="s">"todoList"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;li</span> <span class="na">v-for=</span><span class="s">"(todo, index) in todoItems"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;span&gt;</span>:: <span class="nt">&lt;/span&gt;</span>
+        <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">"removeBtn"</span><span class="nt">&gt;</span><span class="err">&amp;</span>#x00D7<span class="nt">&lt;/span&gt;</span>
+    <span class="nt">&lt;/li&gt;</span>
+<span class="nt">&lt;/ul&gt;</span>
+</code></pre></div></div>
+
+<ul>
+  <li>
+    <p>위에서 정의한 Vue인스턴스 data에는 값이 저장되어 있지 않은 상태인데, methods에서는 이들을 파라미터로 받고있는 상황이다.</p>
+  </li>
+  <li>
+    <p>이에 따라 html의 input으로부터 값을 입력받아 <strong>데이터 바인딩</strong>을 진행해줘야하는데, 데이터 바인딩이라 함은 vue js코드와 html간의 데이터를 연결해주는 것이다. (방향성이 존재 - 뷰에서 html로 값이 저장되는 방식이 일반적이지만, v-model은 양방향으로 데이터 전달이 가능하다.)</p>
+  </li>
+</ul>
+
+<hr />
+
+<h2 id="수강하며-들은-개념-추가-정리">수강하며 들은 개념 추가 정리</h2>
+
+<ul>
+  <li><a href="./mount">vue 마운트</a></li>
+  <li><a href="./vueComponent">vue 컴포넌트</a></li>
+  <li><a href="./vueData">vue Data옵션</a></li>
 </ul>
 </section>
 </main>

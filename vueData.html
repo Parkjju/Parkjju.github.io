@@ -637,49 +637,98 @@
 </div>
  
     <main class="main-post">
-  <h1 class="main-post--title">도메인이란?</h1>
+  <h1 class="main-post--title">Vue js - 데이터와 메소드</h1>
   <div class="line"></div>
   <section class="main-post--content"><ul>
-  <li><a href="https://www.youtube.com/watch?v=ao0VtQnBBXA">Nomad coders - 왜 도메인을 돈 주고 사야해? 도메인 시스템 6분 설명!</a></li>
+  <li><a href="https://v3.ko.vuejs.org/">Vue 관련 공식홈페이지</a></li>
+  <li><a href="https://kr.vuejs.org/v2/api/#propsData">Vue 인스턴스 전체 옵션</a></li>
 </ul>
 
-<h3 id="도메인-시스템이란">도메인 시스템이란?</h3>
+<h2 id="vue-cdn등록--vue-인스턴스-작성">Vue CDN등록 &amp; Vue 인스턴스 작성</h2>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;script </span><span class="na">src=</span><span class="s">"https://cdn.jsdelivr.net/npm/vue/dist/vue.js"</span><span class="nt">&gt;&lt;/script&gt;</span>
+</code></pre></div></div>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">vm</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Vue</span><span class="p">({</span>
+  <span class="c1">// 옵션들</span>
+  <span class="c1">// sciprt태그로 감싸서 html파일 내에 작성해도됨</span>
+<span class="p">});</span>
+</code></pre></div></div>
 
 <ul>
-  <li>서로 복잡하게 얽힌 웹상을 교통하기 위해 IP주소를 불러야 한다면 매우 불편함</li>
   <li>
-    <p>도메인 네임 시스템이 등장(Domain name system)</p>
-
-    <ul>
-      <li>거대한 전화번호부</li>
-      <li>웹사이트 주소 = IP주소</li>
-    </ul>
-  </li>
-  <li>ex) google에 접근하고자 함. -&gt; root name server에서 찾음 -&gt; 이후 하위 <strong>registry</strong>로 이동 (registry -&gt; IP주소와 도메인을 연결해놓는것)</li>
-  <li>레지스트리는 사기업에 의해 운영되는 중</li>
-  <li>.com의 레지스트리 -&gt; Verisign이라는 미국 기업이 운영중</li>
-  <li>
-    <p>registry 운영을 위해서는 웹에 연결하기 위한 인프라 , 보안 및 안전 요소를 확립해야함 (google.com, youtube.com웹에 접근하기 위해 커다란 트래픽이 발생할 것)</p>
+    <p>Vue 인스턴스란, 생성된 Vue 오브젝트 하나를 말한다. 이는 만들고자 하는 Vue 앱의 진입점이 되며 기본적인 렌더링부터 다양한 동작들을 수행하게 됨.</p>
   </li>
   <li>
-    <p>도메인을 구입 -&gt; 직접 도메인 운영하는 기업과 거래 X -&gt; 도메인 리셀러에게 접근해야함(GoDaddy 등)</p>
-
-    <ul>
-      <li>도메인 리셀러 - 유저 관리, 결제 프로세서, 도메인 관리 등을 처리해줌 (직접 운영하는 사기업보다 돈을 더 지불해야함)</li>
-    </ul>
+    <p>Vue 인스턴스 생성 후에는 해당 오브젝트 내 <strong>options 객체</strong>들을 전달해야함. 이를 통해 결과물을 원하는 대로 작동하게끔 한다.</p>
   </li>
-  <li>나만의 도메인을 만들기? ICANN에 신청하기.. 신청비용만 2억 2천 발생 (인프라, 기술, 고객관리 등이 존재함을 증명해야함.)</li>
+  <li>
+    <p>new Vue로 생성했던 앱은 <strong>루트 Vue 인스턴스</strong>로 구성되며 선택적 중첩이 가능하고, 재사용 가능한 컴포넌트 트리로 구성된다.</p>
+  </li>
 </ul>
 
-<h3 id="정리">정리</h3>
+<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Root Instance
+└─ TodoList
+   ├─ TodoItem
+   │  ├─ DeleteTodoButton
+   │  └─ EditTodoButton
+   └─ TodoListFooter
+      ├─ ClearTodosButton
+      └─ TodoListStatistics
+</code></pre></div></div>
+
+<h2 id="데이터와-메소드">데이터와 메소드</h2>
+
+<ul>
+  <li>Vue 인스턴스 생성 시 <code class="language-plaintext highlighter-rouge">data</code>객체에 있는 모든 속성이 Vue의 <strong>반응형 시스템</strong>에 추가된다. Vue코드 내에서 속성값 변경에 따라 반응형 시스템이 추적하여 업데이트</li>
+</ul>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// 공식 홈페이지 예시코드</span>
+<span class="c1">// 데이터 객체</span>
+<span class="kd">var</span> <span class="nx">data</span> <span class="o">=</span> <span class="p">{</span> <span class="na">a</span><span class="p">:</span> <span class="mi">1</span> <span class="p">};</span>
+
+<span class="c1">// Vue인스턴스에 데이터 객체를 추가합니다.</span>
+<span class="kd">var</span> <span class="nx">vm</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Vue</span><span class="p">({</span>
+  <span class="na">data</span><span class="p">:</span> <span class="nx">data</span><span class="p">,</span>
+<span class="p">});</span>
+
+<span class="c1">// 인스턴스에 있는 속성은</span>
+<span class="c1">// 원본 데이터에 있는 값을 반환합니다.</span>
+<span class="nx">vm</span><span class="p">.</span><span class="nx">a</span> <span class="o">===</span> <span class="nx">data</span><span class="p">.</span><span class="nx">a</span><span class="p">;</span> <span class="c1">// =&gt; true</span>
+
+<span class="c1">// 인스턴스에 있는 속성값을 변경하면</span>
+<span class="c1">// 원본 데이터에도 영향을 미칩니다.</span>
+<span class="nx">vm</span><span class="p">.</span><span class="nx">a</span> <span class="o">=</span> <span class="mi">2</span><span class="p">;</span>
+<span class="nx">data</span><span class="p">.</span><span class="nx">a</span><span class="p">;</span> <span class="c1">// =&gt; 2</span>
+
+<span class="c1">// ... 반대로 마찬가지입니다.</span>
+<span class="nx">data</span><span class="p">.</span><span class="nx">a</span> <span class="o">=</span> <span class="mi">3</span><span class="p">;</span>
+<span class="nx">vm</span><span class="p">.</span><span class="nx">a</span><span class="p">;</span> <span class="c1">// =&gt; 3</span>
+</code></pre></div></div>
+
+<h3 id="예시코드-흐름---vma">예시코드 흐름 - vm.a</h3>
 
 <ol>
-  <li>도메인을 만드는 것은 registry이다.</li>
-  <li>registry는 IP = Domain 적어놓은 것</li>
-  <li>registry 되려면 인프라 및 막대한 자금 필요</li>
-  <li>도메인을 사면 registry에 직접 돈을 내지 않음.</li>
-  <li>리셀러 -&gt; 결제처리, 계약관리, 도메인 비용 지급</li>
+  <li>data라는 전역변수에 딕셔너리 형태로 데이터를 저장한다.</li>
+  <li>Vue인스턴스를 하나 생성하여, data옵션에 이전에 생성했던 전역변수 data를 저장한다.</li>
+  <li>이후에는 Vue인스턴스의 객체에서 <code class="language-plaintext highlighter-rouge">data</code> 변수의 a 키값을가진 데이터에 접근할 수 있게된다.</li>
+  <li>비교연산에 대해 True가 당연히 반환되며, 값의 변경은 딕셔너리인 <code class="language-plaintext highlighter-rouge">data</code> 에서 vm의 a키의 값 부분을 변경하거나, vm인스턴스에서 a키의 값 부분을 변경하면 추적하여 해당 값들을 변경하게됨. (코드상에 vm.a, data.a 값 변경 부분을 보기)</li>
 </ol>
+
+<h2 id="el옵션">el옵션</h2>
+
+<ul>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">new</code>를 이용한 인스턴스 생성시에만 이용</p>
+  </li>
+  <li>
+    <p>Vue 인스턴스에 마운트 할 기존 DOM 엘리먼트가 필요하다</p>
+    <ul>
+      <li>인스턴스 마운트</li>
+      <li>DOM 엘리먼트</li>
+    </ul>
+  </li>
+</ul>
 </section>
 </main>
 
