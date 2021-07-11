@@ -81,7 +81,7 @@
 /* 좌측 메뉴바 */
 .menu-bar {
   width: 20rem;
-  overflow: auto;
+  overflow: scroll;
   height: 100vh;
   padding: 2rem 0;
   border-right: 1px solid #dedede;

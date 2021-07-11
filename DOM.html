@@ -662,96 +662,86 @@
   </ul>
 </div>
  <main class="main-post">
-  <h1 class="main-post--title">제너레이터 표현식</h1>
+  <h1 class="main-post--title">Javascript Object Model</h1>
   <div class="line"></div>
-  <section class="main-post--content"><h3 id="하나의-문장으로-제너레이터를-구성하는-방법">하나의 문장으로 제너레이터를 구성하는 방법</h3>
+  <section class="main-post--content"><ul>
+  <li><a href="https://www.youtube.com/watch?v=Qf4q_sUdegI">생활코딩 - JavaScript - ObjectModel : 객체화란 무엇인가</a></li>
+</ul>
+
+<h2 id="개론">개론</h2>
+
+<ul>
+  <li>html코드 내에 img를 삽압한다.</li>
+</ul>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;body&gt;</span>
+  <span class="nt">&lt;img</span> <span class="na">src=</span><span class="s">".."</span> <span class="nt">/&gt;</span>
+<span class="nt">&lt;/body&gt;</span>
+</code></pre></div></div>
 
 <ul>
   <li>
-    <p>‘제너레이터 표현식은 제너레이터 함수와 마찬가지로 제너레이터 객체를 생성하는 방법이다.’</p>
+    <p>img라는 이름의 태그에 src라는 속성이 있으며, 해당 속성에 특정 값을 부여하면 해당 값에 맞는 결과물이 브라우저상에 출력된다.&lt;/br&gt;</p>
   </li>
   <li>
-    <p>‘제너레이터 표현식의 문법 구성이 리스트 컴프리헨션과 거의 똑같다.’</p>
+    <p>이는 html식의 프로그래밍이고, 과연 저러한 img 태그를 제어하려면 javascript상에서 어떻게 구현해야하는가? -&gt; <strong>Javascript가 제어 가능한 형태로 값을 전달하는데, 바로 해당 형태가 Object이다.</strong></p>
   </li>
   <li>
-    <p>iterable 객체를 통해 값을 출력하는 함수)</p>
+    <p>object는 사용자가 직접 만드는 것이 아니고, 브라우저가 작성된 문서를 쭉 읽는 과정에서 각 태그에 맞는 오브젝트들을 생성해놓고 준비한다. 따라서 우리는 각 태그에 맞는 객체를 찾아서 객체에 해당하는 프로퍼티 값을 조작하거나, 메소드를 호출하거나 하는 행동들을 할 수 있다.</p>
   </li>
 </ul>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">&gt;&gt;&gt;</span> <span class="k">def</span> <span class="nf">show_all</span><span class="p">(</span><span class="n">s</span><span class="p">):</span>
-        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">s</span><span class="p">:</span>
-            <span class="k">print</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s">' '</span><span class="p">)</span> <span class="c1"># iterable 객체를 전달하면서 이 함수 호출
-</span></code></pre></div></div>
+<h2 id="브라우저가-마련한-객체를-찾아내는-법-다루는-법">브라우저가 마련한 객체를 찾아내는 법, 다루는 법</h2>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">&gt;&gt;&gt;</span> <span class="n">st</span> <span class="o">=</span> <span class="p">[</span><span class="mi">2</span><span class="o">*</span><span class="n">i</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">10</span><span class="p">)]</span> <span class="c1"># 구구단 2단을 전부 저장한 리스트 생성
-</span><span class="o">&gt;&gt;&gt;</span> <span class="n">show_all</span><span class="p">(</span><span class="n">st</span><span class="p">)</span> <span class="c1"># 위에서 정의한 show_all 호출
-</span></code></pre></div></div>
-
-<ul>
-  <li>위의 식을 제너레이터 함수 기반으로 다시 작성</li>
-</ul>
-
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">&gt;&gt;&gt;</span> <span class="k">def</span> <span class="nf">times2</span><span class="p">():</span> <span class="c1"># 제너레이터 함수의 정의
-</span>        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">10</span><span class="p">):</span>
-            <span class="k">yield</span> <span class="n">i</span><span class="o">*</span><span class="mi">2</span>
-
-<span class="o">&gt;&gt;&gt;</span> <span class="n">g</span><span class="o">=</span><span class="n">times2</span><span class="p">()</span> <span class="c1"># 제너레이터 객체 생성
-</span><span class="o">&gt;&gt;&gt;</span> <span class="n">show_all</span><span class="p">(</span><span class="n">g</span><span class="p">)</span> <span class="c1"># 제너레이터 객체도 iterable하기 때문에 for루프에 전달가능
-</span></code></pre></div></div>
-
-<ul>
-  <li>
-    <p>제너레이터 기반 함수 정의하였을 때 장단점이 분명히 생긴다.</p>
-
-    <ol>
-      <li>
-        <p>장점 : 메모리를 효율적으로 사용한다.</p>
-      </li>
-      <li>
-        <p>단점 : 함수를 추가적으로 제너레이터 기반하여 정의해야한다.</p>
-      </li>
-    </ol>
-  </li>
-  <li>
-    <p>위에서의 단점을 커버하기위해 제너레이터 표현식을 이용!</p>
-  </li>
-</ul>
-
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">&gt;&gt;&gt;</span> <span class="n">g</span> <span class="o">=</span> <span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">i</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">10</span><span class="p">))</span> <span class="c1"># 표현식 기반 제너레이터 생성
-</span><span class="o">&gt;&gt;&gt;</span> <span class="n">show_all</span><span class="p">(</span><span class="n">g</span><span class="p">)</span> <span class="c1"># 위에서 정의한 show_all 호출
-</span></code></pre></div></div>
-
-<ul>
-  <li>
-    <p>제너레이터 표현식과 리스트 컴프리헨션 식을 비교</p>
-
+<ol>
+  <li>document
     <ul>
-      <li>
-        <p>st = [2*i for i in range(1,10)] - 리스트 컴프리헨션</p>
-      </li>
-      <li>
-        <p>g = (2*i for i in range(1,10)) - 제너레이터 표현식</p>
-      </li>
+      <li><code class="language-plaintext highlighter-rouge">document.getElementsByTagName('img');</code> - Elements, 복수의 요소들을 리턴 -&gt; 배열</li>
+      <li><code class="language-plaintext highlighter-rouge">var imgs = document.getElementsByTagName('img');</code> -&gt; imgs 변수에 img태그이름을 지닌 모든 요소 가져오기</li>
+      <li><code class="language-plaintext highlighter-rouge">imgs[0]</code> -&gt; img 태그 이름을 가진 요소들 중 가장 첫 번째 요소를 반환하는데, <strong>객체로 반환한다!</strong></li>
+      <li><code class="language-plaintext highlighter-rouge">imgs[0].style.width='300px';</code> -&gt; JS를 통해 imgs[0]가 리턴한 객체의 프로퍼티인 <strong>style</strong>의 width를 <strong>동적으로 조작할 수 있다.</strong></li>
     </ul>
   </li>
-  <li>
-    <p>제너레이터 표현식은 대괄호가 소괄호로 바뀐 것 이외에 리스트 컴프리헨션과 차이가 없다!</p>
-  </li>
-  <li>
-    <p>파이썬은 리스트 컴프리헨션과 표현이 비슷하다고 해서 <strong>lazy evaluation</strong> 규칙을 절대로 어기지 않는다!</p>
+</ol>
+
+<ul>
+  <li>중요한 것은, HTML수준에서 렌더링이 끝난 객체에 대해 수정이 동적으로 필요한데 이를 HTML에서는 할 수가 없음. <strong>자바스크립트를 그래서 이용</strong> =&gt; <strong>객체화</strong></li>
+</ul>
+
+<h2 id="브라우저의-객체-모델">브라우저의 객체 모델</h2>
+
+<hr />
+
+<h3 id="dom">DOM</h3>
+
+<ul>
+  <li>window객체의 프로퍼티 중 중요하게 다뤄지는 객체 - <strong>document객체</strong>, window라는 객체의 프로퍼티에 저장되어 있는 객체 <code class="language-plaintext highlighter-rouge">window.document</code>, 또는 <code class="language-plaintext highlighter-rouge">document</code> - document앞에 window를 쓰지 않으면 암시적으로 window프로퍼티의 객체로 인식을 하게 된다.
+    <ul>
+      <li>document는 기본적으로 웹 페이지 문서 - body, img, …등 이들을 제어하는 역할을 한다고 생각 ! (DOM - Document object model)</li>
+    </ul>
   </li>
 </ul>
 
-<h3 id="제너레이터-표현식을-직접-전달하기">제너레이터 표현식을 직접 전달하기</h3>
+<h3 id="bom">BOM</h3>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">&gt;&gt;&gt;</span> <span class="k">def</span> <span class="nf">show_all</span><span class="p">(</span><span class="n">s</span><span class="p">):</span>
-        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">s</span><span class="p">:</span>
-            <span class="k">print</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s">" "</span><span class="p">)</span>
+<ul>
+  <li>
+    <p>현재의 웹 브라우저가 가리키고있는 url을 알아내거나, 현재 웹브라우저가 표시하는 페이지를 reload, 경고창 등등을 담당</p>
+  </li>
+  <li>
+    <p>모두 window객체 프로퍼티에 저장되어있다. - navigator, screen, location, frames, history 등등</p>
+  </li>
+</ul>
 
-<span class="o">&gt;&gt;&gt;</span> <span class="n">show_all</span><span class="p">((</span><span class="mi">2</span><span class="o">*</span><span class="n">i</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">10</span><span class="p">)))</span> <span class="c1"># 제너레이터 표현식을 직접 전달
-</span><span class="o">&gt;&gt;&gt;</span> <span class="n">show_all</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">i</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">10</span><span class="p">))</span> <span class="c1"># 제너레이터 표현식을 함수에 직접 전달할 때에는 소괄호 생략 가능하다.
-</span>
-</code></pre></div></div>
+<h3 id="javascript-core">JavaScript Core</h3>
+
+<ul>
+  <li>DOM과 BOM은 브라우저라는 호스트 환경에서만 존재하는 객체들이다.</li>
+  <li>
+    <p>제어하는 환경이 Google Apps script라면? Node.js라면..</p>
+  </li>
+  <li>DOM과 BOM과는 다르게 호스트 환경에 상관 없이 공통적으로 가지고 있는 객체들 (Object, Array, Function 등)</li>
+</ul>
 </section>
 </main>
 

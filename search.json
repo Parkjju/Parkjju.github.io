@@ -1,0 +1,875 @@
+[
+  
+    {
+      "title"    : "Vue js - 데이터와 메소드",
+      "category" : "",
+      "tags"     : "",
+      "url"      : "/vueData",
+      "date"     : "2021-07-10 00:00:00 +0900"
+    } ,
+  
+    {
+      "title"    : "Vue js - 데이터와 메소드",
+      "category" : "",
+      "tags"     : "",
+      "url"      : "/vueComponent",
+      "date"     : "2021-07-10 00:00:00 +0900"
+    } ,
+  
+    {
+      "title"    : "Vue mount",
+      "category" : "",
+      "tags"     : "",
+      "url"      : "/mount",
+      "date"     : "2021-07-10 00:00:00 +0900"
+    } ,
+  
+    {
+      "title"    : "Javascript Object Model",
+      "category" : "",
+      "tags"     : "",
+      "url"      : "/DOM",
+      "date"     : "2021-07-10 00:00:00 +0900"
+    } ,
+  
+    {
+      "title"    : "Monthly I Learned - 2021년 7월",
+      "category" : "",
+      "tags"     : "",
+      "url"      : "/21July",
+      "date"     : "2021-07-09 00:00:00 +0900"
+    } ,
+  
+    {
+      "title"    : "2021년 7월 2주",
+      "category" : "",
+      "tags"     : "",
+      "url"      : "/design",
+      "date"     : "2021-07-07 00:00:00 +0900"
+    } ,
+  
+    {
+      "title"    : "분할정복방법 (Divide &amp; Conquer)",
+      "category" : "",
+      "tags"     : "python",
+      "url"      : "/divide",
+      "date"     : "2021-07-06 00:00:00 +0900"
+    } ,
+  
+    {
+      "title"    : "MOM (Median of Medians) 알고리즘",
+      "category" : "",
+      "tags"     : "python",
+      "url"      : "/mom",
+      "date"     : "2021-07-01 00:00:00 +0900"
+    } ,
+  
+    {
+      "title"    : "jekyll 기반 블로그 개설하기 (Mac OS)",
+      "category" : "",
+      "tags"     : "",
+      "url"      : "/jekyll",
+      "date"     : "2021-06-29 00:00:00 +0900"
+    } ,
+  
+    {
+      "title"    : "선택문제",
+      "category" : "",
+      "tags"     : "",
+      "url"      : "/selection",
+      "date"     : "2021-06-28 00:00:00 +0900"
+    } ,
+  
+    {
+      "title"    : "재귀(Recursion)",
+      "category" : "",
+      "tags"     : "python",
+      "url"      : "/Recursion",
+      "date"     : "2021-06-18 00:00:00 +0900"
+    } ,
+  
+    {
+      "title"    : "All-to-All shortest path problem",
+      "category" : "",
+      "tags"     : "Algorithm",
+      "url"      : "/all-to-all",
+      "date"     : "2021-06-15 00:00:00 +0900"
+    } ,
+  
+    {
+      "title"    : "bootstrap collapse",
+      "category" : "",
+      "tags"     : "",
+      "url"      : "/collapse",
+      "date"     : "2021-06-11 00:00:00 +0900"
+    } ,
+  
+    {
+      "title"    : "bootstrap 클래스 충돌 관련 이슈",
+      "category" : "",
+      "tags"     : "",
+      "url"      : "/bootstrap",
+      "date"     : "2021-06-11 00:00:00 +0900"
+    } ,
+  
+    {
+      "title"    : "How to add css to django application",
+      "category" : "",
+      "tags"     : "",
+      "url"      : "/django-css",
+      "date"     : "2021-06-07 00:00:00 +0900"
+    } ,
+  
+    {
+      "title"    : "최단경로 문제 - Ballman Ford &amp; Dijkstra Algorithm",
+      "category" : "",
+      "tags"     : "Algorithm",
+      "url"      : "/shortest",
+      "date"     : "2021-06-07 00:00:00 +0900"
+    } ,
+  
+    {
+      "title"    : "Software",
+      "category" : "",
+      "tags"     : "",
+      "url"      : "/software",
+      "date"     : "2021-06-04 00:00:00 +0900"
+    } ,
+  
+    {
+      "title"    : "파이썬 Import pylance의 Unresolved import warnings 이슈",
+      "category" : "",
+      "tags"     : "",
+      "url"      : "/pylance",
+      "date"     : "2021-06-01 00:00:00 +0900"
+    } ,
+  
+    {
+      "title"    : "About Networking",
+      "category" : "",
+      "tags"     : "",
+      "url"      : "/networking",
+      "date"     : "2021-05-31 00:00:00 +0900"
+    } ,
+  
+    {
+      "title"    : "Graph 자료구조",
+      "category" : "",
+      "tags"     : "",
+      "url"      : "/graph",
+      "date"     : "2021-05-30 00:00:00 +0900"
+    } ,
+  
+    {
+      "title"    : "CSS textarea 크기 조절 관련 옵션",
+      "category" : "",
+      "tags"     : "",
+      "url"      : "/textarea",
+      "date"     : "2021-05-25 00:00:00 +0900"
+    } ,
+  
+    {
+      "title"    : "Union find 자료구조",
+      "category" : "",
+      "tags"     : "",
+      "url"      : "/union-find",
+      "date"     : "2021-05-20 00:00:00 +0900"
+    } ,
+  
+    {
+      "title"    : "What&#39;s an Operating System?",
+      "category" : "",
+      "tags"     : "",
+      "url"      : "/OS",
+      "date"     : "2021-05-18 00:00:00 +0900"
+    } ,
+  
+    {
+      "title"    : "Crypto 101 with Nico - 가상화폐의 기술에 대하여",
+      "category" : "",
+      "tags"     : "",
+      "url"      : "/block-chain",
+      "date"     : "2021-05-14 00:00:00 +0900"
+    } ,
+  
+    {
+      "title"    : "Module Introduction",
+      "category" : "",
+      "tags"     : "",
+      "url"      : "/Module-Introduction",
+      "date"     : "2021-05-10 00:00:00 +0900"
+    } ,
+  
+    {
+      "title"    : "Web 요청과 응답과정",
+      "category" : "",
+      "tags"     : "",
+      "url"      : "/web_request",
+      "date"     : "2021-05-06 00:00:00 +0900"
+    } ,
+  
+    {
+      "title"    : "Introduction to IT",
+      "category" : "",
+      "tags"     : "",
+      "url"      : "/begin",
+      "date"     : "2021-05-06 00:00:00 +0900"
+    } ,
+  
+    {
+      "title"    : "DevOps란?",
+      "category" : "",
+      "tags"     : "",
+      "url"      : "/devops",
+      "date"     : "2021-05-05 00:00:00 +0900"
+    } ,
+  
+    {
+      "title"    : "What is an API?",
+      "category" : "",
+      "tags"     : "",
+      "url"      : "/api",
+      "date"     : "2021-05-04 00:00:00 +0900"
+    } ,
+  
+    {
+      "title"    : "library vs framework",
+      "category" : "",
+      "tags"     : "",
+      "url"      : "/library",
+      "date"     : "2021-05-01 00:00:00 +0900"
+    } ,
+  
+    {
+      "title"    : "serverless란?",
+      "category" : "",
+      "tags"     : "",
+      "url"      : "/serverless",
+      "date"     : "2021-04-30 00:00:00 +0900"
+    } ,
+  
+    {
+      "title"    : "도메인이란?",
+      "category" : "",
+      "tags"     : "",
+      "url"      : "/domain",
+      "date"     : "2021-04-29 00:00:00 +0900"
+    } ,
+  
+    {
+      "title"    : "Docker란?",
+      "category" : "",
+      "tags"     : "",
+      "url"      : "/docker",
+      "date"     : "2021-04-28 00:00:00 +0900"
+    } ,
+  
+    {
+      "title"    : "힙 자료구조",
+      "category" : "",
+      "tags"     : "",
+      "url"      : "/heap",
+      "date"     : "2021-04-19 00:00:00 +0900"
+    } ,
+  
+    {
+      "title"    : "해시테이블 open addressing 실습",
+      "category" : "",
+      "tags"     : "",
+      "url"      : "/open_addressing",
+      "date"     : "2021-04-15 00:00:00 +0900"
+    } ,
+  
+    {
+      "title"    : "git submodule 사용뽀개기",
+      "category" : "",
+      "tags"     : "",
+      "url"      : "/git_submodule",
+      "date"     : "2021-04-14 00:00:00 +0900"
+    } ,
+  
+    {
+      "title"    : "git fetch와 pull",
+      "category" : "",
+      "tags"     : "",
+      "url"      : "/git_fetch",
+      "date"     : "2021-04-14 00:00:00 +0900"
+    } ,
+  
+    {
+      "title"    : "트리 자료구조",
+      "category" : "",
+      "tags"     : "",
+      "url"      : "/tree",
+      "date"     : "2021-04-13 00:00:00 +0900"
+    } ,
+  
+    {
+      "title"    : "파이썬 딕셔너리 작동방식",
+      "category" : "",
+      "tags"     : "",
+      "url"      : "/pydict",
+      "date"     : "2021-04-11 00:00:00 +0900"
+    } ,
+  
+    {
+      "title"    : "양 방향 연결리스트 구현",
+      "category" : "",
+      "tags"     : "",
+      "url"      : "/doublyLinkedList",
+      "date"     : "2021-04-10 00:00:00 +0900"
+    } ,
+  
+    {
+      "title"    : "한 방향 연결리스트 구현",
+      "category" : "",
+      "tags"     : "",
+      "url"      : "/SinglyLinkedList",
+      "date"     : "2021-04-08 00:00:00 +0900"
+    } ,
+  
+    {
+      "title"    : "스택 이용하여 계산기 코드 구현하기",
+      "category" : "",
+      "tags"     : "",
+      "url"      : "/stack_cal",
+      "date"     : "2021-04-02 00:00:00 +0900"
+    } ,
+  
+    {
+      "title"    : "해시 테이블 (Hash Table)",
+      "category" : "",
+      "tags"     : "",
+      "url"      : "/hash_table",
+      "date"     : "2021-03-25 00:00:00 +0900"
+    } ,
+  
+    {
+      "title"    : "객체 슬라이싱과 getitem magic method와 setitem magic method",
+      "category" : "",
+      "tags"     : "",
+      "url"      : "/getitem",
+      "date"     : "2021-03-23 00:00:00 +0900"
+    } ,
+  
+    {
+      "title"    : "파이썬 split과 join",
+      "category" : "",
+      "tags"     : "",
+      "url"      : "/join",
+      "date"     : "2021-03-22 00:00:00 +0900"
+    } ,
+  
+    {
+      "title"    : "CSS box-sizing, text-transform, z-index, flex children 순서변경, forwards animation, will change",
+      "category" : "",
+      "tags"     : "",
+      "url"      : "/cssbox",
+      "date"     : "2021-03-19 00:00:00 +0900"
+    } ,
+  
+    {
+      "title"    : "CSS not, cursor 프로퍼티, color 상속, form action 과 method, navigation",
+      "category" : "",
+      "tags"     : "",
+      "url"      : "/cssnot",
+      "date"     : "2021-03-11 00:00:00 +0900"
+    } ,
+  
+    {
+      "title"    : "파이썬에서 SQLalchemy로 mySQL연동하기",
+      "category" : "",
+      "tags"     : "",
+      "url"      : "/sqlAlchemy",
+      "date"     : "2021-03-08 00:00:00 +0900"
+    } ,
+  
+    {
+      "title"    : "reset CSS 추가하기",
+      "category" : "",
+      "tags"     : "",
+      "url"      : "/resetCSS",
+      "date"     : "2021-03-08 00:00:00 +0900"
+    } ,
+  
+    {
+      "title"    : "gitignore 설정",
+      "category" : "",
+      "tags"     : "",
+      "url"      : "/gitignore",
+      "date"     : "2021-03-07 00:00:00 +0900"
+    } ,
+  
+    {
+      "title"    : "CSS Icon, Block Element Modifier, Font",
+      "category" : "",
+      "tags"     : "",
+      "url"      : "/CSS_additional",
+      "date"     : "2021-03-07 00:00:00 +0900"
+    } ,
+  
+    {
+      "title"    : "name과 main",
+      "category" : "",
+      "tags"     : "",
+      "url"      : "/name_main",
+      "date"     : "2021-03-06 00:00:00 +0900"
+    } ,
+  
+    {
+      "title"    : "데코레이터",
+      "category" : "",
+      "tags"     : "",
+      "url"      : "/decorator",
+      "date"     : "2021-03-06 00:00:00 +0900"
+    } ,
+  
+    {
+      "title"    : "데이터프레임",
+      "category" : "",
+      "tags"     : "",
+      "url"      : "/dataframe",
+      "date"     : "2021-03-06 00:00:00 +0900"
+    } ,
+  
+    {
+      "title"    : "클래스 메소드와 static 메소드",
+      "category" : "",
+      "tags"     : "",
+      "url"      : "/class_method",
+      "date"     : "2021-03-06 00:00:00 +0900"
+    } ,
+  
+    {
+      "title"    : "네스티드 함수와 클로저",
+      "category" : "",
+      "tags"     : "",
+      "url"      : "/nested_func",
+      "date"     : "2021-03-05 00:00:00 +0900"
+    } ,
+  
+    {
+      "title"    : "slots의 효과",
+      "category" : "",
+      "tags"     : "",
+      "url"      : "/slots",
+      "date"     : "2021-03-04 00:00:00 +0900"
+    } ,
+  
+    {
+      "title"    : "프로퍼티",
+      "category" : "",
+      "tags"     : "",
+      "url"      : "/property",
+      "date"     : "2021-03-04 00:00:00 +0900"
+    } ,
+  
+    {
+      "title"    : "정보은닉과 dict",
+      "category" : "",
+      "tags"     : "",
+      "url"      : "/hide_dict",
+      "date"     : "2021-03-04 00:00:00 +0900"
+    } ,
+  
+    {
+      "title"    : "연산자 오버로딩",
+      "category" : "",
+      "tags"     : "",
+      "url"      : "/operator_overload",
+      "date"     : "2021-03-02 00:00:00 +0900"
+    } ,
+  
+    {
+      "title"    : "스페셜 메소드",
+      "category" : "",
+      "tags"     : "",
+      "url"      : "/special_method",
+      "date"     : "2021-02-28 00:00:00 +0900"
+    } ,
+  
+    {
+      "title"    : "메소드 기반 문자열 조합",
+      "category" : "",
+      "tags"     : "",
+      "url"      : "/method_str",
+      "date"     : "2021-02-26 00:00:00 +0900"
+    } ,
+  
+    {
+      "title"    : "isinstance 함수와 object 클래스",
+      "category" : "",
+      "tags"     : "",
+      "url"      : "/isinstance",
+      "date"     : "2021-02-26 00:00:00 +0900"
+    } ,
+  
+    {
+      "title"    : "상속",
+      "category" : "",
+      "tags"     : "",
+      "url"      : "/inheritance",
+      "date"     : "2021-02-26 00:00:00 +0900"
+    } ,
+  
+    {
+      "title"    : "표현식 기반 문자열 조합",
+      "category" : "",
+      "tags"     : "",
+      "url"      : "/expression_comb",
+      "date"     : "2021-02-26 00:00:00 +0900"
+    } ,
+  
+    {
+      "title"    : "클래스와 객체의 본질",
+      "category" : "",
+      "tags"     : "",
+      "url"      : "/class_obj",
+      "date"     : "2021-02-26 00:00:00 +0900"
+    } ,
+  
+    {
+      "title"    : "정렬 기술",
+      "category" : "",
+      "tags"     : "",
+      "url"      : "/sort",
+      "date"     : "2021-02-25 00:00:00 +0900"
+    } ,
+  
+    {
+      "title"    : "자료형 분류와 set, frozenset",
+      "category" : "",
+      "tags"     : "",
+      "url"      : "/set_frozenset",
+      "date"     : "2021-02-25 00:00:00 +0900"
+    } ,
+  
+    {
+      "title"    : "dict와 orderedDict",
+      "category" : "",
+      "tags"     : "",
+      "url"      : "/ordered_dict",
+      "date"     : "2021-02-25 00:00:00 +0900"
+    } ,
+  
+    {
+      "title"    : "enumerate과 문자열 비교",
+      "category" : "",
+      "tags"     : "",
+      "url"      : "/enumerate",
+      "date"     : "2021-02-25 00:00:00 +0900"
+    } ,
+  
+    {
+      "title"    : "github 레포지토리에 방문자 수 표시하기",
+      "category" : "",
+      "tags"     : "",
+      "url"      : "/hits",
+      "date"     : "2021-02-24 00:00:00 +0900"
+    } ,
+  
+    {
+      "title"    : "dict의 생성과 zip",
+      "category" : "",
+      "tags"     : "",
+      "url"      : "/prod_dict",
+      "date"     : "2021-02-24 00:00:00 +0900"
+    } ,
+  
+    {
+      "title"    : "함수 호출과 매개변수 선언에 있어서 star 특수문자의 사용 규칙",
+      "category" : "",
+      "tags"     : "",
+      "url"      : "/func_star_rule",
+      "date"     : "2021-02-24 00:00:00 +0900"
+    } ,
+  
+    {
+      "title"    : "dict 루핑 기술과 컴프리헨션",
+      "category" : "",
+      "tags"     : "",
+      "url"      : "/dict_lupin",
+      "date"     : "2021-02-24 00:00:00 +0900"
+    } ,
+  
+    {
+      "title"    : "dicr와 defaultdict",
+      "category" : "",
+      "tags"     : "",
+      "url"      : "/dict_defaultdict",
+      "date"     : "2021-02-24 00:00:00 +0900"
+    } ,
+  
+    {
+      "title"    : "튜플의 패킹과 언패킹",
+      "category" : "",
+      "tags"     : "",
+      "url"      : "/tuple_packing",
+      "date"     : "2021-02-22 00:00:00 +0900"
+    } ,
+  
+    {
+      "title"    : "네임드 튜플",
+      "category" : "",
+      "tags"     : "",
+      "url"      : "/named_tuple",
+      "date"     : "2021-02-22 00:00:00 +0900"
+    } ,
+  
+    {
+      "title"    : "제너레이터 표현식",
+      "category" : "",
+      "tags"     : "",
+      "url"      : "/generator_expression",
+      "date"     : "2021-02-22 00:00:00 +0900"
+    } ,
+  
+    {
+      "title"    : "제너레이터 함수",
+      "category" : "",
+      "tags"     : "",
+      "url"      : "/generator",
+      "date"     : "2021-02-22 00:00:00 +0900"
+    } ,
+  
+    {
+      "title"    : "CSS transition, transform, animation, Media query",
+      "category" : "",
+      "tags"     : "",
+      "url"      : "/CSS_Advanced",
+      "date"     : "2021-02-22 00:00:00 +0900"
+    } ,
+  
+    {
+      "title"    : "CSS 기초, 마진상쇄, flexbox, position, Pseudo selector, combinator, state",
+      "category" : "",
+      "tags"     : "",
+      "url"      : "/CSS_begin",
+      "date"     : "2021-02-21 00:00:00 +0900"
+    } ,
+  
+    {
+      "title"    : "map과 filter",
+      "category" : "",
+      "tags"     : "",
+      "url"      : "/map_and_filter",
+      "date"     : "2021-02-19 00:00:00 +0900"
+    } ,
+  
+    {
+      "title"    : "map과 filter를 대신하는 리스트 컴프리헨션",
+      "category" : "",
+      "tags"     : "",
+      "url"      : "/func_comprehension",
+      "date"     : "2021-02-19 00:00:00 +0900"
+    } ,
+  
+    {
+      "title"    : "레퍼런스 카운트와 가비지 컬렉션",
+      "category" : "",
+      "tags"     : "",
+      "url"      : "/reference_count_garbage_collection",
+      "date"     : "2021-02-18 00:00:00 +0900"
+    } ,
+  
+    {
+      "title"    : "리스트 컴프리헨션(list comprehension)",
+      "category" : "",
+      "tags"     : "",
+      "url"      : "/list_comprehension",
+      "date"     : "2021-02-18 00:00:00 +0900"
+    } ,
+  
+    {
+      "title"    : "객체처럼 다뤄지는 함수 그리고 람다",
+      "category" : "",
+      "tags"     : "",
+      "url"      : "/lambda",
+      "date"     : "2021-02-18 00:00:00 +0900"
+    } ,
+  
+    {
+      "title"    : "iterable객체와 iterator 객체",
+      "category" : "",
+      "tags"     : "",
+      "url"      : "/iterable_iterator",
+      "date"     : "2021-02-18 00:00:00 +0900"
+    } ,
+  
+    {
+      "title"    : "수정 가능한 객체와 수정 불가능한 객체",
+      "category" : "",
+      "tags"     : "",
+      "url"      : "/immutable_mutable",
+      "date"     : "2021-02-18 00:00:00 +0900"
+    } ,
+  
+    {
+      "title"    : "깊은 복사와 얕은 복사",
+      "category" : "",
+      "tags"     : "",
+      "url"      : "/deep_shallow_copy",
+      "date"     : "2021-02-18 00:00:00 +0900"
+    } ,
+  
+    {
+      "title"    : "순차적 자료구조",
+      "category" : "",
+      "tags"     : "",
+      "url"      : "/sequential_structure",
+      "date"     : "2021-02-16 00:00:00 +0900"
+    } ,
+  
+    {
+      "title"    : "vscode 단축키",
+      "category" : "",
+      "tags"     : "",
+      "url"      : "/vscode_shortcut",
+      "date"     : "2021-02-15 00:00:00 +0900"
+    } ,
+  
+    {
+      "title"    : "예외처리",
+      "category" : "",
+      "tags"     : "",
+      "url"      : "/unexpect",
+      "date"     : "2021-02-13 00:00:00 +0900"
+    } ,
+  
+    {
+      "title"    : "모듈의 이해 그리고 수학 모듈 이용하기",
+      "category" : "",
+      "tags"     : "",
+      "url"      : "/modules",
+      "date"     : "2021-02-13 00:00:00 +0900"
+    } ,
+  
+    {
+      "title"    : "함수에 대한 추가적인 설명들",
+      "category" : "",
+      "tags"     : "",
+      "url"      : "/functions_add",
+      "date"     : "2021-02-13 00:00:00 +0900"
+    } ,
+  
+    {
+      "title"    : "딕셔너리(Dictionary)",
+      "category" : "",
+      "tags"     : "",
+      "url"      : "/dictionary",
+      "date"     : "2021-02-13 00:00:00 +0900"
+    } ,
+  
+    {
+      "title"    : "클래스와 객체",
+      "category" : "",
+      "tags"     : "",
+      "url"      : "/class",
+      "date"     : "2021-02-13 00:00:00 +0900"
+    } ,
+  
+    {
+      "title"    : "튜플과 레인지",
+      "category" : "",
+      "tags"     : "",
+      "url"      : "/tuple_range",
+      "date"     : "2021-02-11 00:00:00 +0900"
+    } ,
+  
+    {
+      "title"    : "for 루프와 while 루프",
+      "category" : "",
+      "tags"     : "",
+      "url"      : "/for_while_loop",
+      "date"     : "2021-02-10 00:00:00 +0900"
+    } ,
+  
+    {
+      "title"    : "True,False 그리고 if와 형제들",
+      "category" : "",
+      "tags"     : "",
+      "url"      : "/TF",
+      "date"     : "2021-02-10 00:00:00 +0900"
+    } ,
+  
+    {
+      "title"    : "자료구조에 대한 이해",
+      "category" : "",
+      "tags"     : "",
+      "url"      : "/data_structure",
+      "date"     : "2021-02-09 00:00:00 +0900"
+    } ,
+  
+    {
+      "title"    : "Git 명령어 정리 (계속)",
+      "category" : "",
+      "tags"     : "",
+      "url"      : "/git_command",
+      "date"     : "2021-02-08 00:00:00 +0900"
+    } ,
+  
+    {
+      "title"    : "prettier 셋업",
+      "category" : "",
+      "tags"     : "",
+      "url"      : "/vscode_Prettier",
+      "date"     : "2021-02-07 00:00:00 +0900"
+    } ,
+  
+    {
+      "title"    : "Github Page 만들어 배포하기",
+      "category" : "",
+      "tags"     : "",
+      "url"      : "/github_page",
+      "date"     : "2021-02-06 00:00:00 +0900"
+    } ,
+  
+    {
+      "title"    : "리스트와 문자열",
+      "category" : "",
+      "tags"     : "",
+      "url"      : "/list_string",
+      "date"     : "2021-02-06 00:00:00 +0900"
+    } ,
+  
+    {
+      "title"    : "리스트와 문자열의 함수들",
+      "category" : "",
+      "tags"     : "",
+      "url"      : "/list_function",
+      "date"     : "2021-02-06 00:00:00 +0900"
+    } ,
+  
+    {
+      "title"    : "int형 데이터와 float형 데이터",
+      "category" : "",
+      "tags"     : "",
+      "url"      : "/int_float_data",
+      "date"     : "2021-02-06 00:00:00 +0900"
+    } ,
+  
+    {
+      "title"    : "프로그램 사용자로부터 값 입력받기 , 코드의 반복",
+      "category" : "",
+      "tags"     : "",
+      "url"      : "/input_loop",
+      "date"     : "2021-02-06 00:00:00 +0900"
+    } ,
+  
+    {
+      "title"    : "입출력과 변수",
+      "category" : "",
+      "tags"     : "",
+      "url"      : "/input_and_print",
+      "date"     : "2021-02-06 00:00:00 +0900"
+    } ,
+  
+    {
+      "title"    : "함수 만들기",
+      "category" : "",
+      "tags"     : "",
+      "url"      : "/functions",
+      "date"     : "2021-02-06 00:00:00 +0900"
+    } 
+  
+]

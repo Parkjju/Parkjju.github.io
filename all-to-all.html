@@ -26,7 +26,12 @@
     <!-- 검색창 -->
     <form action="" method="get" class="search-box">
       <i class="fas fa-search"></i>
-      <input class="search-form" type="text" autocomplete="off" />
+      <input
+        class="search-form"
+        id="search-input"
+        type="text"
+        autocomplete="off"
+      />
     </form>
 
     <!-- 링크버튼 -->
@@ -518,6 +523,52 @@
       <p
         class="sidebar-heading"
         data-bs-toggle="collapse"
+        href="#javascript"
+        aria-expanded="false"
+        aria-controls="javascript"
+        onclick="rotate(this)"
+      >
+        <span class="sidebar-heading--name">Javascript</span>
+        <i class="fas fa-caret-right fa-xs"></i>
+      </p>
+    </li>
+    <div class="collapse" id="javascript">
+      <div class="card card-body">
+        <a href="./DOM" target="_self"
+          >Javascript 객체 모델 - DOM, BOM, JS Core</a
+        >
+      </div>
+    </div>
+
+    <li class="sidebar-group" role="menuitem">
+      <p
+        class="sidebar-heading"
+        data-bs-toggle="collapse"
+        href="#vue"
+        aria-expanded="false"
+        aria-controls="vue"
+        onclick="rotate(this)"
+      >
+        <span class="sidebar-heading--name">Vue</span>
+        <i class="fas fa-caret-right fa-xs"></i>
+      </p>
+    </li>
+    <div class="collapse" id="vue">
+      <div class="card card-body">
+        <a href="./mount" target="_self">Vue에서의 마운트란 </a>
+      </div>
+      <div class="card card-body">
+        <a href="./vueComponent" target="_self">Vue 컴포넌트</a>
+      </div>
+      <div class="card card-body">
+        <a href="./vueData" target="_self">Vue Data옵션 </a>
+      </div>
+    </div>
+
+    <li class="sidebar-group" role="menuitem">
+      <p
+        class="sidebar-heading"
+        data-bs-toggle="collapse"
         href="#collapse7"
         aria-expanded="false"
         aria-controls="collapse7"
@@ -591,31 +642,6 @@
       </div>
     </div>
 
-    <li class="sidebar-group" role="menuitem">
-      <p
-        class="sidebar-heading"
-        data-bs-toggle="collapse"
-        href="#vue"
-        aria-expanded="false"
-        aria-controls="vue"
-        onclick="rotate(this)"
-      >
-        <span class="sidebar-heading--name">Vue</span>
-        <i class="fas fa-caret-right fa-xs"></i>
-      </p>
-    </li>
-    <div class="collapse" id="vue">
-      <div class="card card-body">
-        <a href="./mount" target="_self">Vue에서의 마운트란 </a>
-      </div>
-      <div class="card card-body">
-        <a href="./vueComponent" target="_self">Vue 컴포넌트</a>
-      </div>
-      <div class="card card-body">
-        <a href="./vueData" target="_self">Vue Data옵션 </a>
-      </div>
-    </div>
-
     <!-- <li class="sidebar-group" role="menuitem">
       <p
         class="sidebar-heading"
@@ -635,8 +661,7 @@
     </div> -->
   </ul>
 </div>
- 
-    <main class="main-post">
+ <main class="main-post">
   <h1 class="main-post--title">All-to-All shortest path problem</h1>
   <div class="line"></div>
   <section class="main-post--content"><ul>
@@ -732,5 +757,6 @@ P_k(i,j) = 노드i ~ 노드j, i와j사이에 등장하는 노드의 번호는 k�
     ></script>
     <script src="assets/js/sidebar-click-event.js"></script>
     <script src="//code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script src="/assets/js/search.js"></script>
   </body>
 </html>
