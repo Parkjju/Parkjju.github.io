@@ -24,15 +24,18 @@
 
   <div class="main_bar--right">
     <!-- 검색창 -->
-    <form action="" method="get" class="search-box">
+    <div class="search-box">
       <i class="fas fa-search"></i>
-      <input
-        class="search-form"
-        id="search-input"
-        type="text"
-        autocomplete="off"
-      />
-    </form>
+      <div class="search-box--result">
+        <input
+          class="search-form"
+          id="search-input"
+          type="search"
+          autocomplete="off"
+        />
+        <ul id="results-container"></ul>
+      </div>
+    </div>
 
     <!-- 링크버튼 -->
     <div
@@ -794,6 +797,19 @@
     ></script>
     <script src="assets/js/sidebar-click-event.js"></script>
     <script src="//code.jquery.com/jquery-3.3.1.min.js"></script>
-    <script src="/assets/js/search.js"></script>
+    <script src="/assets/js/simple-jekyll-search.min.js"></script>
+    <script>
+      window.simpleJekyllSearch = new SimpleJekyllSearch({
+        searchInput: document.getElementById("search-input"),
+        resultsContainer: document.getElementById("results-container"),
+        json: "/search.json",
+        searchResultTemplate:
+          '<li><a href="{url}?query={query}" title="{desc}">{title}</a></li>',
+        noResultsText: "",
+        limit: 10,
+        fuzzy: false,
+        exclude: ["Welcome"],
+      });
+    </script>
   </body>
 </html>
