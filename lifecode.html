@@ -668,47 +668,280 @@
   </ul>
 </div>
  <main class="main-post">
-  <h1 class="main-post--title">What is an API?</h1>
+  <h1 class="main-post--title">생활코딩 Javascript</h1>
   <div class="line"></div>
-  <section class="main-post--content"><ul>
-  <li>
-    <p>API는 키보드와 같은 것.</p>
+  <section class="main-post--content"><h2 id="html과-js의-만남---script-태그">HTML과 JS의 만남 - script 태그</h2>
 
-    <ul>
-      <li>키보드를 통해 컴퓨터와 interaction</li>
-      <li>컴퓨터와 소통하는 유일한 방법</li>
-    </ul>
-  </li>
-  <li>
-    <p>프로그램들이 서로 소통하기 위한 것 -&gt; API</p>
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;body&gt;</span>
+  <span class="nt">&lt;h1&gt;</span>javascript<span class="nt">&lt;/h1&gt;</span>
+  <span class="nt">&lt;script&gt;</span>
+    <span class="nb">document</span><span class="p">.</span><span class="nx">write</span><span class="p">(</span><span class="dl">"</span><span class="s2">hello world!</span><span class="dl">"</span><span class="p">);</span>
+    <span class="nb">document</span><span class="p">.</span><span class="nx">write</span><span class="p">(</span><span class="mi">1</span> <span class="o">+</span> <span class="mi">1</span><span class="p">);</span>
+  <span class="nt">&lt;/script&gt;</span>
+  <span class="nt">&lt;h1&gt;</span>html<span class="nt">&lt;/h1&gt;</span>
+  1+1
+<span class="nt">&lt;/body&gt;</span>
+</code></pre></div></div>
 
-    <ul>
-      <li>코드들끼리의 소통</li>
-      <li>서버에서 만들어 앱에 제공 -&gt; 특정 API는 무슨기능.. 어떤 기능…</li>
-      <li>각자 기능을 도맡아 백엔드 데이터베이스(서버)에 전달</li>
-    </ul>
-  </li>
-  <li>
-    <p>REST API, GraphQL API.. 모양은 다르지만 프로그램들이 서로 소통할 수 있게해줌에는 동일</p>
-  </li>
-  <li>
-    <p>API는 데이터, 서버를 갖고있는 사람들이 원하는 대로 디자인할 수 있음</p>
+<ul>
+  <li>javascript는 <strong>동적이다</strong>.</li>
+</ul>
 
+<h2 id="html과-js의-만남---이벤트">HTML과 JS의 만남 - 이벤트</h2>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;body&gt;</span>
+  <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"button"</span> <span class="na">value=</span><span class="s">"hi"</span> <span class="na">onclick=</span><span class="s">"alert('hi')"</span> <span class="nt">/&gt;</span>
+<span class="nt">&lt;/body&gt;</span>
+</code></pre></div></div>
+
+<ul>
+  <li>html의 onclick속성에는 javascript만 들어와야한다. 브라우저가 onclick속성의 값을 기억하고 있다가 자바스크립트의 문법에 따라 동작한다.</li>
+  <li>다양한 이벤트가 존재한다.
     <ul>
-      <li>따라서, 어떤 API는 접근권한이 존재</li>
-      <li>제약 or 비용이 있을 수도</li>
+      <li><code class="language-plaintext highlighter-rouge">&lt;input type="text" onchange="alert('changed')"&gt;</code> -&gt; 텍스트 영역 내에서 변경사항 감지시 alert</li>
+      <li><code class="language-plaintext highlighter-rouge">&lt;input type="text" onkeydown="alert('key down!')"&gt;</code> -&gt; 키가 눌렸을때 alert</li>
     </ul>
   </li>
-  <li>WEB API -&gt; 브라우저를 위한 API
-    <ul>
-      <li>크롬, 파이어폭스 등</li>
-      <li>유저의 마이크 액세스.. 카메라 접근권한을 요청… 지역위치 접근권한을 요청…</li>
-    </ul>
+</ul>
+
+<h2 id="javascript-data-type">Javascript data type</h2>
+
+<ol>
+  <li>number -&gt; + - * / 과 같은 산술연산자들</li>
+  <li>string -&gt; <code class="language-plaintext highlighter-rouge">문자.length</code>, <code class="language-plaintext highlighter-rouge">'hello'.toUpperCase()</code>, <code class="language-plaintext highlighter-rouge">'hello world'.indexOf('o')</code> 등 프로퍼티 및 다양한 메소드가 존재</li>
+</ol>
+
+<ul>
+  <li>이 외에 다양한 타입들이 존재</li>
+</ul>
+
+<h2 id="javascript-태그-선택">Javascript 태그 선택</h2>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;body&gt;</span>
+  <span class="nt">&lt;h1&gt;&lt;a</span> <span class="na">href=</span><span class="s">"#"</span><span class="nt">&gt;</span>WEB<span class="nt">&lt;/a&gt;&lt;/h1&gt;</span>
+  <span class="nt">&lt;input</span>
+    <span class="na">type=</span><span class="s">"button"</span>
+    <span class="na">value=</span><span class="s">"night"</span>
+    <span class="na">onclick=</span><span class="s">"
+    document.querySelector('body').style.backgroundColor='black';
+    document.querySelector('body').style.color='white';
+    "</span>
+  <span class="nt">/&gt;</span>
+  <span class="nt">&lt;input</span>
+    <span class="na">type=</span><span class="s">"button"</span>
+    <span class="na">value=</span><span class="s">"day"</span>
+    <span class="na">onclick=</span><span class="s">"
+    document.querySelector('body').style.backgroundColor = 'white';
+    document.querySelector('body').style.color='black';"</span>
+  <span class="nt">/&gt;</span>
+  <span class="nt">&lt;p&gt;</span>
+    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit
+    dicta, molestiae, cum itaque maiores et odio architecto doloribus facere
+    facilis, at tempora! Voluptatibus excepturi consectetur magnam
+    exercitationem maxime fugiat accusantium.
+  <span class="nt">&lt;/p&gt;</span>
+<span class="nt">&lt;/body&gt;</span>
+</code></pre></div></div>
+
+<ol>
+  <li>온클릭을 통해 사용자의 클릭을 감지한다.</li>
+  <li>querySelector를 통해 태그를 선택한다. (태그이름, 클래스이름, id값)</li>
+  <li>선택한 태그에 대해 style을 적용시켜본다.</li>
+</ol>
+
+<h2 id="조건문">조건문</h2>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;input</span>
+    <span class="na">id=</span><span class="s">"nightDay"</span>
+    <span class="na">type=</span><span class="s">"button"</span>
+    <span class="na">value=</span><span class="s">"day"</span>
+    <span class="na">onclick=</span><span class="s">"
+        if(document.querySelector('#nightDay').value === 'night'){
+        document.querySelector('body').style.backgroundColor = 'white';
+        document.querySelector('body').style.color='black';
+        document.querySelector('#nightDay').value = 'day';
+        } else {
+        document.querySelector('body').style.backgroundColor='black';
+        document.querySelector('body').style.color='white';
+        document.querySelector('#nightDay').value = 'night';
+    }"</span>
+</code></pre></div></div>
+
+<ul>
+  <li>페이지 다크모드 전환하는 간단 실습코드</li>
+  <li>조건문을 통해 버튼의 텍스트값 비교 진행하여 상태를 동적으로 변화시킨다.</li>
+</ul>
+
+<h2 id="리팩토링-중복의-제거">리팩토링 중복의 제거</h2>
+
+<ul>
+  <li>리팩토링이란 - 코딩 뒤에 비효율적인 부분에 대해 정리하는 것 (가독성 + 유지보수)</li>
+  <li>
+    <p>실습 진행한 코드 바탕으로 리팩토링을 진행해본다.</p>
+  </li>
+  <li>스크롤 하여 밑에도 있는 night-day 모드 전환 버튼을 작동시키고 싶다. - id기반으로 만들어졌기 때문에 하나 하나 구분해줘야하는가?</li>
+  <li>온클릭 내에서 id로 접근하지 않고, this를 통해 버튼 자기 자신에 대한 동작으로 정의를 진행한다 -&gt; id관련 코드 모두 필요없어짐</li>
+</ul>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;input</span>
+    <span class="na">type=</span><span class="s">"button"</span>
+    <span class="na">value=</span><span class="s">"day"</span>
+    <span class="na">onclick=</span><span class="s">"
+        var target = document.querySelector('body');
+        if(this.value === 'night'){
+        target.style.backgroundColor = 'white';
+        target.style.color='black';
+        this.value = 'day';
+        } else {
+        target.style.backgroundColor='black';
+        target.style.color='white';
+        this.value = 'night';
+    }"</span>
+</code></pre></div></div>
+
+<ul>
+  <li>this키워드를 통해 코드의 간결화 + <code class="language-plaintext highlighter-rouge">document.querySelector('body')</code>부분의 중복을 변수화 하여 중복제거</li>
+</ul>
+
+<h2 id="함수">함수</h2>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;script&gt;</span>
+  <span class="kd">function</span> <span class="nx">nightDayHandler</span><span class="p">(</span><span class="nb">self</span><span class="p">)</span> <span class="p">{</span>
+    <span class="kd">var</span> <span class="nx">alist</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">querySelectorAll</span><span class="p">(</span><span class="dl">"</span><span class="s2">a</span><span class="dl">"</span><span class="p">);</span>
+    <span class="kd">var</span> <span class="nx">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+
+    <span class="k">if</span> <span class="p">(</span><span class="nb">self</span><span class="p">.</span><span class="nx">value</span> <span class="o">===</span> <span class="dl">"</span><span class="s2">night</span><span class="dl">"</span><span class="p">)</span> <span class="p">{</span>
+      <span class="nb">document</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="dl">"</span><span class="s2">body</span><span class="dl">"</span><span class="p">).</span><span class="nx">style</span><span class="p">.</span><span class="nx">backgroundColor</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">white</span><span class="dl">"</span><span class="p">;</span>
+      <span class="nb">document</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="dl">"</span><span class="s2">body</span><span class="dl">"</span><span class="p">).</span><span class="nx">style</span><span class="p">.</span><span class="nx">color</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">black</span><span class="dl">"</span><span class="p">;</span>
+      <span class="nb">self</span><span class="p">.</span><span class="nx">value</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">day</span><span class="dl">"</span><span class="p">;</span>
+      <span class="k">while</span> <span class="p">(</span><span class="nx">i</span> <span class="o">&lt;</span> <span class="nx">alist</span><span class="p">.</span><span class="nx">length</span><span class="p">)</span> <span class="p">{</span>
+        <span class="nx">alist</span><span class="p">[</span><span class="nx">i</span><span class="p">].</span><span class="nx">style</span><span class="p">.</span><span class="nx">color</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">blue</span><span class="dl">"</span><span class="p">;</span>
+        <span class="nx">i</span> <span class="o">=</span> <span class="nx">i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">;</span>
+      <span class="p">}</span>
+    <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+      <span class="nb">document</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="dl">"</span><span class="s2">body</span><span class="dl">"</span><span class="p">).</span><span class="nx">style</span><span class="p">.</span><span class="nx">backgroundColor</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">black</span><span class="dl">"</span><span class="p">;</span>
+      <span class="nb">document</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="dl">"</span><span class="s2">body</span><span class="dl">"</span><span class="p">).</span><span class="nx">style</span><span class="p">.</span><span class="nx">color</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">white</span><span class="dl">"</span><span class="p">;</span>
+      <span class="nb">self</span><span class="p">.</span><span class="nx">value</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">night</span><span class="dl">"</span><span class="p">;</span>
+      <span class="k">while</span> <span class="p">(</span><span class="nx">i</span> <span class="o">&lt;</span> <span class="nx">alist</span><span class="p">.</span><span class="nx">length</span><span class="p">)</span> <span class="p">{</span>
+        <span class="nx">alist</span><span class="p">[</span><span class="nx">i</span><span class="p">].</span><span class="nx">style</span><span class="p">.</span><span class="nx">color</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">powderblue</span><span class="dl">"</span><span class="p">;</span>
+        <span class="nx">i</span> <span class="o">=</span> <span class="nx">i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">;</span>
+      <span class="p">}</span>
+    <span class="p">}</span>
+  <span class="p">}</span>
+<span class="nt">&lt;/script&gt;</span>
+</code></pre></div></div>
+
+<ul>
+  <li>function 정의의 파라미터로 self를 전달 -&gt; this를 self로 교체하여 다크모드 기능 버튼의 onclick이벤트에 handler함수를 전달하면 전체적인 코드가 효율적으로 바뀐다.</li>
+</ul>
+
+<h2 id="객체">객체</h2>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;script&gt;</span>
+  <span class="kd">function</span> <span class="nx">BodySetColor</span><span class="p">(</span><span class="nx">color</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nb">document</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="dl">"</span><span class="s2">body</span><span class="dl">"</span><span class="p">).</span><span class="nx">style</span><span class="p">.</span><span class="nx">color</span> <span class="o">=</span> <span class="nx">color</span><span class="p">;</span>
+  <span class="p">}</span>
+
+  <span class="kd">function</span> <span class="nx">BodySetBackgroundColor</span><span class="p">(</span><span class="nx">color</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nb">document</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="dl">"</span><span class="s2">body</span><span class="dl">"</span><span class="p">).</span><span class="nx">style</span><span class="p">.</span><span class="nx">backgroundColor</span> <span class="o">=</span> <span class="nx">color</span><span class="p">;</span>
+  <span class="p">}</span>
+
+  <span class="kd">function</span> <span class="nx">LinksSetColor</span><span class="p">(</span><span class="nx">color</span><span class="p">)</span> <span class="p">{</span>
+    <span class="kd">var</span> <span class="nx">alist</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">querySelectorAll</span><span class="p">(</span><span class="dl">"</span><span class="s2">a</span><span class="dl">"</span><span class="p">);</span>
+    <span class="kd">var</span> <span class="nx">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+    <span class="k">while</span> <span class="p">(</span><span class="nx">i</span> <span class="o">&lt;</span> <span class="nx">alist</span><span class="p">.</span><span class="nx">length</span><span class="p">)</span> <span class="p">{</span>
+      <span class="nx">alist</span><span class="p">[</span><span class="nx">i</span><span class="p">].</span><span class="nx">style</span><span class="p">.</span><span class="nx">color</span> <span class="o">=</span> <span class="nx">color</span><span class="p">;</span>
+      <span class="nx">i</span> <span class="o">=</span> <span class="nx">i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">;</span>
+    <span class="p">}</span>
+  <span class="p">}</span>
+<span class="nt">&lt;/script&gt;</span>
+</code></pre></div></div>
+
+<ul>
+  <li>함수를 적극적으로 코드에 도입하여 다크모드 기능에 대한 코드를 유지보수 관점에서 수준을 향상시켰다. 하지만 BodySetColor 함수와 BodySetBackgroundColor함수는 색을 변경시킨다는 관점에서 결이 비슷한 함수임에도, 다른 스타일에 대해 적용한다는 이유로 함수가 분리되어 적용되어야 한다. 이러한 문제점을 해결하기 위해 javascript는 <strong>객체라는 것을 제공한다.</strong></li>
+  <li>디스크 저장장치의 디렉토리, 폴더와 비슷한 개념!!</li>
+  <li>객체에 속한 함수는 <strong>메소드!</strong></li>
+</ul>
+
+<h3 id="객체-읽기와-쓰기">객체 읽기와 쓰기</h3>
+
+<ul>
+  <li>순서가 있는 데이터 - 배열, 순서가 없는 데이터 - 객체.</li>
+</ul>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;script&gt;</span>
+  <span class="kd">var</span> <span class="nx">coworkers</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="na">programmer</span><span class="p">:</span> <span class="dl">"</span><span class="s2">jun</span><span class="dl">"</span><span class="p">,</span>
+    <span class="na">designer</span><span class="p">:</span> <span class="dl">"</span><span class="s2">jinn</span><span class="dl">"</span><span class="p">,</span>
+  <span class="p">};</span>
+  <span class="nb">document</span><span class="p">.</span><span class="nx">write</span><span class="p">(</span><span class="dl">"</span><span class="s2">programmer : </span><span class="dl">"</span> <span class="o">+</span> <span class="nx">coworkers</span><span class="p">.</span><span class="nx">programmer</span> <span class="o">+</span> <span class="dl">"</span><span class="s2">&lt;br&gt;</span><span class="dl">"</span><span class="p">);</span>
+  <span class="nb">document</span><span class="p">.</span><span class="nx">write</span><span class="p">(</span><span class="dl">"</span><span class="s2">designer : </span><span class="dl">"</span> <span class="o">+</span> <span class="nx">coworkers</span><span class="p">.</span><span class="nx">designer</span> <span class="o">+</span> <span class="dl">"</span><span class="s2">&lt;br&gt;</span><span class="dl">"</span><span class="p">);</span>
+  <span class="nb">document</span><span class="p">.</span><span class="nx">bookKeeper</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">duru</span><span class="dl">"</span><span class="p">;</span>
+  <span class="nb">document</span><span class="p">.</span><span class="nx">write</span><span class="p">(</span><span class="dl">"</span><span class="s2">book Keeper: </span><span class="dl">"</span> <span class="o">+</span> <span class="nx">coworkers</span><span class="p">.</span><span class="nx">bookKeeper</span> <span class="o">+</span> <span class="dl">"</span><span class="s2">&lt;br&gt;</span><span class="dl">"</span><span class="p">);</span>
+  <span class="nx">coworkers</span><span class="p">[</span><span class="dl">"</span><span class="s2">data scientist</span><span class="dl">"</span><span class="p">]</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">park</span><span class="dl">"</span><span class="p">;</span>
+  <span class="nb">document</span><span class="p">.</span><span class="nx">write</span><span class="p">(</span><span class="dl">"</span><span class="s2">Data scientist : </span><span class="dl">"</span> <span class="o">+</span> <span class="nx">coworkers</span><span class="p">[</span><span class="dl">"</span><span class="s2">data scientist</span><span class="dl">"</span><span class="p">]</span> <span class="o">+</span> <span class="dl">"</span><span class="s2">&lt;br&gt;</span><span class="dl">"</span><span class="p">);</span>
+<span class="nt">&lt;/script&gt;</span>
+</code></pre></div></div>
+
+<ul>
+  <li>객체 생성은 {} , 중괄호를 통해 생성한다.</li>
+  <li>파이썬의 딕셔너리 방식과 동일하다. key와 value 관계를 지니며 key값이 없는 상태에서 value를 객체에 할당하려면 생성하려는 key가 객체에 새롭게 대입된다.</li>
+  <li>객체의 이름에 띄어쓰기가 불가피 할때는 속성접근자 점이 아니라 대괄호를 통해 접근한다.</li>
+</ul>
+
+<h3 id="객체와-반복문">객체와 반복문</h3>
+
+<ul>
+  <li>파이썬 이터레이팅 방식과 동일하다. in연산자를 활용</li>
+  <li>객체의 순회에서 반환되는 값은 객체의 key값이다.</li>
+</ul>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;script&gt;</span>
+  <span class="k">for</span> <span class="p">(</span><span class="kd">var</span> <span class="nx">key</span> <span class="k">in</span> <span class="nx">coworkers</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">alert</span><span class="p">(</span><span class="nx">key</span><span class="p">);</span>
+  <span class="p">}</span>
+<span class="nt">&lt;/script&gt;</span>
+<span class="nt">&lt;script&gt;</span>
+  <span class="k">for</span> <span class="p">(</span><span class="kd">var</span> <span class="nx">key</span> <span class="k">in</span> <span class="nx">coworkers</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">alert</span><span class="p">(</span><span class="nx">coworkers</span><span class="p">[</span><span class="nx">key</span><span class="p">]);</span>
+  <span class="p">}</span>
+<span class="nt">&lt;/script&gt;</span>
+</code></pre></div></div>
+
+<ul>
+  <li>key값을 가지는 객체의 value에 접근하고싶으면 대괄호를 이용!</li>
+</ul>
+
+<h3 id="객체-프로퍼티와-메소드">객체 프로퍼티와 메소드</h3>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;h1&gt;</span>Property <span class="err">&amp;</span> method<span class="nt">&lt;/h1&gt;</span>
+<span class="nt">&lt;script&gt;</span>
+  <span class="nx">coworkers</span><span class="p">.</span><span class="nx">showAll</span> <span class="o">=</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+    <span class="k">for</span> <span class="p">(</span><span class="kd">var</span> <span class="nx">key</span> <span class="k">in</span> <span class="k">this</span><span class="p">)</span> <span class="p">{</span>
+      <span class="nb">document</span><span class="p">.</span><span class="nx">write</span><span class="p">(</span><span class="nx">key</span> <span class="o">+</span> <span class="dl">"</span><span class="s2"> : </span><span class="dl">"</span> <span class="o">+</span> <span class="k">this</span><span class="p">[</span><span class="nx">key</span><span class="p">]</span> <span class="o">+</span> <span class="dl">"</span><span class="s2">&lt;br&gt;</span><span class="dl">"</span><span class="p">);</span>
+    <span class="p">}</span>
+  <span class="p">};</span>
+  <span class="nx">coworkers</span><span class="p">.</span><span class="nx">showAll</span><span class="p">();</span>
+<span class="nt">&lt;/script&gt;</span>
+</code></pre></div></div>
+
+<ul>
+  <li>
+    <p>객체 메소드를 정의하는 법은 <code class="language-plaintext highlighter-rouge">object.methodName = function(){ "function definition" }</code> 방식으로 진행하면 된다.</p>
   </li>
   <li>
-    <p>내부 작동방식은 알 수 없음. 그저 작업이 수행되는 것을 이용하면 되는 것!</p>
+    <p>프로퍼티는 객체에 정의된 <strong>변수들</strong>이다.</p>
   </li>
-  <li>API를 만드는 법은 배워야함!!</li>
+  <li>
+    <p><strong>수많은 객체, 함수들을 파일로 쪼개어 링크 형식으로 받게되면 웹 브라우저 입장에서 해당 파일들을 캐시에 저장해야하기 때문에 로딩 속도가 느려질 것이다?</strong> -&gt; 실제로는 한 번 받은 캐시파일들을 브라우저가 그대로 저장해놓기 때문에, 한 번 접속한 이후에 다시 접속할 때에는 해당 캐시파일들을 그대로 로드하기 때문에 오히려 비용측면, 트래픽측면에 개선을 제공한다.</p>
+  </li>
+</ul>
+
+<h2 id="javascript-library---jquery">javascript library - jQuery</h2>
+
+<ul>
+  <li>공식 홈페이지에 가서 CDN 복사 - 붙여넣기 또는 파일 받아서 페이지 루트디렉토리에 복사</li>
+  <li><code class="language-plaintext highlighter-rouge">$('a').css('color', color);</code> -&gt; 반복문없이 전체 a태그를 jQuery로 제어하겠다는 의미</li>
 </ul>
 </section>
 </main>

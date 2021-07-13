@@ -33,6 +33,7 @@ img {
 .main-post li {
   display: list-item;
   padding-left: 1rem;
+  margin-bottom: 1rem;
 }
 ol,
 p,

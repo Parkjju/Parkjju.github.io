@@ -278,3 +278,14 @@ section:last-child {
 #collapse4 #pythonAdditional {
   padding-left: 1.5rem;
 }
+figure {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+}
+
+figcaption {
+  font-size: 0.89rem;
+  color: dimgrey;
+}
