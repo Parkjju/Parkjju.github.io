@@ -829,8 +829,108 @@
 <h3 id="개발-과정-4-jekyll기반으로-정적사이트-생성하기">개발 과정 4. Jekyll기반으로 정적사이트 생성하기</h3>
 
 <ul>
-  <li>사이트의 생성은 그냥 깃헙 페이지에서 리드미 기qks</li>
+  <li>정적사이트 생성이 어떤 식으로 이루어지는 몰랐는데, 공식 홈페이지 통하여 지킬 설치부터 튜토리얼 관련 문서를 쭉 읽어보니 Django와 골자가 비슷했다.</li>
+  <li>장고의 템플릿 언어처럼 지킬에서는 Liquid라는 언어를 사용하여 정적 사이트 내에 페이지 관리를 수월하게 해주었다.</li>
+  <li>
+    <p>Jekyll로 빌드를 본격적으로 진행하기 전 html 파일들을 이전하는 과정을 거쳤는데, 페이지 접속 후 가장 처음으로 보이는 화면의 요소들을 전부 index.html에 넣고 이후 _includes, _layouts 디렉토리를 이용하려니 막막했다.</p>
+  </li>
+  <li>
+    <p>이후 찾아본 얼큰우동TV에 Jekyll 빌드 과정을 러프하게 알려주는 컨텐츠가 있어서 참고하여 개발에 큰 도움이 되었다.</p>
+  </li>
+  <li>가장 많이 참고했던 부분은 페이지의 분리에 있었다. 전체적인 구성이 게시글을 보여주는 Post, 블로그 접속 후 첫 화면인 home 두 가지로 나누었다.</li>
+  <li>이 두가지를 _layouts에 넣고, 각 페이지마다 갖고 있는 공통 요소들 (사이드 메뉴바, 상단 status바) 및 포스팅 레이아웃을 _includes에 넣었다. 추가적으로 html의 head도 포함하여 넣었다.</li>
 </ul>
+
+<h3 id="개발-과정-5-search-기능-구현">개발 과정 5. search 기능 구현</h3>
+
+<ul>
+  <li><a href="https://github.com/christian-fei/Simple-Jekyll-Search">Simple-Jekyll-Search</a></li>
+  <li>
+    <p>참고했던 얼큰 우동 TV의 lunr.js는 무겁다는 의견이 꽤 있어서 더 서치해보니 <strong>simple-jekyll-search</strong> 라이브러리가 심플한 디자인에 구현하기 쉽다는 것을 알게 되었다.</p>
+  </li>
+  <li>
+    <p>본격적인 빌드 이전</p>
+  </li>
+  <li>
+    <p>search.json 생성 후 검색 시 매핑할 데이터를 결정한다.</p>
+  </li>
+  <li>나 같은 경우 태그별로 모아보는 기능이 좌측 사이드바에 구현되기 때문에 따로 tags 데이터를 등록하지는 않았다.</li>
+  <li>layout은 none으로 설정하고 만들어져있는 liquid 기본 구성에 따라 데이터를 커스터마이징 하면 된다.</li>
+</ul>
+
+<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+---
+layout: none
+---
+[
+  {% for post in site.posts %}
+    {
+      "title"    : "{{ post.title | escape }}",
+      "url"      : "{{ site.baseurl }}{{ post.url }}",
+      "date"     : "{{ post.date }}"
+
+    } {% unless forloop.last %},{% endunless %}
+  {% endfor %}
+
+]
+
+</code></pre></div></div>
+
+<ul>
+  <li>
+    <p>데이터 검색을 받을 DOM 요소를 HTML에 추가한다.</p>
+  </li>
+  <li>
+    <p>input태그에 id 를 search-input으로, input시 검색결과를 출력할 테이블을 ul에 id를 result-container로 한다.</p>
+  </li>
+</ul>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"search-box--result"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;input</span>
+    <span class="na">class=</span><span class="s">"search-form"</span>
+    <span class="na">id=</span><span class="s">"search-input"</span>
+    <span class="na">type=</span><span class="s">"search"</span>
+    <span class="na">autocomplete=</span><span class="s">"off"</span>
+  <span class="nt">/&gt;</span>
+  <span class="nt">&lt;ul</span> <span class="na">id=</span><span class="s">"results-container"</span><span class="nt">&gt;&lt;/ul&gt;</span>
+<span class="nt">&lt;/div&gt;</span>
+</code></pre></div></div>
+
+<ul>
+  <li>_layouts 폴더에 default.html 생성하여 각종 템플릿 데이터 링크한 뒤, script 태그에 simple jekyll search 옵션 관련 객체를 생성 후 할당한다.</li>
+  <li>window객체의 simpleJekyllSearch 프로퍼티에 할당</li>
+</ul>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">&lt;!-- deafult.html --&gt;</span>
+<span class="nt">&lt;script&gt;</span>
+  <span class="nb">window</span><span class="p">.</span><span class="nx">simpleJekyllSearch</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">SimpleJekyllSearch</span><span class="p">({</span>
+    <span class="na">searchInput</span><span class="p">:</span> <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="dl">"</span><span class="s2">search-input</span><span class="dl">"</span><span class="p">),</span>
+    <span class="na">resultsContainer</span><span class="p">:</span> <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="dl">"</span><span class="s2">results-container</span><span class="dl">"</span><span class="p">),</span>
+    <span class="na">json</span><span class="p">:</span> <span class="dl">"</span><span class="s2">/search.json</span><span class="dl">"</span><span class="p">,</span>
+    <span class="na">noResultsText</span><span class="p">:</span> <span class="dl">""</span><span class="p">,</span>
+    <span class="na">limit</span><span class="p">:</span> <span class="mi">10</span><span class="p">,</span>
+    <span class="na">fuzzy</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+    <span class="na">exclude</span><span class="p">:</span> <span class="p">[</span><span class="dl">"</span><span class="s2">Welcome</span><span class="dl">"</span><span class="p">],</span>
+  <span class="p">});</span>
+<span class="nt">&lt;/script&gt;</span>
+</code></pre></div></div>
+
+<ul>
+  <li>필수적 옵션인 searchInput, resultsContainer, json파일 추가하고, 나머지 옵션은 디자인에 따라 추가한다.</li>
+  <li>객체 생성 시 오타에 주의하고, 이유는 모르겠지만 script코드의 분리를 하면 정상적으로 구동이 되지 않았다. (default.html 내에 작성하니 구동되었음)</li>
+</ul>
+
+<h3 id="마무리---앞으로의-todo">마무리 - 앞으로의 todo</h3>
+
+<ol>
+  <li>리드미 파일 마이그레이션 시 문서 작성이 보기 좋지 않게 되어있는 부분 markdown 수정하기</li>
+  <li>배포자동화 추가 적용 가능한 지에 대한 여부 확인하기</li>
+  <li>사이드바 메뉴 최대한 리팩토링 진행하기</li>
+  <li>codeblock 관련 CSS는 맘에 드는 것 찾을때까지 서치해봐야할듯</li>
+  <li>사이드바 메뉴 page url 받아서 활성화된 메뉴바 관련 CSS추가하기</li>
+  <li>collapse와 onclick이벤트 통합하여 연속클릭시 CSS반대로 적용되는 문제</li>
+  <li>각 포스팅의 소제목마다 목차 달아서 가독성 높이기</li>
+</ol>
 </section>
 </main>
 
