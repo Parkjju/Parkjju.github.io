@@ -148,6 +148,33 @@
       <p
         class="sidebar-heading"
         data-bs-toggle="collapse"
+        href="#django"
+        aria-expanded="false"
+        aria-controls="django"
+        onclick="rotate(this)"
+      >
+        <span class="sidebar-heading--name">Django</span>
+        <i class="fas fa-caret-right fa-xs"></i>
+      </p>
+    </li>
+    <div class="collapse" id="django">
+      <div class="card card-body">
+        <a href="./classview" target="_self">Django 클래스 기반 뷰</a>
+      </div>
+      <div class="card card-body">
+        <a href="./djangoWeb" target="_self">Python 웹 프로그래밍 기초편</a>
+      </div>
+      <div class="card card-body">
+        <a href="./django-css" target="_self"
+          >Python django - How to add css to django application</a
+        >
+      </div>
+    </div>
+
+    <li class="sidebar-group" role="menuitem">
+      <p
+        class="sidebar-heading"
+        data-bs-toggle="collapse"
         href="#collapse2"
         aria-expanded="false"
         aria-controls="collapse2"
@@ -801,6 +828,170 @@
   <li><a href="./vueData">vue Data옵션</a></li>
   <li><a href="https://vuejs.org/v2/api/#Directives">vue directives 공식 사이트</a></li>
 </ul>
+
+<hr />
+
+<h2 id="714">7/14</h2>
+
+<ul>
+  <li><a href="https://docs.djangoproject.com/en/3.2/topics/class-based-views/">Django document - Class-based views</a></li>
+</ul>
+
+<h2 id="class-based-views">Class-based views</h2>
+
+<ul>
+  <li>
+    <p>A view is a callable which takes a request and returns a response. This can be more than just a function, and Django provides an example of some classes which can be used as views. These allow you to structure your views and reuse code by harnessing inheritance and mixins. There are also some generic views for tasks which we’ll get to later, but you may want to design your own structure of reusable views which suits your use case. For full details, see the class-based views reference documentation.</p>
+  </li>
+  <li>
+    <p>view는 요청을받고 응답을 반환한다. Django는 함수르 넘어 뷰로 사용될 수 있는 클래스도 제공한다. 클래스형 뷰는 뷰를 구조화하고, 상속과 mixin 기술에 있어서 부담없이 코드를 재사용 할 수 있다.</p>
+  </li>
+  <li>
+    <p><a href="https://docs.djangoproject.com/en/3.2/ref/class-based-views/">Django built-in class-based views API</a></p>
+  </li>
+</ul>
+
+<h2 id="introduction-to-class-based-views">Introduction to class-based views</h2>
+
+<ul>
+  <li>
+    <p><a href="https://docs.djangoproject.com/en/3.2/topics/class-based-views/intro/">Django document - Introduction to class-based views</a></p>
+  </li>
+  <li>
+    <p>Class-based views provide an alternative way to implement views as Python objects instead of functions. They do not replace function-based views, but have certain differences and advantages when compared to function-based views:
+Organization of code related to specific HTTP methods (GET, POST, etc.) can be addressed by separate methods instead of conditional branching.
+Object oriented techniques such as mixins (multiple inheritance) can be used to factor code into reusable components.</p>
+  </li>
+  <li>
+    <p>클래스 기반 뷰는 함수 대신 파이썬 객체로 뷰를 구현할 수 있게 해준다. 함수 기반 뷰의 완전 대체재가 아니고, 둘 사이는 차이점이 존재한다.</p>
+  </li>
+</ul>
+
+<ol>
+  <li>특정 HTTP메소드 (GET, POST등)를 처리하는 코드 구성에 있어 if문 대신 별도의 메소드로 처리할 수 있다.</li>
+  <li>mixins(multiple inheritance)와 같은 객체지향 기술이 재사용 가능한 구성요소의 코드로 사용될 수 있다.</li>
+</ol>
+
+<h2 id="the-relationship-and-history-of-generic-views-class-based-views-and-class-based-generic-views">The relationship and history of generic views, class-based views, and class-based generic views</h2>
+
+<ul>
+  <li><strong>generic view</strong>란, django에서 기본적으로 제공하고 있는 뷰를 뜻함. 개발시 자주 등장하는 내용을 모아놓은 뷰</li>
+  <li>function-based view가 처음으로 구현되기 시작하면서 코드들에 대해 상당한 수준의 abstract를 진행하였다.</li>
+  <li>
+    <p>function-based view는 단순한 사례를 잘 다루긴 했지만 일부 옵션에 대해 확장하거나 커스터마이징 할 수 없어서 실제 어플리케이션 개발에 있어서 실용성이 떨어진다는 단점이 존재</p>
+  </li>
+  <li>이에 따라 function-based view로 고안된 객체에 대해 class-based generic view가 개발되면서 뷰 개발이 한층 쉬워짐</li>
+</ul>
+
+<h2 id="using-class-based-view">Using class-based view</h2>
+
+<ul>
+  <li>The code to handle HTTP GET method in a view function</li>
+</ul>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="nn">django.http</span> <span class="kn">import</span> <span class="n">HttpResponse</span>
+
+<span class="k">def</span> <span class="nf">my_view</span><span class="p">(</span><span class="n">request</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">request</span><span class="p">.</span><span class="n">method</span> <span class="o">==</span> <span class="s">'GET'</span><span class="p">:</span>
+        <span class="c1"># &lt;view logic&gt;
+</span>        <span class="k">return</span> <span class="n">HttpResponse</span><span class="p">(</span><span class="s">'result'</span><span class="p">)</span>
+</code></pre></div></div>
+
+<ul>
+  <li>class-based view</li>
+</ul>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="nn">django.http</span> <span class="kn">import</span> <span class="n">HttpResponse</span>
+<span class="kn">from</span> <span class="nn">django.views</span> <span class="kn">import</span> <span class="n">View</span>
+
+<span class="k">class</span> <span class="nc">MyView</span><span class="p">(</span><span class="n">View</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">get</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">request</span><span class="p">):</span>
+        <span class="c1"># &lt;view logic&gt;
+</span>        <span class="k">return</span> <span class="n">HttpResponse</span><span class="p">(</span><span class="s">'result'</span><span class="p">)</span>
+</code></pre></div></div>
+
+<ul>
+  <li>Django urls.py에 클래스형 뷰를 전달하는데, as_view()라는 클래스 메소드를 전달해야한다.</li>
+  <li>as_view 메소드는 urlpatterns의 URL과 매칭되는 요청을 받을 때 호출할 수 있는 함수이다.</li>
+  <li>as_view는 class내에 setup()인스턴스를 생성한다. setup()은 attributes를 초기화하고 dispatch() 메소드를 호출한다.</li>
+  <li>dispatch()는 HTTP메소드가 GET인지 POST인지 판단하고, 매칭되면 해당 메소드로 요청을 relay(중계)하거나 매핑되지 않으면 <code class="language-plaintext highlighter-rouge">HttpResponseNotAllowed</code>를 발생시킨다.</li>
+</ul>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># urls.py
+</span><span class="kn">from</span> <span class="nn">django.urls</span> <span class="kn">import</span> <span class="n">path</span>
+<span class="kn">from</span> <span class="nn">myapp.views</span> <span class="kn">import</span> <span class="n">MyView</span>
+
+<span class="n">urlpatterns</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="n">path</span><span class="p">(</span><span class="s">'about/'</span><span class="p">,</span> <span class="n">MyView</span><span class="p">.</span><span class="n">as_view</span><span class="p">()),</span>
+<span class="p">]</span>
+</code></pre></div></div>
+
+<ul>
+  <li>
+    <p>간단한 클래스기반 뷰를 작성할때는 class attribute가 필요하지 않지만, class attribute는 다양한 class-based view에서 사용된다.</p>
+  </li>
+  <li>
+    <p>way to configure or set class attribute 1</p>
+  </li>
+</ul>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="nn">django.http</span> <span class="kn">import</span> <span class="n">HttpResponse</span>
+<span class="kn">from</span> <span class="nn">django.views</span> <span class="kn">import</span> <span class="n">View</span>
+
+<span class="k">class</span> <span class="nc">GreetingView</span><span class="p">(</span><span class="n">View</span><span class="p">):</span>
+    <span class="n">greeting</span> <span class="o">=</span> <span class="s">"Good Day"</span> <span class="c1"># greeting이라는 클래스 속성을 작성함
+</span>
+    <span class="k">def</span> <span class="nf">get</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">request</span><span class="p">):</span>
+        <span class="k">return</span> <span class="n">HttpResponse</span><span class="p">(</span><span class="bp">self</span><span class="p">.</span><span class="n">greeting</span><span class="p">)</span>
+</code></pre></div></div>
+
+<ul>
+  <li>greeting이라는 클래스 속성을 서브클래스에서 오버라이드한다.</li>
+</ul>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">MorningGreetingView</span><span class="p">(</span><span class="n">GreetingView</span><span class="p">):</span>
+    <span class="n">greeting</span> <span class="o">=</span> <span class="s">"Morning to ya"</span>
+</code></pre></div></div>
+
+<ul>
+  <li>way to configure or set class attribute 2</li>
+  <li>클래스 속성을 as_view()메소드의 키워드로 전달한다. (urlpatterns에서)</li>
+</ul>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">urlpatterns</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="n">path</span><span class="p">(</span><span class="s">'about/'</span><span class="p">,</span> <span class="n">GreetingView</span><span class="p">.</span><span class="n">as_view</span><span class="p">(</span><span class="n">greeting</span><span class="o">=</span><span class="s">"G'day"</span><span class="p">)),</span>
+<span class="p">]</span>
+</code></pre></div></div>
+
+<h2 id="using-mixins">Using mixins</h2>
+
+<ul>
+  <li>mixins는 다수의 부모 클래스가 결합되어 메소드 및 속성을 상속받는 것을 말함</li>
+  <li>generic class-based view에는 <strong>TemplateResponseMixin</strong>이라는 mixin이 있다. 이는 render_to_response()라는 메소드를 정의하는데에 사용됨.</li>
+</ul>
+
+<h2 id="실습---인프런-django--vue">실습 - 인프런 Django &amp; vue</h2>
+
+<ul>
+  <li>클래스기반 뷰 정의 - <strong>RedirectView를 제외한 모든 generic view에 template_name속성이 사용된다.</strong> 따라서 클래스 정의 후 가장 먼저 작성</li>
+  <li>이후 각 뷰에 필요한 속성들을 오버라이딩</li>
+</ul>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># todoapp/views.py
+</span><span class="kn">from</span> <span class="nn">django.views.generic</span> <span class="kn">import</span> <span class="n">TemplateView</span><span class="p">,</span> <span class="n">CreateView</span><span class="p">,</span> <span class="n">ListView</span><span class="p">,</span> <span class="n">DeleteView</span>
+
+<span class="k">class</span> <span class="nc">TodoVueOnlyTV</span><span class="p">(</span><span class="n">TemplateView</span><span class="p">):</span>
+    <span class="n">template_name</span> <span class="o">=</span> <span class="s">'todo/todo_vue_only.html'</span>
+
+<span class="k">class</span> <span class="nc">TodoCV</span><span class="p">(</span><span class="n">CreateView</span><span class="p">):</span>
+    <span class="n">template_name</span> <span class="o">=</span> <span class="s">'todo/todo_form.html'</span>
+
+<span class="k">class</span> <span class="nc">TodoLV</span><span class="p">(</span><span class="n">ListView</span><span class="p">):</span>
+    <span class="n">template_name</span> <span class="o">=</span> <span class="s">'todo/todo_list.html'</span>
+
+<span class="k">class</span> <span class="nc">TodoDelV</span><span class="p">(</span><span class="n">DeleteView</span><span class="p">):</span>
+    <span class="n">template_name</span> <span class="o">=</span> <span class="s">'todo/todo_confirm_delete.html'</span>
+</code></pre></div></div>
 </section>
 </main>
 

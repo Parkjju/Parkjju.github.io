@@ -33,7 +33,7 @@ img {
 .main-post li {
   display: list-item;
   padding-left: 1rem;
-  margin-bottom: 1rem;
+  margin-bottom: 0.8rem;
 }
 ol,
 p,
@@ -63,11 +63,15 @@ h2 {
   font-size: 1.5em;
 }
 h3 {
-  font-size: 1.1em;
+  font-size: 1.3em;
+}
+h4 {
+  font-size: 1.1rem;
 }
 
 h2,
-h3 {
+h3,
+h4 {
   display: block;
   margin-block-start: 0.83em;
   margin-block-end: 0.83em;
@@ -100,4 +104,15 @@ h3 {
 .main-post--content h5:hover a,
 .main-post--content h6:hover a {
   color: var(--title-color);
+}
+
+figure {
+  box-sizing: border-box;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+.main-post ol li {
+  margin-bottom: 0.3rem;
 }

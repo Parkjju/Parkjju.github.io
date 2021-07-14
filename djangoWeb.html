@@ -713,63 +713,194 @@
   </ul>
 </div>
  <main class="main-post">
-  <h1 class="main-post--title">레퍼런스 카운트와 가비지 컬렉션</h1>
+  <h1 class="main-post--title">Python 웹 프로그래밍 기초편 - 김석훈 저</h1>
   <div class="line"></div>
-  <section class="main-post--content"><h3 id="레퍼런스-카운트">레퍼런스 카운트</h3>
+  <section class="main-post--content"><h2 id="chapter-1-웹-프로그래밍의-이해">Chapter 1 웹 프로그래밍의 이해</h2>
+
+<h3 id="11-웹-프로그래밍이란">1.1 웹 프로그래밍이란?</h3>
 
 <ul>
-  <li>파이썬에서 데이터를 다루는 방법은 기존에 배워왔던 C언어와 달랐다.</li>
+  <li>HTTP(S) 프로토콜로 통신하는 클라이언트와 서버를 개발하는 것 (둘 중 하나만 개발할 수도 있음)</li>
+  <li>웹 브라우저는 이미 웹 클라이언트로서 개발되어 있기 때문에 웹 프레임워크를 이용하여 웹 서버만을 개발하는 것을 마치 웹 프로그래밍의 전부인 것으로 착각함 (실제로는 웹 클라이언트를 개발해야하는 상황도 자주 생김)
+<img src="./assets/images/webdraw.jpg" height="30%" width="60%" /></li>
 </ul>
 
-<pre><code class="language-C">int a = 1;
-int b;
-b=a;
-</code></pre>
+<h3 id="12-다양한-웹-클라이언트">1.2 다양한 웹 클라이언트</h3>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">a</span><span class="o">=</span><span class="mi">1</span>
-<span class="n">b</span><span class="o">=</span><span class="n">a</span>
+<h4 id="121-웹-브라우저를-사용하여-요청"><strong>1.2.1 웹 브라우저를 사용하여 요청</strong></h4>
+
+<ul>
+  <li>웹 브라우저가 주소창의 문장을 해석 - HTTP요청을 보내는 클라이언트의 역할을 수행 - 요청을 받은 대상 도메인의 웹 서버가 결과를 웹 브라우저로 전송 - HTML 해석하여 화면에 렌더링</li>
+</ul>
+
+<h4 id="122-리눅스-curl명령을-사용하여-요청"><strong>1.2.2 리눅스 curl명령을 사용하여 요청</strong></h4>
+
+<ul>
+  <li>리눅스의 <code class="language-plaintext highlighter-rouge">curl</code>명령은 HTTP/HTTPS/FTP등 여러 프로토콜을 사용하여 데이터를 송수신할 수 있는 명령</li>
+</ul>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>curl http://www.example.com
 </code></pre></div></div>
 
 <ul>
-  <li>
-    <p>위와 같은 코드를 통해 변수 선언과 대입 연산을 진행한다고 하자.</p>
-
-    <ul>
-      <li>
-        <p>C에서는 변수 선언 및 값 할당 시 변수가 담당하는 역할로서 <strong>메모리 할당 후 접근할 수 있는 공간의 이름을 부여</strong> 함을 알 수있는데</p>
-      </li>
-      <li>
-        <p>위의 Python코드에서는 1이라는 객체를 생성하고 해당 객체에 대해 <strong>메모리 할당 및 저장</strong> 을 미리 진행한다.</p>
-      </li>
-      <li>
-        <p>또한 변수를 선언하여 그 값을 저장한다고 생각할 수 있는데, 그렇지 않으며 Python에서의 변수 역할은 <strong>메모리에 저장된 객체를 참조(reference)</strong> 하는 일을 한다.</p>
-      </li>
-      <li>
-        <p>따라서 변수 간 대입 연산도 값에 대한 복사가 이루어지는 것이 아니라, <strong>새로 선언된 변수가 생성되었던 객체를 추가적으로 가리키는 것</strong> 이다.</p>
-      </li>
-      <li>
-        <p>그렇게 저장된 객체를 참조하는 변수의 수를 <strong>레퍼런스 카운트</strong> 라고 표현한다.</p>
-      </li>
-      <li>
-        <p>또한 레퍼런스 카운트의 값이 0인 객체에 대하여 소멸 대상으로 두고 추후에 소멸시키게 되는 규칙 및 과정을 가리켜 <strong>가비지 컬렉션</strong> 이라고 한다.</p>
-      </li>
-    </ul>
-  </li>
+  <li>요청 뒤에 웹 서버로부터 html을 받는다</li>
 </ul>
 
-<h3 id="파이썬-인터프리터">파이썬 인터프리터</h3>
+<h4 id="123-telnet을-사용하여-요청"><strong>1.2.3 Telnet을 사용하여 요청</strong></h4>
 
 <ul>
-  <li>
-    <p>가비지 컬렉션에 대한 진행은 바로 <strong>파이썬 가상 머신이 진행한다.</strong></p>
-  </li>
-  <li>
-    <p>파이썬 코드가 스크립트 상에 편집되고 실행되면 -&gt; ‘바이트 코드’로 변환되어 저장된다. -&gt; 해당 ‘바이트 코드’는 <strong>파이썬 가상 머신(Python Virtual Machine,PVM)</strong> 위에서 실행된다.</p>
-  </li>
-  <li>
-    <p>PVM,파이썬 코드 변환기, 기본적으로 포함되는 각종 라이브러리들을 포함하여 파이썬 인터프리터 라고 한다.</p>
-  </li>
+  <li>리눅스의 Telnet프로그램을 사용하여 HTTP 요청을 보낼 수도 있다.</li>
 </ul>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$telnet</span> www.example.com 80
+</code></pre></div></div>
+
+<ul>
+  <li>GET, HOST에 대한 정보를 받은 뒤 요청을 받은 웹 서버에서 html을 넘겨준다.</li>
+</ul>
+
+<h4 id="124-직접-만든-클라이언트로-요청"><strong>1.2.4 직접 만든 클라이언트로 요청</strong></h4>
+
+<ul>
+  <li>파이썬으로 직접 웹 클라이언트를 만든다.</li>
+</ul>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">urllib.request</span>
+<span class="k">print</span><span class="p">(</span><span class="n">urllib</span><span class="p">.</span><span class="n">request</span><span class="p">.</span><span class="n">urlopen</span><span class="p">(</span><span class="s">"http://www.example.com"</span><span class="p">).</span><span class="n">read</span><span class="p">().</span><span class="n">decode</span><span class="p">(</span><span class="s">'utf-8'</span><span class="p">))</span>
+</code></pre></div></div>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>baggyeongjun-ui-MacBook-Pro:pythonTest parkgyeongjun<span class="nv">$ </span>python client.py
+&lt;<span class="o">!</span>doctype html&gt;
+&lt;html&gt;
+&lt;<span class="nb">head</span><span class="o">&gt;</span>
+    &lt;title&gt;Example Domain&lt;/title&gt;
+
+    &lt;meta <span class="nv">charset</span><span class="o">=</span><span class="s2">"utf-8"</span> /&gt;
+    &lt;meta http-equiv<span class="o">=</span><span class="s2">"Content-type"</span> <span class="nv">content</span><span class="o">=</span><span class="s2">"text/html; charset=utf-8"</span> /&gt;
+    &lt;meta <span class="nv">name</span><span class="o">=</span><span class="s2">"viewport"</span> <span class="nv">content</span><span class="o">=</span><span class="s2">"width=device-width, initial-scale=1"</span> /&gt;
+    &lt;style <span class="nb">type</span><span class="o">=</span><span class="s2">"text/css"</span><span class="o">&gt;</span>
+    body <span class="o">{</span>
+        background-color: <span class="c">#f0f0f2;</span>
+        margin: 0<span class="p">;</span>
+        padding: 0<span class="p">;</span>
+        font-family: <span class="nt">-apple-system</span>, system-ui, BlinkMacSystemFont, <span class="s2">"Segoe UI"</span>, <span class="s2">"Open Sans"</span>, <span class="s2">"Helvetica Neue"</span>, Helvetica, Arial, sans-serif<span class="p">;</span>
+
+    <span class="o">}</span>
+    div <span class="o">{</span>
+        width: 600px<span class="p">;</span>
+        margin: 5em auto<span class="p">;</span>
+        padding: 2em<span class="p">;</span>
+        background-color: <span class="c">#fdfdff;</span>
+        border-radius: 0.5em<span class="p">;</span>
+        box-shadow: 2px 3px 7px 2px rgba<span class="o">(</span>0,0,0,0.02<span class="o">)</span><span class="p">;</span>
+    <span class="o">}</span>
+    a:link, a:visited <span class="o">{</span>
+        color: <span class="c">#38488f;</span>
+        text-decoration: none<span class="p">;</span>
+    <span class="o">}</span>
+    @media <span class="o">(</span>max-width: 700px<span class="o">)</span> <span class="o">{</span>
+        div <span class="o">{</span>
+            margin: 0 auto<span class="p">;</span>
+            width: auto<span class="p">;</span>
+        <span class="o">}</span>
+    <span class="o">}</span>
+    &lt;/style&gt;
+&lt;/head&gt;
+
+&lt;body&gt;
+&lt;div&gt;
+    &lt;h1&gt;Example Domain&lt;/h1&gt;
+    &lt;p&gt;This domain is <span class="k">for </span>use <span class="k">in </span>illustrative examples <span class="k">in </span>documents. You may use this
+    domain <span class="k">in </span>literature without prior coordination or asking <span class="k">for </span>permission.&lt;/p&gt;
+    &lt;p&gt;&lt;a <span class="nv">href</span><span class="o">=</span><span class="s2">"https://www.iana.org/domains/example"</span><span class="o">&gt;</span>More information...&lt;/a&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre></div></div>
+
+<h3 id="13-http-프로토콜">1.3 HTTP 프로토콜</h3>
+
+<ul>
+  <li>HTTP는 웹 서버와 웹 클라이언트 사이에서 데이터를 주고받기 위해 사용하느 통신 방식 - TCP/IP 프로토콜 위에서 동작한다. -&gt; 웹을 이용하려면 웹 서버와 웹 클라이언트는 각각 TCP/IP동작에 필수적인 IP주소를 가져야한다.</li>
+</ul>
+
+<h4 id="131-http-메시지의-구조"><strong>1.3.1 HTTP 메시지의 구조</strong></h4>
+
+<ul>
+  <li>HTTP 메시지 - 클라이언트에서 서버로 보내는 요청 메시지 &amp; 서버에서 클라이언트로 보내는 응답 메시지</li>
+</ul>
+
+<figure>
+    <img src="./assets/images/httpmessage.jpg" height="50%" width="50%" />
+    <figcaption>http 메시지 구조</figcaption>
+</figure>
+
+<ol>
+  <li>스타트라인 : 요청 메시지일 때 요청라인, 응답 메시지일 때 <strong>상태 라인</strong></li>
+  <li>헤더 : 각 행의 끝에 CRLF(Carriage Return Line Feed - 줄바꿈문자)가 있음. 해더와 바디는 빈 줄로 구분하고 헤더와 바디는 생략될 수 있음.</li>
+  <li>바디 : 바디에는 텍스트 뿐만 아니라 바이너리 데이터도 들어갈 수 있음.</li>
+</ol>
+
+<ul>
+  <li>바디가 없는 요청 메시지 예시</li>
+</ul>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>GET /book/shakespeare HTTP/1.1 <span class="c"># 요청라인.</span>
+Host: www.example.com:8080 <span class="c"># 헤더</span>
+</code></pre></div></div>
+
+<ul>
+  <li>요청라인은 요청 method, 요청 URL, 프로토콜 버전으로 구성</li>
+  <li>
+    <p>헤더는 <code class="language-plaintext highlighter-rouge">이름: 값</code> 형식으로 표현</p>
+  </li>
+  <li>동시에 표시할 수 있음</li>
+</ul>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>GET http://www.example.com:8080/book/shakespeare HTTP/1.1
+</code></pre></div></div>
+
+<ul>
+  <li><strong>응답메시지 예시</strong></li>
+</ul>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>HTTP/1.1 200 OK
+Content-Type: application/xhtml+xml<span class="p">;</span> <span class="nv">charset</span><span class="o">=</span>utf-8
+
+&lt;html&gt;
+...
+&lt;/html&gt;
+</code></pre></div></div>
+
+<ul>
+  <li>첫 번째 줄은 프로토콜 버전, 상태코드, 상태 텍스트로 구성</li>
+  <li>두 번째 줄부터 헤더. html문서가 시작되는 곳부터 바디이므로 빈 줄로 구분하는중</li>
+</ul>
+
+<h4 id="132-http-처리-방식"><strong>1.3.2 HTTP 처리 방식</strong></h4>
+
+<ol>
+  <li>GET - 리소스 취득 - Read
+    <ul>
+      <li>지정한 URL정보를 가져오는 메소드. 서버로부터 웹 페이지, 이미지, 동영상 등을 불러올때 사용</li>
+    </ul>
+  </li>
+  <li>POST - 리소스 생성 , 리소스 데이터 추가 - Create</li>
+  <li>PUT - 리소스 변경 - Update
+    <ul>
+      <li>PUT메소드도 리소스를 생성하는 데 사용할 수 있다.</li>
+      <li>리소스 생성 관점에서 PUT과 POST를 구분하려면 리소스에 대한 URL 결정권이 서버 측에 있을 때 POST, 반대로 클라이언트에 있을 때 PUT을 사용하는 것이 적합.</li>
+      <li>위키백과처럼 클라이언트가 결정한 타이틀이 URL로 결정될때 - PUT으로 하는 것이 적합하지만, 오히려 혼동을 줄 수 있기 때문에 POST PUT 각자의 역할 수행하도록 구현하기</li>
+    </ul>
+  </li>
+  <li>DELETE - 리소스 삭제 - Delete</li>
+  <li>HEAD - 리소스 헤더 취득</li>
+  <li>OPTIONS - 리소스가 서포트하는 메소드 취득</li>
+  <li>TRACE - 루프백 시험에 사용</li>
+  <li>CONNECT - 프록시 동작의 터널 접속으로 변경</li>
+</ol>
+
+<h4 id="133-get과-post메소드"><strong>1.3.3 GET과 POST메소드</strong></h4>
 </section>
 </main>
 
